@@ -37,3 +37,4 @@ sysinfo.txt
 # Blender
 *.blend1
 *.blend2
+*.lock
