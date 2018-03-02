@@ -23,10 +23,6 @@ public class menu_selection : MonoBehaviour {
     public GameObject circuit2Button;
     public GameObject circuit3Button;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
 
     //Schneberger Maxime
     //Quand le pointeur de la souris entre dans un object possédant un event trigger lié avec ce script
@@ -46,6 +42,16 @@ public class menu_selection : MonoBehaviour {
             case "Play_As_Guest_Text":
                 //change la couleur du bouton play_as_guest en vert
                 GameObject.Find("Play_As_Guest").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
+
+            case "Confirm_Text":
+                //change la couleur du bouton confirm en vert
+                GameObject.Find("Confirm_Button").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
+
+            case "Back_Text":
+                //change la couleur du bouton play_as_guest en vert
+                GameObject.Find("Back_Button").GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
         }
     }
@@ -68,25 +74,6 @@ public class menu_selection : MonoBehaviour {
             case "Play_As_Guest_Text":
                 //change la couleur du bouton play_as_guest en blanc
                 GameObject.Find("Play_As_Guest").GetComponent<RawImage>().color = new Color(255, 255, 255);
-                break;
-        }
-    }
-
-    //Schneberger Maxime
-    //Quand on clique sur un object possédant un event trigger lié avec ce script
-    public void OnPointer_Click () {
-        switch (this.name)
-        {
-            case "Log_In_Text":
-
-                break;
-
-            case "Sign_Up_Text":
-
-                break;
-
-            case "Play_As_Guest_Text":
-
                 break;
         }
     }
