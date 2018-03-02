@@ -75,6 +75,16 @@ public class menu_selection : MonoBehaviour {
                 //change la couleur du bouton play_as_guest en blanc
                 GameObject.Find("Play_As_Guest").GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
+
+            case "Confirm_Text":
+                //change la couleur du bouton confirm en blanc
+                GameObject.Find("Confirm_Button").GetComponent<RawImage>().color = new Color(255, 0, 0);
+                break;
+
+            case "Back_Text":
+                //change la couleur du bouton play_as_guest en blanc
+                GameObject.Find("Back_Button").GetComponent<RawImage>().color = new Color(255, 0, 0);
+                break;
         }
     }
 
