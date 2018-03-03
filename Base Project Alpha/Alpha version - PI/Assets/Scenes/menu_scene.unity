@@ -345,6 +345,212 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &45007386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 45007387}
+  - component: {fileID: 45007392}
+  - component: {fileID: 45007391}
+  - component: {fileID: 45007390}
+  - component: {fileID: 45007389}
+  - component: {fileID: 45007388}
+  m_Layer: 0
+  m_Name: Back_Text_Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &45007387
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 180614550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &45007388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639688661f3ed6249807982f91582c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input_un: {fileID: 140685621}
+  input_pw: {fileID: 1891460034}
+  input_pwrep: {fileID: 890366847}
+  loginput_un: {fileID: 502316684}
+  loginput_pw: {fileID: 1512985454}
+  register_button: {fileID: 209529235}
+  login_button: {fileID: 109360615}
+  play_as_guest_button: {fileID: 1093910}
+  play_button: {fileID: 1456061601}
+  customize_button: {fileID: 16709128}
+  profile_button: {fileID: 906502366}
+  solo_button: {fileID: 549246246}
+  multi_button: {fileID: 898464279}
+  tuto_button: {fileID: 1925497450}
+  confirm_button: {fileID: 777533874}
+  back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  GOinput_un: {fileID: 140685619}
+  GOinput_pw: {fileID: 1891460032}
+  GOinput_pwrep: {fileID: 890366845}
+  GOloginput_un: {fileID: 502316682}
+  GOloginput_pw: {fileID: 1512985452}
+  log_reg_canvas: {fileID: 3616586}
+  after_canvas: {fileID: 683701103}
+--- !u!114 &45007389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1473405ad39f20d4badbc8da2f0433ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logInButton: {fileID: 109360615}
+  signUpButton: {fileID: 209529235}
+  playAsGuestButton: {fileID: 1093910}
+  playButton: {fileID: 1456061601}
+  customizeButton: {fileID: 16709128}
+  profileButton: {fileID: 906502366}
+  soloButton: {fileID: 549246246}
+  multiButton: {fileID: 898464279}
+  tutoButton: {fileID: 1925497450}
+  circuit1Button: {fileID: 0}
+  circuit2Button: {fileID: 0}
+  circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
+--- !u!114 &45007390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 45007389}
+          m_MethodName: OnPointer_Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 45007389}
+          m_MethodName: OnPointer_Exit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 45007389}
+          m_MethodName: OnPointer_Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &45007391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.034482956, g: 0, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Retour
+--- !u!222 &45007392
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45007386}
 --- !u!1 &96077915
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +616,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -469,6 +676,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 96077917}
           m_MethodName: OnPointerClick_GUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 96077921}
+          m_MethodName: OnPointer_Click
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -543,6 +761,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!1 &109360615
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +1126,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &164209239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,6 +1236,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164209235}
+--- !u!1 &180614549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 180614550}
+  - component: {fileID: 180614552}
+  - component: {fileID: 180614551}
+  m_Layer: 0
+  m_Name: Back_Button_Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &180614550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180614549}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 45007387}
+  m_Father: {fileID: 565378643}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -37.5}
+  m_SizeDelta: {x: 100, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &180614551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180614549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: f9cec661b72dd4a4095bda8461dfce7a, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &180614552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180614549}
 --- !u!1 &209529235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1711,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 175}
-  m_SizeDelta: {x: 700, y: 0}
+  m_SizeDelta: {x: 700, y: 1312.3556}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &285037698
 MonoBehaviour:
@@ -1705,7 +2005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &366471827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1972,6 +2272,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -2040,6 +2341,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 388761960}
+          m_MethodName: OnPointer_Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -2105,6 +2417,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!1 &446078862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,6 +2974,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -2723,6 +3043,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 535136250}
+          m_MethodName: OnPointer_Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -2788,6 +3119,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!1 &549246246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,6 +3287,7 @@ RectTransform:
   - {fileID: 1925497451}
   - {fileID: 817853749}
   - {fileID: 366471827}
+  - {fileID: 180614550}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3017,6 +3356,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &572023263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3137,7 +3483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &633980439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3756,7 +4102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &817853749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3949,6 +4295,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -3979,6 +4326,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &853300773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,6 +4394,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 853300772}
+          m_MethodName: OnPointer_Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -4498,6 +4863,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -4541,6 +4907,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!1 &906502366
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,6 +5042,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &959446417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4939,8 +5319,8 @@ RectTransform:
   m_Father: {fileID: 1394319750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.733304}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5185,6 +5565,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &1366638701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5524,6 +5911,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &1464478915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5687,6 +6081,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!114 &1473805195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6579,6 +6980,7 @@ MonoBehaviour:
   tuto_button: {fileID: 1925497450}
   confirm_button: {fileID: 777533874}
   back_arrow: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
   GOinput_un: {fileID: 140685619}
   GOinput_pw: {fileID: 1891460032}
   GOinput_pwrep: {fileID: 890366845}
@@ -6647,6 +7049,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 1830168363}
+          m_MethodName: OnPointer_Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -6712,6 +7125,13 @@ MonoBehaviour:
   circuit1Button: {fileID: 0}
   circuit2Button: {fileID: 0}
   circuit3Button: {fileID: 0}
+  userInfo: {fileID: 817853748}
+  userStats: {fileID: 366471826}
+  confirmButton: {fileID: 777533874}
+  backButtonForm: {fileID: 1888700712}
+  backButton: {fileID: 180614549}
+  selection_step: 0
+  is_guest: 0
 --- !u!1 &1846186888
 GameObject:
   m_ObjectHideFlags: 0

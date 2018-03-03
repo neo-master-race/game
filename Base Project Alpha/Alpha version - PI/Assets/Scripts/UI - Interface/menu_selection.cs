@@ -28,6 +28,19 @@ public class menu_selection : MonoBehaviour {
     public GameObject circuit2Button;
     public GameObject circuit3Button;
 
+    [Header("Profile section")]
+    public GameObject userInfo;
+    public GameObject userStats;
+
+    [Header("Others GameObject")]
+    public GameObject confirmButton;
+    public GameObject backButtonForm;
+    public GameObject backButton;
+
+    [Header("Variables")]
+    public int selection_step = 0;
+    public bool is_guest = false;
+
 
     //Schneberger Maxime
     //Quand le pointeur de la souris entre dans un object possédant un event trigger lié avec ce script
@@ -63,12 +76,12 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Confirm_Text":
                 //change la couleur du bouton confirm en vert
-                GameObject.Find("Confirm_Button").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                confirmButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
             case "Back_Text":
-                //change la couleur du bouton play_as_guest en vert
-                GameObject.Find("Back_Button").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                //change la couleur du bouton back en vert
+                backButtonForm.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNECTION                                   *
@@ -121,6 +134,11 @@ public class menu_selection : MonoBehaviour {
             /************************************************************************************
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
+
+            case "Back_Text_Menu":
+                //change la couleur du bouton retour en vert
+                backButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
         }
     }
 
@@ -159,12 +177,12 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Confirm_Text":
                 //change la couleur du bouton confirm en blanc
-                GameObject.Find("Confirm_Button").GetComponent<RawImage>().color = new Color(255, 0, 0);
+                confirmButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
                 break;
 
             case "Back_Text":
                 //change la couleur du bouton play_as_guest en blanc
-                GameObject.Find("Back_Button").GetComponent<RawImage>().color = new Color(255, 0, 0);
+                backButtonForm.GetComponent<RawImage>().color = new Color(255, 0, 0);
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNECTION                                   *
@@ -217,6 +235,11 @@ public class menu_selection : MonoBehaviour {
             /************************************************************************************
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
+
+            case "Back_Text_Menu":
+                //change la couleur du bouton retour en vert
+                backButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
+                break;
         }
     }
 
@@ -228,6 +251,46 @@ public class menu_selection : MonoBehaviour {
         switch (this.name)
         {
             /************************************************************************************
+             *                          BOUTONS D'ENTREE                                        *
+             * **********************************************************************************/
+            case "Log_In_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
+                break;
+
+            case "Sign_Up_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
+                break;
+
+            case "Play_As_Guest_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest = true;
+                break;
+            /************************************************************************************
+             *                          BOUTONS D'ENTREE                                        *
+             * **********************************************************************************/
+
+
+
+
+            /************************************************************************************
+             *                          BOUTONS DE CONNECTION                                   *
+             * **********************************************************************************/
+            case "Confirm_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 2;
+                break;
+
+            case "Back_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 0;
+                break;
+            /************************************************************************************
+             *                          BOUTONS DE CONNECTION                                   *
+             * **********************************************************************************/
+
+
+
+
+
+            /************************************************************************************
              *                        BOUTONS DU MENU PRINCIPAL                                 *
              * **********************************************************************************/
             case "Play_Text":
@@ -238,19 +301,134 @@ public class menu_selection : MonoBehaviour {
                 playButton.SetActive(false);
                 customizeButton.SetActive(false);
                 profileButton.SetActive(false);
+
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
                 break;
 
             case "Customize_Text":
-                
+
+
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
                 break;
 
             case "Profile_Text":
-                
+                userInfo.SetActive(true);
+                userStats.SetActive(true);
+
+                playButton.SetActive(false);
+                customizeButton.SetActive(false);
+                profileButton.SetActive(false);
+
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
                 break;
             /************************************************************************************
              *                        BOUTONS DU MENU PRINCIPAL                                 *
              * **********************************************************************************/
+
+
+
+
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
+             * **********************************************************************************/
+            case "Solo_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
+                break;
+
+            case "Multi_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
+                break;
+
+            case "Tuto_Text":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
+                break;
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
+             * **********************************************************************************/
+
+            case "Back_Text_Menu":
+                want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+                break;
         }
+    }
+
+
+    //Schneberger Maxime
+    //désactive les objets du menu sauf le bouton retour qui active cette fonction afin de réactiver les bons par la suite
+    void disable_all()
+    {
+        logInButton.SetActive(false);
+        logInButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        signUpButton.SetActive(false);
+        signUpButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        playAsGuestButton.SetActive(false);
+        playAsGuestButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+
+        playButton.SetActive(false);
+        playButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        customizeButton.SetActive(false);
+        customizeButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        profileButton.SetActive(false);
+        profileButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+
+        soloButton.SetActive(false);
+        soloButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        multiButton.SetActive(false);
+        multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        tutoButton.SetActive(false);
+        tutoButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+
+        //circuit1Button.SetActive(false);
+        //circuit2Button.SetActive(false);
+        //circuit3Button.SetActive(false);
+
+        confirmButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
+        backButtonForm.GetComponent<RawImage>().color = new Color(255, 0, 0);
+
+        userInfo.SetActive(false);
+        userStats.SetActive(false);
+    }
+
+    //Schneberger Maxime
+    //si l'utilisateur appuie sur retour, on revient un cran en arrière dans le menu
+    void want_to_back(int step)
+    {
+        disable_all();
+        switch(step)
+        {
+            case 2:
+                logInButton.SetActive(true);
+                signUpButton.SetActive(true);
+                playAsGuestButton.SetActive(true);
+
+                GameObject.Find("Play_As_Guest").GetComponent<RawImage>().enabled = true;
+                GameObject.Find("Play_As_Guest_Text").GetComponent<Text>().enabled = true;
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest = false;
+                break;
+
+            case 3:
+                if(!GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest)
+                {
+                    playButton.SetActive(true);
+                    customizeButton.SetActive(true);
+                    profileButton.SetActive(true);
+                }
+                else
+                {
+                    want_to_back(2);
+                    GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step--;
+                }
+                break;
+
+            case 4:
+                soloButton.SetActive(true);
+                multiButton.SetActive(true);
+                tutoButton.SetActive(true);
+                break;
+
+            
+        }
+        GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step--;
     }
 
     // Update is called once per frame
