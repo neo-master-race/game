@@ -18,6 +18,11 @@ public class menu_selection : MonoBehaviour {
     public GameObject customizeButton;
     public GameObject profileButton;
 
+    [Header("Game Type Choice buttons")]
+    public GameObject soloButton;
+    public GameObject multiButton;
+    public GameObject tutoButton;
+
     [Header("Circuits buttons")]
     public GameObject circuit1Button;
     public GameObject circuit2Button;
@@ -34,17 +39,17 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Log_In_Text":
                 //change la couleur du bouton log_in en vert
-                GameObject.Find("Log_In").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                logInButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
             case "Sign_Up_Text":
                 //change la couleur du bouton sign_up en vert
-                GameObject.Find("Sign_Up").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                signUpButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
             case "Play_As_Guest_Text":
                 //change la couleur du bouton play_as_guest en vert
-                GameObject.Find("Play_As_Guest").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                playAsGuestButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
             /************************************************************************************
              *                          BOUTONS D'ENTREE                                        *
@@ -77,20 +82,44 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Play_Text":
                 //change la couleur du bouton play en vert
-                GameObject.Find("Play").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                playButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
             case "Customize_Text":
                 //change la couleur du bouton customize en vert
-                GameObject.Find("Customize").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                customizeButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
             case "Profile_Text":
                 //change la couleur du bouton profile en vert
-                GameObject.Find("Profile").GetComponent<RawImage>().color = new Color(0, 255, 0);
+                profileButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
             /************************************************************************************
              *                        BOUTONS DU MENU PRINCIPAL                                 *
+             * **********************************************************************************/
+
+
+
+
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
+             * **********************************************************************************/
+            case "Solo_Text":
+                //change la couleur du bouton solo en vert
+                soloButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
+
+            case "Multi_Text":
+                //change la couleur du bouton multi en vert
+                multiButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
+
+            case "Tuto_Text":
+                //change la couleur du bouton tuto en vert
+                tutoButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
+                break;
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
         }
     }
@@ -106,17 +135,17 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Log_In_Text":
                 //change la couleur du bouton log_in en blanc
-                GameObject.Find("Log_In").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                logInButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
 
             case "Sign_Up_Text":
                 //change la couleur du bouton sign_up en blanc
-                GameObject.Find("Sign_Up").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                signUpButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
 
             case "Play_As_Guest_Text":
                 //change la couleur du bouton play_as_guest en blanc
-                GameObject.Find("Play_As_Guest").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                playAsGuestButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
             /************************************************************************************
              *                          BOUTONS D'ENTREE                                        *
@@ -148,18 +177,75 @@ public class menu_selection : MonoBehaviour {
              *                        BOUTONS DU MENU PRINCIPAL                                 *
              * **********************************************************************************/
             case "Play_Text":
-                //change la couleur du bouton play en vert
-                GameObject.Find("Play").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                //change la couleur du bouton play en blanc
+                playButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
 
             case "Customize_Text":
-                //change la couleur du bouton customize en vert
-                GameObject.Find("Customize").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                //change la couleur du bouton customize en blanc
+                customizeButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
 
             case "Profile_Text":
-                //change la couleur du bouton profile en vert
-                GameObject.Find("Profile").GetComponent<RawImage>().color = new Color(255, 255, 255);
+                //change la couleur du bouton profile en blanc
+                profileButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+                break;
+            /************************************************************************************
+             *                        BOUTONS DU MENU PRINCIPAL                                 *
+             * **********************************************************************************/
+
+
+
+
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
+             * **********************************************************************************/
+            case "Solo_Text":
+                //change la couleur du bouton solo en blanc
+                soloButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+                break;
+
+            case "Multi_Text":
+                //change la couleur du bouton multi en blanc
+                multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+                break;
+
+            case "Tuto_Text":
+                //change la couleur du bouton tuto en blanc
+                tutoButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+                break;
+            /************************************************************************************
+             *                        BOUTONS DU TYPE DE PARTIE                                 *
+             * **********************************************************************************/
+        }
+    }
+
+
+    //Schneberger Maxime
+    //Quand l'utilisateur clique sur un object possédant un event trigger lié avec ce script
+    public void OnPointer_Click()
+    {
+        switch (this.name)
+        {
+            /************************************************************************************
+             *                        BOUTONS DU MENU PRINCIPAL                                 *
+             * **********************************************************************************/
+            case "Play_Text":
+                soloButton.SetActive(true);
+                multiButton.SetActive(true);
+                tutoButton.SetActive(true);
+
+                playButton.SetActive(false);
+                customizeButton.SetActive(false);
+                profileButton.SetActive(false);
+                break;
+
+            case "Customize_Text":
+                
+                break;
+
+            case "Profile_Text":
+                
                 break;
             /************************************************************************************
              *                        BOUTONS DU MENU PRINCIPAL                                 *
