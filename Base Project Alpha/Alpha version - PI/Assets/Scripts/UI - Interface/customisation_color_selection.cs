@@ -14,6 +14,9 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 
     private Color vehicle_color;
 
+    private float cursorPositionX=-1f;
+    private float cursorPositionY=-1f;
+
     // Use this for initialization
     void Start () {
 
@@ -23,6 +26,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
         if(pointerData.position.x>=512 && pointerData.position.x <= 712 && pointerData.position.y >= 484 && pointerData.position.y <= 684)
         {
             GameObject.Find("cursor_texture").transform.localPosition = new Vector3(pointerData.position.x - 512, pointerData.position.y - 484, 0);
+            cursorPositionX = pointerData.position.x;
+            cursorPositionY = pointerData.position.y;
             vehicleMainColor.color = calculate_color_general(pointerData.position.x-512, pointerData.position.y-484);
         }
     }
@@ -57,6 +62,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
     // Update is called once per frame
     void Update () {
         vehicle_color=calculate_color_range(colorPicked.value);
-        gradient3D.SetColor("_Color_TopR", vehicle_color);// colorpick_g.value * 255, colorpick_b.value * 255, 255));
+        gradient3D.SetColor("_Color_TopR", vehicle_color);
+        if(cursorPositionX>=0 && cursorPositionY>=0)
+            vehicleMainColor.color = calculate_color_general(cursorPositionX - 512, cursorPositionY - 484);
     }
 }
