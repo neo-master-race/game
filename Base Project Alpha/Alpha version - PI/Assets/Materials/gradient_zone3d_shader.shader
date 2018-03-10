@@ -5,7 +5,7 @@
 //Schneberger Maxime
 //10-03-18
 
-//crée un nouveau shader afin d'affecter des matériaux en gradient, non possible en unity 'basique'
+//crée un nouveau shader afin d'affecter des matériaux en gradient 3D, non possible en unity 'basique'
 Shader "Custom/SpriteGradient_3D" {
  Properties {
      [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
@@ -59,7 +59,7 @@ Shader "Custom/SpriteGradient_3D" {
              return o;
          }
         
-  
+		 //fonction d'affectation de la couleur suivant une zone ayant x en longueur et y en largeur
          fixed4 frag (v2f i) : COLOR {
 			float x = i.texcoord.x;
             float y = i.texcoord.y;

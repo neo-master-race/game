@@ -2,6 +2,10 @@
 
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+//Schneberger Maxime
+//10-03-18
+
+//crée un nouveau shader afin d'affecter des matériaux en gradient 2D, non possible en unity 'basique'
 Shader "Custom/SpriteGradient_2D" {
  Properties {
      [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Schneberger Maxime
+//10-03-18
+
+//gère la customisation des véhicule
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +10,6 @@ using UnityEngine.EventSystems;
 
 public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 {
-
     public Slider colorPicked;
     public Material gradient3D;
 
@@ -22,6 +25,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 
 	}
 	
+    //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
         if(pointerData.position.x>=512 && pointerData.position.x <= 712 && pointerData.position.y >= 484 && pointerData.position.y <= 684)
         {
@@ -32,6 +36,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
         }
     }
 
+    //suivant la position du slider sur le gradient 2D choisi par l'utilisateur change les paramètres du gradient (carré) 3D pour changer la tonalité de couleur en temps réel
     Color calculate_color_range(float value)
     {
         if (value <= 0.1666)
@@ -48,6 +53,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
             return new Color(1, 0, 1-((value % 0.1667f) * 6), 1);
     }
 
+    //calcule la couleur sélectionnée par l'utilisateur suivant la position du curseur sur la zone du gradient 3D (unity ne permet pas de simplement repéré la couleur sur laquelle a cliqué le curseur)
     Color calculate_color_general(float x, float y)
     {
 
@@ -61,6 +67,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 
     // Update is called once per frame
     void Update () {
+        //appelle la fonction de changement de tonalité et de changement de couleur du véhicule à chaque frame pour avoir un changement adaptatif sans attente d'évènements par l'utilisateur
         vehicle_color=calculate_color_range(colorPicked.value);
         gradient3D.SetColor("_Color_TopR", vehicle_color);
         if(cursorPositionX>=0 && cursorPositionY>=0)
