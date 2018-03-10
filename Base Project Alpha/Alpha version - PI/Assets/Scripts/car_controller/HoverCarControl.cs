@@ -114,16 +114,18 @@ public class HoverCarControl : MonoBehaviour
 			thrust /= 100f;
 			turnValue /= 100f;
 		}
+        if(dustTrails.Length > 0)
+        {
+		    for(int i = 0; i<dustTrails.Length; i++)
+		    {
+			    var emission = dustTrails[i].emission;
+			    emission.rate = new ParticleSystem.MinMaxCurve(emissionRate);
+            }
+        }
 
-		for(int i = 0; i<dustTrails.Length; i++)
-		{
-			var emission = dustTrails[i].emission;
-			emission.rate = new ParticleSystem.MinMaxCurve(emissionRate);
-		}
-
-    // Handle Forward and Reverse forces
-    if (Mathf.Abs(thrust) > 0)
-      body.AddForce(transform.forward * thrust);
+        // Handle Forward and Reverse forces
+        if (Mathf.Abs(thrust) > 0)
+            body.AddForce(transform.forward * thrust);
 
     // Handle Turn forces
     if (turnValue > 0)
