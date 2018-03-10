@@ -14,13 +14,14 @@ public class CarController : MonoBehaviour
     public GameObject[] hoverPoints;
 
     public float forwardAcceleration = 8000f; // force d'Accélération 
+    private float currentAcceleration = 1f;
     public float reverseAcceleration = 4000f; // force de freinage
     float thrust = 0f;
 
     public float turnStrength = 1000f; // force de rotation du vehicule
     float turnValue = 0f; //force de rotation appliquée 
 
-    public ParticleSystem[] dustTrails = new ParticleSystem[2]; //particules derrières le vehicule (optionnel mais cool)
+    public ParticleSystem[] dustTrails = new ParticleSystem[0]; //particules derrières le vehicule (optionnel mais cool)
 
     int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
 
@@ -33,14 +34,31 @@ public class CarController : MonoBehaviour
         layerMask = ~layerMask;
     }
 
+    public void boost(float multiplicator)
+    {
+        if(currentAcceleration<3f)
+        {
+            StartCoroutine(accelerationMultiplicator(multiplicator));
+            currentAcceleration += multiplicator;
+        }
+    }
+
+    IEnumerator accelerationMultiplicator(float multiplicator)
+    {
+        yield return new WaitForSeconds(3);
+        currentAcceleration -= multiplicator;
+        if (currentAcceleration < 1f)
+            currentAcceleration = 1f;
+    }
+
     void Update()
     {
         thrust = 0.0f;
         float acceleration = Input.GetAxis("Vertical");
         if (acceleration > deadZone)
-            thrust = acceleration * forwardAcceleration;
+            thrust = acceleration * forwardAcceleration*currentAcceleration;
         else if (acceleration < -deadZone)
-            thrust = acceleration * reverseAcceleration;
+            thrust = acceleration * reverseAcceleration*currentAcceleration;
 
         // Get turning input
         turnValue = 0.0f;
@@ -51,7 +69,6 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
-
         //  Do hover/bounce force
         RaycastHit hit;
         bool onGround = false;
@@ -96,7 +113,7 @@ public class CarController : MonoBehaviour
 
 
         // émettre une trainée derrière le véhicule
-        if (dustTrails[0]!=null)
+        if (dustTrails.Length>0)
         {
             for (int i = 0; i < dustTrails.Length; i++)
             {
