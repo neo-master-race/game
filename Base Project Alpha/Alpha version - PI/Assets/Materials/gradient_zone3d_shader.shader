@@ -6,7 +6,7 @@
 //10-03-18
 
 //crée un nouveau shader afin d'affecter des matériaux en gradient, non possible en unity 'basique'
-Shader "Custom/SpriteGradient" {
+Shader "Custom/SpriteGradient_3D" {
  Properties {
      [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
      _Color_Left ("Left Color", Color) = (1,1,1,1)
