@@ -1,0 +1,12 @@
+booster
+(pente)
+item typée huile
+rocket/fusée (carapace like)
+shield
+indestructible
+booster in-track
+pneux insensible au terrain
+malus sur le tracé (perma et spawnable)
+éclair (mario kart)
+skillshot donnant accèl max ou frein 0 (2 items séparés)
+touches inversées (malus in-track || zone sur le circuit || skillshot?)
