@@ -56,10 +56,7 @@ private
                 Debug.Log("DEBUG=" + i);
 
                 data = new Byte[i];
-                // String responseData = String.Empty;
-                stream.Read(data, 0, data.Length);
-                // Int32 bytes = stream.Read(data, 0, data.Length);
-                // responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                Int32 bytes = stream.Read(data, 0, data.Length);
 
                 // Protocol.Message msg = new Protocol.Message{
                 //     User = "moi",
@@ -67,9 +64,19 @@ private
                 // };
 
                 // Debug.Log(msg);
-                Protocol.Message msg2 = Protocol.Message.Parser.ParseFrom(data);
 
-                Debug.Log("Received from " + msg2.User + " the following message: " + msg2.Content);
+                Protocol.Message parsedData;
+                try {
+                    parsedData = Protocol.Message.Parser.ParseFrom(data);
+                } catch (Exception e) {
+                    String responseData = String.Empty;
+                    responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                    Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
+                    return;
+                }
+                Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
+
+                Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
             }
         }
     }

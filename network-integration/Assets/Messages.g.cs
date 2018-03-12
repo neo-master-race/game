@@ -22,22 +22,28 @@ namespace Protocol {
     static MessagesReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5tZXNzYWdlcy5wcm90bxIIcHJvdG9jb2wiKAoHTWVzc2FnZRIPCgdjb250",
-            "ZW50GAEgASgJEgwKBHVzZXIYAiABKAliBnByb3RvMw=="));
+            "Cg5tZXNzYWdlcy5wcm90bxIIcHJvdG9jb2wiLAoLQ2hhdE1lc3NhZ2USDwoH",
+            "Y29udGVudBgBIAEoCRIMCgR1c2VyGAIgASgJIk0KB01lc3NhZ2USDAoEdHlw",
+            "ZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2NvbC5DaGF0",
+            "TWVzc2FnZUgAQgUKA21zZ2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Content", "User" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class Message : pb::IMessage<Message> {
-    private static readonly pb::MessageParser<Message> _parser = new pb::MessageParser<Message>(() => new Message());
+  /// <summary>
+  ///  definition of a chat message
+  /// </summary>
+  public sealed partial class ChatMessage : pb::IMessage<ChatMessage> {
+    private static readonly pb::MessageParser<ChatMessage> _parser = new pb::MessageParser<ChatMessage>(() => new ChatMessage());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Message> Parser { get { return _parser; } }
+    public static pb::MessageParser<ChatMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -50,21 +56,21 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Message() {
+    public ChatMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Message(Message other) : this() {
+    public ChatMessage(ChatMessage other) : this() {
       content_ = other.content_;
       user_ = other.user_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Message Clone() {
-      return new Message(this);
+    public ChatMessage Clone() {
+      return new ChatMessage(this);
     }
 
     /// <summary>Field number for the "content" field.</summary>
@@ -91,11 +97,11 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Message);
+      return Equals(other as ChatMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Message other) {
+    public bool Equals(ChatMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -145,7 +151,7 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Message other) {
+    public void MergeFrom(ChatMessage other) {
       if (other == null) {
         return;
       }
@@ -171,6 +177,191 @@ namespace Protocol {
           }
           case 18: {
             User = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  message that can be exchanged between the client and the server
+  ///  TYPE = "chat_message" if ChatMessage (for example)
+  /// </summary>
+  public sealed partial class Message : pb::IMessage<Message> {
+    private static readonly pb::MessageParser<Message> _parser = new pb::MessageParser<Message>(() => new Message());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Message> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message(Message other) : this() {
+      type_ = other.type_;
+      switch (other.MsgCase) {
+        case MsgOneofCase.ChatMessage:
+          ChatMessage = other.ChatMessage.Clone();
+          break;
+      }
+
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message Clone() {
+      return new Message(this);
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private string type_ = "";
+    /// <summary>
+    ///  easier for fetching datas
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Type {
+      get { return type_; }
+      set {
+        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "chat_message" field.</summary>
+    public const int ChatMessageFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.ChatMessage ChatMessage {
+      get { return msgCase_ == MsgOneofCase.ChatMessage ? (global::Protocol.ChatMessage) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.ChatMessage;
+      }
+    }
+
+    private object msg_;
+    /// <summary>Enum of possible cases for the "msg" oneof.</summary>
+    public enum MsgOneofCase {
+      None = 0,
+      ChatMessage = 2,
+    }
+    private MsgOneofCase msgCase_ = MsgOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MsgOneofCase MsgCase {
+      get { return msgCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearMsg() {
+      msgCase_ = MsgOneofCase.None;
+      msg_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Message);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Message other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      if (!object.Equals(ChatMessage, other.ChatMessage)) return false;
+      if (MsgCase != other.MsgCase) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (msgCase_ == MsgOneofCase.ChatMessage) hash ^= ChatMessage.GetHashCode();
+      hash ^= (int) msgCase_;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Type.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Type);
+      }
+      if (msgCase_ == MsgOneofCase.ChatMessage) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ChatMessage);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      }
+      if (msgCase_ == MsgOneofCase.ChatMessage) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChatMessage);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Message other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type.Length != 0) {
+        Type = other.Type;
+      }
+      switch (other.MsgCase) {
+        case MsgOneofCase.ChatMessage:
+          ChatMessage = other.ChatMessage;
+          break;
+      }
+
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Type = input.ReadString();
+            break;
+          }
+          case 18: {
+            global::Protocol.ChatMessage subBuilder = new global::Protocol.ChatMessage();
+            if (msgCase_ == MsgOneofCase.ChatMessage) {
+              subBuilder.MergeFrom(ChatMessage);
+            }
+            input.ReadMessage(subBuilder);
+            ChatMessage = subBuilder;
             break;
           }
         }
