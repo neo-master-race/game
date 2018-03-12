@@ -1,0 +1,7 @@
+syntax = "proto3";
+package protocol;
+
+message Message {
+  string content = 1;
+  string user = 2;
+}
