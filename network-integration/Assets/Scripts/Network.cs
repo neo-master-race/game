@@ -56,10 +56,20 @@ private
                 Debug.Log("DEBUG=" + i);
 
                 data = new Byte[i];
-                String responseData = String.Empty;
-                Int32 bytes = stream.Read(data, 0, data.Length);
-                responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                Debug.Log("Received: " + responseData);
+                // String responseData = String.Empty;
+                stream.Read(data, 0, data.Length);
+                // Int32 bytes = stream.Read(data, 0, data.Length);
+                // responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+
+                // Protocol.Message msg = new Protocol.Message{
+                //     User = "moi",
+                //     Content = "hello world!"
+                // };
+
+                // Debug.Log(msg);
+                Protocol.Message msg2 = Protocol.Message.Parser.ParseFrom(data);
+
+                Debug.Log("Received from " + msg2.User + " the following message: " + msg2.Content);
             }
         }
     }
