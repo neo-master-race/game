@@ -43,7 +43,7 @@ private
     void Update()
     {
         if (socketReady) {
-            if (stream.DataAvailable) {
+            while (stream.DataAvailable) {
                 Byte[] data = new Byte[4];
 
                 stream.Read(data, 0, 4); // read an int
