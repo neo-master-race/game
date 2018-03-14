@@ -1,12 +1,46 @@
-booster
-(pente)
-item typée huile
-rocket/fusée (carapace like)
-shield
-indestructible
-booster in-track
-pneux insensible au terrain
-malus sur le tracé (perma et spawnable)
-éclair (mario kart)
-skillshot donnant accèl max ou frein 0 (2 items séparés)
-touches inversées (malus in-track || zone sur le circuit || skillshot?)
+- booster
+item. augmente la vitesse *x pendant x temps
+??
+
+- (pente)
+??? was
+
+- huile
+item à jeter derrière. fais déraper les joueurs
+??
+
+- rocket/fusée
+item à jeter devant. arrête le(s) joueur(s) touché(s), peut être dirigé vers un joueur spécifique ou non
+??
+
+- shield
+item. rends le joueur indestructible jusqu'à ce que le joueur soit touché par un item
+sphere transparente autour de la voiture
+
+- indestructible
+item. rend le joueur indestructible pendant x temps + augmente sa vitesse *x
+aura autour de la voiture
+
+- booster
+in-track. augmente la vitesse *x pendant x temps.
+zone difficile d'accès pour le joueur (prend des risques en y allant) mais qui lui permet d'obtenir un bonus de vitesse.
+
+- pneus insensible au terrain
+item. rend les pneus insensibles au terrain (bords)
+augmente la taille des pneus (scaler la voiture?)
+
+- malus sur le tracé 
+perma. blocs au millieu du circuit? 
+spawnable (dernier tour). huile (dépendant du circuit)? 
+
+- éclair
+item. arrête tous les joeurs (qui sont devant?) et les ralentis au démarrage
+néon
+
+- skillshot donnant accèl max
+item à jeter devant. met l'accelération des joueurs au max
+??
+
+- touches inversées 
+(in-track || zone sur le circuit || skillshot) inverse les touches des joueurs pendant x temps.
+??

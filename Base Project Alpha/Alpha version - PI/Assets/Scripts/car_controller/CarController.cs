@@ -29,6 +29,8 @@ public class CarController : MonoBehaviour
 
     int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
 
+    public float current_speed=8000f;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
