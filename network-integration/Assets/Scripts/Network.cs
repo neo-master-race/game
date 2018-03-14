@@ -53,8 +53,11 @@ private
             ChatMessage = chatMsg
         };
 
-        Debug.Log(msg);
+        sendMessage(msg);
+    }
 
+
+    private void sendMessage(Protocol.Message msg) {
         byte[] msgBytes = msg.ToByteArray();
         byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
         if (!BitConverter.IsLittleEndian) {
@@ -114,5 +117,25 @@ private
                onIncomingData();
             }
         }
+    }
+
+
+
+    public void updatePlayerPosition(Protocol.Vector vecPosition, Protocol.Vector vecRotation, Protocol.Vector vecScale) {
+        // all together
+        Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
+          Position = vecPosition,
+          Direction = vecRotation,
+          Scale = vecScale,
+          User = "Unity"
+        };
+
+        // final message that we can send
+        Protocol.Message msg = new Protocol.Message{
+          Type = "update_player_position",
+          UpdatePlayerPosition = upp
+        };
+
+        sendMessage(msg);
     }
 }

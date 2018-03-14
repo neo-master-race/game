@@ -16,7 +16,7 @@ public class Voiture : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    limiter = limiter++ % 24;
+    limiter = limiter++ % 50;
     if (limiter == 0) {
       if (isLocalPlayer) {
         float verticalAxis = Input.GetAxis("Vertical");
@@ -58,21 +58,7 @@ public class Voiture : MonoBehaviour {
       Z = transform.localScale.z
     };
 
-    // all together
-    Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
-      Position = vecPosition,
-      Direction = vecRotation,
-      Scale = vecScale,
-      User = "Unity"
-    };
-
-    // final message that we can send
-    Protocol.Message msg = new Protocol.Message{
-      Type = "update_player_position",
-      UpdatePlayerPosition = upp
-    };
-
-    Debug.Log(msg);
+    GameObject.Find("Network").GetComponent<Network>().updatePlayerPosition(vecPosition, vecRotation, vecScale);
   }
 
 }
