@@ -20,6 +20,9 @@ private
 private
     NetworkStream stream;
 
+private
+    string clientName = "Unity-" + new System.Random().Next(1, 65536);
+
     // Use this for initialization
     void Start()
     {
@@ -39,44 +42,76 @@ private
         }
     }
 
+    private void sendData(string data) {
+        Protocol.ChatMessage chatMsg = new Protocol.ChatMessage{
+            User = clientName,
+            Content = data
+        };
+
+        Protocol.Message msg = new Protocol.Message{
+            Type = "chat_message",
+            ChatMessage = chatMsg
+        };
+
+        Debug.Log(msg);
+
+        byte[] msgBytes = msg.ToByteArray();
+        byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
+        if (!BitConverter.IsLittleEndian) {
+            Array.Reverse(msgLength);
+        }
+
+        byte[] finalMessage = new byte[4 + msgBytes.Length];
+        Array.Copy(msgLength, finalMessage, 4);
+        Array.Copy(msgBytes, 0, finalMessage, 4, msgBytes.Length);
+
+        stream.Write(finalMessage, 0, finalMessage.Length);
+    }
+
+    // when user sends a message
+    public void onSendAction() {
+        GameObject go = GameObject.Find("InputField");
+        string message = go.GetComponent<InputField>().text;
+        sendData(message);
+        go.GetComponent<InputField>().text = "";
+    }
+
+    // when there are some incoming datas, do something with them
+    private void onIncomingData() {
+        Byte[] data = new Byte[4];
+
+        stream.Read(data, 0, 4); // read an int
+
+        if (!BitConverter.IsLittleEndian) {
+            Array.Reverse(data);
+        }
+
+        int dataLength = BitConverter.ToInt32(data, 0);
+        Debug.Log("LENGTH=" + dataLength);
+
+        data = new Byte[dataLength];
+        Int32 bytes = stream.Read(data, 0, data.Length);
+
+        Protocol.Message parsedData;
+        try {
+            parsedData = Protocol.Message.Parser.ParseFrom(data);
+        } catch (Exception e) {
+            String responseData = String.Empty;
+            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
+            return;
+        }
+        Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
+
+        Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (socketReady) {
             while (stream.DataAvailable) {
-                Byte[] data = new Byte[4];
-
-                stream.Read(data, 0, 4); // read an int
-
-                if (!BitConverter.IsLittleEndian) {
-                    Array.Reverse(data);
-                }
-
-                int i = BitConverter.ToInt32(data, 0);
-                Debug.Log("DEBUG=" + i);
-
-                data = new Byte[i];
-                Int32 bytes = stream.Read(data, 0, data.Length);
-
-                // Protocol.Message msg = new Protocol.Message{
-                //     User = "moi",
-                //     Content = "hello world!"
-                // };
-
-                // Debug.Log(msg);
-
-                Protocol.Message parsedData;
-                try {
-                    parsedData = Protocol.Message.Parser.ParseFrom(data);
-                } catch (Exception e) {
-                    String responseData = String.Empty;
-                    responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                    Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
-                    return;
-                }
-                Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
-
-                Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
+               onIncomingData();
             }
         }
     }
