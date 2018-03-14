@@ -23,7 +23,9 @@ public class CarController : MonoBehaviour
 
     public ParticleSystem[] dustTrails = new ParticleSystem[0]; //particules derrières le vehicule (optionnel mais cool)
 
-    int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
+    int layerMask; //éviter de prendre en compte le vehicule dans le raycast
+
+    public float current_speed=8000f;
 
     void Start()
     {
