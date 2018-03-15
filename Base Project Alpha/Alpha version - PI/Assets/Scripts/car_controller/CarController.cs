@@ -14,15 +14,22 @@ public class CarController : MonoBehaviour
     public GameObject[] hoverPoints;
 
     public float forwardAcceleration = 8000f; // force d'Accélération 
+    private float currentAcceleration = 1f;
     public float reverseAcceleration = 4000f; // force de freinage
     float thrust = 0f;
 
     public float turnStrength = 1000f; // force de rotation du vehicule
     float turnValue = 0f; //force de rotation appliquée 
 
-    public ParticleSystem[] dustTrails = new ParticleSystem[2]; //particules derrières le vehicule (optionnel mais cool)
+    public ParticleSystem[] dustTrails = new ParticleSystem[0]; //particules derrières le vehicule (optionnel mais cool)
+
+    //temporaires: boutons pour tester sur Android
+    public GameObject buttonForward;
+    public GameObject buttonBackward;
 
     int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
+
+    public float current_speed=8000f;
 
     void Start()
     {
@@ -31,27 +38,87 @@ public class CarController : MonoBehaviour
 
         layerMask = 1 << LayerMask.NameToLayer("Vehicle");
         layerMask = ~layerMask;
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            //Pour que l'orientation de la tablette ne change pas
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
+        }
+    }
+
+    public void boost(float multiplicator)
+    {
+        if(currentAcceleration<3f)
+        {
+            StartCoroutine(accelerationMultiplicator(multiplicator));
+            currentAcceleration += multiplicator;
+        }
+    }
+
+    IEnumerator accelerationMultiplicator(float multiplicator)
+    {
+        yield return new WaitForSeconds(3);
+        currentAcceleration -= multiplicator;
+        if (currentAcceleration < 1f)
+            currentAcceleration = 1f;
     }
 
     void Update()
     {
-        thrust = 0.0f;
-        float acceleration = Input.GetAxis("Vertical");
-        if (acceleration > deadZone)
-            thrust = acceleration * forwardAcceleration;
-        else if (acceleration < -deadZone)
-            thrust = acceleration * reverseAcceleration;
+        float acceleration = 0.0f;
 
-        // Get turning input
-        turnValue = 0.0f;
-        float turnAxis = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(turnAxis) > deadZone)
-            turnValue = turnAxis;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            float padRotation = Input.acceleration.x * 1.5f;
+
+            if (buttonForward.GetComponent<CustomButton>().down)
+            {
+                acceleration = 1.0f;
+                Debug.Log("ERZERZERZERZER");
+            }
+            else if (buttonBackward.GetComponent<CustomButton>().down)
+            {
+                acceleration = -1.0f;
+                Debug.Log("ERZERZERZ89+8+9ERZER");
+            }
+            /* if (MaxRotation < Mathf.Abs(padRotation))
+             {
+                 padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation);
+             }*/
+            /*
+             * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
+             */
+            float MinRotation = 0.3f;
+            if (Mathf.Abs(padRotation) < MinRotation)
+            {
+                padRotation = (0.0f < padRotation) ? MinRotation : -MinRotation;
+            }
+            padRotation += (0.0f < padRotation) ? -MinRotation : MinRotation;
+            turnValue = padRotation;
+        }
+        else
+        {
+            acceleration = Input.GetAxis("Vertical");
+
+            // Get turning input
+            turnValue = 0.0f;
+            float turnAxis = Input.GetAxis("Horizontal");
+            if (Mathf.Abs(turnAxis) > deadZone)
+                turnValue = turnAxis;
+        }
+
+        
+
+
+        thrust = 0.0f;
+        if (acceleration > deadZone)
+            thrust = acceleration * forwardAcceleration * currentAcceleration;
+        else if (acceleration < -deadZone)
+            thrust = acceleration * reverseAcceleration * currentAcceleration;
     }
 
     void FixedUpdate()
     {
-
         //  Do hover/bounce force
         RaycastHit hit;
         bool onGround = false;
@@ -96,7 +163,7 @@ public class CarController : MonoBehaviour
 
 
         // émettre une trainée derrière le véhicule
-        if (dustTrails[0]!=null)
+        if (dustTrails.Length>0)
         {
             for (int i = 0; i < dustTrails.Length; i++)
             {

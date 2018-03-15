@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     float MaxRotation = 40.0f;
+    float MinRotation = 10.0f; 
     float CatchupPrecision = 5.0f;
     float CatchupSpeed = 120.0f;
 
@@ -39,8 +40,16 @@ public class Car : MonoBehaviour
         float padRotation = Input.acceleration.x * 100;
         if (MaxRotation < Mathf.Abs(padRotation))
         {
-            padRotation = (0.0f < padRotation) ? MaxRotation : -MaxRotation; 
+            padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation); 
         }
+        /*
+         * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
+         */
+        if (Mathf.Abs(padRotation) < MinRotation)
+        {
+            padRotation = (0.0f < padRotation) ? MinRotation : -MinRotation;
+        }
+        padRotation += (0.0f < padRotation) ? -MinRotation : MinRotation; 
         wheelsRotation = padRotation;
 
         /*
@@ -48,13 +57,13 @@ public class Car : MonoBehaviour
         */
         for (int r = 0; r < 4; r++)
         {
-            wheels[r].transform.localEulerAngles = new Vector3(0, wheelsRotation - bodyRotation, time);
+            wheels[r].transform.localEulerAngles = new Vector3(0, padRotation, time);
         }
 
         /*
          * Le corps suit les roues avec un delai 
          */
-        float difference = wheelsRotation - bodyRotation;
+        float difference = wheelsRotation;
 
         if (CatchupPrecision < Mathf.Abs(difference))  //Le corps ne tourne que s'il a plus de X° de différence avec les roues
         {
@@ -66,6 +75,12 @@ public class Car : MonoBehaviour
         }
         
         transform.eulerAngles = new Vector3(0, 90 + bodyRotation, 0); // (la caméra est à 90° donc j'ajuste) 
+
+        /*
+         * Mouvement vers l'avant 
+         */
+        float speed = 10.0f * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * wheelsRotation); 
+        transform.position += Quaternion.Euler(0, bodyRotation, 0) * new Vector3(0.0f, 0.0f, speed);
 
         time += Time.deltaTime * 320.0f; 
     }
