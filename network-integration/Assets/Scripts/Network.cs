@@ -99,14 +99,32 @@ private
         try {
             parsedData = Protocol.Message.Parser.ParseFrom(data);
         } catch (Exception e) {
-            String responseData = String.Empty;
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
+            // String responseData = String.Empty;
+            // responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            // Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
             return;
         }
-        Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
 
-        Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
+        switch(parsedData.Type) {
+            case "update_player_position":
+                Protocol.UpdatePlayerPosition upp = parsedData.UpdatePlayerPosition;
+                Protocol.Vector vecPos = upp.Position;
+                Protocol.Vector vecRot = upp.Direction;
+                Protocol.Vector vecScale = upp.Scale;
+                // Debug.Log("GOT UPDATE: " + parsedData.UpdatePlayerPosition);
+                GameObject go = GameObject.Find("Other");
+                go.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
+                go.transform.localEulerAngles = new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
+                go.transform.localScale = new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
+                break;
+            case "chat_message":
+                Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
+                Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
+                break;
+            default:
+                Debug.LogWarning("unsupported message type for " + parsedData);
+                break;
+        }
     }
 
     // Update is called once per frame
