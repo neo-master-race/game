@@ -24,7 +24,7 @@ private
     string clientName = "Unity-" + new System.Random().Next(1, 65536);
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         Debug.Log("network started");
 
@@ -42,21 +42,17 @@ private
         }
     }
 
-    private void sendData(string data) {
-        Protocol.ChatMessage chatMsg = new Protocol.ChatMessage{
-            User = clientName,
-            Content = data
-        };
-
-        Protocol.Message msg = new Protocol.Message{
-            Type = "chat_message",
-            ChatMessage = chatMsg
-        };
-
-        sendMessage(msg);
+    // Update is called once per frame
+    private void Update()
+    {
+        if (socketReady) {
+            while (stream.DataAvailable) {
+               onIncomingData();
+            }
+        }
     }
 
-
+    // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
     private void sendMessage(Protocol.Message msg) {
         byte[] msgBytes = msg.ToByteArray();
         byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
@@ -71,12 +67,28 @@ private
         stream.Write(finalMessage, 0, finalMessage.Length);
     }
 
-    // when user sends a message
-    public void onSendAction() {
+
+    // when user clicks the send button to send a chat message
+    public void onChatSendAction() {
         GameObject go = GameObject.Find("InputField");
         string message = go.GetComponent<InputField>().text;
-        sendData(message);
+        sendChatMessage(message);
         go.GetComponent<InputField>().text = "";
+    }
+
+    // send a chat message
+    private void sendChatMessage(string data) {
+        Protocol.ChatMessage chatMsg = new Protocol.ChatMessage{
+            User = clientName,
+            Content = data
+        };
+
+        Protocol.Message msg = new Protocol.Message{
+            Type = "chat_message",
+            ChatMessage = chatMsg
+        };
+
+        sendMessage(msg);
     }
 
     // when there are some incoming datas, do something with them
@@ -90,28 +102,29 @@ private
         }
 
         int dataLength = BitConverter.ToInt32(data, 0);
-        Debug.Log("LENGTH=" + dataLength);
 
         data = new Byte[dataLength];
-        Int32 bytes = stream.Read(data, 0, data.Length);
+        stream.Read(data, 0, data.Length);
 
-        Protocol.Message parsedData;
         try {
+            Protocol.Message parsedData;
             parsedData = Protocol.Message.Parser.ParseFrom(data);
-        } catch (Exception e) {
-            // String responseData = String.Empty;
-            // responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            // Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
-            return;
+            filterIncomingMessages(parsedData);
+        } catch {
+            // do nothing
         }
 
+    }
+
+    // filter incoming message using his type
+    private void filterIncomingMessages(Protocol.Message parsedData) {
         switch(parsedData.Type) {
             case "update_player_position":
                 Protocol.UpdatePlayerPosition upp = parsedData.UpdatePlayerPosition;
                 Protocol.Vector vecPos = upp.Position;
                 Protocol.Vector vecRot = upp.Direction;
                 Protocol.Vector vecScale = upp.Scale;
-                // Debug.Log("GOT UPDATE: " + parsedData.UpdatePlayerPosition);
+
                 GameObject go = GameObject.Find("Other");
                 go.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
                 go.transform.localEulerAngles = new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
@@ -127,18 +140,8 @@ private
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (socketReady) {
-            while (stream.DataAvailable) {
-               onIncomingData();
-            }
-        }
-    }
 
-
-
+    // tell the network to send player's current position to all others
     public void updatePlayerPosition(Protocol.Vector vecPosition, Protocol.Vector vecRotation, Protocol.Vector vecScale) {
         // all together
         Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
