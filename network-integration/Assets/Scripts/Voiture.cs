@@ -48,9 +48,9 @@ public class Voiture : MonoBehaviour {
       Z = transform.position.z
     };
     Protocol.Vector vecRotation = new Protocol.Vector{
-      X = transform.rotation.x,
-      Y = transform.rotation.y,
-      Z = transform.rotation.z
+      X = transform.eulerAngles.x,
+      Y = transform.eulerAngles.y,
+      Z = transform.eulerAngles.z
     };
     Protocol.Vector vecScale = new Protocol.Vector{
       X = transform.localScale.x,
