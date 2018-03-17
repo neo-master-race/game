@@ -29,7 +29,9 @@ public class Checkpoints_Check : MonoBehaviour {
             else
             {
                 int cp_count = 0;
-                checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length-1] = true;
+                if(checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber
+                    && checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length)
+                    checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length-1] = true;
                 for (int i = 0; i <= checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length - 1; i++)
                 {
                     if (checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[i] == true)
@@ -41,8 +43,8 @@ public class Checkpoints_Check : MonoBehaviour {
                     for (int j = 0; j <= checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length - 1; j++)
                         checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[j] = false;
                     checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber=1;
-                    checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber = 1;
                 }
+                checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber = 1;
             }
         }
         else
