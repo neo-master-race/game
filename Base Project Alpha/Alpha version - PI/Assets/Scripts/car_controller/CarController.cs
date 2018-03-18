@@ -13,6 +13,7 @@ public class CarController : MonoBehaviour
     public float hoverHeight = 1.2f; //hauteur de lévitation
     public GameObject[] hoverPoints;
 
+    public float vitesse = 0f; // force d'Accélération 
     public float forwardAcceleration = 8000f; // force d'Accélération 
     private float currentAcceleration = 1f;
     public float reverseAcceleration = 4000f; // force de freinage
@@ -99,7 +100,6 @@ public class CarController : MonoBehaviour
         else
         {
             acceleration = Input.GetAxis("Vertical");
-
             // Get turning input
             turnValue = 0.0f;
             float turnAxis = Input.GetAxis("Horizontal");
@@ -115,6 +115,7 @@ public class CarController : MonoBehaviour
             thrust = acceleration * forwardAcceleration * currentAcceleration;
         else if (acceleration < -deadZone)
             thrust = acceleration * reverseAcceleration * currentAcceleration;
+        vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
     }
 
     void FixedUpdate()
