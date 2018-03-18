@@ -12,148 +12,149 @@ using Google.Protobuf;
 
 public
 class Network : MonoBehaviour {
+ private
+  bool socketReady;
+ private
+  TcpClient socket;
+ private
+  NetworkStream stream;
 
-private
-    bool socketReady;
-private
-    TcpClient socket;
-private
-    NetworkStream stream;
+ private
+  string clientName = "Unity-" + new System.Random().Next(1, 65536);
 
-private
-    string clientName = "Unity-" + new System.Random().Next(1, 65536);
+  // Use this for initialization
+ private
+  void Start() {
+    Debug.Log("network started");
 
-    // Use this for initialization
-    void Start()
-    {
-        Debug.Log("network started");
+    string host = "pi-2.ludovic-muller.fr";
+    Int32 port = 4242;
 
-        string host = "pi-2.ludovic-muller.fr";
-        Int32 port = 4242;
+    try {
+      socket = new TcpClient(host, port);
+      stream = socket.GetStream();
+      socketReady = true;
 
-        try {
-            socket = new TcpClient(host, port);
-            stream = socket.GetStream();
-            socketReady = true;
+      Debug.Log("socket is ready");
+    } catch (Exception e) {
+      Debug.Log("socket error: " + e.Message);
+    }
+  }
 
-            Debug.Log("socket is ready");
-        } catch (Exception e) {
-            Debug.Log("socket error: " + e.Message);
-        }
+  // Update is called once per frame
+ private
+  void Update() {
+    if (socketReady) {
+      while (stream.DataAvailable) {
+        onIncomingData();
+      }
+    }
+  }
+
+  // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
+ private
+  void sendMessage(Protocol.Message msg) {
+    byte[] msgBytes = msg.ToByteArray();
+    byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
+    if (!BitConverter.IsLittleEndian) {
+      Array.Reverse(msgLength);
     }
 
-    private void sendData(string data) {
-        Protocol.ChatMessage chatMsg = new Protocol.ChatMessage{
-            User = clientName,
-            Content = data
-        };
+    byte[] finalMessage = new byte[4 + msgBytes.Length];
+    Array.Copy(msgLength, finalMessage, 4);
+    Array.Copy(msgBytes, 0, finalMessage, 4, msgBytes.Length);
 
-        Protocol.Message msg = new Protocol.Message{
-            Type = "chat_message",
-            ChatMessage = chatMsg
-        };
+    stream.Write(finalMessage, 0, finalMessage.Length);
+  }
 
-        sendMessage(msg);
+  // when user clicks the send button to send a chat message
+ public
+  void onChatSendAction() {
+    GameObject go = GameObject.Find("InputField");
+    string message = go.GetComponent<InputField>().text;
+    sendChatMessage(message);
+    go.GetComponent<InputField>().text = "";
+  }
+
+  // send a chat message
+ private
+  void sendChatMessage(string data) {
+    Protocol.ChatMessage chatMsg =
+        new Protocol.ChatMessage{User = clientName, Content = data};
+
+    Protocol.Message msg =
+        new Protocol.Message{Type = "chat_message", ChatMessage = chatMsg};
+
+    sendMessage(msg);
+  }
+
+  // when there are some incoming datas, do something with them
+ private
+  void onIncomingData() {
+    Byte[] data = new Byte[4];
+
+    stream.Read(data, 0, 4);  // read an int
+
+    if (!BitConverter.IsLittleEndian) {
+      Array.Reverse(data);
     }
 
+    int dataLength = BitConverter.ToInt32(data, 0);
 
-    private void sendMessage(Protocol.Message msg) {
-        byte[] msgBytes = msg.ToByteArray();
-        byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
-        if (!BitConverter.IsLittleEndian) {
-            Array.Reverse(msgLength);
-        }
+    data = new Byte[dataLength];
+    stream.Read(data, 0, data.Length);
 
-        byte[] finalMessage = new byte[4 + msgBytes.Length];
-        Array.Copy(msgLength, finalMessage, 4);
-        Array.Copy(msgBytes, 0, finalMessage, 4, msgBytes.Length);
-
-        stream.Write(finalMessage, 0, finalMessage.Length);
+    try {
+      Protocol.Message parsedData;
+      parsedData = Protocol.Message.Parser.ParseFrom(data);
+      filterIncomingMessages(parsedData);
+    } catch {
+      // do nothing
     }
+  }
 
-    // when user sends a message
-    public void onSendAction() {
-        GameObject go = GameObject.Find("InputField");
-        string message = go.GetComponent<InputField>().text;
-        sendData(message);
-        go.GetComponent<InputField>().text = "";
+  // filter incoming message using his type
+ private
+  void filterIncomingMessages(Protocol.Message parsedData) {
+    switch (parsedData.Type) {
+      case "update_player_position":
+        Protocol.UpdatePlayerPosition upp = parsedData.UpdatePlayerPosition;
+        Protocol.Vector vecPos = upp.Position;
+        Protocol.Vector vecRot = upp.Direction;
+        Protocol.Vector vecScale = upp.Scale;
+
+        GameObject go = GameObject.Find("Other");
+        go.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
+        go.transform.localEulerAngles =
+            new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
+        go.transform.localScale =
+            new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
+        break;
+      case "chat_message":
+        Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
+        Debug.Log("Received from " + chatMsg.User +
+                  " the following message: " + chatMsg.Content);
+        break;
+      default:
+        Debug.LogWarning("unsupported message type for " + parsedData);
+        break;
     }
+  }
 
-    // when there are some incoming datas, do something with them
-    private void onIncomingData() {
-        Byte[] data = new Byte[4];
+  // tell the network to send player's current position to all others
+ public
+  void updatePlayerPosition(Protocol.Vector vecPosition,
+                            Protocol.Vector vecRotation,
+                            Protocol.Vector vecScale) {
+    // all together
+    Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
+        Position = vecPosition, Direction = vecRotation, Scale = vecScale,
+        User = "Unity"};
 
-        stream.Read(data, 0, 4); // read an int
+    // final message that we can send
+    Protocol.Message msg = new Protocol.Message{Type = "update_player_position",
+                                                UpdatePlayerPosition = upp};
 
-        if (!BitConverter.IsLittleEndian) {
-            Array.Reverse(data);
-        }
-
-        int dataLength = BitConverter.ToInt32(data, 0);
-        Debug.Log("LENGTH=" + dataLength);
-
-        data = new Byte[dataLength];
-        Int32 bytes = stream.Read(data, 0, data.Length);
-
-        Protocol.Message parsedData;
-        try {
-            parsedData = Protocol.Message.Parser.ParseFrom(data);
-        } catch (Exception e) {
-            // String responseData = String.Empty;
-            // responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            // Debug.LogWarning("cannot parse incoming message (" + responseData + ").\n\n" + e);
-            return;
-        }
-
-        switch(parsedData.Type) {
-            case "update_player_position":
-                Protocol.UpdatePlayerPosition upp = parsedData.UpdatePlayerPosition;
-                Protocol.Vector vecPos = upp.Position;
-                Protocol.Vector vecRot = upp.Direction;
-                Protocol.Vector vecScale = upp.Scale;
-                // Debug.Log("GOT UPDATE: " + parsedData.UpdatePlayerPosition);
-                GameObject go = GameObject.Find("Other");
-                go.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
-                go.transform.localEulerAngles = new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
-                go.transform.localScale = new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
-                break;
-            case "chat_message":
-                Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
-                Debug.Log("Received from " + chatMsg.User + " the following message: " + chatMsg.Content);
-                break;
-            default:
-                Debug.LogWarning("unsupported message type for " + parsedData);
-                break;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (socketReady) {
-            while (stream.DataAvailable) {
-               onIncomingData();
-            }
-        }
-    }
-
-
-
-    public void updatePlayerPosition(Protocol.Vector vecPosition, Protocol.Vector vecRotation, Protocol.Vector vecScale) {
-        // all together
-        Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
-          Position = vecPosition,
-          Direction = vecRotation,
-          Scale = vecScale,
-          User = "Unity"
-        };
-
-        // final message that we can send
-        Protocol.Message msg = new Protocol.Message{
-          Type = "update_player_position",
-          UpdatePlayerPosition = upp
-        };
-
-        sendMessage(msg);
-    }
+    sendMessage(msg);
+  }
 }
