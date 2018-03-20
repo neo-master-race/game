@@ -50,5 +50,12 @@ public class Timer : MonoBehaviour {
         return clockstring;
     }
 
+    public void resetTimer()
+    {
+        timeVal = 0;
+        currentSec = 0;
+        currentMilliSec = 0;
+        currentMin = 0;
+    }
 
 }
