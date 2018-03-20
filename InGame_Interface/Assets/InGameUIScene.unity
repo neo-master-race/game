@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 611775538}
   - component: {fileID: 611775540}
   - component: {fileID: 611775539}
+  - component: {fileID: 611775541}
   m_Layer: 5
   m_Name: PositionText
   m_TagString: Untagged
@@ -526,6 +527,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611775537}
+--- !u!114 &611775541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 611775537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a82945b198f914d8db14e5270fe890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionObject: {fileID: 611775539}
+  playerPosition: 0
+  totalPlayers: 0
 --- !u!1 &664094894
 GameObject:
   m_ObjectHideFlags: 0
