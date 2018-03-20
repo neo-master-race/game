@@ -169,7 +169,7 @@ public class CarController : MonoBehaviour
             for (int i = 0; i < dustTrails.Length; i++)
             {
                 var emission = dustTrails[i].emission;
-                emission.rate = new ParticleSystem.MinMaxCurve(emissionRate);
+    
             }
         }
 
