@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4888515127112180}
   - component: {fileID: 114670220616957204}
   m_Layer: 0
-  m_Name: CarPosition
+  m_Name: Car
   m_TagString: Voiture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65329214397860568}
   - component: {fileID: 23677172800399250}
   m_Layer: 0
-  m_Name: Voiture
+  m_Name: Vehicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c097a2a8c1c640d999e1adbe17a44f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLocalPlayer: 0

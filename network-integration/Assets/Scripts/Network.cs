@@ -18,13 +18,20 @@ class Network : MonoBehaviour {
   TcpClient socket;
  private
   NetworkStream stream;
-
  private
-  string clientName = "Unity-" + new System.Random().Next(1, 65536);
+  Hashtable players;
+ private
+  string clientName;
+ public
+  GameObject carsContainer;
+ public
+  GameObject carPrefab;
 
   // Use this for initialization
  private
   void Start() {
+    players = new Hashtable();
+    clientName = "Unity-" + new System.Random().Next(1, 65536);
     Debug.Log("network started");
 
     string host = "pi-2.ludovic-muller.fr";
@@ -122,12 +129,22 @@ class Network : MonoBehaviour {
         Protocol.Vector vecPos = upp.Position;
         Protocol.Vector vecRot = upp.Direction;
         Protocol.Vector vecScale = upp.Scale;
+        string user = upp.User;
 
-        GameObject go = GameObject.Find("Other");
-        go.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
-        go.transform.localEulerAngles =
+        if (user == clientName) break;
+
+        GameObject player;
+        if (!players.ContainsKey(user)) {
+          player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
+          players.Add(user, player);
+        } else {
+          player = players[user] as GameObject;
+        }
+
+        player.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
+        player.transform.localEulerAngles =
             new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
-        go.transform.localScale =
+        player.transform.localScale =
             new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
         break;
       case "chat_message":
@@ -149,7 +166,7 @@ class Network : MonoBehaviour {
     // all together
     Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
         Position = vecPosition, Direction = vecRotation, Scale = vecScale,
-        User = "Unity"};
+        User = clientName};
 
     // final message that we can send
     Protocol.Message msg = new Protocol.Message{Type = "update_player_position",
