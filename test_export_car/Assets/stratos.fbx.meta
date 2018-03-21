@@ -6,12 +6,83 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Circle
+    100006: Circle.001
+    100008: Cube
+    100010: Cube.001
+    100012: Cube.002
+    100014: Cylinder
+    100016: Cylinder.001
+    100018: Sun
+    100020: Cube.003
+    100022: Cylinder.002
+    100024: Plane
+    100026: Sun.001
+    100028: Sun.002
     400000: //RootNode
+    400002: Camera
+    400004: Circle
+    400006: Circle.001
+    400008: Cube
+    400010: Cube.001
+    400012: Cube.002
+    400014: Cylinder
+    400016: Cylinder.001
+    400018: Sun
+    400020: Cube.003
+    400022: Cylinder.002
+    400024: Plane
+    400026: Sun.001
+    400028: Sun.002
+    2000000: Camera
     2100000: Material.001
     2100002: Material
+    2100004: No Name
+    2100006: Material.003
+    2100008: Material.004
+    2100010: paint_main
+    2100012: window
+    2100014: hidden
+    2100016: Material.005
+    2100018: wheel_metal
+    2100020: tire
+    2100022: Material.002
     2300000: //RootNode
+    2300002: Circle
+    2300004: Circle.001
+    2300006: Cube
+    2300008: Cube.001
+    2300010: Cube.002
+    2300012: Cylinder
+    2300014: Cylinder.001
+    2300016: Cube.003
+    2300018: Cylinder.002
+    2300020: Plane
     3300000: //RootNode
+    3300002: Circle
+    3300004: Circle.001
+    3300006: Cube
+    3300008: Cube.001
+    3300010: Cube.002
+    3300012: Cylinder
+    3300014: Cylinder.001
+    3300016: Cube.003
+    3300018: Cylinder.002
+    3300020: Plane
     4300000: Cube
+    4300002: Cube.002
+    4300004: Cube.001
+    4300006: Cylinder.001
+    4300008: Cylinder
+    4300010: Circle.001
+    4300012: Circle
+    4300014: Cylinder.002
+    4300016: Cube.003
+    4300018: Plane
+    10800000: Sun
+    10800002: Sun.001
+    10800004: Sun.002
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -50,7 +121,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
