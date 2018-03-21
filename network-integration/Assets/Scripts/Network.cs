@@ -131,17 +131,20 @@ class Network : MonoBehaviour {
         Protocol.Vector vecScale = upp.Scale;
         string user = upp.User;
 
-        if (user == clientName) break;
+        if (user == clientName)
+          break;
 
         GameObject player;
         if (!players.ContainsKey(user)) {
-          player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
+          player =
+              Instantiate(carPrefab, carsContainer.transform) as GameObject;
           players.Add(user, player);
         } else {
           player = players[user] as GameObject;
         }
 
-        player.transform.localPosition = new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
+        player.transform.localPosition =
+            new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
         player.transform.localEulerAngles =
             new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
         player.transform.localScale =
