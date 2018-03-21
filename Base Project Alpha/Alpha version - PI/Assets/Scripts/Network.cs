@@ -26,6 +26,14 @@ class Network : MonoBehaviour {
   GameObject carsContainer;
  public
   GameObject carPrefab;
+ private
+  int fps = 30;
+
+  void Awake()
+  {
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = fps;
+  }
 
   // Use this for initialization
  private
@@ -51,6 +59,8 @@ class Network : MonoBehaviour {
   // Update is called once per frame
  private
   void Update() {
+    if (Application.targetFrameRate != fps)
+             Application.targetFrameRate = fps;
     if (socketReady) {
       while (stream.DataAvailable) {
         onIncomingData();

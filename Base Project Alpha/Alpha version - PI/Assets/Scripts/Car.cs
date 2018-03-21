@@ -15,7 +15,7 @@ class Car : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    limiter = limiter++ % 6;
+    limiter = limiter++ % 60;
     if (limiter == 0) {
       if (isLocalPlayer) {
         float verticalAxis = Input.GetAxis("Vertical");
