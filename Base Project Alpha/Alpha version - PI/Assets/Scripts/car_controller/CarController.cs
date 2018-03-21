@@ -75,12 +75,10 @@ public class CarController : MonoBehaviour
             if (buttonForward.GetComponent<CustomButton>().down)
             {
                 acceleration = 1.0f;
-                Debug.Log("ERZERZERZERZER");
             }
             else if (buttonBackward.GetComponent<CustomButton>().down)
             {
                 acceleration = -1.0f;
-                Debug.Log("ERZERZERZ89+8+9ERZER");
             }
             /* if (MaxRotation < Mathf.Abs(padRotation))
              {
@@ -89,7 +87,7 @@ public class CarController : MonoBehaviour
             /*
              * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
              */
-            float MinRotation = 0.3f;
+            float MinRotation = 0.1f;
             if (Mathf.Abs(padRotation) < MinRotation)
             {
                 padRotation = (0.0f < padRotation) ? MinRotation : -MinRotation;
