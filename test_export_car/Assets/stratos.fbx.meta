@@ -20,6 +20,11 @@ ModelImporter:
     100024: Plane
     100026: Sun.001
     100028: Sun.002
+    100030: body
+    100032: tire_BL
+    100034: tire_BR
+    100036: tire_FL
+    100038: tire_FR
     400000: //RootNode
     400002: Camera
     400004: Circle
@@ -35,6 +40,11 @@ ModelImporter:
     400024: Plane
     400026: Sun.001
     400028: Sun.002
+    400030: body
+    400032: tire_BL
+    400034: tire_BR
+    400036: tire_FL
+    400038: tire_FR
     2000000: Camera
     2100000: Material.001
     2100002: Material
@@ -59,6 +69,11 @@ ModelImporter:
     2300016: Cube.003
     2300018: Cylinder.002
     2300020: Plane
+    2300022: body
+    2300024: tire_BL
+    2300026: tire_BR
+    2300028: tire_FL
+    2300030: tire_FR
     3300000: //RootNode
     3300002: Circle
     3300004: Circle.001
@@ -70,6 +85,11 @@ ModelImporter:
     3300016: Cube.003
     3300018: Cylinder.002
     3300020: Plane
+    3300022: body
+    3300024: tire_BL
+    3300026: tire_BR
+    3300028: tire_FL
+    3300030: tire_FR
     4300000: Cube
     4300002: Cube.002
     4300004: Cube.001
@@ -80,6 +100,11 @@ ModelImporter:
     4300014: Cylinder.002
     4300016: Cube.003
     4300018: Plane
+    4300020: tire_FR
+    4300022: tire_BR
+    4300024: tire_BL
+    4300026: tire_FL
+    4300028: body
     10800000: Sun
     10800002: Sun.001
     10800004: Sun.002
