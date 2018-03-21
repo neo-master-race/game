@@ -15,23 +15,24 @@ class Car : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    limiter = limiter++ % 60;
-    if (limiter == 0) {
-      if (isLocalPlayer) {
-        float verticalAxis = Input.GetAxis("Vertical");
-        float horizontalAxis =
-            Input.GetAxis("Horizontal") * 5 * System.Math.Abs(verticalAxis);
+    limiter += 1;
+    limiter = limiter % 6;
+    if (isLocalPlayer) {
+      float verticalAxis = Input.GetAxis("Vertical");
+      float horizontalAxis =
+          Input.GetAxis("Horizontal") * 5 * System.Math.Abs(verticalAxis);
 
-        Vector3 vec = transform.localPosition;
-        Vector3 vecRot = transform.localEulerAngles;
+      Vector3 vec = transform.localPosition;
+      Vector3 vecRot = transform.localEulerAngles;
 
-        vecRot.y += horizontalAxis;
-        vec += verticalAxis * transform.forward;
+      vecRot.y += horizontalAxis;
+      vec += verticalAxis * transform.forward;
 
-        transform.localPosition = vec;
-        transform.localEulerAngles = vecRot;
+      transform.localPosition = vec;
+      transform.localEulerAngles = vecRot;
 
-        // if the player moved, send his nex position
+      // if the player moved, send his nex position
+      if (limiter == 0) {
         if (verticalAxis != 0 || horizontalAxis != 0) {
           updatePlayerPosition();
         }
