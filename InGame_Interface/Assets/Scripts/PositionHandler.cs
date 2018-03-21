@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Luc-Michel Zissler
-// TODO : add ordinal indicator
 
 public class PositionHandler : MonoBehaviour {
 
     public Text positionObject;
+    private string ordinalIndicator; // example : st, nd, etc..
     
     public int playerPosition;
     public int totalPlayers;
 
 	// Use this for initialization
 	void Start () {
-        initialPositionInfos(6, 12);
+        initialPositionInfos(4, 4);
+
     }
 	
 	// Update is called once per frame
@@ -54,12 +55,13 @@ public class PositionHandler : MonoBehaviour {
             playerPosition = pos;
         }
 
+        getOrdinalIndicator(playerPosition);
         displayPositionInfos();
     }
 
     public void displayPositionInfos()
     {
-        positionObject.text = playerPosition.ToString();
+        positionObject.text = playerPosition.ToString() + ordinalIndicator;
     }
 
     public void incrementPlayerPosition()
@@ -67,6 +69,7 @@ public class PositionHandler : MonoBehaviour {
         if (playerPosition < totalPlayers)
         {
             playerPosition++;
+            getOrdinalIndicator(playerPosition);
             displayPositionInfos();
         }
     }
@@ -76,7 +79,27 @@ public class PositionHandler : MonoBehaviour {
         if( playerPosition > 1)
         {
             playerPosition--;
+            getOrdinalIndicator(playerPosition);
             displayPositionInfos();
+        }
+    }
+
+    public void getOrdinalIndicator(int pos)
+    {
+        switch(pos)
+        {
+            case 1:
+                ordinalIndicator = "st";
+                break;
+            case 2:
+                ordinalIndicator = "nd";
+                break;
+            case 3:
+                ordinalIndicator = "rd";
+                break;
+            default:
+                ordinalIndicator = "th";
+                break;
         }
     }
 }
