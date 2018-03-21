@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 4c373a240f6bde34ea858a9b9ab21376
+timeCreated: 1519671771
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camera
+    100004: Circle
+    100006: Circle.001
+    100008: Cube
+    100010: Cube.001
+    100012: Cube.002
+    100014: Cylinder
+    100016: Cylinder.001
+    100018: Sun
+    100020: Cube.003
+    100022: Cylinder.002
+    100024: Plane
+    100026: Sun.001
+    100028: Sun.002
+    100030: body
+    100032: tire_BL
+    100034: tire_BR
+    100036: tire_FL
+    100038: tire_FR
+    400000: //RootNode
+    400002: Camera
+    400004: Circle
+    400006: Circle.001
+    400008: Cube
+    400010: Cube.001
+    400012: Cube.002
+    400014: Cylinder
+    400016: Cylinder.001
+    400018: Sun
+    400020: Cube.003
+    400022: Cylinder.002
+    400024: Plane
+    400026: Sun.001
+    400028: Sun.002
+    400030: body
+    400032: tire_BL
+    400034: tire_BR
+    400036: tire_FL
+    400038: tire_FR
+    2000000: Camera
+    2100000: Material.001
+    2100002: Material
+    2100004: No Name
+    2100006: Material.003
+    2100008: Material.004
+    2100010: paint_main
+    2100012: window
+    2100014: hidden
+    2100016: Material.005
+    2100018: wheel_metal
+    2100020: tire
+    2100022: Material.002
+    2300000: //RootNode
+    2300002: Circle
+    2300004: Circle.001
+    2300006: Cube
+    2300008: Cube.001
+    2300010: Cube.002
+    2300012: Cylinder
+    2300014: Cylinder.001
+    2300016: Cube.003
+    2300018: Cylinder.002
+    2300020: Plane
+    2300022: body
+    2300024: tire_BL
+    2300026: tire_BR
+    2300028: tire_FL
+    2300030: tire_FR
+    3300000: //RootNode
+    3300002: Circle
+    3300004: Circle.001
+    3300006: Cube
+    3300008: Cube.001
+    3300010: Cube.002
+    3300012: Cylinder
+    3300014: Cylinder.001
+    3300016: Cube.003
+    3300018: Cylinder.002
+    3300020: Plane
+    3300022: body
+    3300024: tire_BL
+    3300026: tire_BR
+    3300028: tire_FL
+    3300030: tire_FR
+    4300000: Cube
+    4300002: Cube.002
+    4300004: Cube.001
+    4300006: Cylinder.001
+    4300008: Cylinder
+    4300010: Circle.001
+    4300012: Circle
+    4300014: Cylinder.002
+    4300016: Cube.003
+    4300018: Plane
+    4300020: tire_FR
+    4300022: tire_BR
+    4300024: tire_BL
+    4300026: tire_FL
+    4300028: body
+    10800000: Sun
+    10800002: Sun.001
+    10800004: Sun.002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
