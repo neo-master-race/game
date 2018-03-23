@@ -27,6 +27,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 	
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
+		Debug.Log("hello");
         if(pointerData.position.x>=512 && pointerData.position.x <= 712 && pointerData.position.y >= 484 && pointerData.position.y <= 684)
         {
             GameObject.Find("cursor_texture").transform.localPosition = new Vector3(pointerData.position.x - 512, pointerData.position.y - 484, 0);
