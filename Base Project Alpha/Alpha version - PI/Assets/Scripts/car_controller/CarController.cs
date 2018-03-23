@@ -121,10 +121,12 @@ public class CarController : MonoBehaviour
         vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
 
 
+        // limit the message per second rate
         limiter += 1;
         limiter = limiter % 6;
         // if the player moved, send his new position
-        if (isLocalPlayer && limiter == 0) {
+        if (isLocalPlayer && limiter == 0 && vitesse != 0)
+        {
             updatePlayerPosition();
         }
     }
