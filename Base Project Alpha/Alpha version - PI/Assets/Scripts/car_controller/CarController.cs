@@ -1,5 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Google.Protobuf;
 
 
 public class CarController : MonoBehaviour
@@ -31,6 +33,9 @@ public class CarController : MonoBehaviour
     int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
 
     public float current_speed=8000f;
+
+    public bool isLocalPlayer;
+    private int limiter = 0;
 
     void Start()
     {
@@ -114,6 +119,14 @@ public class CarController : MonoBehaviour
         else if (acceleration < -deadZone)
             thrust = acceleration * reverseAcceleration * currentAcceleration;
         vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
+
+
+        limiter += 1;
+        limiter = limiter % 6;
+        // if the player moved, send his new position
+        if (isLocalPlayer && limiter == 0) {
+            updatePlayerPosition();
+        }
     }
 
     void FixedUpdate()
@@ -190,4 +203,33 @@ public class CarController : MonoBehaviour
             body.velocity = body.velocity.normalized * maxVelocity;
         }
     }
+
+    private void updatePlayerPosition()
+    {
+        // vectors that we need to send
+        Protocol.Vector vecPosition = new Protocol.Vector{
+            X = transform.position.x,
+            Y = transform.position.y,
+            Z = transform.position.z
+        };
+        Protocol.Vector vecRotation = new Protocol.Vector{
+            X = transform.eulerAngles.x,
+            Y = transform.eulerAngles.y,
+            Z = transform.eulerAngles.z
+        };
+        Protocol.Vector vecScale = new Protocol.Vector{
+            X = transform.localScale.x,
+            Y = transform.localScale.y,
+            Z = transform.localScale.z
+        };
+
+        GameObject
+            .Find("Network")
+            .GetComponent<Network>()
+            .updatePlayerPosition(
+                vecPosition,
+                vecRotation,
+                vecScale
+            );
+     }
 }
