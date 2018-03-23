@@ -20,6 +20,7 @@ ModelImporter:
     2100002: side
     2100004: center
     2100006: walls
+    2100008: turn
     2300000: NurbsCircle
     2300002: Plane
     2300004: //RootNode
@@ -28,6 +29,8 @@ ModelImporter:
     3300004: //RootNode
     4300000: NurbsCircle
     4300002: Plane
+    4300004: Plane.001
+    4300006: Plane.002
     10800000: Lamp
   externalObjects: {}
   materials:
