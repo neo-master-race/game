@@ -143,7 +143,7 @@ public class CarController : MonoBehaviour
             if (Physics.Raycast(hoverPoint.transform.position, -Vector3.up, out hit, hoverHeight, layerMask))
             {
                 //surélévation du véhicule afin d'éviter les frottement avec le sol
-                body.AddForceAtPosition(Vector3.up * hoverForce * (1.0f - (hit.distance / hoverHeight)), hoverPoint.transform.position);
+                body.AddForceAtPosition(Vector3.up * hoverForce * (0.9f - (hit.distance / hoverHeight)), hoverPoint.transform.position);
                 onGround = true;
             }
             else
