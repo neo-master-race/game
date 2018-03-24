@@ -117,7 +117,10 @@ public class CarController : MonoBehaviour
         if (acceleration > deadZone)
             thrust = acceleration * forwardAcceleration * currentAcceleration;
         else if (acceleration < -deadZone)
+        {
             thrust = acceleration * reverseAcceleration * currentAcceleration;
+            turnValue *= -1f;
+        }
         vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
 
 
