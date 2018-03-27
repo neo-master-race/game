@@ -27,13 +27,16 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 	
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
-		Debug.Log("hello");
-        if(pointerData.position.x>=512 && pointerData.position.x <= 712 && pointerData.position.y >= 484 && pointerData.position.y <= 684)
+        Debug.Log("division: " + ((Screen.width / 1024f) * (1024f/Screen.width)));
+        Debug.Log("a:" + Screen.width);
+        Debug.Log("x:"+pointerData.position.x);
+        Debug.Log("x+:" + ((pointerData.position.x - 512f * (Screen.width/1024f))));// *(1024f/Screen.width)));
+        if (pointerData.position.x>=512f * (Screen.width / 1024f) && pointerData.position.x <= 712f*(Screen.width/1024f) && pointerData.position.y >= 484f * (Screen.height / 768f) && pointerData.position.y <= 684f * (Screen.height / 768f))
         {
-            GameObject.Find("cursor_texture").transform.localPosition = new Vector3(pointerData.position.x - 512, pointerData.position.y - 484, 0);
+            GameObject.Find("cursor_texture").transform.localPosition = new Vector3((pointerData.position.x - 512f * (Screen.width / 1024f))* (1024f/Screen.width), pointerData.position.y - 484f * (Screen.height / 768f), 0);
             cursorPositionX = pointerData.position.x;
             cursorPositionY = pointerData.position.y;
-            vehicleMainColor.color = calculate_color_general(pointerData.position.x-512, pointerData.position.y-484);
+            vehicleMainColor.color = calculate_color_general(pointerData.position.x-512f, pointerData.position.y-484f );
         }
     }
 
@@ -72,6 +75,6 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
         vehicle_color=calculate_color_range(colorPicked.value);
         gradient3D.SetColor("_Color_TopR", vehicle_color);
         if(cursorPositionX>=0 && cursorPositionY>=0)
-            vehicleMainColor.color = calculate_color_general(cursorPositionX - 512, cursorPositionY - 484);
+            vehicleMainColor.color = calculate_color_general(cursorPositionX - 512f, cursorPositionY - 484f);
     }
 }
