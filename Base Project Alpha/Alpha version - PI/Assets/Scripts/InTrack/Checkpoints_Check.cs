@@ -18,9 +18,19 @@ public class Checkpoints_Check : MonoBehaviour
     public int nextCheckpointNumber=1;
     public int supposedNextCheckpointNumber = 1;
 
+    [Header("Waypoints variables")]
+    public GameObject[] wayPoints;
+    public float[] distanceToWaypoint;
+    [Space(20)]
+
     [Header("Checkpoints variables (0 for all on script source)")]
     public bool isStartFinishLine;
     public int checkpointNumber;
+
+    
+
+
+    private int cpNumber;
 
     void OnTriggerEnter()
     {
@@ -63,10 +73,14 @@ public class Checkpoints_Check : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
+        cpNumber = checkpoints_collider.Length;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+		for(int i=0;i< cpNumber;i++)
+        {
+            distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, GameObject.Find("Stratos").transform.position);
+        }
 	}
 }
