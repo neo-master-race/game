@@ -80,7 +80,10 @@ public class Checkpoints_Check : MonoBehaviour
 	void Update () {
 		for(int i=0;i< cpNumber;i++)
         {
-            distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, GameObject.Find("Stratos").transform.position);
+            if (i == (supposedNextCheckpointNumber-1))
+                distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, GameObject.Find("Stratos").transform.position);
+            else
+                distanceToWaypoint[i] = 0.0f;
         }
 	}
 }
