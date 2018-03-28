@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
-    
+    public GameObject canvas;
+
 	void Start ()
     {
         Button button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick); 
+        button.onClick.AddListener(OnClick);
+
+        DontDestroyOnLoad(canvas); 
 	}
 
     void OnClick()
