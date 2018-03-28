@@ -14,6 +14,7 @@ public class Checkpoints_Check : MonoBehaviour
     public GameObject checkpointsParentScript;
     public GameObject[] checkpoints_collider;
     public GameObject[] wayPoints;
+    public bool initializedWaypointDistances;
 
     [Space(20)]
 
@@ -24,6 +25,8 @@ public class Checkpoints_Check : MonoBehaviour
     private int cpNumber;
 
     private GameObject[] players;
+
+    
 
 
 
@@ -88,5 +91,8 @@ public class Checkpoints_Check : MonoBehaviour
                     player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = 0.0f;
             }
         }
-	}
+        if(!initializedWaypointDistances)
+            initializedWaypointDistances = true;
+
+    }
 }
