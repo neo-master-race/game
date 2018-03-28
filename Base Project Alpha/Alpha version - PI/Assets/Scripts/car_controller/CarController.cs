@@ -71,68 +71,66 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        if (isLocalPlayer) {
-            float acceleration = 0.0f;
+        float acceleration = 0.0f;
 
-            if (Application.platform == RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            float padRotation = Input.acceleration.x * 2.5f;
+
+            if (buttonForward.GetComponent<CustomButton>().down)
             {
-                float padRotation = Input.acceleration.x * 2.5f;
-
-                if (buttonForward.GetComponent<CustomButton>().down)
-                {
-                    acceleration = 1.0f;
-                }
-                else if (buttonBackward.GetComponent<CustomButton>().down)
-                {
-                    acceleration = -1.0f;
-                }
-                /* if (MaxRotation < Mathf.Abs(padRotation))
-                 {
-                     padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation);
-                 }*/
-                /*
-                 * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
-                 */
-                float MinRotation = 0.1f;
-                if (Mathf.Abs(padRotation) < MinRotation)
-                {
-                    padRotation = (0.0f < padRotation) ? MinRotation : -MinRotation;
-                }
-                padRotation += (0.0f < padRotation) ? -MinRotation : MinRotation;
-                turnValue = padRotation;
+                acceleration = 1.0f;
             }
-            else
+            else if (buttonBackward.GetComponent<CustomButton>().down)
             {
-                acceleration = Input.GetAxis("Vertical");
-                // Get turning input
-                turnValue = 0.0f;
-                float turnAxis = Input.GetAxis("Horizontal");
-                if (Mathf.Abs(turnAxis) > deadZone)
-                    turnValue = turnAxis;
+                acceleration = -1.0f;
             }
-
-            
-
-
-            thrust = 0.0f;
-            if (acceleration > deadZone)
-                thrust = acceleration * forwardAcceleration * currentAcceleration;
-            else if (acceleration < -deadZone)
+            /* if (MaxRotation < Mathf.Abs(padRotation))
+             {
+                 padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation);
+             }*/
+            /*
+             * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
+             */
+            float MinRotation = 0.1f;
+            if (Mathf.Abs(padRotation) < MinRotation)
             {
-                thrust = acceleration * reverseAcceleration * currentAcceleration;
-                turnValue *= -1f;
+                padRotation = (0.0f < padRotation) ? MinRotation : -MinRotation;
             }
-            vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
+            padRotation += (0.0f < padRotation) ? -MinRotation : MinRotation;
+            turnValue = padRotation;
+        }
+        else
+        {
+            acceleration = Input.GetAxis("Vertical");
+            // Get turning input
+            turnValue = 0.0f;
+            float turnAxis = Input.GetAxis("Horizontal");
+            if (Mathf.Abs(turnAxis) > deadZone)
+                turnValue = turnAxis;
+        }
+
+        
 
 
-            // limit the message per second rate
-            limiter += 1;
-            limiter = limiter % 6;
-            // if the player moved, send his new position
-            if (isLocalPlayer && limiter == 0 && vitesse != 0)
-            {
-                updatePlayerPosition();
-            }
+        thrust = 0.0f;
+        if (acceleration > deadZone)
+            thrust = acceleration * forwardAcceleration * currentAcceleration;
+        else if (acceleration < -deadZone)
+        {
+            thrust = acceleration * reverseAcceleration * currentAcceleration;
+            turnValue *= -1f;
+        }
+        vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
+
+
+        // limit the message per second rate
+        limiter += 1;
+        limiter = limiter % 6;
+        // if the player moved, send his new position
+        if (isLocalPlayer && limiter == 0 && vitesse != 0)
+        {
+            updatePlayerPosition();
         }
     }
 
