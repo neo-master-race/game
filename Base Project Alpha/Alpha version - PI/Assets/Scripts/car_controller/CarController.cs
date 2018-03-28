@@ -75,7 +75,7 @@ public class CarController : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            float padRotation = Input.acceleration.x * 1.5f;
+            float padRotation = Input.acceleration.x * 2.5f;
 
             if (buttonForward.GetComponent<CustomButton>().down)
             {
