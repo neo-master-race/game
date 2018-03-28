@@ -45,34 +45,54 @@ public class Player_Info_Ingame : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if(GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances)
+        if(GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
+            && !GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
         {
             for (int i=0;i<players.Length-1;i++)
             {
                 for (int j = 0; j < players.Length-1; j++)
                 {
-                    if (players[i].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] > players[i+1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0])
+                    if (players[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] > players[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0])
                     {
-                        GameObject tmp = playersLeaderboard[i + 1];
-                        playersLeaderboard[i + 1] = playersLeaderboard[i];
-                        playersLeaderboard[i] = tmp;
+                        GameObject tmp = playersLeaderboard[j + 1];
+                        playersLeaderboard[j + 1] = playersLeaderboard[j];
+                        playersLeaderboard[j] = tmp;
                     }
                 }
             }
+            GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation = true;
+        }
+        for (int i = 0; i < playersLeaderboard.Length; i++)
+        {
+            Debug.Log(playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer);
+            if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i+1;
         }
         for (int i = 0; i < playersLeaderboard.Length - 1; i++)
         {
-            if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
-                players[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i+1;
-        }
-        foreach (GameObject player in players)
-        {
-            if(!player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            for (int j = 0; j < playersLeaderboard.Length - 1; j++)
             {
-                if (GetComponent<Player_Info_Ingame>().lap_count < player.GetComponent<Player_Info_Ingame>().lap_count)
-                    leaderboardPosition= player.GetComponent<Player_Info_Ingame>().leaderboardPosition + 1;
-                else if(GetComponent<Player_Info_Ingame>().lap_count > player.GetComponent<Player_Info_Ingame>().lap_count)
-                    leaderboardPosition = player.GetComponent<Player_Info_Ingame>().leaderboardPosition - 1;
+                if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
+                {
+                    GameObject tmp = playersLeaderboard[j + 1];
+                    playersLeaderboard[j + 1] = playersLeaderboard[j];
+                    playersLeaderboard[j] = tmp;
+                }
+                else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
+                    && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().nextCheckpointNumber < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().nextCheckpointNumber))
+                {
+                    GameObject tmp = playersLeaderboard[j + 1];
+                    playersLeaderboard[j + 1] = playersLeaderboard[j];
+                    playersLeaderboard[j] = tmp;
+                }
+                else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
+                    && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().nextCheckpointNumber == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().nextCheckpointNumber)
+                    && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[nextCheckpointNumber-1] > playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[nextCheckpointNumber-1]))
+                {
+                    GameObject tmp = playersLeaderboard[j + 1];
+                    playersLeaderboard[j + 1] = playersLeaderboard[j];
+                    playersLeaderboard[j] = tmp;
+                }
             }
         }
         GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();

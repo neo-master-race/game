@@ -15,6 +15,7 @@ public class Checkpoints_Check : MonoBehaviour
     public GameObject[] checkpoints_collider;
     public GameObject[] wayPoints;
     public bool initializedWaypointDistances;
+    public bool initializedWaypointDistancesConfirmation=false;
 
     [Space(20)]
 
