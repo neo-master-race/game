@@ -39,13 +39,14 @@ public class Player_Info_Ingame : MonoBehaviour {
         leaderboardPosition = 1;
         wentThrough = new bool[GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().checkpoints_collider.Length];
         distanceToWaypoint = new float[GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().wayPoints.Length];
-        players = GameObject.FindGameObjectsWithTag("Player");
-        playersLeaderboard = GameObject.FindGameObjectsWithTag("Player");
+        
     }
 
     // Update is called once per frame
     void Update () {
-        if(GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
+        players = GameObject.FindGameObjectsWithTag("Player");
+        playersLeaderboard = GameObject.FindGameObjectsWithTag("Player");
+        if (GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
             && !GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
         {
             for (int i=0;i<players.Length-1;i++)
@@ -64,7 +65,6 @@ public class Player_Info_Ingame : MonoBehaviour {
         }
         for (int i = 0; i < playersLeaderboard.Length; i++)
         {
-            Debug.Log(playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer);
             if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
                 playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i+1;
         }
