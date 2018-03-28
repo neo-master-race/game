@@ -14,6 +14,7 @@ message UpdatePlayerPosition {
   Vector direction = 2;
   Vector scale = 3;
   string user = 4;
+  Vector velocity = 5;
 }
 
 // definition of a chat message

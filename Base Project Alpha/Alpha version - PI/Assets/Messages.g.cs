@@ -23,20 +23,20 @@ namespace Protocol {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5tZXNzYWdlcy5wcm90bxIIcHJvdG9jb2wiKQoGVmVjdG9yEgkKAXgYASAB",
-            "KAISCQoBeRgCIAEoAhIJCgF6GAMgASgCIo4BChRVcGRhdGVQbGF5ZXJQb3Np",
+            "KAISCQoBeRgCIAEoAhIJCgF6GAMgASgCIrIBChRVcGRhdGVQbGF5ZXJQb3Np",
             "dGlvbhIiCghwb3NpdGlvbhgBIAEoCzIQLnByb3RvY29sLlZlY3RvchIjCglk",
             "aXJlY3Rpb24YAiABKAsyEC5wcm90b2NvbC5WZWN0b3ISHwoFc2NhbGUYAyAB",
-            "KAsyEC5wcm90b2NvbC5WZWN0b3ISDAoEdXNlchgEIAEoCSIsCgtDaGF0TWVz",
-            "c2FnZRIPCgdjb250ZW50GAEgASgJEgwKBHVzZXIYAiABKAkijwEKB01lc3Nh",
-            "Z2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90",
-            "b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24Y",
-            "AyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAQgUKA21z",
-            "Z2IGcHJvdG8z"));
+            "KAsyEC5wcm90b2NvbC5WZWN0b3ISDAoEdXNlchgEIAEoCRIiCgh2ZWxvY2l0",
+            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciIsCgtDaGF0TWVzc2FnZRIPCgdj",
+            "b250ZW50GAEgASgJEgwKBHVzZXIYAiABKAkijwEKB01lc3NhZ2USDAoEdHlw",
+            "ZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2NvbC5DaGF0",
+            "TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24YAyABKAsyHi5w",
+            "cm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAQgUKA21zZ2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Vector), global::Protocol.Vector.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition" }, new[]{ "Msg" }, null, null)
           }));
@@ -252,6 +252,7 @@ namespace Protocol {
       Direction = other.direction_ != null ? other.Direction.Clone() : null;
       Scale = other.scale_ != null ? other.Scale.Clone() : null;
       user_ = other.user_;
+      Velocity = other.velocity_ != null ? other.Velocity.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -303,6 +304,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "velocity" field.</summary>
+    public const int VelocityFieldNumber = 5;
+    private global::Protocol.Vector velocity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.Vector Velocity {
+      get { return velocity_; }
+      set {
+        velocity_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpdatePlayerPosition);
@@ -320,6 +332,7 @@ namespace Protocol {
       if (!object.Equals(Direction, other.Direction)) return false;
       if (!object.Equals(Scale, other.Scale)) return false;
       if (User != other.User) return false;
+      if (!object.Equals(Velocity, other.Velocity)) return false;
       return true;
     }
 
@@ -330,6 +343,7 @@ namespace Protocol {
       if (direction_ != null) hash ^= Direction.GetHashCode();
       if (scale_ != null) hash ^= Scale.GetHashCode();
       if (User.Length != 0) hash ^= User.GetHashCode();
+      if (velocity_ != null) hash ^= Velocity.GetHashCode();
       return hash;
     }
 
@@ -356,6 +370,10 @@ namespace Protocol {
         output.WriteRawTag(34);
         output.WriteString(User);
       }
+      if (velocity_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Velocity);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -372,6 +390,9 @@ namespace Protocol {
       }
       if (User.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
+      }
+      if (velocity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
       }
       return size;
     }
@@ -401,6 +422,12 @@ namespace Protocol {
       }
       if (other.User.Length != 0) {
         User = other.User;
+      }
+      if (other.velocity_ != null) {
+        if (velocity_ == null) {
+          velocity_ = new global::Protocol.Vector();
+        }
+        Velocity.MergeFrom(other.Velocity);
       }
     }
 
@@ -435,6 +462,13 @@ namespace Protocol {
           }
           case 34: {
             User = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (velocity_ == null) {
+              velocity_ = new global::Protocol.Vector();
+            }
+            input.ReadMessage(velocity_);
             break;
           }
         }

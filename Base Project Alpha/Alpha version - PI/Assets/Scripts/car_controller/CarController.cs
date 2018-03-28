@@ -129,7 +129,7 @@ public class CarController : MonoBehaviour
             limiter += 1;
             limiter = limiter % 6;
             // if the player moved, send his new position
-            if (isLocalPlayer && limiter == 0 && vitesse != 0)
+            if (/*isLocalPlayer && */limiter == 0/* && vitesse != 0*/)
             {
                 updatePlayerPosition();
             }
@@ -229,6 +229,11 @@ public class CarController : MonoBehaviour
             Y = transform.localScale.y,
             Z = transform.localScale.z
         };
+        Protocol.Vector vecVelocity = new Protocol.Vector{
+            X = body.velocity.x,
+            Y = body.velocity.y,
+            Z = body.velocity.z
+        };
 
         GameObject
             .Find("Network")
@@ -236,7 +241,8 @@ public class CarController : MonoBehaviour
             .updatePlayerPosition(
                 vecPosition,
                 vecRotation,
-                vecScale
+                vecScale,
+                vecVelocity
             );
      }
 }

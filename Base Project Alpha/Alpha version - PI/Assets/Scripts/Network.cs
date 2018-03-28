@@ -139,6 +139,7 @@ class Network : MonoBehaviour {
         Protocol.Vector vecPos = upp.Position;
         Protocol.Vector vecRot = upp.Direction;
         Protocol.Vector vecScale = upp.Scale;
+        Protocol.Vector vecVelocity = upp.Velocity;
         string user = upp.User;
 
         if (user == clientName)
@@ -159,6 +160,8 @@ class Network : MonoBehaviour {
             new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
         player.transform.localScale =
             new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(vecVelocity.X, vecVelocity.Y, vecVelocity.Z);
         break;
       case "chat_message":
         Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
@@ -175,11 +178,12 @@ class Network : MonoBehaviour {
  public
   void updatePlayerPosition(Protocol.Vector vecPosition,
                             Protocol.Vector vecRotation,
-                            Protocol.Vector vecScale) {
+                            Protocol.Vector vecScale,
+                            Protocol.Vector vecVelocity) {
     // all together
     Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
         Position = vecPosition, Direction = vecRotation, Scale = vecScale,
-        User = clientName};
+        User = clientName, Velocity = vecVelocity};
 
     // final message that we can send
     Protocol.Message msg = new Protocol.Message{Type = "update_player_position",
