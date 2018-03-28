@@ -35,16 +35,15 @@ public class Checkpoints_Check : MonoBehaviour
                 localPlayer.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
             else
             {
-                int cp_count = 0;
                 if (localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
                     && localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                     localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
                 for (int i = 0; i <= localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
                 {
                     if (localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
-                        cp_count++;
+                        localPlayer.GetComponent<Player_Info_Ingame>().cp_count++;
                 }
-                if (cp_count == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
+                if (localPlayer.GetComponent<Player_Info_Ingame>().cp_count == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
                     localPlayer.GetComponent<Player_Info_Ingame>().lap_count++;
                     for (int j = 0; j <= localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)

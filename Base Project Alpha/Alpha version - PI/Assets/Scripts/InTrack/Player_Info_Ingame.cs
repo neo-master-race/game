@@ -16,6 +16,7 @@ public class Player_Info_Ingame : MonoBehaviour {
     public bool hasHitSFLineOnce;
     public int nextCheckpointNumber = 1;
     public int supposedNextCheckpointNumber = 1;
+    public int cp_count=0;
 
     [Header("Waypoints (relative position indicator)")]
     public float[] distanceToWaypoint;
