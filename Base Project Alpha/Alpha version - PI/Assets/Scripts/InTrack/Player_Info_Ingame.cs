@@ -20,6 +20,11 @@ public class Player_Info_Ingame : MonoBehaviour {
     [Header("Waypoints (relative position indicator)")]
     public float[] distanceToWaypoint;
 
+    [Header("UI Stats")]
+    public int leaderboardPosition;
+    public float[] lapTimes;
+    public int currentItemIndex;
+
     // Use this for initialization
     void Start () {
         wentThrough = new bool[GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().checkpoints_collider.Length];
