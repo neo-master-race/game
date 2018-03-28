@@ -22,8 +22,10 @@ public class Player_Info_Ingame : MonoBehaviour {
 
     [Header("UI Stats")]
     public int leaderboardPosition;
-    public float[] lapTimes;
     public int currentItemIndex;
+    [Space(5)]
+    public float[] lapTimes;
+    public float bestLapTime;
 
     // Use this for initialization
     void Start () {
