@@ -50,6 +50,7 @@ public class Checkpoints_Check : MonoBehaviour
                 if (localPlayer.GetComponent<Player_Info_Ingame>().cp_count == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
                     localPlayer.GetComponent<Player_Info_Ingame>().lap_count++;
+                    localPlayer.GetComponent<Player_Info_Ingame>().cp_count = 0;
                     for (int j = 0; j <= localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
                         localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
                     localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
