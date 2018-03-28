@@ -22,7 +22,10 @@ public class Checkpoints_Check : MonoBehaviour
     public int checkpointNumber;
     
     private int cpNumber;
-    
+
+    private GameObject[] players;
+
+
 
     void OnTriggerEnter()
     {
@@ -66,7 +69,7 @@ public class Checkpoints_Check : MonoBehaviour
 	// Use this for initialization
 	void Start () {
         cpNumber = checkpoints_collider.Length;
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
             if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
@@ -78,10 +81,13 @@ public class Checkpoints_Check : MonoBehaviour
 	void Update () {
 		for(int i=0;i< cpNumber;i++)
         {
-            if (i == (localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber -1))
-                localPlayer.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, localPlayer.transform.position);
-            else
-                localPlayer.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = 0.0f;
+            foreach (GameObject player in players)
+            {
+                if (i == (player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber - 1))
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, player.transform.position);
+                else
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = 0.0f;
+            }
         }
 	}
 }
