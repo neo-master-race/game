@@ -1,46 +1,57 @@
 - booster
-item. augmente la vitesse *x pendant x temps
+item. augmente la vitesse *x pendant y temps
 ??
+sur activation augmente drastiquement l'accéleration sur une periode de temps très courte
 
 - (pente)
-??? was
+??? 
 
 - huile
-item à jeter derrière. fais déraper les joueurs
-??
+item à jeter derrière. fait déraper les joueurs
+?? 
+grosse tâche qui apparaît derrière le véhicule et qui reste jusqu'à ce qu'un certain nombre de joueurs roulent dessus (un même joueur peut se la prendre plusieurs fois), la tâche rétrécit à chaque passage d'une voiture dessus jusqu'à disparaître complètement, une fois ce certain nombre atteint
 
 - rocket/fusée
 item à jeter devant. arrête le(s) joueur(s) touché(s), peut être dirigé vers un joueur spécifique ou non
 ??
 
+
 - shield
 item. rends le joueur indestructible jusqu'à ce que le joueur soit touché par un item
 sphere transparente autour de la voiture
 
+
 - indestructible
-item. rend le joueur indestructible pendant x temps + augmente sa vitesse *x
+item. rend le joueur indestructible pendant x temps + augmente sa vitesse *y
 aura autour de la voiture
+
 
 - booster
 in-track. augmente la vitesse *x pendant x temps.
-zone difficile d'accès pour le joueur (prend des risques en y allant) mais qui lui permet d'obtenir un bonus de vitesse.
+zone difficile d'accès pour le joueur (prend des risques en y allant) mais qui lui permet d'obtenir un bonus de vitesse
+zones rectangulaires consécutivement rapprochées sur le tracé (au nombre de 4) augmentant chacunes la vitesse de 20% (pas 80% pour permettre au joueur d'adapter sa conduite au nombre de boosters pris sur 4 (20, 40, 60, 80))
 
 - pneus insensible au terrain
 item. rend les pneus insensibles au terrain (bords)
 augmente la taille des pneus (scaler la voiture?)
 
+
 - malus sur le tracé 
-perma. blocs au millieu du circuit? 
-spawnable (dernier tour). huile (dépendant du circuit)? 
+perma. blocs au millieu du circuit? spawnable (dernier tour)
+huile (dépendant du circuit), ralentisseur (inverse de booster), touches inversées devant des passages avec beaucoup de virages
+suivant les caractéristiques du circuit, placement d'éléments à un endroit défini, une fois que le leader rentre dans son dernier tour et reste jusqu'à la fin de la course pour tout le monde
 
 - éclair
 item. arrête tous les joeurs (qui sont devant?) et les ralentis au démarrage
 néon
 
+
 - skillshot donnant accèl max
 item à jeter devant. met l'accelération des joueurs au max
 ??
 
+
 - touches inversées 
-(in-track || zone sur le circuit || skillshot) inverse les touches des joueurs pendant x temps.
-??
+(in-track & zone sur le circuit) inverse les touches des joueurs pendant x temps
+carré sur le sol avec un design de flèches qui se croisent (linéaires ou courbées)
+zone permanente sur le circuit de forme carrée qui s'active pendant une durée finie (effet visuel durant toute la durée de l'effet)
