@@ -84,9 +84,10 @@ public class Checkpoints_Check : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         players = GameObject.FindGameObjectsWithTag("Player");
-        for (int i=0;i< cpNumber;i++)
+        
+        foreach (GameObject player in players)
         {
-            foreach (GameObject player in players)
+            for (int i = 0; i < cpNumber; i++)
             {
                 if (i == (player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber - 1))
                     player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, player.transform.position);
