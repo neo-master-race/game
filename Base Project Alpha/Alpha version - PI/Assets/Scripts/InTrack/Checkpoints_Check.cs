@@ -35,38 +35,38 @@ public class Checkpoints_Check : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Checkpoints_Check>().isStartFinishLine)
         {
-            if (!localPlayer.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
-                localPlayer.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
+            if (!this.gameObject.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
+                this.gameObject.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
             else
             {
-                if (localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
-                    && localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
-                    localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
-                for (int i = 0; i <= localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
+                if (this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
+                    && this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough.Length)
+                    this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
+                for (int i = 0; i <= this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
                 {
-                    if (localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
-                        localPlayer.GetComponent<Player_Info_Ingame>().cp_count++;
+                    if (this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
+                        this.gameObject.GetComponent<Player_Info_Ingame>().cp_count++;
                 }
-                if (localPlayer.GetComponent<Player_Info_Ingame>().cp_count == localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length)
+                if (this.gameObject.GetComponent<Player_Info_Ingame>().cp_count == this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
-                    localPlayer.GetComponent<Player_Info_Ingame>().lap_count++;
-                    localPlayer.GetComponent<Player_Info_Ingame>().cp_count = 0;
-                    for (int j = 0; j <= localPlayer.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
-                        localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
-                    localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
+                    this.gameObject.GetComponent<Player_Info_Ingame>().lap_count++;
+                    this.gameObject.GetComponent<Player_Info_Ingame>().cp_count = 0;
+                    for (int j = 0; j <= this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
+                        this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
+                    this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
                 }
-                localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
+                this.gameObject.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
             }
         }
         else
         {
-            if (localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
-                && localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber)
+            if (this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
+                && this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber)
             {
-                localPlayer.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
-                localPlayer.GetComponent<Player_Info_Ingame>().nextCheckpointNumber++;
+                this.gameObject.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
+                this.gameObject.GetComponent<Player_Info_Ingame>().nextCheckpointNumber++;
             }
-            localPlayer.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
+            this.gameObject.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
         }
     }
 
