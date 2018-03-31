@@ -41,14 +41,19 @@ public class Checkpoints_Check : MonoBehaviour
             {
                 if (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
                     && car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().wentThrough.Length)
+                {
+                    car.GetComponent<Player_Info_Ingame>().cp_count++;
                     car.GetComponent<Player_Info_Ingame>().wentThrough[car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
-                for (int i = 0; i <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
+                }
+                    
+                /*for (int i = 0; i <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
                 {
                     if (car.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
                         car.GetComponent<Player_Info_Ingame>().cp_count++;
-                }
+                }*/
                 if (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
+                    Debug.Log(this.name+" "+car.GetComponent<Player_Info_Ingame>().cp_count);
                     car.GetComponent<Player_Info_Ingame>().lap_count++;
                     car.GetComponent<Player_Info_Ingame>().cp_count = 0;
                     for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
@@ -65,6 +70,7 @@ public class Checkpoints_Check : MonoBehaviour
             {
                 car.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
                 car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber++;
+                car.GetComponent<Player_Info_Ingame>().cp_count++;
             }
             car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
         }
