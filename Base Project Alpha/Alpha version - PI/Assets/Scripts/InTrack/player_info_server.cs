@@ -17,9 +17,10 @@ public class player_info_server : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < players.Length - 1; i++)
+        for (int i = 0; i < players.Length ; i++)
         {
             players_laps[i] = players[i].GetComponent<Player_Info_Ingame>().lap_count;
+            Debug.Log(players[i].name);
         }
     }
 }
