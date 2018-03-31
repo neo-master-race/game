@@ -52,7 +52,7 @@ public class Player_Info_Ingame : MonoBehaviour {
             int nb_players_after = players.Length;
             if (nb_players_before != nb_players_after)
             {
-                if(nb_players_after-nb_players_before>0)
+                if (nb_players_after - nb_players_before > 0)
                 {
                     for (int i = 0; i < nb_players_after - nb_players_before; i++)
                     {
@@ -63,6 +63,7 @@ public class Player_Info_Ingame : MonoBehaviour {
                             playersLeaderboard[j] = tmp;
                         }
                     }
+                }
             }
             
             if (GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
