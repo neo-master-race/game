@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player_info_server : MonoBehaviour {
 
-    public int[] players_laps;
+    public int[] players_laps=new int[4];
 
     public GameObject[] players;
     public GameObject[] playersLeaderboard;
