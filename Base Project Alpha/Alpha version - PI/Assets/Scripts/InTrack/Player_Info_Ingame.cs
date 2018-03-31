@@ -48,10 +48,23 @@ public class Player_Info_Ingame : MonoBehaviour {
         {
             int nb_players_before = players.Length;
             players = GameObject.FindGameObjectsWithTag("Player");
+            playersLeaderboard = GameObject.FindGameObjectsWithTag("Player");
             int nb_players_after = players.Length;
             if (nb_players_before != nb_players_after)
-                Debug.Log("ah");
-            playersLeaderboard = GameObject.FindGameObjectsWithTag("Player");
+            {
+                if(nb_players_after-nb_players_before>0)
+                {
+                    for (int i = 0; i < nb_players_after - nb_players_before; i++)
+                    {
+                        for (int j = 0; j < playersLeaderboard.Length - 1; j++)
+                        {
+                            GameObject tmp = playersLeaderboard[j + 1];
+                            playersLeaderboard[j + 1] = playersLeaderboard[j];
+                            playersLeaderboard[j] = tmp;
+                        }
+                    }
+            }
+            
             if (GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
                 && !GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
             {
