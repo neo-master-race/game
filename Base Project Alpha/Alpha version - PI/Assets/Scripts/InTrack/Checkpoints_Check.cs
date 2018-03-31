@@ -59,6 +59,7 @@ public class Checkpoints_Check : MonoBehaviour
                     for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
                         car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
                     car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
+                    GameObject.Find("Race_Control").GetComponent<player_info_server>().players_laps[0] = 5;
                 }
                 car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
             }
