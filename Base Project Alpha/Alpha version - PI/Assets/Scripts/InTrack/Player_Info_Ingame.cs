@@ -69,11 +69,11 @@ public class Player_Info_Ingame : MonoBehaviour {
             if (GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
                 && !GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
             {
-                for (int i=0;i<players.Length-1;i++)
+                for (int i=0;i< playersLeaderboard.Length-1;i++)
                 {
-                    for (int j = 0; j < players.Length-1; j++)
+                    for (int j = 0; j < playersLeaderboard.Length-1; j++)
                     {
-                        if (players[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] > players[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0])
+                        if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] > playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0])
                         {
                             GameObject tmp = playersLeaderboard[j + 1];
                             playersLeaderboard[j + 1] = playersLeaderboard[j];
