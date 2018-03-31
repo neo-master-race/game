@@ -83,7 +83,8 @@ public class Checkpoints_Check : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		for(int i=0;i< cpNumber;i++)
+        players = GameObject.FindGameObjectsWithTag("Player");
+        for (int i=0;i< cpNumber;i++)
         {
             foreach (GameObject player in players)
             {
