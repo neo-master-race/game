@@ -69,7 +69,7 @@ class Network : MonoBehaviour {
   }
 
   // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
- private
+ public
   void sendMessage(Protocol.Message msg) {
     byte[] msgBytes = msg.ToByteArray();
     byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
@@ -130,9 +130,25 @@ class Network : MonoBehaviour {
     }
   }
 
+  // get the player (or create if needed)
+  private GameObject getPlayer(string clientName) {
+    GameObject player;
+    if (!players.ContainsKey(clientName)) {
+      player =
+          Instantiate(carPrefab, carsContainer.transform) as GameObject;
+      players.Add(clientName, player);
+    } else {
+      player = players[clientName] as GameObject;
+    }
+    return player;
+  }
+
   // filter incoming message using his type
  private
   void filterIncomingMessages(Protocol.Message parsedData) {
+    GameObject player;
+    string user;
+
     switch (parsedData.Type) {
       case "update_player_position":
         Protocol.UpdatePlayerPosition upp = parsedData.UpdatePlayerPosition;
@@ -140,19 +156,12 @@ class Network : MonoBehaviour {
         Protocol.Vector vecRot = upp.Direction;
         Protocol.Vector vecScale = upp.Scale;
         Protocol.Vector vecVelocity = upp.Velocity;
-        string user = upp.User;
+        user = upp.User;
 
         if (user == clientName)
           break;
 
-        GameObject player;
-        if (!players.ContainsKey(user)) {
-          player =
-              Instantiate(carPrefab, carsContainer.transform) as GameObject;
-          players.Add(user, player);
-        } else {
-          player = players[user] as GameObject;
-        }
+        player = getPlayer(user);
 
         player.transform.localPosition =
             new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
@@ -162,6 +171,24 @@ class Network : MonoBehaviour {
             new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
         Rigidbody rb = player.GetComponent<Rigidbody>();
         rb.velocity = new Vector3(vecVelocity.X, vecVelocity.Y, vecVelocity.Z);
+        break;
+      case "update_player_status":
+        Protocol.UpdatePlayerStatus ups = parsedData.UpdatePlayerStatus;
+        Google.Protobuf.Collections.RepeatedField<bool> wentThrough = ups.WentThrough;
+        int lapCount = ups.LapCount;
+        bool hasHitSFLineOnce = ups.HasHitSFLineOnce;
+        int cpCount = ups.CpCount;
+        int nextCheckpointNumber = ups.NextCheckpointNumber;
+        int supposedNextCheckpointNumber = ups.SupposedNextCheckpointNumber;
+        user = ups.User;
+
+        if (user == clientName)
+          break;
+
+        player = getPlayer(user);
+
+        // @TODO: do something on the player an the datas we got
+
         break;
       case "chat_message":
         Protocol.ChatMessage chatMsg = parsedData.ChatMessage;
