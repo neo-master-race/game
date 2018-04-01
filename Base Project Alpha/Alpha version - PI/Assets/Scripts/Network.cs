@@ -218,4 +218,31 @@ class Network : MonoBehaviour {
 
     sendMessage(msg);
   }
+
+  // tell the network to send player's current status to all others
+ public
+  void UpdatePlayerStatus(
+        bool[] wentThrough,
+        int lapCount,
+        bool hasHitSFLineOnce,
+        int cpCount,
+        int nextCheckpointNumber,
+        int supposedNextCheckpointNumber) {
+
+    // all together
+    Protocol.UpdatePlayerStatus ups = new Protocol.UpdatePlayerStatus{
+      // WentThrough = wentThrough, // @TODO: cette ligne pose problème
+      LapCount = lapCount,
+      HasHitSFLineOnce = hasHitSFLineOnce,
+      CpCount = cpCount,
+      NextCheckpointNumber = nextCheckpointNumber,
+      SupposedNextCheckpointNumber = supposedNextCheckpointNumber,
+      User = clientName};
+
+    // final message that we can send
+    Protocol.Message msg = new Protocol.Message{Type = "update_player_status",
+                                                UpdatePlayerStatus = ups};
+
+    sendMessage(msg);
+  }
 }
