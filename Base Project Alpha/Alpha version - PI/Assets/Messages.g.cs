@@ -27,23 +27,23 @@ namespace Protocol {
             "dGlvbhIiCghwb3NpdGlvbhgBIAEoCzIQLnByb3RvY29sLlZlY3RvchIjCglk",
             "aXJlY3Rpb24YAiABKAsyEC5wcm90b2NvbC5WZWN0b3ISHwoFc2NhbGUYAyAB",
             "KAsyEC5wcm90b2NvbC5WZWN0b3ISDAoEdXNlchgEIAEoCRIiCgh2ZWxvY2l0",
-            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciK3AQoSVXBkYXRlUGxheWVyU3Rh",
+            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciLFAQoSVXBkYXRlUGxheWVyU3Rh",
             "dHVzEhQKDHdlbnRfdGhyb3VnaBgBIAMoCBIRCglsYXBfY291bnQYAiABKAUS",
             "HQoVaGFzX2hpdF9zX2ZfbGluZV9vbmNlGAMgASgIEhAKCGNwX2NvdW50GAQg",
             "ASgFEh4KFm5leHRfY2hlY2twb2ludF9udW1iZXIYBSABKAUSJwofc3VwcG9z",
-            "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBSIsCgtDaGF0TWVzc2Fn",
-            "ZRIPCgdjb250ZW50GAEgASgJEgwKBHVzZXIYAiABKAkizQEKB01lc3NhZ2US",
-            "DAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2Nv",
-            "bC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24YAyAB",
-            "KAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAEjwKFHVwZGF0",
-            "ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwucHJvdG9jb2wuVXBkYXRlUGxheWVy",
-            "U3RhdHVzSABCBQoDbXNnYgZwcm90bzM="));
+            "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBRIMCgR1c2VyGAcgASgJ",
+            "IiwKC0NoYXRNZXNzYWdlEg8KB2NvbnRlbnQYASABKAkSDAoEdXNlchgCIAEo",
+            "CSLNAQoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgC",
+            "IAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXll",
+            "cl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0",
+            "aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2Nv",
+            "bC5VcGRhdGVQbGF5ZXJTdGF0dXNIAEIFCgNtc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Vector), global::Protocol.Vector.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User", "Velocity" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus" }, new[]{ "Msg" }, null, null)
           }));
@@ -517,6 +517,7 @@ namespace Protocol {
       cpCount_ = other.cpCount_;
       nextCheckpointNumber_ = other.nextCheckpointNumber_;
       supposedNextCheckpointNumber_ = other.supposedNextCheckpointNumber_;
+      user_ = other.user_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -592,6 +593,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 7;
+    private string user_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string User {
+      get { return user_; }
+      set {
+        user_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpdatePlayerStatus);
@@ -611,6 +623,7 @@ namespace Protocol {
       if (CpCount != other.CpCount) return false;
       if (NextCheckpointNumber != other.NextCheckpointNumber) return false;
       if (SupposedNextCheckpointNumber != other.SupposedNextCheckpointNumber) return false;
+      if (User != other.User) return false;
       return true;
     }
 
@@ -623,6 +636,7 @@ namespace Protocol {
       if (CpCount != 0) hash ^= CpCount.GetHashCode();
       if (NextCheckpointNumber != 0) hash ^= NextCheckpointNumber.GetHashCode();
       if (SupposedNextCheckpointNumber != 0) hash ^= SupposedNextCheckpointNumber.GetHashCode();
+      if (User.Length != 0) hash ^= User.GetHashCode();
       return hash;
     }
 
@@ -654,6 +668,10 @@ namespace Protocol {
         output.WriteRawTag(48);
         output.WriteInt32(SupposedNextCheckpointNumber);
       }
+      if (User.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(User);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -674,6 +692,9 @@ namespace Protocol {
       }
       if (SupposedNextCheckpointNumber != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(SupposedNextCheckpointNumber);
+      }
+      if (User.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
       }
       return size;
     }
@@ -698,6 +719,9 @@ namespace Protocol {
       }
       if (other.SupposedNextCheckpointNumber != 0) {
         SupposedNextCheckpointNumber = other.SupposedNextCheckpointNumber;
+      }
+      if (other.User.Length != 0) {
+        User = other.User;
       }
     }
 
@@ -732,6 +756,10 @@ namespace Protocol {
           }
           case 48: {
             SupposedNextCheckpointNumber = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            User = input.ReadString();
             break;
           }
         }
