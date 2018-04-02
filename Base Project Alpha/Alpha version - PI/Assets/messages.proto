@@ -35,6 +35,11 @@ message ChatMessage {
   string user = 2;
 }
 
+// when a user is disconnecting, he will automatically send this kind of message to others
+message Disconnect {
+  string user = 1;
+}
+
 // message that can be exchanged between the client and the server
 // TYPE = "chat_message" if ChatMessage (for example)
 message Message {
@@ -43,5 +48,6 @@ message Message {
     ChatMessage chat_message = 2;
     UpdatePlayerPosition update_player_position = 3;
     UpdatePlayerStatus update_player_status = 4;
+    Disconnect disconnect = 5;
   }
 }
