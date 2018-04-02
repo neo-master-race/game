@@ -29,8 +29,7 @@ class Network : MonoBehaviour {
  private
   int fps = 30;
 
-  void Awake()
-  {
+  void Awake() {
     QualitySettings.vSyncCount = 0;
     Application.targetFrameRate = fps;
   }
@@ -60,7 +59,7 @@ class Network : MonoBehaviour {
  private
   void Update() {
     if (Application.targetFrameRate != fps)
-             Application.targetFrameRate = fps;
+      Application.targetFrameRate = fps;
     if (socketReady) {
       while (stream.DataAvailable) {
         onIncomingData();
@@ -131,11 +130,11 @@ class Network : MonoBehaviour {
   }
 
   // get the player (or create if needed)
-  private GameObject getPlayer(string clientName) {
+ private
+  GameObject getPlayer(string clientName) {
     GameObject player;
     if (!players.ContainsKey(clientName)) {
-      player =
-          Instantiate(carPrefab, carsContainer.transform) as GameObject;
+      player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
       players.Add(clientName, player);
     } else {
       player = players[clientName] as GameObject;
@@ -174,7 +173,14 @@ class Network : MonoBehaviour {
         break;
       case "update_player_status":
         Protocol.UpdatePlayerStatus ups = parsedData.UpdatePlayerStatus;
-        Google.Protobuf.Collections.RepeatedField<bool> wentThrough = ups.WentThrough;
+
+        IEnumerator<bool> num = ups.WentThrough.GetEnumerator();
+        List<bool> list = new List<bool>();
+        while (num.MoveNext()) {
+          list.Add(num.Current);
+        }
+        bool[] wentThrough = list.ToArray();
+
         int lapCount = ups.LapCount;
         bool hasHitSFLineOnce = ups.HasHitSFLineOnce;
         int cpCount = ups.CpCount;
@@ -221,23 +227,22 @@ class Network : MonoBehaviour {
 
   // tell the network to send player's current status to all others
  public
-  void UpdatePlayerStatus(
-        bool[] wentThrough,
-        int lapCount,
-        bool hasHitSFLineOnce,
-        int cpCount,
-        int nextCheckpointNumber,
-        int supposedNextCheckpointNumber) {
-
+  void UpdatePlayerStatus(bool[] wentThrough,
+                          int lapCount,
+                          bool hasHitSFLineOnce,
+                          int cpCount,
+                          int nextCheckpointNumber,
+                          int supposedNextCheckpointNumber) {
     // all together
     Protocol.UpdatePlayerStatus ups = new Protocol.UpdatePlayerStatus{
-      // WentThrough = wentThrough, // @TODO: cette ligne pose problème
-      LapCount = lapCount,
-      HasHitSFLineOnce = hasHitSFLineOnce,
-      CpCount = cpCount,
-      NextCheckpointNumber = nextCheckpointNumber,
-      SupposedNextCheckpointNumber = supposedNextCheckpointNumber,
-      User = clientName};
+        LapCount = lapCount,
+        HasHitSFLineOnce = hasHitSFLineOnce,
+        CpCount = cpCount,
+        NextCheckpointNumber = nextCheckpointNumber,
+        SupposedNextCheckpointNumber = supposedNextCheckpointNumber,
+        User = clientName};
+
+    ups.WentThrough.Add(wentThrough);
 
     // final message that we can send
     Protocol.Message msg = new Protocol.Message{Type = "update_player_status",
