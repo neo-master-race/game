@@ -203,6 +203,7 @@ class Network : MonoBehaviour {
         break;
       case "disconnect":
         user = parsedData.Disconnect.User;
+        Destroy(getPlayer(user));
         players.Remove(user);
         break;
       default:
