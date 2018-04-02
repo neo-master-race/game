@@ -1,14 +1,14 @@
 syntax = "proto3";
 package protocol;
 
-// Vec3
+// Vector3
 message Vector {
   float x = 1;
   float y = 2;
   float z = 3;
 }
 
-// Update the position of a user
+// update the position of a user
 message UpdatePlayerPosition {
   Vector position = 1;
   Vector direction = 2;
@@ -17,10 +17,27 @@ message UpdatePlayerPosition {
   Vector velocity = 5;
 }
 
+// update the status of a player
+message UpdatePlayerStatus {
+  repeated bool went_through = 1; // tableau de booléens
+  int32 lap_count = 2;
+  bool has_hit_s_f_line_once = 3;
+  int32 cp_count = 4;
+  int32 next_checkpoint_number = 5;
+  int32 supposed_next_checkpoint_number = 6;
+  string user = 7;
+}
+
+
 // definition of a chat message
 message ChatMessage {
   string content = 1;
   string user = 2;
+}
+
+// when a user is disconnecting, he will automatically send this kind of message to others
+message Disconnect {
+  string user = 1;
 }
 
 // message that can be exchanged between the client and the server
@@ -30,5 +47,7 @@ message Message {
   oneof msg {
     ChatMessage chat_message = 2;
     UpdatePlayerPosition update_player_position = 3;
+    UpdatePlayerStatus update_player_status = 4;
+    Disconnect disconnect = 5;
   }
 }

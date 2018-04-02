@@ -10,80 +10,100 @@ public class Checkpoints_Check : MonoBehaviour
 {
 
     [Header("Script Source requirement (0 for all on checkpoints object)")]
+    public GameObject localPlayer;
     public GameObject checkpointsParentScript;
     public GameObject[] checkpoints_collider;
-    public bool[] wentThrough;
-    public int lap_count = 1;
-    public bool hasHitSFLineOnce;
-    public int nextCheckpointNumber=1;
-    public int supposedNextCheckpointNumber = 1;
-
-    [Header("Waypoints variables")]
     public GameObject[] wayPoints;
-    public float[] distanceToWaypoint;
+    public bool initializedWaypointDistances;
+    public bool initializedWaypointDistancesConfirmation=false;
+
     [Space(20)]
 
     [Header("Checkpoints variables (0 for all on script source)")]
     public bool isStartFinishLine;
     public int checkpointNumber;
+    
+    private int cpNumber;
+
+    private GameObject[] players;
 
     
 
 
-    private int cpNumber;
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider car)
     {
         if (this.gameObject.GetComponent<Checkpoints_Check>().isStartFinishLine)
         {
-            if (!checkpointsParentScript.GetComponent<Checkpoints_Check>().hasHitSFLineOnce)
-                checkpointsParentScript.GetComponent<Checkpoints_Check>().hasHitSFLineOnce = true;
+            if (!car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
+                car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
             else
             {
-                int cp_count = 0;
-                if (checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber
-                    && checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length)
-                    checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length - 1] = true;
-                for (int i = 0; i <= checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length - 1; i++)
+                if (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
+                    && car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
-                    if (checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[i] == true)
-                        cp_count++;
+                    car.GetComponent<Player_Info_Ingame>().cp_count++;
+                    car.GetComponent<Player_Info_Ingame>().wentThrough[car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
                 }
-                if (cp_count == checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length)
+                    
+                /*for (int i = 0; i <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
                 {
-                    checkpointsParentScript.GetComponent<Checkpoints_Check>().lap_count++;
-                    for (int j = 0; j <= checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough.Length - 1; j++)
-                        checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[j] = false;
-                    checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber = 1;
+                    if (car.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
+                        car.GetComponent<Player_Info_Ingame>().cp_count++;
+                }*/
+                if (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length)
+                {
+                    Debug.Log(this.name+" "+car.GetComponent<Player_Info_Ingame>().cp_count);
+                    car.GetComponent<Player_Info_Ingame>().lap_count++;
+                    car.GetComponent<Player_Info_Ingame>().cp_count = 0;
+                    for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
+                        car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
+                    car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
+                    GameObject.Find("Race_Control").GetComponent<player_info_server>().players_laps[0] = 5;
                 }
-                checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber = 1;
+                car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
             }
         }
         else
         {
-            if (checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
-                && checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber == checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber)
+            if (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
+                && car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber)
             {
-                checkpointsParentScript.GetComponent<Checkpoints_Check>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
-                checkpointsParentScript.GetComponent<Checkpoints_Check>().nextCheckpointNumber++;
+                car.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
+                car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber++;
+                car.GetComponent<Player_Info_Ingame>().cp_count++;
             }
-            checkpointsParentScript.GetComponent<Checkpoints_Check>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
+            car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
         }
     }
 
 	// Use this for initialization
 	void Start () {
         cpNumber = checkpoints_collider.Length;
+        players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                localPlayer = player;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-		for(int i=0;i< cpNumber;i++)
+        players = GameObject.FindGameObjectsWithTag("Player");
+        
+        foreach (GameObject player in players)
         {
-            if (i == (supposedNextCheckpointNumber-1))
-                distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, GameObject.Find("Stratos").transform.position);
-            else
-                distanceToWaypoint[i] = 0.0f;
+            for (int i = 0; i < cpNumber; i++)
+            {
+                if (i == (player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber - 1))
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, player.transform.position);
+                else
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = 0.0f;
+            }
         }
-	}
+        if(!initializedWaypointDistances)
+            initializedWaypointDistances = true;
+
+    }
 }

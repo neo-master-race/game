@@ -27,18 +27,28 @@ namespace Protocol {
             "dGlvbhIiCghwb3NpdGlvbhgBIAEoCzIQLnByb3RvY29sLlZlY3RvchIjCglk",
             "aXJlY3Rpb24YAiABKAsyEC5wcm90b2NvbC5WZWN0b3ISHwoFc2NhbGUYAyAB",
             "KAsyEC5wcm90b2NvbC5WZWN0b3ISDAoEdXNlchgEIAEoCRIiCgh2ZWxvY2l0",
-            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciIsCgtDaGF0TWVzc2FnZRIPCgdj",
-            "b250ZW50GAEgASgJEgwKBHVzZXIYAiABKAkijwEKB01lc3NhZ2USDAoEdHlw",
-            "ZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2NvbC5DaGF0",
-            "TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24YAyABKAsyHi5w",
-            "cm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAQgUKA21zZ2IGcHJvdG8z"));
+            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciLFAQoSVXBkYXRlUGxheWVyU3Rh",
+            "dHVzEhQKDHdlbnRfdGhyb3VnaBgBIAMoCBIRCglsYXBfY291bnQYAiABKAUS",
+            "HQoVaGFzX2hpdF9zX2ZfbGluZV9vbmNlGAMgASgIEhAKCGNwX2NvdW50GAQg",
+            "ASgFEh4KFm5leHRfY2hlY2twb2ludF9udW1iZXIYBSABKAUSJwofc3VwcG9z",
+            "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBRIMCgR1c2VyGAcgASgJ",
+            "IiwKC0NoYXRNZXNzYWdlEg8KB2NvbnRlbnQYASABKAkSDAoEdXNlchgCIAEo",
+            "CSIaCgpEaXNjb25uZWN0EgwKBHVzZXIYASABKAki+QEKB01lc3NhZ2USDAoE",
+            "dHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2NvbC5D",
+            "aGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24YAyABKAsy",
+            "Hi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAEjwKFHVwZGF0ZV9w",
+            "bGF5ZXJfc3RhdHVzGAQgASgLMhwucHJvdG9jb2wuVXBkYXRlUGxheWVyU3Rh",
+            "dHVzSAASKgoKZGlzY29ubmVjdBgFIAEoCzIULnByb3RvY29sLkRpc2Nvbm5l",
+            "Y3RIAEIFCgNtc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Vector), global::Protocol.Vector.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User", "Velocity" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Disconnect), global::Protocol.Disconnect.Parser, new[]{ "User" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -46,7 +56,7 @@ namespace Protocol {
   }
   #region Messages
   /// <summary>
-  ///  Vec3
+  ///  Vector3
   /// </summary>
   public sealed partial class Vector : pb::IMessage<Vector> {
     private static readonly pb::MessageParser<Vector> _parser = new pb::MessageParser<Vector>(() => new Vector());
@@ -222,7 +232,7 @@ namespace Protocol {
   }
 
   /// <summary>
-  ///  Update the position of a user
+  ///  update the position of a user
   /// </summary>
   public sealed partial class UpdatePlayerPosition : pb::IMessage<UpdatePlayerPosition> {
     private static readonly pb::MessageParser<UpdatePlayerPosition> _parser = new pb::MessageParser<UpdatePlayerPosition>(() => new UpdatePlayerPosition());
@@ -478,6 +488,290 @@ namespace Protocol {
   }
 
   /// <summary>
+  ///  update the status of a player
+  /// </summary>
+  public sealed partial class UpdatePlayerStatus : pb::IMessage<UpdatePlayerStatus> {
+    private static readonly pb::MessageParser<UpdatePlayerStatus> _parser = new pb::MessageParser<UpdatePlayerStatus>(() => new UpdatePlayerStatus());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdatePlayerStatus> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatus() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatus(UpdatePlayerStatus other) : this() {
+      wentThrough_ = other.wentThrough_.Clone();
+      lapCount_ = other.lapCount_;
+      hasHitSFLineOnce_ = other.hasHitSFLineOnce_;
+      cpCount_ = other.cpCount_;
+      nextCheckpointNumber_ = other.nextCheckpointNumber_;
+      supposedNextCheckpointNumber_ = other.supposedNextCheckpointNumber_;
+      user_ = other.user_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatus Clone() {
+      return new UpdatePlayerStatus(this);
+    }
+
+    /// <summary>Field number for the "went_through" field.</summary>
+    public const int WentThroughFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool> _repeated_wentThrough_codec
+        = pb::FieldCodec.ForBool(10);
+    private readonly pbc::RepeatedField<bool> wentThrough_ = new pbc::RepeatedField<bool>();
+    /// <summary>
+    ///  tableau de booléens
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<bool> WentThrough {
+      get { return wentThrough_; }
+    }
+
+    /// <summary>Field number for the "lap_count" field.</summary>
+    public const int LapCountFieldNumber = 2;
+    private int lapCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LapCount {
+      get { return lapCount_; }
+      set {
+        lapCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "has_hit_s_f_line_once" field.</summary>
+    public const int HasHitSFLineOnceFieldNumber = 3;
+    private bool hasHitSFLineOnce_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasHitSFLineOnce {
+      get { return hasHitSFLineOnce_; }
+      set {
+        hasHitSFLineOnce_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cp_count" field.</summary>
+    public const int CpCountFieldNumber = 4;
+    private int cpCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CpCount {
+      get { return cpCount_; }
+      set {
+        cpCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_checkpoint_number" field.</summary>
+    public const int NextCheckpointNumberFieldNumber = 5;
+    private int nextCheckpointNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NextCheckpointNumber {
+      get { return nextCheckpointNumber_; }
+      set {
+        nextCheckpointNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "supposed_next_checkpoint_number" field.</summary>
+    public const int SupposedNextCheckpointNumberFieldNumber = 6;
+    private int supposedNextCheckpointNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SupposedNextCheckpointNumber {
+      get { return supposedNextCheckpointNumber_; }
+      set {
+        supposedNextCheckpointNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 7;
+    private string user_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string User {
+      get { return user_; }
+      set {
+        user_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdatePlayerStatus);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdatePlayerStatus other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!wentThrough_.Equals(other.wentThrough_)) return false;
+      if (LapCount != other.LapCount) return false;
+      if (HasHitSFLineOnce != other.HasHitSFLineOnce) return false;
+      if (CpCount != other.CpCount) return false;
+      if (NextCheckpointNumber != other.NextCheckpointNumber) return false;
+      if (SupposedNextCheckpointNumber != other.SupposedNextCheckpointNumber) return false;
+      if (User != other.User) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= wentThrough_.GetHashCode();
+      if (LapCount != 0) hash ^= LapCount.GetHashCode();
+      if (HasHitSFLineOnce != false) hash ^= HasHitSFLineOnce.GetHashCode();
+      if (CpCount != 0) hash ^= CpCount.GetHashCode();
+      if (NextCheckpointNumber != 0) hash ^= NextCheckpointNumber.GetHashCode();
+      if (SupposedNextCheckpointNumber != 0) hash ^= SupposedNextCheckpointNumber.GetHashCode();
+      if (User.Length != 0) hash ^= User.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      wentThrough_.WriteTo(output, _repeated_wentThrough_codec);
+      if (LapCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(LapCount);
+      }
+      if (HasHitSFLineOnce != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(HasHitSFLineOnce);
+      }
+      if (CpCount != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CpCount);
+      }
+      if (NextCheckpointNumber != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(NextCheckpointNumber);
+      }
+      if (SupposedNextCheckpointNumber != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(SupposedNextCheckpointNumber);
+      }
+      if (User.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(User);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += wentThrough_.CalculateSize(_repeated_wentThrough_codec);
+      if (LapCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LapCount);
+      }
+      if (HasHitSFLineOnce != false) {
+        size += 1 + 1;
+      }
+      if (CpCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CpCount);
+      }
+      if (NextCheckpointNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NextCheckpointNumber);
+      }
+      if (SupposedNextCheckpointNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SupposedNextCheckpointNumber);
+      }
+      if (User.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdatePlayerStatus other) {
+      if (other == null) {
+        return;
+      }
+      wentThrough_.Add(other.wentThrough_);
+      if (other.LapCount != 0) {
+        LapCount = other.LapCount;
+      }
+      if (other.HasHitSFLineOnce != false) {
+        HasHitSFLineOnce = other.HasHitSFLineOnce;
+      }
+      if (other.CpCount != 0) {
+        CpCount = other.CpCount;
+      }
+      if (other.NextCheckpointNumber != 0) {
+        NextCheckpointNumber = other.NextCheckpointNumber;
+      }
+      if (other.SupposedNextCheckpointNumber != 0) {
+        SupposedNextCheckpointNumber = other.SupposedNextCheckpointNumber;
+      }
+      if (other.User.Length != 0) {
+        User = other.User;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10:
+          case 8: {
+            wentThrough_.AddEntriesFrom(input, _repeated_wentThrough_codec);
+            break;
+          }
+          case 16: {
+            LapCount = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            HasHitSFLineOnce = input.ReadBool();
+            break;
+          }
+          case 32: {
+            CpCount = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            NextCheckpointNumber = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            SupposedNextCheckpointNumber = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            User = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///  definition of a chat message
   /// </summary>
   public sealed partial class ChatMessage : pb::IMessage<ChatMessage> {
@@ -487,7 +781,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -626,6 +920,126 @@ namespace Protocol {
   }
 
   /// <summary>
+  ///  when a user is disconnecting, he will automatically send this kind of message to others
+  /// </summary>
+  public sealed partial class Disconnect : pb::IMessage<Disconnect> {
+    private static readonly pb::MessageParser<Disconnect> _parser = new pb::MessageParser<Disconnect>(() => new Disconnect());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Disconnect> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Disconnect() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Disconnect(Disconnect other) : this() {
+      user_ = other.user_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Disconnect Clone() {
+      return new Disconnect(this);
+    }
+
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 1;
+    private string user_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string User {
+      get { return user_; }
+      set {
+        user_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Disconnect);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Disconnect other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (User != other.User) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (User.Length != 0) hash ^= User.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (User.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(User);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (User.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Disconnect other) {
+      if (other == null) {
+        return;
+      }
+      if (other.User.Length != 0) {
+        User = other.User;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            User = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
   /// </summary>
@@ -636,7 +1050,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -660,6 +1074,12 @@ namespace Protocol {
           break;
         case MsgOneofCase.UpdatePlayerPosition:
           UpdatePlayerPosition = other.UpdatePlayerPosition.Clone();
+          break;
+        case MsgOneofCase.UpdatePlayerStatus:
+          UpdatePlayerStatus = other.UpdatePlayerStatus.Clone();
+          break;
+        case MsgOneofCase.Disconnect:
+          Disconnect = other.Disconnect.Clone();
           break;
       }
 
@@ -706,12 +1126,36 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "update_player_status" field.</summary>
+    public const int UpdatePlayerStatusFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UpdatePlayerStatus UpdatePlayerStatus {
+      get { return msgCase_ == MsgOneofCase.UpdatePlayerStatus ? (global::Protocol.UpdatePlayerStatus) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.UpdatePlayerStatus;
+      }
+    }
+
+    /// <summary>Field number for the "disconnect" field.</summary>
+    public const int DisconnectFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.Disconnect Disconnect {
+      get { return msgCase_ == MsgOneofCase.Disconnect ? (global::Protocol.Disconnect) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.Disconnect;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
       None = 0,
       ChatMessage = 2,
       UpdatePlayerPosition = 3,
+      UpdatePlayerStatus = 4,
+      Disconnect = 5,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -741,6 +1185,8 @@ namespace Protocol {
       if (Type != other.Type) return false;
       if (!object.Equals(ChatMessage, other.ChatMessage)) return false;
       if (!object.Equals(UpdatePlayerPosition, other.UpdatePlayerPosition)) return false;
+      if (!object.Equals(UpdatePlayerStatus, other.UpdatePlayerStatus)) return false;
+      if (!object.Equals(Disconnect, other.Disconnect)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -751,6 +1197,8 @@ namespace Protocol {
       if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (msgCase_ == MsgOneofCase.ChatMessage) hash ^= ChatMessage.GetHashCode();
       if (msgCase_ == MsgOneofCase.UpdatePlayerPosition) hash ^= UpdatePlayerPosition.GetHashCode();
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) hash ^= UpdatePlayerStatus.GetHashCode();
+      if (msgCase_ == MsgOneofCase.Disconnect) hash ^= Disconnect.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -774,6 +1222,14 @@ namespace Protocol {
         output.WriteRawTag(26);
         output.WriteMessage(UpdatePlayerPosition);
       }
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) {
+        output.WriteRawTag(34);
+        output.WriteMessage(UpdatePlayerStatus);
+      }
+      if (msgCase_ == MsgOneofCase.Disconnect) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Disconnect);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -787,6 +1243,12 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.UpdatePlayerPosition) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatePlayerPosition);
+      }
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatePlayerStatus);
+      }
+      if (msgCase_ == MsgOneofCase.Disconnect) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Disconnect);
       }
       return size;
     }
@@ -805,6 +1267,12 @@ namespace Protocol {
           break;
         case MsgOneofCase.UpdatePlayerPosition:
           UpdatePlayerPosition = other.UpdatePlayerPosition;
+          break;
+        case MsgOneofCase.UpdatePlayerStatus:
+          UpdatePlayerStatus = other.UpdatePlayerStatus;
+          break;
+        case MsgOneofCase.Disconnect:
+          Disconnect = other.Disconnect;
           break;
       }
 
@@ -838,6 +1306,24 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             UpdatePlayerPosition = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Protocol.UpdatePlayerStatus subBuilder = new global::Protocol.UpdatePlayerStatus();
+            if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) {
+              subBuilder.MergeFrom(UpdatePlayerStatus);
+            }
+            input.ReadMessage(subBuilder);
+            UpdatePlayerStatus = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Protocol.Disconnect subBuilder = new global::Protocol.Disconnect();
+            if (msgCase_ == MsgOneofCase.Disconnect) {
+              subBuilder.MergeFrom(Disconnect);
+            }
+            input.ReadMessage(subBuilder);
+            Disconnect = subBuilder;
             break;
           }
         }
