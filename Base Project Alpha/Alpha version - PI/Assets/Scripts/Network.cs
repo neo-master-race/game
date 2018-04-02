@@ -201,6 +201,10 @@ class Network : MonoBehaviour {
         Debug.Log("Received from " + chatMsg.User +
                   " the following message: " + chatMsg.Content);
         break;
+      case "disconnect":
+        user = parsedData.Disconnect.User;
+        players.Remove(user);
+        break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
