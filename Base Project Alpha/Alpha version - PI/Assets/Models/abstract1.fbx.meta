@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 803ecea0d5b48df4380f45f7a55ecabf
+timeCreated: 1522842973
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camera
+    100004: Camera.001
+    100006: Cube
+    100008: Cube.001
+    100010: Cube.002
+    100012: Cube.004
+    100014: Cube.005
+    100016: Cube.006
+    100018: Empty
+    100020: Lamp
+    100022: NurbsCircle
+    100024: NurbsCircle.001
+    100026: NurbsCircle.002
+    100028: NurbsCircle.003
+    100030: Plane
+    100032: Plane.001
+    100034: Plane.002
+    100036: Plane.003
+    100038: Plane.004
+    100040: Sphere
+    400000: //RootNode
+    400002: Camera
+    400004: Camera.001
+    400006: Cube
+    400008: Cube.001
+    400010: Cube.002
+    400012: Cube.004
+    400014: Cube.005
+    400016: Cube.006
+    400018: Empty
+    400020: Lamp
+    400022: NurbsCircle
+    400024: NurbsCircle.001
+    400026: NurbsCircle.002
+    400028: NurbsCircle.003
+    400030: Plane
+    400032: Plane.001
+    400034: Plane.002
+    400036: Plane.003
+    400038: Plane.004
+    400040: Sphere
+    2000000: Camera
+    2000002: Camera.001
+    2100000: world
+    2100002: pole
+    2100004: light_strong
+    2100006: light_weak
+    2100008: black
+    2100010: side
+    2100012: walls
+    2100014: center
+    2100016: turn
+    2100018: No Name
+    2100020: paint
+    2100022: plastic
+    2100024: metal
+    2100026: headlight
+    2100028: hidden
+    2100030: window
+    2100032: tail light
+    2100034: turn light
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.004
+    2300008: Cube.005
+    2300010: Cube.006
+    2300012: NurbsCircle
+    2300014: NurbsCircle.001
+    2300016: NurbsCircle.002
+    2300018: NurbsCircle.003
+    2300020: Plane
+    2300022: Plane.001
+    2300024: Plane.002
+    2300026: Plane.003
+    2300028: Plane.004
+    2300030: Sphere
+    2300032: //RootNode
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.004
+    3300008: Cube.005
+    3300010: Cube.006
+    3300012: NurbsCircle
+    3300014: NurbsCircle.001
+    3300016: NurbsCircle.002
+    3300018: NurbsCircle.003
+    3300020: Plane
+    3300022: Plane.001
+    3300024: Plane.002
+    3300026: Plane.003
+    3300028: Plane.004
+    3300030: Sphere
+    3300032: //RootNode
+    4300000: Sphere
+    4300002: Cube.002
+    4300004: NurbsCircle.003
+    4300006: Plane.003
+    4300008: NurbsCircle.002
+    4300010: NurbsCircle.001
+    4300012: Plane.002
+    4300014: Plane.001
+    4300016: NurbsCircle
+    4300018: Plane.004
+    4300020: Plane
+    4300022: Cube
+    4300024: Cube.001
+    4300026: Cube.004
+    4300028: Cube.005
+    4300030: Cube.006
+    10800000: Lamp
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
