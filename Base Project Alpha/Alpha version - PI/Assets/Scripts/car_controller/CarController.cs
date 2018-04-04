@@ -37,8 +37,26 @@ public class CarController : MonoBehaviour
     public bool isLocalPlayer;
     private int limiter = 0;
 
+    public void updatePlayerStatus() {
+        if (isLocalPlayer) {
+            Player_Info_Ingame pii = GetComponent<Player_Info_Ingame>();
+            GameObject
+                .Find("Network")
+                .GetComponent<Network>()
+                .UpdatePlayerStatus(
+                    pii.wentThrough,
+                    pii.lap_count,
+                    pii.hasHitSFLineOnce,
+                    pii.cp_count,
+                    pii.nextCheckpointNumber,
+                    pii.supposedNextCheckpointNumber
+                );
+        }
+    }
+
     void Start()
     {
+        Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
 

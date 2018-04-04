@@ -50,6 +50,7 @@ class Network : MonoBehaviour {
       socketReady = true;
 
       Debug.Log("socket is ready");
+      UpdatePlayerStatus();
     } catch (Exception e) {
       Debug.Log("socket error: " + e.Message);
     }
@@ -193,7 +194,19 @@ class Network : MonoBehaviour {
 
         player = getPlayer(user);
 
-        // @TODO: do something on the player an the datas we got
+        Debug.Log("Got status response from " + user);
+
+        break;
+      case "update_player_status_request":
+        GameObject[] cars = GameObject.FindGameObjectsWithTag("Player");
+
+        Debug.Log("Got request");
+        
+        foreach (GameObject car in cars) {
+          if (car.GetComponent<CarController>().isLocalPlayer) {
+            car.GetComponent<CarController>().updatePlayerStatus();
+          }
+        }
 
         break;
       case "chat_message":
@@ -254,5 +267,12 @@ class Network : MonoBehaviour {
                                                 UpdatePlayerStatus = ups};
 
     sendMessage(msg);
+  }
+
+  public void UpdatePlayerStatus() {
+    sendMessage(new Protocol.Message{
+      Type = "update_player_status_request",
+      UpdatePlayerStatusRequest = new Protocol.UpdatePlayerStatusRequest()
+    });
   }
 }
