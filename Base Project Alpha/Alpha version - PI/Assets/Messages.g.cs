@@ -32,23 +32,26 @@ namespace Protocol {
             "HQoVaGFzX2hpdF9zX2ZfbGluZV9vbmNlGAMgASgIEhAKCGNwX2NvdW50GAQg",
             "ASgFEh4KFm5leHRfY2hlY2twb2ludF9udW1iZXIYBSABKAUSJwofc3VwcG9z",
             "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBRIMCgR1c2VyGAcgASgJ",
-            "IiwKC0NoYXRNZXNzYWdlEg8KB2NvbnRlbnQYASABKAkSDAoEdXNlchgCIAEo",
-            "CSIaCgpEaXNjb25uZWN0EgwKBHVzZXIYASABKAki+QEKB01lc3NhZ2USDAoE",
-            "dHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5wcm90b2NvbC5D",
-            "aGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRpb24YAyABKAsy",
-            "Hi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAEjwKFHVwZGF0ZV9w",
-            "bGF5ZXJfc3RhdHVzGAQgASgLMhwucHJvdG9jb2wuVXBkYXRlUGxheWVyU3Rh",
-            "dHVzSAASKgoKZGlzY29ubmVjdBgFIAEoCzIULnByb3RvY29sLkRpc2Nvbm5l",
-            "Y3RIAEIFCgNtc2diBnByb3RvMw=="));
+            "IhsKGVVwZGF0ZVBsYXllclN0YXR1c1JlcXVlc3QiLAoLQ2hhdE1lc3NhZ2US",
+            "DwoHY29udGVudBgBIAEoCRIMCgR1c2VyGAIgASgJIhoKCkRpc2Nvbm5lY3QS",
+            "DAoEdXNlchgBIAEoCSLGAgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNo",
+            "YXRfbWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoW",
+            "dXBkYXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0",
+            "ZVBsYXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCAB",
+            "KAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25u",
+            "ZWN0GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9w",
+            "bGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQ",
+            "bGF5ZXJTdGF0dXNSZXF1ZXN0SABCBQoDbXNnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Vector), global::Protocol.Vector.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber", "User" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatusRequest), global::Protocol.UpdatePlayerStatusRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Disconnect), global::Protocol.Disconnect.Parser, new[]{ "User" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -772,6 +775,98 @@ namespace Protocol {
   }
 
   /// <summary>
+  ///  request other players status
+  /// </summary>
+  public sealed partial class UpdatePlayerStatusRequest : pb::IMessage<UpdatePlayerStatusRequest> {
+    private static readonly pb::MessageParser<UpdatePlayerStatusRequest> _parser = new pb::MessageParser<UpdatePlayerStatusRequest>(() => new UpdatePlayerStatusRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdatePlayerStatusRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatusRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatusRequest(UpdatePlayerStatusRequest other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdatePlayerStatusRequest Clone() {
+      return new UpdatePlayerStatusRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdatePlayerStatusRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdatePlayerStatusRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdatePlayerStatusRequest other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///  definition of a chat message
   /// </summary>
   public sealed partial class ChatMessage : pb::IMessage<ChatMessage> {
@@ -781,7 +876,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -929,7 +1024,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1050,7 +1145,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1080,6 +1175,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.Disconnect:
           Disconnect = other.Disconnect.Clone();
+          break;
+        case MsgOneofCase.UpdatePlayerStatusRequest:
+          UpdatePlayerStatusRequest = other.UpdatePlayerStatusRequest.Clone();
           break;
       }
 
@@ -1148,6 +1246,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "update_player_status_request" field.</summary>
+    public const int UpdatePlayerStatusRequestFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UpdatePlayerStatusRequest UpdatePlayerStatusRequest {
+      get { return msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest ? (global::Protocol.UpdatePlayerStatusRequest) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.UpdatePlayerStatusRequest;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -1156,6 +1265,7 @@ namespace Protocol {
       UpdatePlayerPosition = 3,
       UpdatePlayerStatus = 4,
       Disconnect = 5,
+      UpdatePlayerStatusRequest = 6,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1187,6 +1297,7 @@ namespace Protocol {
       if (!object.Equals(UpdatePlayerPosition, other.UpdatePlayerPosition)) return false;
       if (!object.Equals(UpdatePlayerStatus, other.UpdatePlayerStatus)) return false;
       if (!object.Equals(Disconnect, other.Disconnect)) return false;
+      if (!object.Equals(UpdatePlayerStatusRequest, other.UpdatePlayerStatusRequest)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -1199,6 +1310,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.UpdatePlayerPosition) hash ^= UpdatePlayerPosition.GetHashCode();
       if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) hash ^= UpdatePlayerStatus.GetHashCode();
       if (msgCase_ == MsgOneofCase.Disconnect) hash ^= Disconnect.GetHashCode();
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) hash ^= UpdatePlayerStatusRequest.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -1230,6 +1342,10 @@ namespace Protocol {
         output.WriteRawTag(42);
         output.WriteMessage(Disconnect);
       }
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) {
+        output.WriteRawTag(50);
+        output.WriteMessage(UpdatePlayerStatusRequest);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1249,6 +1365,9 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.Disconnect) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Disconnect);
+      }
+      if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatePlayerStatusRequest);
       }
       return size;
     }
@@ -1273,6 +1392,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.Disconnect:
           Disconnect = other.Disconnect;
+          break;
+        case MsgOneofCase.UpdatePlayerStatusRequest:
+          UpdatePlayerStatusRequest = other.UpdatePlayerStatusRequest;
           break;
       }
 
@@ -1324,6 +1446,15 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             Disconnect = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Protocol.UpdatePlayerStatusRequest subBuilder = new global::Protocol.UpdatePlayerStatusRequest();
+            if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) {
+              subBuilder.MergeFrom(UpdatePlayerStatusRequest);
+            }
+            input.ReadMessage(subBuilder);
+            UpdatePlayerStatusRequest = subBuilder;
             break;
           }
         }
