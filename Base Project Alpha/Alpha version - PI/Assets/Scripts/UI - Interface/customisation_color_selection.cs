@@ -15,7 +15,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 
     public Material vehicleMainColor;
 
-    public Color vehicle_color;
+    private Color vehicle_color;
 
     private float cursorPositionX=-1f;
     private float cursorPositionY=-1f;
