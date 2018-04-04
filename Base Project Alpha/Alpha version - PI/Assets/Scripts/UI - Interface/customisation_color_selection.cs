@@ -15,10 +15,13 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 
     public Material vehicleMainColor;
 
-    private Color vehicle_color;
+    public Color vehicle_color;
 
     private float cursorPositionX=-1f;
     private float cursorPositionY=-1f;
+
+    private float cursorLocalPositionX = -1f;
+    private float cursorLocalPositionY = -1f;
 
     // Use this for initialization
     void Start () {
@@ -27,17 +30,13 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
 	
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
-        Debug.Log("division: " + ((Screen.width / 1024f) * (1024f/Screen.width)));
-        Debug.Log("a:" + Screen.width);
-        Debug.Log("x:"+pointerData.position.x);
-        Debug.Log("x+:" + ((pointerData.position.x - 512f * (Screen.width/1024f))));// *(1024f/Screen.width)));
-        if (pointerData.position.x>=512f * (Screen.width / 1024f) && pointerData.position.x <= 712f*(Screen.width/1024f) && pointerData.position.y >= 484f * (Screen.height / 768f) && pointerData.position.y <= 684f * (Screen.height / 768f))
-        {
-            GameObject.Find("cursor_texture").transform.localPosition = new Vector3((pointerData.position.x - 512f * (Screen.width / 1024f))* (1024f/Screen.width), pointerData.position.y - 484f * (Screen.height / 768f), 0);
-            cursorPositionX = pointerData.position.x;
-            cursorPositionY = pointerData.position.y;
-            vehicleMainColor.color = calculate_color_general(pointerData.position.x-512f, pointerData.position.y-484f );
-        }
+
+        cursorPositionX = pointerData.position.x;
+        cursorPositionY = pointerData.position.y;
+        GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
+        cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
+        cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
+        vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
     }
 
     //suivant la position du slider sur le gradient 2D choisi par l'utilisateur change les paramètres du gradient (carré) 3D pour changer la tonalité de couleur en temps réel
@@ -74,7 +73,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
         //appelle la fonction de changement de tonalité et de changement de couleur du véhicule à chaque frame pour avoir un changement adaptatif sans attente d'évènements par l'utilisateur
         vehicle_color=calculate_color_range(colorPicked.value);
         gradient3D.SetColor("_Color_TopR", vehicle_color);
-        if(cursorPositionX>=0 && cursorPositionY>=0)
-            vehicleMainColor.color = calculate_color_general(cursorPositionX - 512f, cursorPositionY - 484f);
+        if(cursorLocalPositionX>=0 && cursorLocalPositionY>=0)
+            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
     }
 }
