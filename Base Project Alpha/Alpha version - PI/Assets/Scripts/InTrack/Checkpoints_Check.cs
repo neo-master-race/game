@@ -53,8 +53,9 @@ public class Checkpoints_Check : MonoBehaviour
                 }*/
                 if (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length)
                 {
-                    Debug.Log(this.name+" "+car.GetComponent<Player_Info_Ingame>().cp_count);
                     car.GetComponent<Player_Info_Ingame>().lap_count++;
+                    if(car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                        GameObject.Find("LapCounter").GetComponent<LapCount>().setCurrentLap(car.GetComponent<Player_Info_Ingame>().lap_count);
                     car.GetComponent<Player_Info_Ingame>().cp_count = 0;
                     for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
                         car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
