@@ -195,6 +195,12 @@ class Network : MonoBehaviour {
         player = getPlayer(user);
 
         Debug.Log("Got status response from " + user);
+        player.GetComponent<Player_Info_Ingame>().lap_count = lapCount;
+        player.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = hasHitSFLineOnce;
+        player.GetComponent<Player_Info_Ingame>().cp_count = cpCount;
+        player.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = nextCheckpointNumber;
+        player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = supposedNextCheckpointNumber;
+        player.GetComponent<Player_Info_Ingame>().wentThrough = wentThrough;
 
         break;
       case "update_player_status_request":
