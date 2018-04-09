@@ -10,13 +10,14 @@ public class player_info_server : MonoBehaviour {
     public GameObject[] playersLeaderboard;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         players = GameObject.FindGameObjectsWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
         /*for (int i = 0; i < players.Length ; i++)
         {
             players_laps[i] = players[i].GetComponent<Player_Info_Ingame>().lap_count;
