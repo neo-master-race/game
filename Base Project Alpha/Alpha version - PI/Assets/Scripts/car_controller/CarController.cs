@@ -30,6 +30,8 @@ public class CarController : MonoBehaviour
     public GameObject buttonForward;
     public GameObject buttonBackward;
 
+    public GameObject network;
+
     int layerMask; //éviter de prendre en compte le vehicule dans le raycast 
 
     public float current_speed=8000f;
@@ -37,25 +39,10 @@ public class CarController : MonoBehaviour
     public bool isLocalPlayer;
     private int limiter = 0;
 
-    public void updatePlayerStatus() {
-        if (isLocalPlayer) {
-            Player_Info_Ingame pii = GetComponent<Player_Info_Ingame>();
-            GameObject
-                .Find("Network")
-                .GetComponent<Network>()
-                .UpdatePlayerStatus(
-                    pii.wentThrough,
-                    pii.lap_count,
-                    pii.hasHitSFLineOnce,
-                    pii.cp_count,
-                    pii.nextCheckpointNumber,
-                    pii.supposedNextCheckpointNumber
-                );
-        }
-    }
-
     void Start()
     {
+        network = GameObject.Find("Network"); 
+
         Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
@@ -68,6 +55,8 @@ public class CarController : MonoBehaviour
             //Pour que l'orientation de la tablette ne change pas
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
+
+        buttonForward = GameObject.Find("PrefabInterface/ControlPanel/AccelerateRawImage");
     }
 
     public void boost(float multiplicator)
@@ -229,6 +218,24 @@ public class CarController : MonoBehaviour
         }
     }
 
+    public void updatePlayerStatus()
+    {
+        if (isLocalPlayer)
+        {
+            Player_Info_Ingame pii = GetComponent<Player_Info_Ingame>();
+            network
+                .GetComponent<Network>()
+                .UpdatePlayerStatus(
+                    pii.wentThrough,
+                    pii.lap_count,
+                    pii.hasHitSFLineOnce,
+                    pii.cp_count,
+                    pii.nextCheckpointNumber,
+                    pii.supposedNextCheckpointNumber
+                );
+        }
+    }
+
     private void updatePlayerPosition()
     {
         // vectors that we need to send
@@ -253,8 +260,7 @@ public class CarController : MonoBehaviour
             Z = body.velocity.z
         };
 
-        GameObject
-            .Find("Network")
+        network
             .GetComponent<Network>()
             .updatePlayerPosition(
                 vecPosition,
