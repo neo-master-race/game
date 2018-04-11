@@ -117,6 +117,7 @@ public class Player_Info_Ingame : MonoBehaviour {
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i + 1;
             }
             GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
+            //Debug.Log(leaderboardPosition);
         }
     }
 }
