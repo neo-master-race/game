@@ -6,18 +6,14 @@ using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
-    public GameObject inGame;
-
-	void Start ()
+    public void ByName(string track)
     {
-        Button button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
+        SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+        SceneManager.LoadScene(track, LoadSceneMode.Additive);
 
-        DontDestroyOnLoad(inGame); 
-	}
+        GameObject network = GameObject.Find("Network");
+        GameObject trackInterface = GameObject.Find("PrefabInterface");
 
-    void OnClick()
-    {
-        SceneManager.LoadScene("track1", LoadSceneMode.Single);
+        network.GetComponent<Network>().carsContainer = GameObject.Find("Cars"); 
     }
 }
