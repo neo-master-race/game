@@ -34,14 +34,20 @@ namespace Protocol {
             "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBRIMCgR1c2VyGAcgASgJ",
             "IhsKGVVwZGF0ZVBsYXllclN0YXR1c1JlcXVlc3QiLAoLQ2hhdE1lc3NhZ2US",
             "DwoHY29udGVudBgBIAEoCRIMCgR1c2VyGAIgASgJIhoKCkRpc2Nvbm5lY3QS",
-            "DAoEdXNlchgBIAEoCSLGAgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNo",
-            "YXRfbWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoW",
-            "dXBkYXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0",
-            "ZVBsYXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCAB",
-            "KAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25u",
-            "ZWN0GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9w",
-            "bGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQ",
-            "bGF5ZXJTdGF0dXNSZXF1ZXN0SABCBQoDbXNnYgZwcm90bzM="));
+            "DAoEdXNlchgBIAEoCSIMCgpDcmVhdGVSb29tIgsKCVN0YXJ0Um9vbSIKCghK",
+            "b2luUm9vbSIkChBTdGFydGluZ1Bvc2l0aW9uEhAKCHBvc2l0aW9uGAEgAygF",
+            "IoAECgdNZXNzYWdlEgwKBHR5cGUYASABKAkSLQoMY2hhdF9tZXNzYWdlGAIg",
+            "ASgLMhUucHJvdG9jb2wuQ2hhdE1lc3NhZ2VIABJAChZ1cGRhdGVfcGxheWVy",
+            "X3Bvc2l0aW9uGAMgASgLMh4ucHJvdG9jb2wuVXBkYXRlUGxheWVyUG9zaXRp",
+            "b25IABI8ChR1cGRhdGVfcGxheWVyX3N0YXR1cxgEIAEoCzIcLnByb3RvY29s",
+            "LlVwZGF0ZVBsYXllclN0YXR1c0gAEioKCmRpc2Nvbm5lY3QYBSABKAsyFC5w",
+            "cm90b2NvbC5EaXNjb25uZWN0SAASSwocdXBkYXRlX3BsYXllcl9zdGF0dXNf",
+            "cmVxdWVzdBgGIAEoCzIjLnByb3RvY29sLlVwZGF0ZVBsYXllclN0YXR1c1Jl",
+            "cXVlc3RIABIrCgtjcmVhdGVfcm9vbRgHIAEoCzIULnByb3RvY29sLkNyZWF0",
+            "ZVJvb21IABIpCgpzdGFydF9yb29tGAggASgLMhMucHJvdG9jb2wuU3RhcnRS",
+            "b29tSAASJwoJam9pbl9yb29tGAkgASgLMhIucHJvdG9jb2wuSm9pblJvb21I",
+            "ABI3ChFzdGFydGluZ19wb3NpdGlvbhgKIAEoCzIaLnByb3RvY29sLlN0YXJ0",
+            "aW5nUG9zaXRpb25IAEIFCgNtc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -51,7 +57,11 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatusRequest), global::Protocol.UpdatePlayerStatusRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Disconnect), global::Protocol.Disconnect.Parser, new[]{ "User" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.CreateRoom), global::Protocol.CreateRoom.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartRoom), global::Protocol.StartRoom.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoom), global::Protocol.JoinRoom.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -1015,7 +1025,8 @@ namespace Protocol {
   }
 
   /// <summary>
-  ///  when a user is disconnecting, he will automatically send this kind of message to others
+  ///  when a user is disconnecting, he will automatically send this kind of message
+  ///  to others
   /// </summary>
   public sealed partial class Disconnect : pb::IMessage<Disconnect> {
     private static readonly pb::MessageParser<Disconnect> _parser = new pb::MessageParser<Disconnect>(() => new Disconnect());
@@ -1135,6 +1146,392 @@ namespace Protocol {
   }
 
   /// <summary>
+  ///  request to create a new room
+  /// </summary>
+  public sealed partial class CreateRoom : pb::IMessage<CreateRoom> {
+    private static readonly pb::MessageParser<CreateRoom> _parser = new pb::MessageParser<CreateRoom>(() => new CreateRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CreateRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom(CreateRoom other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoom Clone() {
+      return new CreateRoom(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CreateRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CreateRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CreateRoom other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  starts a game
+  /// </summary>
+  public sealed partial class StartRoom : pb::IMessage<StartRoom> {
+    private static readonly pb::MessageParser<StartRoom> _parser = new pb::MessageParser<StartRoom>(() => new StartRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StartRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartRoom(StartRoom other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartRoom Clone() {
+      return new StartRoom(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StartRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StartRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StartRoom other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  join a room
+  /// </summary>
+  public sealed partial class JoinRoom : pb::IMessage<JoinRoom> {
+    private static readonly pb::MessageParser<JoinRoom> _parser = new pb::MessageParser<JoinRoom>(() => new JoinRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<JoinRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoom(JoinRoom other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoom Clone() {
+      return new JoinRoom(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as JoinRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(JoinRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(JoinRoom other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class StartingPosition : pb::IMessage<StartingPosition> {
+    private static readonly pb::MessageParser<StartingPosition> _parser = new pb::MessageParser<StartingPosition>(() => new StartingPosition());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StartingPosition> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartingPosition() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartingPosition(StartingPosition other) : this() {
+      position_ = other.position_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StartingPosition Clone() {
+      return new StartingPosition(this);
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 1;
+    private static readonly pb::FieldCodec<int> _repeated_position_codec
+        = pb::FieldCodec.ForInt32(10);
+    private readonly pbc::RepeatedField<int> position_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Position {
+      get { return position_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StartingPosition);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StartingPosition other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!position_.Equals(other.position_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= position_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      position_.WriteTo(output, _repeated_position_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += position_.CalculateSize(_repeated_position_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StartingPosition other) {
+      if (other == null) {
+        return;
+      }
+      position_.Add(other.position_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10:
+          case 8: {
+            position_.AddEntriesFrom(input, _repeated_position_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
   /// </summary>
@@ -1145,7 +1542,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1178,6 +1575,18 @@ namespace Protocol {
           break;
         case MsgOneofCase.UpdatePlayerStatusRequest:
           UpdatePlayerStatusRequest = other.UpdatePlayerStatusRequest.Clone();
+          break;
+        case MsgOneofCase.CreateRoom:
+          CreateRoom = other.CreateRoom.Clone();
+          break;
+        case MsgOneofCase.StartRoom:
+          StartRoom = other.StartRoom.Clone();
+          break;
+        case MsgOneofCase.JoinRoom:
+          JoinRoom = other.JoinRoom.Clone();
+          break;
+        case MsgOneofCase.StartingPosition:
+          StartingPosition = other.StartingPosition.Clone();
           break;
       }
 
@@ -1257,6 +1666,50 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "create_room" field.</summary>
+    public const int CreateRoomFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.CreateRoom CreateRoom {
+      get { return msgCase_ == MsgOneofCase.CreateRoom ? (global::Protocol.CreateRoom) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.CreateRoom;
+      }
+    }
+
+    /// <summary>Field number for the "start_room" field.</summary>
+    public const int StartRoomFieldNumber = 8;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.StartRoom StartRoom {
+      get { return msgCase_ == MsgOneofCase.StartRoom ? (global::Protocol.StartRoom) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.StartRoom;
+      }
+    }
+
+    /// <summary>Field number for the "join_room" field.</summary>
+    public const int JoinRoomFieldNumber = 9;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.JoinRoom JoinRoom {
+      get { return msgCase_ == MsgOneofCase.JoinRoom ? (global::Protocol.JoinRoom) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.JoinRoom;
+      }
+    }
+
+    /// <summary>Field number for the "starting_position" field.</summary>
+    public const int StartingPositionFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.StartingPosition StartingPosition {
+      get { return msgCase_ == MsgOneofCase.StartingPosition ? (global::Protocol.StartingPosition) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.StartingPosition;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -1266,6 +1719,10 @@ namespace Protocol {
       UpdatePlayerStatus = 4,
       Disconnect = 5,
       UpdatePlayerStatusRequest = 6,
+      CreateRoom = 7,
+      StartRoom = 8,
+      JoinRoom = 9,
+      StartingPosition = 10,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1298,6 +1755,10 @@ namespace Protocol {
       if (!object.Equals(UpdatePlayerStatus, other.UpdatePlayerStatus)) return false;
       if (!object.Equals(Disconnect, other.Disconnect)) return false;
       if (!object.Equals(UpdatePlayerStatusRequest, other.UpdatePlayerStatusRequest)) return false;
+      if (!object.Equals(CreateRoom, other.CreateRoom)) return false;
+      if (!object.Equals(StartRoom, other.StartRoom)) return false;
+      if (!object.Equals(JoinRoom, other.JoinRoom)) return false;
+      if (!object.Equals(StartingPosition, other.StartingPosition)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -1311,6 +1772,10 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.UpdatePlayerStatus) hash ^= UpdatePlayerStatus.GetHashCode();
       if (msgCase_ == MsgOneofCase.Disconnect) hash ^= Disconnect.GetHashCode();
       if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) hash ^= UpdatePlayerStatusRequest.GetHashCode();
+      if (msgCase_ == MsgOneofCase.CreateRoom) hash ^= CreateRoom.GetHashCode();
+      if (msgCase_ == MsgOneofCase.StartRoom) hash ^= StartRoom.GetHashCode();
+      if (msgCase_ == MsgOneofCase.JoinRoom) hash ^= JoinRoom.GetHashCode();
+      if (msgCase_ == MsgOneofCase.StartingPosition) hash ^= StartingPosition.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -1346,6 +1811,22 @@ namespace Protocol {
         output.WriteRawTag(50);
         output.WriteMessage(UpdatePlayerStatusRequest);
       }
+      if (msgCase_ == MsgOneofCase.CreateRoom) {
+        output.WriteRawTag(58);
+        output.WriteMessage(CreateRoom);
+      }
+      if (msgCase_ == MsgOneofCase.StartRoom) {
+        output.WriteRawTag(66);
+        output.WriteMessage(StartRoom);
+      }
+      if (msgCase_ == MsgOneofCase.JoinRoom) {
+        output.WriteRawTag(74);
+        output.WriteMessage(JoinRoom);
+      }
+      if (msgCase_ == MsgOneofCase.StartingPosition) {
+        output.WriteRawTag(82);
+        output.WriteMessage(StartingPosition);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1368,6 +1849,18 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatePlayerStatusRequest);
+      }
+      if (msgCase_ == MsgOneofCase.CreateRoom) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateRoom);
+      }
+      if (msgCase_ == MsgOneofCase.StartRoom) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartRoom);
+      }
+      if (msgCase_ == MsgOneofCase.JoinRoom) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(JoinRoom);
+      }
+      if (msgCase_ == MsgOneofCase.StartingPosition) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartingPosition);
       }
       return size;
     }
@@ -1395,6 +1888,18 @@ namespace Protocol {
           break;
         case MsgOneofCase.UpdatePlayerStatusRequest:
           UpdatePlayerStatusRequest = other.UpdatePlayerStatusRequest;
+          break;
+        case MsgOneofCase.CreateRoom:
+          CreateRoom = other.CreateRoom;
+          break;
+        case MsgOneofCase.StartRoom:
+          StartRoom = other.StartRoom;
+          break;
+        case MsgOneofCase.JoinRoom:
+          JoinRoom = other.JoinRoom;
+          break;
+        case MsgOneofCase.StartingPosition:
+          StartingPosition = other.StartingPosition;
           break;
       }
 
@@ -1455,6 +1960,42 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             UpdatePlayerStatusRequest = subBuilder;
+            break;
+          }
+          case 58: {
+            global::Protocol.CreateRoom subBuilder = new global::Protocol.CreateRoom();
+            if (msgCase_ == MsgOneofCase.CreateRoom) {
+              subBuilder.MergeFrom(CreateRoom);
+            }
+            input.ReadMessage(subBuilder);
+            CreateRoom = subBuilder;
+            break;
+          }
+          case 66: {
+            global::Protocol.StartRoom subBuilder = new global::Protocol.StartRoom();
+            if (msgCase_ == MsgOneofCase.StartRoom) {
+              subBuilder.MergeFrom(StartRoom);
+            }
+            input.ReadMessage(subBuilder);
+            StartRoom = subBuilder;
+            break;
+          }
+          case 74: {
+            global::Protocol.JoinRoom subBuilder = new global::Protocol.JoinRoom();
+            if (msgCase_ == MsgOneofCase.JoinRoom) {
+              subBuilder.MergeFrom(JoinRoom);
+            }
+            input.ReadMessage(subBuilder);
+            JoinRoom = subBuilder;
+            break;
+          }
+          case 82: {
+            global::Protocol.StartingPosition subBuilder = new global::Protocol.StartingPosition();
+            if (msgCase_ == MsgOneofCase.StartingPosition) {
+              subBuilder.MergeFrom(StartingPosition);
+            }
+            input.ReadMessage(subBuilder);
+            StartingPosition = subBuilder;
             break;
           }
         }

@@ -37,9 +37,21 @@ message ChatMessage {
   string user = 2;
 }
 
-// when a user is disconnecting, he will automatically send this kind of message to others
-message Disconnect {
-  string user = 1;
+// when a user is disconnecting, he will automatically send this kind of message
+// to others
+message Disconnect { string user = 1; }
+
+// request to create a new room
+message CreateRoom {}
+
+// starts a game
+message StartRoom {}
+
+// join a room
+message JoinRoom {}
+
+message StartingPosition {
+  repeated int32 position = 1;
 }
 
 // message that can be exchanged between the client and the server
@@ -52,5 +64,9 @@ message Message {
     UpdatePlayerStatus update_player_status = 4;
     Disconnect disconnect = 5;
     UpdatePlayerStatusRequest update_player_status_request = 6;
+    CreateRoom create_room = 7;
+    StartRoom start_room = 8;
+    JoinRoom join_room = 9;
+    StartingPosition starting_position = 10;
   }
 }
