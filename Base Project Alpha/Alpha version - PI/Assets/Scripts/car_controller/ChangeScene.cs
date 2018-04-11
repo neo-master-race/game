@@ -11,9 +11,5 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
         SceneManager.LoadScene(track, LoadSceneMode.Additive);
 
-        GameObject network = GameObject.Find("Network");
-        GameObject trackInterface = GameObject.Find("PrefabInterface");
-
-        network.GetComponent<Network>().carsContainer = GameObject.Find("Cars"); 
     }
 }

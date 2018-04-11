@@ -37,7 +37,10 @@ class Network : MonoBehaviour {
   // Use this for initialization
  private
   void Start() {
-    players = new Hashtable();
+
+     carsContainer = GameObject.Find("Cars");
+
+        players = new Hashtable();
     clientName = "Unity-" + new System.Random().Next(1, 65536);
     Debug.Log("network started");
 
