@@ -196,10 +196,13 @@ class Network : MonoBehaviour {
 
         Debug.Log("Got status response from " + user);
         player.GetComponent<Player_Info_Ingame>().lap_count = lapCount;
-        player.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = hasHitSFLineOnce;
+        player.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce =
+            hasHitSFLineOnce;
         player.GetComponent<Player_Info_Ingame>().cp_count = cpCount;
-        player.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = nextCheckpointNumber;
-        player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = supposedNextCheckpointNumber;
+        player.GetComponent<Player_Info_Ingame>().nextCheckpointNumber =
+            nextCheckpointNumber;
+        player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber =
+            supposedNextCheckpointNumber;
         player.GetComponent<Player_Info_Ingame>().wentThrough = wentThrough;
 
         break;
@@ -207,7 +210,7 @@ class Network : MonoBehaviour {
         GameObject[] cars = GameObject.FindGameObjectsWithTag("Player");
 
         Debug.Log("Got request");
-        
+
         foreach (GameObject car in cars) {
           if (car.GetComponent<CarController>().isLocalPlayer) {
             car.GetComponent<CarController>().updatePlayerStatus();
@@ -224,6 +227,18 @@ class Network : MonoBehaviour {
         user = parsedData.Disconnect.User;
         Destroy(getPlayer(user));
         players.Remove(user);
+        break;
+      case "starting_position":
+        Protocol.StartingPosition sp = parsedData.StartingPosition;
+        IEnumerator<int> numInt = sp.Position.GetEnumerator();
+        List<int> listInt = new List<int>();
+        while (numInt.MoveNext()) {
+          listInt.Add(numInt.Current);
+        }
+        int[] positions = listInt.ToArray();
+
+        // @TODO: do something with positions
+
         break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
@@ -275,10 +290,23 @@ class Network : MonoBehaviour {
     sendMessage(msg);
   }
 
-  public void UpdatePlayerStatus() {
+  // tell the network to send an int array containing all starting positions
+ public
+  void StartingPosition(int[] positions) {
+    Protocol.StartingPosition sp = new Protocol.StartingPosition{};
+    sp.Position.Add(positions);
+
+    // final message that we can send
+    Protocol.Message msg =
+        new Protocol.Message{Type = "starting_position", StartingPosition = sp};
+
+    sendMessage(msg);
+  }
+
+ public
+  void UpdatePlayerStatus() {
     sendMessage(new Protocol.Message{
-      Type = "update_player_status_request",
-      UpdatePlayerStatusRequest = new Protocol.UpdatePlayerStatusRequest()
-    });
+        Type = "update_player_status_request",
+        UpdatePlayerStatusRequest = new Protocol.UpdatePlayerStatusRequest()});
   }
 }
