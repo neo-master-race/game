@@ -41,8 +41,6 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-        network = GameObject.Find("Network"); 
-
         Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
@@ -56,7 +54,7 @@ public class CarController : MonoBehaviour
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
 
-        buttonForward = GameObject.Find("PrefabInterface/ControlPanel/AccelerateRawImage");
+        buttonForward = GameObject.Find("/PrefabInterface/ControlPanel/AccelerateRawImage");
     }
 
     public void boost(float multiplicator)
@@ -223,8 +221,8 @@ public class CarController : MonoBehaviour
         if (isLocalPlayer)
         {
             Player_Info_Ingame pii = GetComponent<Player_Info_Ingame>();
-            network
-                .GetComponent<Network>()
+            GameObject.Find("Network")
+               .GetComponent<Network>()
                 .UpdatePlayerStatus(
                     pii.wentThrough,
                     pii.lap_count,
@@ -260,8 +258,8 @@ public class CarController : MonoBehaviour
             Z = body.velocity.z
         };
 
-        network
-            .GetComponent<Network>()
+        GameObject.Find("Network")
+           .GetComponent<Network>()
             .updatePlayerPosition(
                 vecPosition,
                 vecRotation,
