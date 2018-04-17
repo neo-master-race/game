@@ -73,7 +73,9 @@ public class Player_Info_Ingame : MonoBehaviour {
                 {
                     for (int j = 0; j < playersLeaderboard.Length-1; j++)
                     {
-                        if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] > playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0])
+                        if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0]+ playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[1])
+                             >
+                            (playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0] + playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[1]))
                         {
                             GameObject tmp = playersLeaderboard[j + 1];
                             playersLeaderboard[j + 1] = playersLeaderboard[j];
@@ -103,7 +105,9 @@ public class Player_Info_Ingame : MonoBehaviour {
                     }
                     else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
                         && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().nextCheckpointNumber == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().nextCheckpointNumber)
-                        && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[nextCheckpointNumber-1] > playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[nextCheckpointNumber-1]))
+                        && ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(nextCheckpointNumber-1)*2]+ playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((nextCheckpointNumber - 1) * 2)+1])
+                            >
+                            (playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(nextCheckpointNumber-1)*2])+ playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((nextCheckpointNumber - 1) * 2)+1]))
                     {
                         GameObject tmp = playersLeaderboard[j + 1];
                         playersLeaderboard[j + 1] = playersLeaderboard[j];
