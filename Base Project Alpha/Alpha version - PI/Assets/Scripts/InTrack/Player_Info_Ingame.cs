@@ -37,8 +37,8 @@ public class Player_Info_Ingame : MonoBehaviour {
     void Start()
     {
         leaderboardPosition = 1;
-        wentThrough = new bool[GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().checkpoints_collider.Length];
-        distanceToWaypoint = new float[GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().wayPoints.Length];
+        wentThrough = new bool[GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().checkpoints_collider.Length];
+        distanceToWaypoint = new float[GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().wayPoints.Length];
         players = GameObject.FindGameObjectsWithTag("Player");
     }
 
@@ -66,8 +66,8 @@ public class Player_Info_Ingame : MonoBehaviour {
                 }
             }
             
-            if (GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
-                && !GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
+            if (GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
+                && !GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
             {
                 for (int i=0;i< playersLeaderboard.Length-1;i++)
                 {
@@ -81,7 +81,7 @@ public class Player_Info_Ingame : MonoBehaviour {
                         }
                     }
                 }
-                GameObject.Find("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation = true;
+                GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation = true;
             }
             
             for (int i = 0; i < playersLeaderboard.Length - 1; i++)
