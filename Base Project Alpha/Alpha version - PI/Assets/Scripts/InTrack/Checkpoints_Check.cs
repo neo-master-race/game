@@ -98,9 +98,15 @@ public class Checkpoints_Check : MonoBehaviour
             for (int i = 0; i < cpNumber; i++)
             {
                 if (i == (player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber - 1))
-                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = Vector3.Distance(wayPoints[i].transform.position, player.transform.position);
+                {
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[2*i] = Vector3.Distance(wayPoints[2*i].transform.position, player.transform.position);
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[2*i+1] = Vector3.Distance(wayPoints[2*i+1].transform.position, player.transform.position);
+                }
                 else
-                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[i] = 0.0f;
+                {
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[2 * i] = 0.0f;
+                    player.GetComponent<Player_Info_Ingame>().distanceToWaypoint[2 * i + 1] = 0.0f;
+                }  
             }
         }
         if(!initializedWaypointDistances)
