@@ -337,6 +337,11 @@ public class menu_selection : MonoBehaviour {
 
             case "Multi_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
+                soloButton.SetActive(false);
+                multiButton.SetActive(false);
+                tutoButton.SetActive(false);
+
+
                 break;
 
             case "Tuto_Text":
