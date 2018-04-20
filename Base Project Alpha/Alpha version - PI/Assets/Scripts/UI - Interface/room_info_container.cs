@@ -21,11 +21,24 @@ public class Room
 
 public class room_info_container : MonoBehaviour {
 
+    public GameObject roomParent;
+    public GameObject roomSinglePrefab;
+    public GameObject roomTournamentPrefab;
     public Room[] rooms;
 
     // Use this for initialization
     void Start () {
-        
+        for(int i=0;i<rooms.Length;i++)
+        {
+            if (rooms[i].room == RoomType.SingleRace)
+            {
+                GameObject singleRaceRoom = Instantiate(roomSinglePrefab, roomParent.transform);
+            }
+            else
+            {
+                GameObject tournamentRoom = Instantiate(roomTournamentPrefab, roomParent.transform);
+            }
+        }
 	}
 	
 	// Update is called once per frame
