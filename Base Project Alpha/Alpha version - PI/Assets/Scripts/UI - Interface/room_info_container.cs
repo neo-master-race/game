@@ -53,14 +53,15 @@ public class room_info_container : MonoBehaviour {
         room.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[roomIndex].currentPlayersNb + "/" + rooms[roomIndex].MaximumPlayersNb;
     }
 
-    // Use this for initialization
-    void Start () {
-        for(int i=0;i<rooms.Length;i++)
+
+    void createRooms()
+    {
+        for (int i = 0; i < rooms.Length; i++)
         {
             if (rooms[i].room == RoomType.SingleRace)
             {
                 GameObject singleRaceRoom = Instantiate(roomSinglePrefab, roomParent.transform);
-                setRoomAttributes(singleRaceRoom, "SingleRace",i);
+                setRoomAttributes(singleRaceRoom, "SingleRace", i);
                 singleRaceRoom.transform.GetComponent<RectTransform>().anchoredPosition =
                     new Vector2
                     (
@@ -71,7 +72,7 @@ public class room_info_container : MonoBehaviour {
             else
             {
                 GameObject tournamentRoom = Instantiate(roomTournamentPrefab, roomParent.transform);
-                setRoomAttributes(tournamentRoom, "Tournament",i);
+                setRoomAttributes(tournamentRoom, "Tournament", i);
                 tournamentRoom.transform.GetComponent<RectTransform>().anchoredPosition =
                     new Vector2
                     (
@@ -80,8 +81,14 @@ public class room_info_container : MonoBehaviour {
                     );
             }
         }
-        if(rooms.Length>4)
-            GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin = new Vector2(GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin.x, -105*(rooms.Length-4));
+        if (rooms.Length > 4)
+            GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin = new Vector2(GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin.x, -105 * (rooms.Length - 4));
+    }
+
+
+    // Use this for initialization
+    void Start () {
+        createRooms();
     }
 	
 	// Update is called once per frame
