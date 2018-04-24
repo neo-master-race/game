@@ -48,7 +48,29 @@ public class room_info_container : MonoBehaviour {
                 room.transform.Find("Circuit").GetComponent<RawImage>().texture = track3Texture;
         }
         else
+        {
             room.transform.Find("RaceMode").GetComponent<Text>().text = "TOURNOI";
+            if (rooms[roomIndex].circuits[0] == Circuit.Track1)
+                room.transform.Find("Circuit1").GetComponent<RawImage>().texture = track1Texture;
+            else if (rooms[roomIndex].circuits[0] == Circuit.Track2)
+                room.transform.Find("Circuit1").GetComponent<RawImage>().texture = track2Texture;
+            else if (rooms[roomIndex].circuits[0] == Circuit.Track3)
+                room.transform.Find("Circuit1").GetComponent<RawImage>().texture = track3Texture;
+
+            if (rooms[roomIndex].circuits[1] == Circuit.Track1)
+                room.transform.Find("Circuit2").GetComponent<RawImage>().texture = track1Texture;
+            else if (rooms[roomIndex].circuits[1] == Circuit.Track2)
+                room.transform.Find("Circuit2").GetComponent<RawImage>().texture = track2Texture;
+            else if (rooms[roomIndex].circuits[1] == Circuit.Track3)
+                room.transform.Find("Circuit2").GetComponent<RawImage>().texture = track3Texture;
+
+            if (rooms[roomIndex].circuits[2] == Circuit.Track1)
+                room.transform.Find("Circuit3").GetComponent<RawImage>().texture = track1Texture;
+            else if (rooms[roomIndex].circuits[2] == Circuit.Track2)
+                room.transform.Find("Circuit3").GetComponent<RawImage>().texture = track2Texture;
+            else if (rooms[roomIndex].circuits[2] == Circuit.Track3)
+                room.transform.Find("Circuit3").GetComponent<RawImage>().texture = track3Texture;
+        }
         room.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[roomIndex].currentPlayersNb + "/" + rooms[roomIndex].MaximumPlayersNb;
     }
 

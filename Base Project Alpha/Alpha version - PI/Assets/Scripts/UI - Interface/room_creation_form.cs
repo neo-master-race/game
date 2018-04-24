@@ -23,6 +23,12 @@ public class room_creation_form : MonoBehaviour {
     public GameObject Track1Visible;
     public GameObject Track2Visible;
     public GameObject Track3Visible;
+    public Text Track1Name;
+    public Text Track2Name;
+    public Text Track3Name;
+    public Text Track1Index;
+    public Text Track2Index;
+    public Text Track3Index;
     public Texture circuit1;
     public Texture circuit2;
     public Texture circuit3;
@@ -30,8 +36,13 @@ public class room_creation_form : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        currentRoomCreated.circuits = new Circuit[1];
+    }
+
+    public void activateRoomForm ()
+    {
+        roomCreationForm.SetActive(true);
+    }
 
     public void toggleSingleRace()
     {
@@ -42,6 +53,18 @@ public class room_creation_form : MonoBehaviour {
             toggleIsOn = "Single";
             GameObject.Find("ToggleTournament").GetComponent<Toggle>().isOn = false;
         }
+        Track1Visible.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -250);
+        Track1Visible.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 125);
+        Track1Name.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -335);
+        Track2Visible.SetActive(false);
+        Track3Visible.SetActive(false);
+        Track2Name.enabled=false;
+        Track3Name.enabled = false;
+        Track1Index.enabled = false;
+        Track2Index.enabled = false;
+        Track3Index.enabled = false;
+        currentRoomCreated.circuits = new Circuit[1];
+        GameObject.Find("CircuitChoiceText").GetComponent<Text>().text = "Circuit";
     }
 
     public void toggleTournament()
@@ -53,6 +76,18 @@ public class room_creation_form : MonoBehaviour {
             toggleIsOn = "Tournament";
             GameObject.Find("ToggleSingleRace").GetComponent<Toggle>().isOn = false;
         }
+        Track1Visible.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-160, -250);
+        Track1Visible.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 100);
+        Track1Name.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-160, -335);
+        Track2Visible.SetActive(true);
+        Track3Visible.SetActive(true);
+        Track2Name.enabled = true;
+        Track3Name.enabled = true;
+        Track1Index.enabled = true;
+        Track2Index.enabled = true;
+        Track3Index.enabled = true;
+        currentRoomCreated.circuits = new Circuit[3];
+        GameObject.Find("CircuitChoiceText").GetComponent<Text>().text = "Circuits";
     }
 
     public void togglePublicRoom()
@@ -117,42 +152,47 @@ public class room_creation_form : MonoBehaviour {
     {
         if(toggleIsOn=="Single")
         {
-            currentRoomCreated.circuits = new Circuit[1];
             if (trackTexture.name == "Track1Image" || trackTexture.name == "Track1Text")
             {
                 Track1Visible.transform.GetComponent<RawImage>().texture= circuit1;
                 currentRoomCreated.circuits[0] = Circuit.Track1;
+                Track1Name.text = "Euromir";
             }
             else if (trackTexture.name == "Track2Image" || trackTexture.name == "Track2Text")
             {
                 Track1Visible.transform.GetComponent<RawImage>().texture = circuit2;
                 currentRoomCreated.circuits[0] = Circuit.Track2;
+                Track1Name.text = "Monaco";
             }
             else if (trackTexture.name == "Track3Image" || trackTexture.name == "Track3Text")
             {
                 Track1Visible.transform.GetComponent<RawImage>().texture = circuit3;
                 currentRoomCreated.circuits[0] = Circuit.Track3;
+                Track1Name.text = "Track 3";
             }
         }
         else
         {
-            currentRoomCreated.circuits = new Circuit[3];
+            
             if (actualCircuitSelection == 1)
             {
                 if (trackTexture.name == "Track1Image" || trackTexture.name == "Track1Text")
                 {
                     Track1Visible.transform.GetComponent<RawImage>().texture = circuit1;
                     currentRoomCreated.circuits[0] = Circuit.Track1;
+                    Track1Name.text = "Euromir";
                 }
                 else if (trackTexture.name == "Track2Image" || trackTexture.name == "Track2Text")
                 {
                     Track1Visible.transform.GetComponent<RawImage>().texture = circuit2;
                     currentRoomCreated.circuits[0] = Circuit.Track2;
+                    Track1Name.text = "Monaco";
                 }
                 else if (trackTexture.name == "Track3Image" || trackTexture.name == "Track3Text")
                 {
                     Track1Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[0] = Circuit.Track3;
+                    Track1Name.text = "Track 3";
                 }
             }
             else if (actualCircuitSelection == 2)
@@ -161,16 +201,19 @@ public class room_creation_form : MonoBehaviour {
                 { 
                     Track2Visible.transform.GetComponent<RawImage>().texture = circuit1;
                     currentRoomCreated.circuits[1] = Circuit.Track1;
+                    Track2Name.text = "Euromir";
                 }
                 else if (trackTexture.name == "Track2Image" || trackTexture.name == "Track2Text")
                 {
                     Track2Visible.transform.GetComponent<RawImage>().texture = circuit2;
                     currentRoomCreated.circuits[1] = Circuit.Track2;
+                    Track2Name.text = "Monaco";
                 }
                 else if (trackTexture.name == "Track3Image" || trackTexture.name == "Track3Text")
                 {
                     Track2Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[1] = Circuit.Track3;
+                    Track2Name.text = "Track 3";
                 }
             }
             else if (actualCircuitSelection == 3)
@@ -179,16 +222,19 @@ public class room_creation_form : MonoBehaviour {
                 {
                     Track3Visible.transform.GetComponent<RawImage>().texture = circuit1;
                     currentRoomCreated.circuits[2] = Circuit.Track1;
+                    Track3Name.text = "Euromir";
                 }
                 else if (trackTexture.name == "Track2Image" || trackTexture.name == "Track2Text")
                 {
                     Track3Visible.transform.GetComponent<RawImage>().texture = circuit2;
                     currentRoomCreated.circuits[2] = Circuit.Track2;
+                    Track3Name.text = "Monaco";
                 }
                 else if (trackTexture.name == "Track3Image" || trackTexture.name == "Track3Text")
                 {
                     Track3Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[2] = Circuit.Track3;
+                    Track3Name.text = "Track 3";
                 }
             }
         }
@@ -211,7 +257,7 @@ public class room_creation_form : MonoBehaviour {
                 currentRoomCreated.MaximumPlayersNb = maxPlayers;
                 currentRoomCreated.ActivePlayers = new string[maxPlayers];
                 currentRoomCreated.ActivePlayers[0] = "localplayer";
-                if (toggleIsOn == "Public")
+                if (toggle2IsOn == "Public")
                     currentRoomCreated.roomAccessibility = RoomAccesibility.Public;
                 else
                     currentRoomCreated.roomAccessibility = RoomAccesibility.Private;
