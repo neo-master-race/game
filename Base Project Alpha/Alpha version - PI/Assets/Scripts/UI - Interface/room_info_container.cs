@@ -29,7 +29,7 @@ public class room_info_container : MonoBehaviour {
     [Header("Circuit Images")]
     public Texture track1Texture;
     public Texture track2Texture;
-    //public Texture track3Texture;
+    public Texture track3Texture;
 
     [Header("Room Creation")]
     public List<Room> rooms;
@@ -44,8 +44,8 @@ public class room_info_container : MonoBehaviour {
                 room.transform.Find("Circuit").GetComponent<RawImage>().texture = track1Texture;
             else if (rooms[roomIndex].circuits[0] == Circuit.Track2)
                 room.transform.Find("Circuit").GetComponent<RawImage>().texture = track2Texture;
-            //else if (rooms[roomIndex].circuits[0] == Circuit.Track3)
-            //    room.transform.Find("Circuit1").GetComponent<RawImage>().texture = track3Texture;
+            else if (rooms[roomIndex].circuits[0] == Circuit.Track3)
+                room.transform.Find("Circuit").GetComponent<RawImage>().texture = track3Texture;
         }
         else
             room.transform.Find("RaceMode").GetComponent<Text>().text = "TOURNOI";
