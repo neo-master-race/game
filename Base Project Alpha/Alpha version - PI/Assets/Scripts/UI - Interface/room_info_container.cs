@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +32,7 @@ public class room_info_container : MonoBehaviour {
     //public Texture track3Texture;
 
     [Header("Room Creation")]
-    public Room[] rooms;
+    public List<Room> rooms;
 
 
     void setRoomAttributes(GameObject room,string roomGameMode,int roomIndex)
@@ -54,9 +53,9 @@ public class room_info_container : MonoBehaviour {
     }
 
 
-    void createRooms()
+    public void createRooms()
     {
-        for (int i = 0; i < rooms.Length; i++)
+        for (int i = GameObject.Find("Rooms").transform.childCount; i < rooms.Count; i++)
         {
             if (rooms[i].room == RoomType.SingleRace)
             {
@@ -81,8 +80,8 @@ public class room_info_container : MonoBehaviour {
                     );
             }
         }
-        if (rooms.Length > 4)
-            GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin = new Vector2(GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin.x, -105 * (rooms.Length - 4));
+        if (rooms.Count > 4)
+            GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin = new Vector2(0, - 105 * (rooms.Count - 4)+ GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMax.y);
     }
 
 
