@@ -77,7 +77,7 @@ public class room_info_container : MonoBehaviour {
 
     public void createRooms()
     {
-        for (int i = GameObject.Find("Rooms").transform.childCount; i < rooms.Count; i++)
+        for (int i = roomParent.transform.childCount; i < rooms.Count; i++)
         {
             if (rooms[i].room == RoomType.SingleRace)
             {
@@ -103,7 +103,7 @@ public class room_info_container : MonoBehaviour {
             }
         }
         if (rooms.Count > 4)
-            GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMin = new Vector2(0, - 105 * (rooms.Count - 4)+ GameObject.Find("Rooms").GetComponent<RectTransform>().offsetMax.y);
+            roomParent.GetComponent<RectTransform>().offsetMin = new Vector2(0, - 105 * (rooms.Count - 4)+ roomParent.GetComponent<RectTransform>().offsetMax.y);
     }
 
 

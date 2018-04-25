@@ -9,6 +9,8 @@ using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
 using Google.Protobuf;
+using UnityEngine.SceneManagement;
+
 
 public
 class Network : MonoBehaviour {
@@ -29,6 +31,11 @@ class Network : MonoBehaviour {
  private
   int fps = 30;
 
+    [Header("User Log Informations")]
+    public String username;
+    public String password;
+
+
   void Awake() {
     QualitySettings.vSyncCount = 0;
     Application.targetFrameRate = fps;
@@ -37,8 +44,8 @@ class Network : MonoBehaviour {
   // Use this for initialization
  private
   void Start() {
-
-     carsContainer = GameObject.Find("Cars");
+        DontDestroyOnLoad(this.gameObject);
+        carsContainer = GameObject.Find("Cars");
 
         players = new Hashtable();
     clientName = "Unity-" + new System.Random().Next(1, 65536);
@@ -71,8 +78,32 @@ class Network : MonoBehaviour {
     }
   }
 
-  // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
- public
+public
+ void GetInputUser(GameObject userfield)
+{
+    this.username = userfield.GetComponent<InputField>().text;
+}
+
+public
+ void GetInputPass(GameObject pwdfield)
+{
+    this.password = pwdfield.GetComponent<InputField>().text;
+}
+
+public
+ void login()
+{
+    Debug.Log("New user connected with username: " + username + " and password:" + password);
+}
+
+public
+ void register()
+{
+    Debug.Log("New user registered with username: " + username + " and password:" + password);
+}
+
+    // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
+    public
   void sendMessage(Protocol.Message msg) {
     byte[] msgBytes = msg.ToByteArray();
     byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);

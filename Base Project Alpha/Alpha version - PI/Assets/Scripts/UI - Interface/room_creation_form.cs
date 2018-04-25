@@ -37,6 +37,7 @@ public class room_creation_form : MonoBehaviour {
     // Use this for initialization
     void Start () {
         currentRoomCreated.circuits = new Circuit[1];
+        GameObject.Find("NetWork").GetComponent<Network>().login();
     }
 
     public void activateRoomForm ()
