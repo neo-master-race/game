@@ -79,10 +79,9 @@ class Network : MonoBehaviour {
       }
     }
 
-
-    if ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
+    if (SceneManager.GetActiveScene().name=="entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
     && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login"
-    || GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register"))
+    || GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")))
     {
         login_register();
     }
@@ -105,10 +104,10 @@ public
 public
  void login_register()
 {
-    if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login")
+    if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login" && username!="" && password!="")
         Debug.Log("New user connected with username: " + username + " and password: " + password);
-    else if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")
-        Debug.Log("New user registered with username: " + username + " and password: " + password);
+    else if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register" && username != "" && password != "")
+            Debug.Log("New user registered with username: " + username + " and password: " + password);
 }
 
 public
