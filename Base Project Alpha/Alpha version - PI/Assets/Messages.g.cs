@@ -36,18 +36,28 @@ namespace Protocol {
             "DwoHY29udGVudBgBIAEoCRIMCgR1c2VyGAIgASgJIhoKCkRpc2Nvbm5lY3QS",
             "DAoEdXNlchgBIAEoCSIMCgpDcmVhdGVSb29tIgsKCVN0YXJ0Um9vbSIKCghK",
             "b2luUm9vbSIkChBTdGFydGluZ1Bvc2l0aW9uEhAKCHBvc2l0aW9uGAEgAygF",
-            "IoAECgdNZXNzYWdlEgwKBHR5cGUYASABKAkSLQoMY2hhdF9tZXNzYWdlGAIg",
-            "ASgLMhUucHJvdG9jb2wuQ2hhdE1lc3NhZ2VIABJAChZ1cGRhdGVfcGxheWVy",
-            "X3Bvc2l0aW9uGAMgASgLMh4ucHJvdG9jb2wuVXBkYXRlUGxheWVyUG9zaXRp",
-            "b25IABI8ChR1cGRhdGVfcGxheWVyX3N0YXR1cxgEIAEoCzIcLnByb3RvY29s",
-            "LlVwZGF0ZVBsYXllclN0YXR1c0gAEioKCmRpc2Nvbm5lY3QYBSABKAsyFC5w",
-            "cm90b2NvbC5EaXNjb25uZWN0SAASSwocdXBkYXRlX3BsYXllcl9zdGF0dXNf",
-            "cmVxdWVzdBgGIAEoCzIjLnByb3RvY29sLlVwZGF0ZVBsYXllclN0YXR1c1Jl",
-            "cXVlc3RIABIrCgtjcmVhdGVfcm9vbRgHIAEoCzIULnByb3RvY29sLkNyZWF0",
-            "ZVJvb21IABIpCgpzdGFydF9yb29tGAggASgLMhMucHJvdG9jb2wuU3RhcnRS",
-            "b29tSAASJwoJam9pbl9yb29tGAkgASgLMhIucHJvdG9jb2wuSm9pblJvb21I",
-            "ABI3ChFzdGFydGluZ19wb3NpdGlvbhgKIAEoCzIaLnByb3RvY29sLlN0YXJ0",
-            "aW5nUG9zaXRpb25IAEIFCgNtc2diBnByb3RvMw=="));
+            "IjUKD1JlZ2lzdGVyUmVxdWVzdBIQCgh1c2VybmFtZRgBIAEoCRIQCghwYXNz",
+            "d29yZBgCIAEoCSIyCgxMb2dpblJlcXVlc3QSEAoIdXNlcm5hbWUYASABKAkS",
+            "EAoIcGFzc3dvcmQYAiABKAkiNQoQUmVnaXN0ZXJSZXNwb25zZRIPCgdzdWNj",
+            "ZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIgASgJIjIKDUxvZ2luUmVzcG9uc2US",
+            "DwoHc3VjY2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSLUBQoHTWVzc2Fn",
+            "ZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgCIAEoCzIVLnByb3Rv",
+            "Y29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXllcl9wb3NpdGlvbhgD",
+            "IAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0aW9uSAASPAoUdXBk",
+            "YXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5",
+            "ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQucHJvdG9jb2wuRGlz",
+            "Y29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiAB",
+            "KAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNSZXF1ZXN0SAASKwoL",
+            "Y3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVhdGVSb29tSAASKQoK",
+            "c3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0Um9vbUgAEicKCWpv",
+            "aW5fcm9vbRgJIAEoCzISLnByb3RvY29sLkpvaW5Sb29tSAASNwoRc3RhcnRp",
+            "bmdfcG9zaXRpb24YCiABKAsyGi5wcm90b2NvbC5TdGFydGluZ1Bvc2l0aW9u",
+            "SAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgLIAEoCzIZLnByb3RvY29sLlJlZ2lz",
+            "dGVyUmVxdWVzdEgAEi8KDWxvZ2luX3JlcXVlc3QYDCABKAsyFi5wcm90b2Nv",
+            "bC5Mb2dpblJlcXVlc3RIABI3ChFyZWdpc3Rlcl9yZXNwb25zZRgNIAEoCzIa",
+            "LnByb3RvY29sLlJlZ2lzdGVyUmVzcG9uc2VIABIxCg5sb2dpbl9yZXNwb25z",
+            "ZRgOIAEoCzIXLnByb3RvY29sLkxvZ2luUmVzcG9uc2VIAEIFCgNtc2diBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -61,7 +71,11 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartRoom), global::Protocol.StartRoom.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoom), global::Protocol.JoinRoom.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterRequest), global::Protocol.RegisterRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginRequest), global::Protocol.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -1531,6 +1545,586 @@ namespace Protocol {
 
   }
 
+  public sealed partial class RegisterRequest : pb::IMessage<RegisterRequest> {
+    private static readonly pb::MessageParser<RegisterRequest> _parser = new pb::MessageParser<RegisterRequest>(() => new RegisterRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RegisterRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterRequest(RegisterRequest other) : this() {
+      username_ = other.username_;
+      password_ = other.password_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterRequest Clone() {
+      return new RegisterRequest(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RegisterRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Password != other.Password) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RegisterRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
+    private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest(LoginRequest other) : this() {
+      username_ = other.username_;
+      password_ = other.password_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest Clone() {
+      return new LoginRequest(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LoginRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LoginRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Password != other.Password) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LoginRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RegisterResponse : pb::IMessage<RegisterResponse> {
+    private static readonly pb::MessageParser<RegisterResponse> _parser = new pb::MessageParser<RegisterResponse>(() => new RegisterResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RegisterResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterResponse(RegisterResponse other) : this() {
+      success_ = other.success_;
+      username_ = other.username_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RegisterResponse Clone() {
+      return new RegisterResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 2;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RegisterResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RegisterResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (Username != other.Username) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Username);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RegisterResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            Username = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
+    private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse(LoginResponse other) : this() {
+      success_ = other.success_;
+      username_ = other.username_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse Clone() {
+      return new LoginResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 2;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LoginResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LoginResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (Username != other.Username) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Username);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LoginResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            Username = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
@@ -1542,7 +2136,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1587,6 +2181,18 @@ namespace Protocol {
           break;
         case MsgOneofCase.StartingPosition:
           StartingPosition = other.StartingPosition.Clone();
+          break;
+        case MsgOneofCase.RegisterRequest:
+          RegisterRequest = other.RegisterRequest.Clone();
+          break;
+        case MsgOneofCase.LoginRequest:
+          LoginRequest = other.LoginRequest.Clone();
+          break;
+        case MsgOneofCase.RegisterResponse:
+          RegisterResponse = other.RegisterResponse.Clone();
+          break;
+        case MsgOneofCase.LoginResponse:
+          LoginResponse = other.LoginResponse.Clone();
           break;
       }
 
@@ -1710,6 +2316,50 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "register_request" field.</summary>
+    public const int RegisterRequestFieldNumber = 11;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.RegisterRequest RegisterRequest {
+      get { return msgCase_ == MsgOneofCase.RegisterRequest ? (global::Protocol.RegisterRequest) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.RegisterRequest;
+      }
+    }
+
+    /// <summary>Field number for the "login_request" field.</summary>
+    public const int LoginRequestFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.LoginRequest LoginRequest {
+      get { return msgCase_ == MsgOneofCase.LoginRequest ? (global::Protocol.LoginRequest) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.LoginRequest;
+      }
+    }
+
+    /// <summary>Field number for the "register_response" field.</summary>
+    public const int RegisterResponseFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.RegisterResponse RegisterResponse {
+      get { return msgCase_ == MsgOneofCase.RegisterResponse ? (global::Protocol.RegisterResponse) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.RegisterResponse;
+      }
+    }
+
+    /// <summary>Field number for the "login_response" field.</summary>
+    public const int LoginResponseFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.LoginResponse LoginResponse {
+      get { return msgCase_ == MsgOneofCase.LoginResponse ? (global::Protocol.LoginResponse) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.LoginResponse;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -1723,6 +2373,10 @@ namespace Protocol {
       StartRoom = 8,
       JoinRoom = 9,
       StartingPosition = 10,
+      RegisterRequest = 11,
+      LoginRequest = 12,
+      RegisterResponse = 13,
+      LoginResponse = 14,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1759,6 +2413,10 @@ namespace Protocol {
       if (!object.Equals(StartRoom, other.StartRoom)) return false;
       if (!object.Equals(JoinRoom, other.JoinRoom)) return false;
       if (!object.Equals(StartingPosition, other.StartingPosition)) return false;
+      if (!object.Equals(RegisterRequest, other.RegisterRequest)) return false;
+      if (!object.Equals(LoginRequest, other.LoginRequest)) return false;
+      if (!object.Equals(RegisterResponse, other.RegisterResponse)) return false;
+      if (!object.Equals(LoginResponse, other.LoginResponse)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -1776,6 +2434,10 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.StartRoom) hash ^= StartRoom.GetHashCode();
       if (msgCase_ == MsgOneofCase.JoinRoom) hash ^= JoinRoom.GetHashCode();
       if (msgCase_ == MsgOneofCase.StartingPosition) hash ^= StartingPosition.GetHashCode();
+      if (msgCase_ == MsgOneofCase.RegisterRequest) hash ^= RegisterRequest.GetHashCode();
+      if (msgCase_ == MsgOneofCase.LoginRequest) hash ^= LoginRequest.GetHashCode();
+      if (msgCase_ == MsgOneofCase.RegisterResponse) hash ^= RegisterResponse.GetHashCode();
+      if (msgCase_ == MsgOneofCase.LoginResponse) hash ^= LoginResponse.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -1827,6 +2489,22 @@ namespace Protocol {
         output.WriteRawTag(82);
         output.WriteMessage(StartingPosition);
       }
+      if (msgCase_ == MsgOneofCase.RegisterRequest) {
+        output.WriteRawTag(90);
+        output.WriteMessage(RegisterRequest);
+      }
+      if (msgCase_ == MsgOneofCase.LoginRequest) {
+        output.WriteRawTag(98);
+        output.WriteMessage(LoginRequest);
+      }
+      if (msgCase_ == MsgOneofCase.RegisterResponse) {
+        output.WriteRawTag(106);
+        output.WriteMessage(RegisterResponse);
+      }
+      if (msgCase_ == MsgOneofCase.LoginResponse) {
+        output.WriteRawTag(114);
+        output.WriteMessage(LoginResponse);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1861,6 +2539,18 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.StartingPosition) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartingPosition);
+      }
+      if (msgCase_ == MsgOneofCase.RegisterRequest) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RegisterRequest);
+      }
+      if (msgCase_ == MsgOneofCase.LoginRequest) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LoginRequest);
+      }
+      if (msgCase_ == MsgOneofCase.RegisterResponse) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RegisterResponse);
+      }
+      if (msgCase_ == MsgOneofCase.LoginResponse) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LoginResponse);
       }
       return size;
     }
@@ -1900,6 +2590,18 @@ namespace Protocol {
           break;
         case MsgOneofCase.StartingPosition:
           StartingPosition = other.StartingPosition;
+          break;
+        case MsgOneofCase.RegisterRequest:
+          RegisterRequest = other.RegisterRequest;
+          break;
+        case MsgOneofCase.LoginRequest:
+          LoginRequest = other.LoginRequest;
+          break;
+        case MsgOneofCase.RegisterResponse:
+          RegisterResponse = other.RegisterResponse;
+          break;
+        case MsgOneofCase.LoginResponse:
+          LoginResponse = other.LoginResponse;
           break;
       }
 
@@ -1996,6 +2698,42 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             StartingPosition = subBuilder;
+            break;
+          }
+          case 90: {
+            global::Protocol.RegisterRequest subBuilder = new global::Protocol.RegisterRequest();
+            if (msgCase_ == MsgOneofCase.RegisterRequest) {
+              subBuilder.MergeFrom(RegisterRequest);
+            }
+            input.ReadMessage(subBuilder);
+            RegisterRequest = subBuilder;
+            break;
+          }
+          case 98: {
+            global::Protocol.LoginRequest subBuilder = new global::Protocol.LoginRequest();
+            if (msgCase_ == MsgOneofCase.LoginRequest) {
+              subBuilder.MergeFrom(LoginRequest);
+            }
+            input.ReadMessage(subBuilder);
+            LoginRequest = subBuilder;
+            break;
+          }
+          case 106: {
+            global::Protocol.RegisterResponse subBuilder = new global::Protocol.RegisterResponse();
+            if (msgCase_ == MsgOneofCase.RegisterResponse) {
+              subBuilder.MergeFrom(RegisterResponse);
+            }
+            input.ReadMessage(subBuilder);
+            RegisterResponse = subBuilder;
+            break;
+          }
+          case 114: {
+            global::Protocol.LoginResponse subBuilder = new global::Protocol.LoginResponse();
+            if (msgCase_ == MsgOneofCase.LoginResponse) {
+              subBuilder.MergeFrom(LoginResponse);
+            }
+            input.ReadMessage(subBuilder);
+            LoginResponse = subBuilder;
             break;
           }
         }
