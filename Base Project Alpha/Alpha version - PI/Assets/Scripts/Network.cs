@@ -36,9 +36,21 @@ class Network : MonoBehaviour {
     [Header("User Log Informations")]
     public String username;
     public String password;
+    public GameObject log_reg_canvas;
+    public GameObject after_canvas;
+    public GameObject register_button;
+    public GameObject login_button;
+    public GameObject play_as_guest_button;
+    public GameObject play_button;
+    public GameObject customize_button;
+    public GameObject profile_button;
+    public GameObject solo_button;
+    public GameObject multi_button;
+    public GameObject tuto_button;
+    public GameObject backButton;
 
 
-  void Awake() {
+    void Awake() {
     QualitySettings.vSyncCount = 0;
     Application.targetFrameRate = fps;
   }
@@ -80,10 +92,21 @@ class Network : MonoBehaviour {
     }
 
     if (SceneManager.GetActiveScene().name=="entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
-    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login"
-    || GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")))
+    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login")))
     {
-        login_register();
+         if (username != "" && password != "")
+             LogInSuccess();
+         else
+             LogInError();
+    }
+
+    if (SceneManager.GetActiveScene().name == "entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
+    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")))
+    {
+        if (username != "" && password != "")
+            RegisterSuccess();
+        else
+            RegisterError();
     }
 
 
@@ -102,15 +125,89 @@ public
 }
 
 public
- void login_register()
+ IEnumerator go_to_menu(String message, bool is_guest)
 {
-    if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login" && username!="" && password!="")
-        Debug.Log("New user connected with username: " + username + " and password: " + password);
-    else if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register" && username != "" && password != "")
-            Debug.Log("New user registered with username: " + username + " and password: " + password);
+
+    after_canvas.SetActive(true);
+    GameObject.Find("Success_Register").GetComponent<Text>().enabled = false;
+    GameObject.Find("Success_Login").GetComponent<Text>().enabled = true;
+    GameObject.Find("Success_Login").GetComponent<Text>().text = message;
+    log_reg_canvas.SetActive(false);
+    backButton.SetActive(false);
+    yield return new WaitForSeconds(3.0f);
+    
+
+    after_canvas.SetActive(false);
+    backButton.SetActive(true);
+
+    if (!is_guest)
+    {
+        play_button.SetActive(true);
+        customize_button.SetActive(true);
+        profile_button.SetActive(true);
+    }
+    else
+    {
+        solo_button.SetActive(true);
+        multi_button.SetActive(true);
+        tuto_button.SetActive(true);
+    }
+}
+
+
+    public
+ void towwwlog()
+{
+    after_canvas.SetActive(true);
+    GameObject.Find("Success_Register").GetComponent<Text>().enabled = false;
+    GameObject.Find("Success_Login").GetComponent<Text>().enabled = true;
+    GameObject.Find("Success_Login").GetComponent<Text>().text = "Connection...";
+    log_reg_canvas.SetActive(false);
+
+    StartCoroutine(go_to_menu("Vous vous êtes correctement identifié\nVous allez être redirigé vers le menu", false));
 }
 
 public
+ IEnumerator towwwsign()
+{
+    after_canvas.SetActive(true);
+    GameObject.Find("Success_Register").GetComponent<Text>().enabled = true;
+    GameObject.Find("Success_Login").GetComponent<Text>().enabled = false;
+    GameObject.Find("Success_Register").GetComponent<Text>().text = "Création de votre compte...";
+    log_reg_canvas.SetActive(false);
+    yield return new WaitForSeconds(1.0f);
+
+    StartCoroutine(go_to_menu("Vous vous êtes correctement inscrit\nVous allez être redirigé vers le menu", false));
+}
+
+
+public
+ void LogInSuccess()
+{
+   Debug.Log("New user connected with username: " + username + " and password: " + password);
+   towwwlog();
+}
+
+public
+ void LogInError()
+{
+    Debug.Log("user error for logging in");
+}
+
+public
+ void RegisterSuccess()
+{
+    Debug.Log("New user registered with username: " + username + " and password: " + password);
+    StartCoroutine(towwwsign());
+}
+
+public
+ void RegisterError()
+{
+    Debug.Log("user error for to register");
+}
+
+    public
  void register()
 {
     
