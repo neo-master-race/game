@@ -11,9 +11,6 @@ using UnityEngine.UI;
 using Google.Protobuf;
 using UnityEngine.SceneManagement;
 
-
-
-
 public
 class Network : MonoBehaviour {
  private
@@ -33,12 +30,11 @@ class Network : MonoBehaviour {
  private
   int fps = 30;
 
-    [Header("User Log Informations")]
-    public String username;
-    public String password;
+  [Header("User Log Informations")] public String username;
+ public
+  String password;
 
-
-    void Awake() {
+  void Awake() {
     QualitySettings.vSyncCount = 0;
     Application.targetFrameRate = fps;
   }
@@ -46,10 +42,10 @@ class Network : MonoBehaviour {
   // Use this for initialization
  private
   void Start() {
-        DontDestroyOnLoad(this.gameObject);
-        carsContainer = GameObject.Find("Cars");
+    DontDestroyOnLoad(this.gameObject);
+    carsContainer = GameObject.Find("Cars");
 
-        players = new Hashtable();
+    players = new Hashtable();
     clientName = "Unity-" + new System.Random().Next(1, 65536);
     Debug.Log("network started");
 
@@ -79,49 +75,59 @@ class Network : MonoBehaviour {
       }
     }
 
-    if (SceneManager.GetActiveScene().name=="entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
-    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login")) && (username != "" && password != ""))
-    {
-        login();
+    if (SceneManager.GetActiveScene().name == "entryScene" &&
+        ((Input.GetKeyDown(KeyCode.Return) ||
+          GameObject.Find("Script_Source")
+                  .GetComponent<menu_selection>()
+                  .confirm_start == 1) &&
+         (GameObject.Find("Script_Source")
+              .GetComponent<menu_selection>()
+              .start_action == "Login")) &&
+        (username != "" && password != "")) {
+      login();
     }
 
-    if (SceneManager.GetActiveScene().name == "entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
-    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")) && (username != "" && password != ""))
-    {
-        register();
+    if (SceneManager.GetActiveScene().name == "entryScene" &&
+        ((Input.GetKeyDown(KeyCode.Return) ||
+          GameObject.Find("Script_Source")
+                  .GetComponent<menu_selection>()
+                  .confirm_start == 1) &&
+         (GameObject.Find("Script_Source")
+              .GetComponent<menu_selection>()
+              .start_action == "Register")) &&
+        (username != "" && password != "")) {
+      register();
     }
+  }
 
-
-}
-
-public
- void GetInputUser(GameObject userfield)
-{
+ public
+  void GetInputUser(GameObject userfield) {
     this.username = userfield.GetComponent<InputField>().text;
-}
+  }
 
-public
- void GetInputPass(GameObject pwdfield)
-{
+ public
+  void GetInputPass(GameObject pwdfield) {
     this.password = pwdfield.GetComponent<InputField>().text;
-}
+  }
 
-public
- void login()
-{
-    //GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInSuccess();
-    //GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInError("ton message à afficher sur le jeu (court, et clairement compréhensible pour le joueur)");
-}
+ public
+  void login() {
+    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInSuccess();
+    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInError("ton
+    // message à afficher sur le jeu (court, et clairement compréhensible pour
+    // le joueur)");
+  }
 
-public
- void register()
-{
-    //GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterSuccess();
-    //GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterError("ton message à afficher sur le jeu (court, et clairement compréhensible pour le joueur)");
-}
+ public
+  void register() {
+    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterSuccess();
+    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterError("ton
+    // message à afficher sur le jeu (court, et clairement compréhensible pour
+    // le joueur)");
+  }
 
-    // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
-    public
+  // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
+ public
   void sendMessage(Protocol.Message msg) {
     byte[] msgBytes = msg.ToByteArray();
     byte[] msgLength = BitConverter.GetBytes(msgBytes.Length);
