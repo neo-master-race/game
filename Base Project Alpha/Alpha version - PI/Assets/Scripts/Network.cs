@@ -12,6 +12,8 @@ using Google.Protobuf;
 using UnityEngine.SceneManagement;
 
 
+
+
 public
 class Network : MonoBehaviour {
  private
@@ -76,7 +78,16 @@ class Network : MonoBehaviour {
         onIncomingData();
       }
     }
-  }
+
+    if (SceneManager.GetActiveScene().name=="entryScene" && ((Input.GetKeyDown(KeyCode.Return) || GameObject.Find("Script_Source").GetComponent<menu_selection>().confirm_start == 1)
+    && (GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login"
+    || GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register")))
+    {
+        login_register();
+    }
+
+
+}
 
 public
  void GetInputUser(GameObject userfield)
@@ -91,15 +102,18 @@ public
 }
 
 public
- void login()
+ void login_register()
 {
-    Debug.Log("New user connected with username: " + username + " and password:" + password);
+    if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Login" && username!="" && password!="")
+        Debug.Log("New user connected with username: " + username + " and password: " + password);
+    else if(GameObject.Find("Script_Source").GetComponent<menu_selection>().start_action == "Register" && username != "" && password != "")
+            Debug.Log("New user registered with username: " + username + " and password: " + password);
 }
 
 public
  void register()
 {
-    Debug.Log("New user registered with username: " + username + " and password:" + password);
+    
 }
 
     // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket

@@ -1,6 +1,7 @@
 ﻿//Schneberger Maxime
 //21-02-18
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,7 +41,8 @@ public class menu_selection : MonoBehaviour {
     [Header("Variables")]
     public int selection_step = 0;
     public bool is_guest = false;
-
+    public int confirm_start=0;
+    public String start_action="";
 
     //Schneberger Maxime
     //Quand le pointeur de la souris entre dans un object possédant un event trigger lié avec ce script
@@ -452,5 +454,6 @@ public class menu_selection : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		
-	}
+
+    }
 }
