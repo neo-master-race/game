@@ -118,7 +118,12 @@ class Network : MonoBehaviour {
           .RegisterError("Veuillez saisir vos identifiants.");
       return;
     }
-    // @TODO: send a message over TCP socket
+
+    Protocol.LoginRequest lr =
+        new Protocol.LoginRequest{Username = username, Password = password};
+
+    Protocol.Message msg =
+        new Protocol.Message{Type = "login_request", LoginRequest = lr};
   }
 
  public
@@ -129,7 +134,14 @@ class Network : MonoBehaviour {
           .LogInError("Veuillez saisir vos identifiants.");
       return;
     }
-    // @TODO: send a message over TCP socket
+
+    Protocol.RegisterRequest rr =
+        new Protocol.RegisterRequest{Username = username, Password = password};
+
+    Protocol.Message msg =
+        new Protocol.Message{Type = "register_request", RegisterRequest = rr};
+
+    sendMessage(msg);
   }
 
  public
