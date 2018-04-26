@@ -132,6 +132,12 @@ class Network : MonoBehaviour {
     // @TODO: send a message over TCP socket
   }
 
+ public
+  void logout() {
+    // just generate a new random clientName
+    clientName = "Unity-" + new System.Random().Next(1, 65536);
+  }
+
   // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
  public
   void sendMessage(Protocol.Message msg) {
