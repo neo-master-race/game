@@ -20,9 +20,11 @@ public class Timer : MonoBehaviour {
 
     private float timeVal = 0f;
 
+    public string[] lapTimes;
+
     // Use this for initialization
     void Start () {
-		
+        lapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber];
 	}
 	
 	// Update is called once per frame
@@ -52,6 +54,7 @@ public class Timer : MonoBehaviour {
 
     public void resetTimer()
     {
+        lapTimes[GameObject.Find("LapCounter").GetComponent<LapCount>().currentLap-1] = zeroDisplay(currentMin, 2) + ":"+ zeroDisplay(currentSec, 2) + ":"+ zeroDisplay(currentMilliSec, 3);
         timeVal = 0;
         currentSec = 0;
         currentMilliSec = 0;

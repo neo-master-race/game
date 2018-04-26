@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class LapCount : MonoBehaviour {
 
     public Text LapObject;
-    private int raceLapNumber;
-    private int currentLap;
+    public int raceLapNumber;
+    public int currentLap;
 
 	// Use this for initialization
 	void Start () {
