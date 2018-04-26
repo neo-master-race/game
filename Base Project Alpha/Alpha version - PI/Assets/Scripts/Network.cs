@@ -112,18 +112,24 @@ class Network : MonoBehaviour {
 
  public
   void login() {
-    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInSuccess();
-    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().LogInError("ton
-    // message à afficher sur le jeu (court, et clairement compréhensible pour
-    // le joueur)");
+    if (username == "" || password == "") {
+      GameObject.Find("LogRegForm")
+          .GetComponent<log_reg_form>()
+          .RegisterError("Veuillez saisir vos identifiants.");
+      return;
+    }
+    // @TODO: send a message over TCP socket
   }
 
  public
   void register() {
-    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterSuccess();
-    // GameObject.Find("LogRegForm").GetComponent<log_reg_form>().RegisterError("ton
-    // message à afficher sur le jeu (court, et clairement compréhensible pour
-    // le joueur)");
+    if (username == "" || password == "") {
+      GameObject.Find("LogRegForm")
+          .GetComponent<log_reg_form>()
+          .LogInError("Veuillez saisir vos identifiants.");
+      return;
+    }
+    // @TODO: send a message over TCP socket
   }
 
   // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
@@ -296,6 +302,41 @@ class Network : MonoBehaviour {
         int[] positions = listInt.ToArray();
 
         // @TODO: do something with positions
+
+        break;
+      case "register_response":
+        Protocol.RegisterResponse registerResponse =
+            parsedData.RegisterResponse;
+        bool registredSuccess = registerResponse.Success;
+        string registredUsername = registerResponse.Username;
+
+        if (registredSuccess) {
+          GameObject.Find("LogRegForm")
+              .GetComponent<log_reg_form>()
+              .RegisterSuccess();
+          clientName = registredUsername;
+        } else {
+          GameObject.Find("LogRegForm")
+              .GetComponent<log_reg_form>()
+              .RegisterError("Nom d'utilisateur déjà existant.");
+        }
+
+        break;
+      case "login_response":
+        Protocol.LoginResponse loginResponse = parsedData.LoginResponse;
+        bool loggedSuccess = loginResponse.Success;
+        string loggedUsername = loginResponse.Username;
+
+        if (loggedSuccess) {
+          GameObject.Find("LogRegForm")
+              .GetComponent<log_reg_form>()
+              .LogInSuccess();
+          clientName = loggedUsername;
+        } else {
+          GameObject.Find("LogRegForm")
+              .GetComponent<log_reg_form>()
+              .LogInError("Mauvais identifiants.");
+        }
 
         break;
       default:
