@@ -44,6 +44,7 @@ class Network : MonoBehaviour {
   void Start() {
     DontDestroyOnLoad(this.gameObject);
     carsContainer = GameObject.Find("Cars");
+    
 
     players = new Hashtable();
     clientName = "Unity-" + new System.Random().Next(1, 65536);
