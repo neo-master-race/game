@@ -14,10 +14,13 @@ public class Player_Info_Ingame : MonoBehaviour {
     [Header("current race completion infos")]
     public bool[] wentThrough;
     public int lap_count = 1;
+    public int virtual_lap_count = 1;
     public bool hasHitSFLineOnce;
     public int nextCheckpointNumber = 1;
     public int supposedNextCheckpointNumber = 1;
     public int cp_count=0;
+    public int lastHittedCP = 0;
+    public int secondLastHittedCP = 0;
 
     [Header("Waypoints (relative position indicator)")]
     public float[] distanceToWaypoint;
@@ -90,24 +93,24 @@ public class Player_Info_Ingame : MonoBehaviour {
             {
                 for (int j = 0; j < playersLeaderboard.Length - 1; j++)
                 {
-                    if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
+                    if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().virtual_lap_count < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().virtual_lap_count)
                     {
                         GameObject tmp = playersLeaderboard[j + 1];
                         playersLeaderboard[j + 1] = playersLeaderboard[j];
                         playersLeaderboard[j] = tmp;
                     }
-                    else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
-                        && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().nextCheckpointNumber < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().nextCheckpointNumber))
+                    else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().virtual_lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().virtual_lap_count)
+                        && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber))
                     {
                         GameObject tmp = playersLeaderboard[j + 1];
                         playersLeaderboard[j + 1] = playersLeaderboard[j];
                         playersLeaderboard[j] = tmp;
                     }
-                    else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().lap_count)
-                        && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().nextCheckpointNumber == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().nextCheckpointNumber)
-                        && ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(nextCheckpointNumber-1)*2]+ playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((nextCheckpointNumber - 1) * 2)+1])
+                    else if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().virtual_lap_count == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().virtual_lap_count)
+                        && (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber == playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber)
+                        && ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(supposedNextCheckpointNumber - 1)*2]+ playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((supposedNextCheckpointNumber - 1) * 2)+1])
                             >
-                            (playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(nextCheckpointNumber-1)*2])+ playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((nextCheckpointNumber - 1) * 2)+1]))
+                            (playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[(supposedNextCheckpointNumber - 1)*2])+ playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().distanceToWaypoint[((supposedNextCheckpointNumber - 1) * 2)+1]))
                     {
                         GameObject tmp = playersLeaderboard[j + 1];
                         playersLeaderboard[j + 1] = playersLeaderboard[j];
@@ -119,6 +122,11 @@ public class Player_Info_Ingame : MonoBehaviour {
             {
                 if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i + 1;
+
+                if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber > playersLeaderboard[i].GetComponent<Player_Info_Ingame>().nextCheckpointNumber)
+                    playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count - 1;
+                else
+                    playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count;
             }
             GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
             //Debug.Log(leaderboardPosition);

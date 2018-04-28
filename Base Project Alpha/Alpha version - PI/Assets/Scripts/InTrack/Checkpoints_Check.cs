@@ -27,8 +27,6 @@ public class Checkpoints_Check : MonoBehaviour
 
     private GameObject[] players;
 
-    
-
 
 
     void OnTriggerEnter(Collider car)
@@ -36,7 +34,11 @@ public class Checkpoints_Check : MonoBehaviour
         if (this.gameObject.GetComponent<Checkpoints_Check>().isStartFinishLine)
         {
             if (!car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
+            {
                 car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
+                car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
+                car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
+            } 
             else
             {
                 if (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
@@ -55,6 +57,7 @@ public class Checkpoints_Check : MonoBehaviour
                 {
                     GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer();
                     car.GetComponent<Player_Info_Ingame>().lap_count++;
+                    car.GetComponent<Player_Info_Ingame>().virtual_lap_count++;
                     if (car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
                         GameObject.Find("LapCounter").GetComponent<LapCount>().setCurrentLap(car.GetComponent<Player_Info_Ingame>().lap_count);
                     car.GetComponent<Player_Info_Ingame>().cp_count = 0;
@@ -74,8 +77,21 @@ public class Checkpoints_Check : MonoBehaviour
                 car.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
                 car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber++;
                 car.GetComponent<Player_Info_Ingame>().cp_count++;
+                car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
             }
-            car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
+            else if(car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber != this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
+                && car.GetComponent<Player_Info_Ingame>().secondLastHittedCP > car.GetComponent<Player_Info_Ingame>().lastHittedCP)
+            {
+                car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber;
+                car.GetComponent<Player_Info_Ingame>().secondLastHittedCP = car.GetComponent<Player_Info_Ingame>().lastHittedCP;
+                car.GetComponent<Player_Info_Ingame>().lastHittedCP= this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber;
+            }
+            else
+            {
+                car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
+                car.GetComponent<Player_Info_Ingame>().secondLastHittedCP = car.GetComponent<Player_Info_Ingame>().lastHittedCP;
+                car.GetComponent<Player_Info_Ingame>().lastHittedCP = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber;
+            }
         }
     }
 
