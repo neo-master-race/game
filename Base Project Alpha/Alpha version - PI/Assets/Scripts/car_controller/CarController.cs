@@ -113,7 +113,11 @@ public class CarController : MonoBehaviour
                 turnValue = 0.0f;
                 float turnAxis = Input.GetAxis("Horizontal");
                 if (Mathf.Abs(turnAxis) > deadZone)
+                {
                     turnValue = turnAxis;
+                    if (acceleration < -deadZone)
+                        turnValue *= -1;
+                }
             }
 
             
