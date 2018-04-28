@@ -41,6 +41,7 @@ public class startLightsSequence : MonoBehaviour {
                 }
                 GameObject.Find("Stratos").GetComponent<CarController>().enabled = true;
                 timerInBetweenLights = 2.0f;
+                GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn = true;
             }
             if (lightSequenceStep == 7)
             {

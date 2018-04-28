@@ -22,6 +22,8 @@ public class Timer : MonoBehaviour {
 
     public string[] lapTimes;
 
+    public bool timerOn=false;
+
     // Use this for initialization
     void Start () {
         lapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber];
@@ -29,18 +31,20 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeVal += Time.deltaTime;
+        if(timerOn)
+        {
+            timeVal += Time.deltaTime;
 
-        currentMilliSec = (int)(timeVal * 1000) % 1000;
-        currentSec = (int)(timeVal) % 60;
-        currentMin = (int)(timeVal / 60) % 60;
+            currentMilliSec = (int)(timeVal * 1000) % 1000;
+            currentSec = (int)(timeVal) % 60;
+            currentMin = (int)(timeVal / 60) % 60;
 
-        secString = zeroDisplay(currentSec,2);
-        milliSecString = zeroDisplay(currentMilliSec, 3);
-        minString = zeroDisplay(currentMin,2);
+            secString = zeroDisplay(currentSec,2);
+            milliSecString = zeroDisplay(currentMilliSec, 3);
+            minString = zeroDisplay(currentMin,2);
 
-        TimeObject.text = minString + ":" + secString + "." + milliSecString;
-
+            TimeObject.text = minString + ":" + secString + "." + milliSecString;
+        }
     }
 
     string zeroDisplay(int toclock, int zeros)
