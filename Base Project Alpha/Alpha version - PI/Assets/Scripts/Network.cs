@@ -340,7 +340,9 @@ class Network : MonoBehaviour {
               .GetComponent<log_reg_form>()
               .RegisterSuccess();
           clientName = registredUsername;
+          Debug.Log("Sucessfully registred as " + clientName);
         } else {
+          Debug.Log("Error while trying to register as " + clientName);
           GameObject.Find("LogRegForm")
               .GetComponent<log_reg_form>()
               .RegisterError("Nom d'utilisateur déjà existant.");
@@ -357,7 +359,9 @@ class Network : MonoBehaviour {
               .GetComponent<log_reg_form>()
               .LogInSuccess();
           clientName = loggedUsername;
+          Debug.Log("Sucessfully logged in as " + clientName);
         } else {
+          Debug.Log("Error while trying to log in as " + clientName);
           GameObject.Find("LogRegForm")
               .GetComponent<log_reg_form>()
               .LogInError("Mauvais identifiants.");
