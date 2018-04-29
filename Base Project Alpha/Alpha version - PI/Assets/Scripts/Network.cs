@@ -276,6 +276,9 @@ class Network : MonoBehaviour {
         int cpCount = ups.CpCount;
         int nextCheckpointNumber = ups.NextCheckpointNumber;
         int supposedNextCheckpointNumber = ups.SupposedNextCheckpointNumber;
+        int virtual_lap_count = ups.VirtualLapCount;
+        int lastHittedCP = ups.LastHittedCp;
+        int secondLastHittedCP = ups.SecondLastHittedCp;
         user = ups.User;
 
         if (user == clientName)
@@ -293,6 +296,11 @@ class Network : MonoBehaviour {
         player.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber =
             supposedNextCheckpointNumber;
         player.GetComponent<Player_Info_Ingame>().wentThrough = wentThrough;
+        player.GetComponent<Player_Info_Ingame>().virtual_lap_count =
+            virtual_lap_count;
+        player.GetComponent<Player_Info_Ingame>().lastHittedCP = lastHittedCP;
+        player.GetComponent<Player_Info_Ingame>().secondLastHittedCP =
+            secondLastHittedCP;
 
         break;
       case "update_player_status_request":
