@@ -399,7 +399,10 @@ class Network : MonoBehaviour {
                           bool hasHitSFLineOnce,
                           int cpCount,
                           int nextCheckpointNumber,
-                          int supposedNextCheckpointNumber) {
+                          int supposedNextCheckpointNumber,
+                          int virtual_lap_count,
+                          int lastHittedCP,
+                          int secondLastHittedCP) {
     // all together
     Protocol.UpdatePlayerStatus ups = new Protocol.UpdatePlayerStatus{
         LapCount = lapCount,
@@ -407,7 +410,10 @@ class Network : MonoBehaviour {
         CpCount = cpCount,
         NextCheckpointNumber = nextCheckpointNumber,
         SupposedNextCheckpointNumber = supposedNextCheckpointNumber,
-        User = clientName};
+        User = clientName,
+        VirtualLapCount = virtual_lap_count,
+        LastHittedCp = lastHittedCP,
+        SecondLastHittedCp = secondLastHittedCP};
 
     ups.WentThrough.Add(wentThrough);
 

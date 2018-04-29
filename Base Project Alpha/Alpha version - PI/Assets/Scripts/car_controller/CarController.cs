@@ -249,7 +249,10 @@ public class CarController : MonoBehaviour
                     pii.hasHitSFLineOnce,
                     pii.cp_count,
                     pii.nextCheckpointNumber,
-                    pii.supposedNextCheckpointNumber
+                    pii.supposedNextCheckpointNumber,
+                    pii.virtual_lap_count,
+                    pii.lastHittedCP,
+                    pii.secondLastHittedCP
                 );
         }
     }
