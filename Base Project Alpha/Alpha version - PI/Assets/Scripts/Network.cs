@@ -44,7 +44,6 @@ class Network : MonoBehaviour {
   void Start() {
     DontDestroyOnLoad(this.gameObject);
     carsContainer = GameObject.Find("Cars");
-    
 
     players = new Hashtable();
     clientName = "Unity-" + new System.Random().Next(1, 65536);
@@ -110,6 +109,9 @@ class Network : MonoBehaviour {
   void GetInputPass(GameObject pwdfield) {
     this.password = pwdfield.GetComponent<InputField>().text;
   }
+
+ public
+  string getClientName() { return clientName; }
 
  public
   void login() {
