@@ -27,43 +27,45 @@ namespace Protocol {
             "dGlvbhIiCghwb3NpdGlvbhgBIAEoCzIQLnByb3RvY29sLlZlY3RvchIjCglk",
             "aXJlY3Rpb24YAiABKAsyEC5wcm90b2NvbC5WZWN0b3ISHwoFc2NhbGUYAyAB",
             "KAsyEC5wcm90b2NvbC5WZWN0b3ISDAoEdXNlchgEIAEoCRIiCgh2ZWxvY2l0",
-            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciLFAQoSVXBkYXRlUGxheWVyU3Rh",
+            "eRgFIAEoCzIQLnByb3RvY29sLlZlY3RvciKXAgoSVXBkYXRlUGxheWVyU3Rh",
             "dHVzEhQKDHdlbnRfdGhyb3VnaBgBIAMoCBIRCglsYXBfY291bnQYAiABKAUS",
             "HQoVaGFzX2hpdF9zX2ZfbGluZV9vbmNlGAMgASgIEhAKCGNwX2NvdW50GAQg",
             "ASgFEh4KFm5leHRfY2hlY2twb2ludF9udW1iZXIYBSABKAUSJwofc3VwcG9z",
             "ZWRfbmV4dF9jaGVja3BvaW50X251bWJlchgGIAEoBRIMCgR1c2VyGAcgASgJ",
-            "IhsKGVVwZGF0ZVBsYXllclN0YXR1c1JlcXVlc3QiLAoLQ2hhdE1lc3NhZ2US",
-            "DwoHY29udGVudBgBIAEoCRIMCgR1c2VyGAIgASgJIhoKCkRpc2Nvbm5lY3QS",
-            "DAoEdXNlchgBIAEoCSIMCgpDcmVhdGVSb29tIhcKCVN0YXJ0Um9vbRIKCgJp",
-            "ZBgBIAEoCSIWCghKb2luUm9vbRIKCgJpZBgBIAEoCSIkChBTdGFydGluZ1Bv",
-            "c2l0aW9uEhAKCHBvc2l0aW9uGAEgAygFIjUKD1JlZ2lzdGVyUmVxdWVzdBIQ",
-            "Cgh1c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIyCgxMb2dpblJl",
-            "cXVlc3QSEAoIdXNlcm5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiNQoQ",
-            "UmVnaXN0ZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCHVzZXJuYW1l",
-            "GAIgASgJIjIKDUxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1",
-            "c2VybmFtZRgCIAEoCSLUBQoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNo",
-            "YXRfbWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoW",
-            "dXBkYXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0",
-            "ZVBsYXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCAB",
-            "KAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25u",
-            "ZWN0GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9w",
-            "bGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQ",
-            "bGF5ZXJTdGF0dXNSZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5w",
-            "cm90b2NvbC5DcmVhdGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnBy",
-            "b3RvY29sLlN0YXJ0Um9vbUgAEicKCWpvaW5fcm9vbRgJIAEoCzISLnByb3Rv",
-            "Y29sLkpvaW5Sb29tSAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5w",
-            "cm90b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVz",
-            "dBgLIAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2lu",
-            "X3JlcXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFy",
-            "ZWdpc3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVz",
-            "cG9uc2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxv",
-            "Z2luUmVzcG9uc2VIAEIFCgNtc2diBnByb3RvMw=="));
+            "EhkKEXZpcnR1YWxfbGFwX2NvdW50GAggASgFEhYKDmxhc3RfaGl0dGVkX2Nw",
+            "GAkgASgFEh0KFXNlY29uZF9sYXN0X2hpdHRlZF9jcBgKIAEoBSIbChlVcGRh",
+            "dGVQbGF5ZXJTdGF0dXNSZXF1ZXN0IiwKC0NoYXRNZXNzYWdlEg8KB2NvbnRl",
+            "bnQYASABKAkSDAoEdXNlchgCIAEoCSIaCgpEaXNjb25uZWN0EgwKBHVzZXIY",
+            "ASABKAkiDAoKQ3JlYXRlUm9vbSIXCglTdGFydFJvb20SCgoCaWQYASABKAki",
+            "FgoISm9pblJvb20SCgoCaWQYASABKAkiJAoQU3RhcnRpbmdQb3NpdGlvbhIQ",
+            "Cghwb3NpdGlvbhgBIAMoBSI1Cg9SZWdpc3RlclJlcXVlc3QSEAoIdXNlcm5h",
+            "bWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiMgoMTG9naW5SZXF1ZXN0EhAK",
+            "CHVzZXJuYW1lGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIjUKEFJlZ2lzdGVy",
+            "UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSIy",
+            "Cg1Mb2dpblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUY",
+            "AiABKAki1AUKB01lc3NhZ2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3Nh",
+            "Z2UYAiABKAsyFS5wcm90b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9w",
+            "bGF5ZXJfcG9zaXRpb24YAyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQ",
+            "b3NpdGlvbkgAEjwKFHVwZGF0ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwucHJv",
+            "dG9jb2wuVXBkYXRlUGxheWVyU3RhdHVzSAASKgoKZGlzY29ubmVjdBgFIAEo",
+            "CzIULnByb3RvY29sLkRpc2Nvbm5lY3RIABJLChx1cGRhdGVfcGxheWVyX3N0",
+            "YXR1c19yZXF1ZXN0GAYgASgLMiMucHJvdG9jb2wuVXBkYXRlUGxheWVyU3Rh",
+            "dHVzUmVxdWVzdEgAEisKC2NyZWF0ZV9yb29tGAcgASgLMhQucHJvdG9jb2wu",
+            "Q3JlYXRlUm9vbUgAEikKCnN0YXJ0X3Jvb20YCCABKAsyEy5wcm90b2NvbC5T",
+            "dGFydFJvb21IABInCglqb2luX3Jvb20YCSABKAsyEi5wcm90b2NvbC5Kb2lu",
+            "Um9vbUgAEjcKEXN0YXJ0aW5nX3Bvc2l0aW9uGAogASgLMhoucHJvdG9jb2wu",
+            "U3RhcnRpbmdQb3NpdGlvbkgAEjUKEHJlZ2lzdGVyX3JlcXVlc3QYCyABKAsy",
+            "GS5wcm90b2NvbC5SZWdpc3RlclJlcXVlc3RIABIvCg1sb2dpbl9yZXF1ZXN0",
+            "GAwgASgLMhYucHJvdG9jb2wuTG9naW5SZXF1ZXN0SAASNwoRcmVnaXN0ZXJf",
+            "cmVzcG9uc2UYDSABKAsyGi5wcm90b2NvbC5SZWdpc3RlclJlc3BvbnNlSAAS",
+            "MQoObG9naW5fcmVzcG9uc2UYDiABKAsyFy5wcm90b2NvbC5Mb2dpblJlc3Bv",
+            "bnNlSABCBQoDbXNnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Vector), global::Protocol.Vector.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerPosition), global::Protocol.UpdatePlayerPosition.Parser, new[]{ "Position", "Direction", "Scale", "User", "Velocity" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber", "User" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatus), global::Protocol.UpdatePlayerStatus.Parser, new[]{ "WentThrough", "LapCount", "HasHitSFLineOnce", "CpCount", "NextCheckpointNumber", "SupposedNextCheckpointNumber", "User", "VirtualLapCount", "LastHittedCp", "SecondLastHittedCp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatusRequest), global::Protocol.UpdatePlayerStatusRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Disconnect), global::Protocol.Disconnect.Parser, new[]{ "User" }, null, null, null),
@@ -548,6 +550,9 @@ namespace Protocol {
       nextCheckpointNumber_ = other.nextCheckpointNumber_;
       supposedNextCheckpointNumber_ = other.supposedNextCheckpointNumber_;
       user_ = other.user_;
+      virtualLapCount_ = other.virtualLapCount_;
+      lastHittedCp_ = other.lastHittedCp_;
+      secondLastHittedCp_ = other.secondLastHittedCp_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -634,6 +639,39 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "virtual_lap_count" field.</summary>
+    public const int VirtualLapCountFieldNumber = 8;
+    private int virtualLapCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int VirtualLapCount {
+      get { return virtualLapCount_; }
+      set {
+        virtualLapCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_hitted_cp" field.</summary>
+    public const int LastHittedCpFieldNumber = 9;
+    private int lastHittedCp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LastHittedCp {
+      get { return lastHittedCp_; }
+      set {
+        lastHittedCp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "second_last_hitted_cp" field.</summary>
+    public const int SecondLastHittedCpFieldNumber = 10;
+    private int secondLastHittedCp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SecondLastHittedCp {
+      get { return secondLastHittedCp_; }
+      set {
+        secondLastHittedCp_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpdatePlayerStatus);
@@ -654,6 +692,9 @@ namespace Protocol {
       if (NextCheckpointNumber != other.NextCheckpointNumber) return false;
       if (SupposedNextCheckpointNumber != other.SupposedNextCheckpointNumber) return false;
       if (User != other.User) return false;
+      if (VirtualLapCount != other.VirtualLapCount) return false;
+      if (LastHittedCp != other.LastHittedCp) return false;
+      if (SecondLastHittedCp != other.SecondLastHittedCp) return false;
       return true;
     }
 
@@ -667,6 +708,9 @@ namespace Protocol {
       if (NextCheckpointNumber != 0) hash ^= NextCheckpointNumber.GetHashCode();
       if (SupposedNextCheckpointNumber != 0) hash ^= SupposedNextCheckpointNumber.GetHashCode();
       if (User.Length != 0) hash ^= User.GetHashCode();
+      if (VirtualLapCount != 0) hash ^= VirtualLapCount.GetHashCode();
+      if (LastHittedCp != 0) hash ^= LastHittedCp.GetHashCode();
+      if (SecondLastHittedCp != 0) hash ^= SecondLastHittedCp.GetHashCode();
       return hash;
     }
 
@@ -702,6 +746,18 @@ namespace Protocol {
         output.WriteRawTag(58);
         output.WriteString(User);
       }
+      if (VirtualLapCount != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(VirtualLapCount);
+      }
+      if (LastHittedCp != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(LastHittedCp);
+      }
+      if (SecondLastHittedCp != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(SecondLastHittedCp);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -725,6 +781,15 @@ namespace Protocol {
       }
       if (User.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
+      }
+      if (VirtualLapCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(VirtualLapCount);
+      }
+      if (LastHittedCp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastHittedCp);
+      }
+      if (SecondLastHittedCp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SecondLastHittedCp);
       }
       return size;
     }
@@ -752,6 +817,15 @@ namespace Protocol {
       }
       if (other.User.Length != 0) {
         User = other.User;
+      }
+      if (other.VirtualLapCount != 0) {
+        VirtualLapCount = other.VirtualLapCount;
+      }
+      if (other.LastHittedCp != 0) {
+        LastHittedCp = other.LastHittedCp;
+      }
+      if (other.SecondLastHittedCp != 0) {
+        SecondLastHittedCp = other.SecondLastHittedCp;
       }
     }
 
@@ -790,6 +864,18 @@ namespace Protocol {
           }
           case 58: {
             User = input.ReadString();
+            break;
+          }
+          case 64: {
+            VirtualLapCount = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            LastHittedCp = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            SecondLastHittedCp = input.ReadInt32();
             break;
           }
         }
