@@ -113,6 +113,7 @@ class Network : MonoBehaviour {
 
  public
   void login() {
+    Debug.Log("call to login function");
     if (username == "" || password == "") {
       GameObject.Find("LogRegForm")
           .GetComponent<log_reg_form>()
@@ -125,10 +126,13 @@ class Network : MonoBehaviour {
 
     Protocol.Message msg =
         new Protocol.Message{Type = "login_request", LoginRequest = lr};
+
+    sendMessage(msg);
   }
 
  public
   void register() {
+    Debug.Log("call to register function");
     if (username == "" || password == "") {
       GameObject.Find("LogRegForm")
           .GetComponent<log_reg_form>()
