@@ -39,26 +39,11 @@ public class CarController : MonoBehaviour
     public bool isLocalPlayer;
     private int limiter = 0;
 
-    public Vector3 centerOfMass;
-
-
     void Start()
-    {/*
-
-        for (int i = 0; i < dustTrails.Length; i++)
-        {
-            dustTrails[i].part 
-                = new Vector3(0, 1, 0);
-
-        }*/
-
-
+    {
         Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
-
-        if(centerOfMass!=null)
-            body.centerOfMass = centerOfMass;
 
         layerMask = 1 << LayerMask.NameToLayer("Vehicle");
         layerMask = ~layerMask;
@@ -133,7 +118,6 @@ public class CarController : MonoBehaviour
                     if (acceleration < -deadZone)
                         turnValue *= -1;
                 }
-                
             }
 
             
