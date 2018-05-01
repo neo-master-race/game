@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class menu_selection : MonoBehaviour {
 
@@ -336,6 +337,8 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Solo_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
+                SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+                SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
                 break;
 
             case "Multi_Text":

@@ -8,6 +8,7 @@ public class Player_Info_Ingame : MonoBehaviour {
     [Space(20)]
 
     public bool isLocalPlayer = false;
+    public string userName;
 
     [Space(30)]
 

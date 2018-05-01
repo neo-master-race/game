@@ -225,7 +225,13 @@ class Network : MonoBehaviour {
     GameObject player;
     if (!players.ContainsKey(clientName)) {
       player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
-      players.Add(clientName, player);
+
+    player.GetComponent<Player_Info_Ingame>().userName = clientName;
+    player.GetComponent<Player_Info_Ingame>().isLocalPlayer = false;
+    player.GetComponent<CarController>().isLocalPlayer = false;
+
+
+    players.Add(clientName, player);
     } else {
       player = players[clientName] as GameObject;
     }
