@@ -20,9 +20,14 @@ public class UserStats : MonoBehaviour {
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void isGuest()
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
+    }
+
+    // Update is called once per frame
+    void Update () {
+            
+    }
 }

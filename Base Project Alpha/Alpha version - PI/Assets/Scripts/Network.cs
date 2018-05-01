@@ -46,7 +46,7 @@ class Network : MonoBehaviour {
     carsContainer = GameObject.Find("Cars");
 
     players = new Hashtable();
-    clientName = "Unity-" + new System.Random().Next(1, 65536);
+    clientName = "Invité-" + new System.Random().Next(1, 65536);
     Debug.Log("network started");
 
     string host = "pi-2.ludovic-muller.fr";
@@ -154,7 +154,7 @@ class Network : MonoBehaviour {
  public
   void logout() {
     // just generate a new random clientName
-    clientName = "Unity-" + new System.Random().Next(1, 65536);
+    clientName = "Invité-" + new System.Random().Next(1, 65536);
   }
 
   // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
