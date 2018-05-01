@@ -79,6 +79,7 @@ public class log_reg_form : MonoBehaviour {
     public void LogInSuccess()
     {
         Debug.Log("New user connected");
+        GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().username;
         towwwlog();
     }
 
@@ -90,6 +91,7 @@ public class log_reg_form : MonoBehaviour {
     public void RegisterSuccess()
     {
         Debug.Log("New user registered");
+        GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().username;
         StartCoroutine(towwwsign());
     }
 

@@ -372,7 +372,7 @@ class Network : MonoBehaviour {
           Debug.Log("Error while trying to log in as " + loggedUsername);
           GameObject.Find("LogRegForm")
               .GetComponent<log_reg_form>()
-              .LogInError("Mauvais identifiants.");
+              .LogInError("Nom d'utilisateur ou mot de passe incorrect.");
         }
 
         break;
