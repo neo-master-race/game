@@ -12,7 +12,7 @@ public class LapCount : MonoBehaviour {
     public int currentLap;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         InitialLapInfos(1, 3);
 	}
 	
