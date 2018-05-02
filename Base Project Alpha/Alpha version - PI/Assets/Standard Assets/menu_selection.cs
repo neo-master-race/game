@@ -48,21 +48,32 @@ public class menu_selection : MonoBehaviour {
     public int confirm_start=0;
     public String start_action="";
 
+	[Header("Menu index")]
+	public int currentIndex = 1;
+	public int maxIndex = 0;
+	public InputField connexionUser;
+	public InputField connexionPasswd;
+	public InputField inscriptionUser;
+	public InputField inscriptionPasswd;
+	public InputField inscriptionPasswdConf;
+
+
 
     //Schneberger Maxime
     //Quand le pointeur de la souris entre dans un object possédant un event trigger lié avec ce script
     public void OnPointer_Enter () {
+		
         switch(this.name)
         {
             /************************************************************************************
              *                          BOUTONS D'ENTREE                                        *
              * **********************************************************************************/
-            case "Log_In_Text":
+			case "Log_In_Text":
                 //change la couleur du bouton log_in en vert
                 logInButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
 
-            case "Sign_Up_Text":
+			case "Sign_Up_Text":
                 //change la couleur du bouton sign_up en vert
                 signUpButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
@@ -79,7 +90,7 @@ public class menu_selection : MonoBehaviour {
 
 
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
             case "Confirm_Text":
                 //change la couleur du bouton confirm en vert
@@ -91,7 +102,7 @@ public class menu_selection : MonoBehaviour {
                 backButtonForm.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
 
 
@@ -180,7 +191,7 @@ public class menu_selection : MonoBehaviour {
 
 
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
             case "Confirm_Text":
                 //change la couleur du bouton confirm en blanc
@@ -192,7 +203,7 @@ public class menu_selection : MonoBehaviour {
                 backButtonForm.GetComponent<RawImage>().color = new Color(255, 0, 0);
                 break;
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
 
 
@@ -261,10 +272,14 @@ public class menu_selection : MonoBehaviour {
              *                          BOUTONS D'ENTREE                                        *
              * **********************************************************************************/
             case "Log_In_Text":
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex = 1;
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex = 2;
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
                 break;
 
             case "Sign_Up_Text":
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex = 1;
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex = 3;
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
                 break;
 
@@ -280,7 +295,7 @@ public class menu_selection : MonoBehaviour {
 
 
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
             case "Confirm_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 2;
@@ -290,7 +305,7 @@ public class menu_selection : MonoBehaviour {
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 0;
                 break;
             /************************************************************************************
-             *                          BOUTONS DE CONNECTION                                   *
+             *                          BOUTONS DE CONNEXION                                   *
              * **********************************************************************************/
 
 
@@ -462,7 +477,38 @@ public class menu_selection : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+		if (this.name == "Script_Source" && Input.GetKeyDown (KeyCode.Tab)) {
+			if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex < GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex) {
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex++;
 
+				if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 3) {
+					if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
+						inscriptionUser.ActivateInputField ();
+					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
+						inscriptionPasswd.ActivateInputField ();
+					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 3)
+						inscriptionPasswdConf.ActivateInputField ();
+				} 
+
+				else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 2) {
+					if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
+						connexionUser.ActivateInputField ();
+					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
+						connexionPasswd.ActivateInputField ();
+				}
+			}
+		}
+
+		if (this.name == "Script_Source") {
+			if (inscriptionUser.isFocused || connexionUser.isFocused)
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 1;
+
+			if (inscriptionPasswd.isFocused || connexionPasswd.isFocused)
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 2;		
+
+			if (inscriptionPasswdConf.isFocused)
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 3;		
+			
+		}
     }
 }

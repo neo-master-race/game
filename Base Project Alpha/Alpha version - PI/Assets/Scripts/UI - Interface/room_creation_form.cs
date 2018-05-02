@@ -246,7 +246,7 @@ public class room_creation_form : MonoBehaviour {
         switch (this.name)
         {
             case "RoomCreationSubmitText":
-                currentRoomCreated.roomIndex = GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Count;
+                //currentRoomCreated.roomIndex = GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Count;
 
                 if(toggleIsOn=="Single")
                     currentRoomCreated.room = RoomType.SingleRace;
@@ -256,13 +256,28 @@ public class room_creation_form : MonoBehaviour {
                 currentRoomCreated.currentPlayersNb = 1;
                 currentRoomCreated.MaximumPlayersNb = maxPlayers;
                 currentRoomCreated.ActivePlayers = new string[maxPlayers];
-                currentRoomCreated.ActivePlayers[0] = "localplayer";
+                currentRoomCreated.ActivePlayers[0] = GameObject.Find("UserStats").GetComponent<UserStats>().username;
                 if (toggle2IsOn == "Public")
                     currentRoomCreated.roomAccessibility = RoomAccesibility.Public;
                 else
                     currentRoomCreated.roomAccessibility = RoomAccesibility.Private;
 
-                GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Add(currentRoomCreated);
+
+
+                //APPEL RESEAU POUR LA CREATION DE ROOM EN RESEAU PUIS APPEL DEPUIS LE SCRIPT RESEAU A :
+                //GameObject.Find("Rooms_Script").GetComponent<room_info_container>().roomConstructor(.....)
+                //tu as déjà ici les variables 
+                //currentRoomCreated.room (Type de partie : Single, Tournament)
+                //currentRoomCreated.currentPlayersNb = 1;
+                //currentRoomCreated.MaximumPlayersNb = maxPlayers;
+                //currentRoomCreated.ActivePlayers = new string[maxPlayers];
+                //currentRoomCreated.ActivePlayers[0] = GameObject.Find("UserStats").GetComponent<UserStats>().username;
+                //currentRoomCreated.roomAccessibility = RoomAccesibility.Public;
+
+
+
+
+                //GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Add(currentRoomCreated);
                 GameObject.Find("Rooms_Script").GetComponent<room_info_container>().createRooms();
                 roomCreationForm.SetActive(false);
                 break;
