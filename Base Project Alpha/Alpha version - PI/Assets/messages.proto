@@ -49,7 +49,7 @@ message Disconnect { string user = 1; }
 message CreateRoom {
   int32 room_type = 1;
   int32 id_circuit = 2;
-  int32 max_players = 3
+  int32 max_players = 3;
 }
 
 message RoomListRequest {}
@@ -57,7 +57,7 @@ message RoomListResponse {
   string id = 1;
   int32 room_type = 2;
   int32 id_circuit = 3;
-  int32 max_players = 4
+  int32 max_players = 4;
   int32 nb_players = 5;
   repeated string players_username = 6;
   repeated int32 players_nb_races = 7;

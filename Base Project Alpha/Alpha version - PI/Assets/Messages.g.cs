@@ -36,30 +36,39 @@ namespace Protocol {
             "GAkgASgFEh0KFXNlY29uZF9sYXN0X2hpdHRlZF9jcBgKIAEoBSIbChlVcGRh",
             "dGVQbGF5ZXJTdGF0dXNSZXF1ZXN0IiwKC0NoYXRNZXNzYWdlEg8KB2NvbnRl",
             "bnQYASABKAkSDAoEdXNlchgCIAEoCSIaCgpEaXNjb25uZWN0EgwKBHVzZXIY",
-            "ASABKAkiDAoKQ3JlYXRlUm9vbSIXCglTdGFydFJvb20SCgoCaWQYASABKAki",
-            "FgoISm9pblJvb20SCgoCaWQYASABKAkiJAoQU3RhcnRpbmdQb3NpdGlvbhIQ",
-            "Cghwb3NpdGlvbhgBIAMoBSI1Cg9SZWdpc3RlclJlcXVlc3QSEAoIdXNlcm5h",
-            "bWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiMgoMTG9naW5SZXF1ZXN0EhAK",
-            "CHVzZXJuYW1lGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIjUKEFJlZ2lzdGVy",
-            "UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSIy",
-            "Cg1Mb2dpblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUY",
-            "AiABKAki1AUKB01lc3NhZ2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3Nh",
-            "Z2UYAiABKAsyFS5wcm90b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9w",
-            "bGF5ZXJfcG9zaXRpb24YAyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQ",
-            "b3NpdGlvbkgAEjwKFHVwZGF0ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwucHJv",
-            "dG9jb2wuVXBkYXRlUGxheWVyU3RhdHVzSAASKgoKZGlzY29ubmVjdBgFIAEo",
-            "CzIULnByb3RvY29sLkRpc2Nvbm5lY3RIABJLChx1cGRhdGVfcGxheWVyX3N0",
-            "YXR1c19yZXF1ZXN0GAYgASgLMiMucHJvdG9jb2wuVXBkYXRlUGxheWVyU3Rh",
-            "dHVzUmVxdWVzdEgAEisKC2NyZWF0ZV9yb29tGAcgASgLMhQucHJvdG9jb2wu",
-            "Q3JlYXRlUm9vbUgAEikKCnN0YXJ0X3Jvb20YCCABKAsyEy5wcm90b2NvbC5T",
-            "dGFydFJvb21IABInCglqb2luX3Jvb20YCSABKAsyEi5wcm90b2NvbC5Kb2lu",
-            "Um9vbUgAEjcKEXN0YXJ0aW5nX3Bvc2l0aW9uGAogASgLMhoucHJvdG9jb2wu",
-            "U3RhcnRpbmdQb3NpdGlvbkgAEjUKEHJlZ2lzdGVyX3JlcXVlc3QYCyABKAsy",
-            "GS5wcm90b2NvbC5SZWdpc3RlclJlcXVlc3RIABIvCg1sb2dpbl9yZXF1ZXN0",
-            "GAwgASgLMhYucHJvdG9jb2wuTG9naW5SZXF1ZXN0SAASNwoRcmVnaXN0ZXJf",
-            "cmVzcG9uc2UYDSABKAsyGi5wcm90b2NvbC5SZWdpc3RlclJlc3BvbnNlSAAS",
-            "MQoObG9naW5fcmVzcG9uc2UYDiABKAsyFy5wcm90b2NvbC5Mb2dpblJlc3Bv",
-            "bnNlSABCBQoDbXNnYgZwcm90bzM="));
+            "ASABKAkiSAoKQ3JlYXRlUm9vbRIRCglyb29tX3R5cGUYASABKAUSEgoKaWRf",
+            "Y2lyY3VpdBgCIAEoBRITCgttYXhfcGxheWVycxgDIAEoBSIRCg9Sb29tTGlz",
+            "dFJlcXVlc3Qi0wEKEFJvb21MaXN0UmVzcG9uc2USCgoCaWQYASABKAkSEQoJ",
+            "cm9vbV90eXBlGAIgASgFEhIKCmlkX2NpcmN1aXQYAyABKAUSEwoLbWF4X3Bs",
+            "YXllcnMYBCABKAUSEgoKbmJfcGxheWVycxgFIAEoBRIYChBwbGF5ZXJzX3Vz",
+            "ZXJuYW1lGAYgAygJEhgKEHBsYXllcnNfbmJfcmFjZXMYByADKAUSFwoPcGxh",
+            "eWVyc19uYl93aW5zGAggAygFEhYKDnBsYXllcnNfcmVjb3JkGAkgAygJIhcK",
+            "CVN0YXJ0Um9vbRIKCgJpZBgBIAEoCSIWCghKb2luUm9vbRIKCgJpZBgBIAEo",
+            "CSIkChBTdGFydGluZ1Bvc2l0aW9uEhAKCHBvc2l0aW9uGAEgAygFIjUKD1Jl",
+            "Z2lzdGVyUmVxdWVzdBIQCgh1c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgC",
+            "IAEoCSIyCgxMb2dpblJlcXVlc3QSEAoIdXNlcm5hbWUYASABKAkSEAoIcGFz",
+            "c3dvcmQYAiABKAkiNQoQUmVnaXN0ZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEg",
+            "ASgIEhAKCHVzZXJuYW1lGAIgASgJIjIKDUxvZ2luUmVzcG9uc2USDwoHc3Vj",
+            "Y2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSLGBgoHTWVzc2FnZRIMCgR0",
+            "eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNo",
+            "YXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIe",
+            "LnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3Bs",
+            "YXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0",
+            "dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVj",
+            "dEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5w",
+            "cm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNSZXF1ZXN0SAASKwoLY3JlYXRl",
+            "X3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVhdGVSb29tSAASKQoKc3RhcnRf",
+            "cm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0Um9vbUgAEicKCWpvaW5fcm9v",
+            "bRgJIAEoCzISLnByb3RvY29sLkpvaW5Sb29tSAASNwoRc3RhcnRpbmdfcG9z",
+            "aXRpb24YCiABKAsyGi5wcm90b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQ",
+            "cmVnaXN0ZXJfcmVxdWVzdBgLIAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVx",
+            "dWVzdEgAEi8KDWxvZ2luX3JlcXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dp",
+            "blJlcXVlc3RIABI3ChFyZWdpc3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3Rv",
+            "Y29sLlJlZ2lzdGVyUmVzcG9uc2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEo",
+            "CzIXLnByb3RvY29sLkxvZ2luUmVzcG9uc2VIABI2ChFyb29tX2xpc3RfcmVx",
+            "dWVzdBgPIAEoCzIZLnByb3RvY29sLlJvb21MaXN0UmVxdWVzdEgAEjgKEnJv",
+            "b21fbGlzdF9yZXNwb25zZRgQIAEoCzIaLnByb3RvY29sLlJvb21MaXN0UmVz",
+            "cG9uc2VIAEIFCgNtc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -69,7 +78,9 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UpdatePlayerStatusRequest), global::Protocol.UpdatePlayerStatusRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChatMessage), global::Protocol.ChatMessage.Parser, new[]{ "Content", "User" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Disconnect), global::Protocol.Disconnect.Parser, new[]{ "User" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.CreateRoom), global::Protocol.CreateRoom.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.CreateRoom), global::Protocol.CreateRoom.Parser, new[]{ "RoomType", "IdCircuit", "MaxPlayers" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListRequest), global::Protocol.RoomListRequest.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListResponse), global::Protocol.RoomListResponse.Parser, new[]{ "Id", "RoomType", "IdCircuit", "MaxPlayers", "NbPlayers", "PlayersUsername", "PlayersNbRaces", "PlayersNbWins", "PlayersRecord" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartRoom), global::Protocol.StartRoom.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoom), global::Protocol.JoinRoom.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
@@ -77,7 +88,7 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginRequest), global::Protocol.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -1272,11 +1283,47 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateRoom(CreateRoom other) : this() {
+      roomType_ = other.roomType_;
+      idCircuit_ = other.idCircuit_;
+      maxPlayers_ = other.maxPlayers_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CreateRoom Clone() {
       return new CreateRoom(this);
+    }
+
+    /// <summary>Field number for the "room_type" field.</summary>
+    public const int RoomTypeFieldNumber = 1;
+    private int roomType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomType {
+      get { return roomType_; }
+      set {
+        roomType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id_circuit" field.</summary>
+    public const int IdCircuitFieldNumber = 2;
+    private int idCircuit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IdCircuit {
+      get { return idCircuit_; }
+      set {
+        idCircuit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_players" field.</summary>
+    public const int MaxPlayersFieldNumber = 3;
+    private int maxPlayers_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxPlayers {
+      get { return maxPlayers_; }
+      set {
+        maxPlayers_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1286,6 +1333,143 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CreateRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoomType != other.RoomType) return false;
+      if (IdCircuit != other.IdCircuit) return false;
+      if (MaxPlayers != other.MaxPlayers) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoomType != 0) hash ^= RoomType.GetHashCode();
+      if (IdCircuit != 0) hash ^= IdCircuit.GetHashCode();
+      if (MaxPlayers != 0) hash ^= MaxPlayers.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoomType != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RoomType);
+      }
+      if (IdCircuit != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(IdCircuit);
+      }
+      if (MaxPlayers != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(MaxPlayers);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoomType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomType);
+      }
+      if (IdCircuit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdCircuit);
+      }
+      if (MaxPlayers != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxPlayers);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CreateRoom other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoomType != 0) {
+        RoomType = other.RoomType;
+      }
+      if (other.IdCircuit != 0) {
+        IdCircuit = other.IdCircuit;
+      }
+      if (other.MaxPlayers != 0) {
+        MaxPlayers = other.MaxPlayers;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RoomType = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            IdCircuit = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            MaxPlayers = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RoomListRequest : pb::IMessage<RoomListRequest> {
+    private static readonly pb::MessageParser<RoomListRequest> _parser = new pb::MessageParser<RoomListRequest>(() => new RoomListRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RoomListRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListRequest(RoomListRequest other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListRequest Clone() {
+      return new RoomListRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RoomListRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RoomListRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1317,7 +1501,7 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CreateRoom other) {
+    public void MergeFrom(RoomListRequest other) {
       if (other == null) {
         return;
       }
@@ -1337,6 +1521,317 @@ namespace Protocol {
 
   }
 
+  public sealed partial class RoomListResponse : pb::IMessage<RoomListResponse> {
+    private static readonly pb::MessageParser<RoomListResponse> _parser = new pb::MessageParser<RoomListResponse>(() => new RoomListResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RoomListResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListResponse(RoomListResponse other) : this() {
+      id_ = other.id_;
+      roomType_ = other.roomType_;
+      idCircuit_ = other.idCircuit_;
+      maxPlayers_ = other.maxPlayers_;
+      nbPlayers_ = other.nbPlayers_;
+      playersUsername_ = other.playersUsername_.Clone();
+      playersNbRaces_ = other.playersNbRaces_.Clone();
+      playersNbWins_ = other.playersNbWins_.Clone();
+      playersRecord_ = other.playersRecord_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoomListResponse Clone() {
+      return new RoomListResponse(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "room_type" field.</summary>
+    public const int RoomTypeFieldNumber = 2;
+    private int roomType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomType {
+      get { return roomType_; }
+      set {
+        roomType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id_circuit" field.</summary>
+    public const int IdCircuitFieldNumber = 3;
+    private int idCircuit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IdCircuit {
+      get { return idCircuit_; }
+      set {
+        idCircuit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_players" field.</summary>
+    public const int MaxPlayersFieldNumber = 4;
+    private int maxPlayers_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxPlayers {
+      get { return maxPlayers_; }
+      set {
+        maxPlayers_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "nb_players" field.</summary>
+    public const int NbPlayersFieldNumber = 5;
+    private int nbPlayers_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NbPlayers {
+      get { return nbPlayers_; }
+      set {
+        nbPlayers_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "players_username" field.</summary>
+    public const int PlayersUsernameFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_playersUsername_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> playersUsername_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> PlayersUsername {
+      get { return playersUsername_; }
+    }
+
+    /// <summary>Field number for the "players_nb_races" field.</summary>
+    public const int PlayersNbRacesFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_playersNbRaces_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> playersNbRaces_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> PlayersNbRaces {
+      get { return playersNbRaces_; }
+    }
+
+    /// <summary>Field number for the "players_nb_wins" field.</summary>
+    public const int PlayersNbWinsFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_playersNbWins_codec
+        = pb::FieldCodec.ForInt32(66);
+    private readonly pbc::RepeatedField<int> playersNbWins_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> PlayersNbWins {
+      get { return playersNbWins_; }
+    }
+
+    /// <summary>Field number for the "players_record" field.</summary>
+    public const int PlayersRecordFieldNumber = 9;
+    private static readonly pb::FieldCodec<string> _repeated_playersRecord_codec
+        = pb::FieldCodec.ForString(74);
+    private readonly pbc::RepeatedField<string> playersRecord_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> PlayersRecord {
+      get { return playersRecord_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RoomListResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RoomListResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (RoomType != other.RoomType) return false;
+      if (IdCircuit != other.IdCircuit) return false;
+      if (MaxPlayers != other.MaxPlayers) return false;
+      if (NbPlayers != other.NbPlayers) return false;
+      if(!playersUsername_.Equals(other.playersUsername_)) return false;
+      if(!playersNbRaces_.Equals(other.playersNbRaces_)) return false;
+      if(!playersNbWins_.Equals(other.playersNbWins_)) return false;
+      if(!playersRecord_.Equals(other.playersRecord_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (RoomType != 0) hash ^= RoomType.GetHashCode();
+      if (IdCircuit != 0) hash ^= IdCircuit.GetHashCode();
+      if (MaxPlayers != 0) hash ^= MaxPlayers.GetHashCode();
+      if (NbPlayers != 0) hash ^= NbPlayers.GetHashCode();
+      hash ^= playersUsername_.GetHashCode();
+      hash ^= playersNbRaces_.GetHashCode();
+      hash ^= playersNbWins_.GetHashCode();
+      hash ^= playersRecord_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (RoomType != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RoomType);
+      }
+      if (IdCircuit != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IdCircuit);
+      }
+      if (MaxPlayers != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(MaxPlayers);
+      }
+      if (NbPlayers != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(NbPlayers);
+      }
+      playersUsername_.WriteTo(output, _repeated_playersUsername_codec);
+      playersNbRaces_.WriteTo(output, _repeated_playersNbRaces_codec);
+      playersNbWins_.WriteTo(output, _repeated_playersNbWins_codec);
+      playersRecord_.WriteTo(output, _repeated_playersRecord_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (RoomType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomType);
+      }
+      if (IdCircuit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdCircuit);
+      }
+      if (MaxPlayers != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxPlayers);
+      }
+      if (NbPlayers != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NbPlayers);
+      }
+      size += playersUsername_.CalculateSize(_repeated_playersUsername_codec);
+      size += playersNbRaces_.CalculateSize(_repeated_playersNbRaces_codec);
+      size += playersNbWins_.CalculateSize(_repeated_playersNbWins_codec);
+      size += playersRecord_.CalculateSize(_repeated_playersRecord_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RoomListResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.RoomType != 0) {
+        RoomType = other.RoomType;
+      }
+      if (other.IdCircuit != 0) {
+        IdCircuit = other.IdCircuit;
+      }
+      if (other.MaxPlayers != 0) {
+        MaxPlayers = other.MaxPlayers;
+      }
+      if (other.NbPlayers != 0) {
+        NbPlayers = other.NbPlayers;
+      }
+      playersUsername_.Add(other.playersUsername_);
+      playersNbRaces_.Add(other.playersNbRaces_);
+      playersNbWins_.Add(other.playersNbWins_);
+      playersRecord_.Add(other.playersRecord_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            RoomType = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            IdCircuit = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            MaxPlayers = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            NbPlayers = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            playersUsername_.AddEntriesFrom(input, _repeated_playersUsername_codec);
+            break;
+          }
+          case 58:
+          case 56: {
+            playersNbRaces_.AddEntriesFrom(input, _repeated_playersNbRaces_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            playersNbWins_.AddEntriesFrom(input, _repeated_playersNbWins_codec);
+            break;
+          }
+          case 74: {
+            playersRecord_.AddEntriesFrom(input, _repeated_playersRecord_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  starts a game
   /// </summary>
@@ -1347,7 +1842,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1467,7 +1962,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1584,7 +2079,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1694,7 +2189,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1839,7 +2334,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1984,7 +2479,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2129,7 +2624,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2278,7 +2773,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2335,6 +2830,12 @@ namespace Protocol {
           break;
         case MsgOneofCase.LoginResponse:
           LoginResponse = other.LoginResponse.Clone();
+          break;
+        case MsgOneofCase.RoomListRequest:
+          RoomListRequest = other.RoomListRequest.Clone();
+          break;
+        case MsgOneofCase.RoomListResponse:
+          RoomListResponse = other.RoomListResponse.Clone();
           break;
       }
 
@@ -2502,6 +3003,28 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "room_list_request" field.</summary>
+    public const int RoomListRequestFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.RoomListRequest RoomListRequest {
+      get { return msgCase_ == MsgOneofCase.RoomListRequest ? (global::Protocol.RoomListRequest) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.RoomListRequest;
+      }
+    }
+
+    /// <summary>Field number for the "room_list_response" field.</summary>
+    public const int RoomListResponseFieldNumber = 16;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.RoomListResponse RoomListResponse {
+      get { return msgCase_ == MsgOneofCase.RoomListResponse ? (global::Protocol.RoomListResponse) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.RoomListResponse;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -2519,6 +3042,8 @@ namespace Protocol {
       LoginRequest = 12,
       RegisterResponse = 13,
       LoginResponse = 14,
+      RoomListRequest = 15,
+      RoomListResponse = 16,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2559,6 +3084,8 @@ namespace Protocol {
       if (!object.Equals(LoginRequest, other.LoginRequest)) return false;
       if (!object.Equals(RegisterResponse, other.RegisterResponse)) return false;
       if (!object.Equals(LoginResponse, other.LoginResponse)) return false;
+      if (!object.Equals(RoomListRequest, other.RoomListRequest)) return false;
+      if (!object.Equals(RoomListResponse, other.RoomListResponse)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -2580,6 +3107,8 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.LoginRequest) hash ^= LoginRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.RegisterResponse) hash ^= RegisterResponse.GetHashCode();
       if (msgCase_ == MsgOneofCase.LoginResponse) hash ^= LoginResponse.GetHashCode();
+      if (msgCase_ == MsgOneofCase.RoomListRequest) hash ^= RoomListRequest.GetHashCode();
+      if (msgCase_ == MsgOneofCase.RoomListResponse) hash ^= RoomListResponse.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -2647,6 +3176,14 @@ namespace Protocol {
         output.WriteRawTag(114);
         output.WriteMessage(LoginResponse);
       }
+      if (msgCase_ == MsgOneofCase.RoomListRequest) {
+        output.WriteRawTag(122);
+        output.WriteMessage(RoomListRequest);
+      }
+      if (msgCase_ == MsgOneofCase.RoomListResponse) {
+        output.WriteRawTag(130, 1);
+        output.WriteMessage(RoomListResponse);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2693,6 +3230,12 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.LoginResponse) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LoginResponse);
+      }
+      if (msgCase_ == MsgOneofCase.RoomListRequest) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RoomListRequest);
+      }
+      if (msgCase_ == MsgOneofCase.RoomListResponse) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoomListResponse);
       }
       return size;
     }
@@ -2744,6 +3287,12 @@ namespace Protocol {
           break;
         case MsgOneofCase.LoginResponse:
           LoginResponse = other.LoginResponse;
+          break;
+        case MsgOneofCase.RoomListRequest:
+          RoomListRequest = other.RoomListRequest;
+          break;
+        case MsgOneofCase.RoomListResponse:
+          RoomListResponse = other.RoomListResponse;
           break;
       }
 
@@ -2876,6 +3425,24 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             LoginResponse = subBuilder;
+            break;
+          }
+          case 122: {
+            global::Protocol.RoomListRequest subBuilder = new global::Protocol.RoomListRequest();
+            if (msgCase_ == MsgOneofCase.RoomListRequest) {
+              subBuilder.MergeFrom(RoomListRequest);
+            }
+            input.ReadMessage(subBuilder);
+            RoomListRequest = subBuilder;
+            break;
+          }
+          case 130: {
+            global::Protocol.RoomListResponse subBuilder = new global::Protocol.RoomListResponse();
+            if (msgCase_ == MsgOneofCase.RoomListResponse) {
+              subBuilder.MergeFrom(RoomListResponse);
+            }
+            input.ReadMessage(subBuilder);
+            RoomListResponse = subBuilder;
             break;
           }
         }

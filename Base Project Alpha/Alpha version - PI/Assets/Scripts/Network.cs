@@ -226,12 +226,11 @@ class Network : MonoBehaviour {
     if (!players.ContainsKey(clientName)) {
       player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
 
-    player.GetComponent<Player_Info_Ingame>().userName = clientName;
-    player.GetComponent<Player_Info_Ingame>().isLocalPlayer = false;
-    player.GetComponent<CarController>().isLocalPlayer = false;
+      player.GetComponent<Player_Info_Ingame>().userName = clientName;
+      player.GetComponent<Player_Info_Ingame>().isLocalPlayer = false;
+      player.GetComponent<CarController>().isLocalPlayer = false;
 
-
-    players.Add(clientName, player);
+      players.Add(clientName, player);
     } else {
       player = players[clientName] as GameObject;
     }
@@ -456,5 +455,15 @@ class Network : MonoBehaviour {
     sendMessage(new Protocol.Message{
         Type = "update_player_status_request",
         UpdatePlayerStatusRequest = new Protocol.UpdatePlayerStatusRequest()});
+  }
+
+  // request for creating a room
+ public
+  void createRoom(int type, int circuit, int maxPlayers) {
+    sendMessage(new Protocol.Message {
+      Type = "create_room",
+      CreateRoom = new Protocol.CreateRoom{RoomType = type, IdCircuit = circuit,
+                                           MaxPlayers = maxPlayers}
+    });
   }
 }
