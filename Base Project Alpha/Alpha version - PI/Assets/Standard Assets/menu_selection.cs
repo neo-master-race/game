@@ -25,6 +25,9 @@ public class menu_selection : MonoBehaviour {
     public GameObject multiButton;
     public GameObject tutoButton;
 
+    [Header("Multiplayer Section")]
+    public GameObject multiplayerUI;
+
     [Header("Circuits buttons")]
     public GameObject circuit1Button;
     public GameObject circuit2Button;
@@ -346,6 +349,8 @@ public class menu_selection : MonoBehaviour {
                 soloButton.SetActive(false);
                 multiButton.SetActive(false);
                 tutoButton.SetActive(false);
+
+                multiplayerUI.SetActive(true);
 
 
                 break;
