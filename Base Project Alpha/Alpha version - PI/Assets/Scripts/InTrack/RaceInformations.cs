@@ -14,14 +14,15 @@ public class RaceInformations : MonoBehaviour {
     public int[] playerLapCount;
     public string[] playerGlobalTimes;
     public string[] playerLapTimes;
+    public string[] playerBestLapTimes= { "-", "-", "-", "-" };
 
 
     private int i = 0;
 
-    
+
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         playerGlobalTimes = new string[4];
         playerLapCount = new int[4];
