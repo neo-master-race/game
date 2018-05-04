@@ -55,9 +55,10 @@ public class Checkpoints_Check : MonoBehaviour
                 }*/
                 if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
                 {
-                    GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer();
+                    GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer(0);
                     car.GetComponent<Player_Info_Ingame>().lap_count++;
                     car.GetComponent<Player_Info_Ingame>().virtual_lap_count++;
+                    
                     if (car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
                         GameObject.Find("LapCounter").GetComponent<LapCount>().setCurrentLap(car.GetComponent<Player_Info_Ingame>().lap_count);
                     car.GetComponent<Player_Info_Ingame>().cp_count = 0;

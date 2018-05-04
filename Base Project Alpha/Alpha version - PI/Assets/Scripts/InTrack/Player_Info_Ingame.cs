@@ -36,6 +36,8 @@ public class Player_Info_Ingame : MonoBehaviour {
     [Header("Other Players")]
     public GameObject[] players;
     public GameObject[] playersLeaderboard;
+    public string[] playersGlobalTime;
+    public string[] playersLapTimes;
 
     // Use this for initialization
     void Start()
