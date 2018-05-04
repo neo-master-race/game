@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
+        
     }
 	
 	// Update is called once per frame
@@ -94,12 +94,13 @@ public class Timer : MonoBehaviour {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));
             int bestLapMSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(6, 3));
-            Debug.Log(bestLapMin + ":" + bestlapSec + ":" + bestLapMSec);
-            for (int i = playerId * racelap; i < (playerId + 1); i++)
+            if(currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (currentSecLap[playerId]< bestlapSec))
+            || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
             {
-                if((currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec< currentSecLap[playerId]))
-                    || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
+                GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId]= zeroDisplay(currentMinLap[playerId], 2) + ":" + zeroDisplay(currentSecLap[playerId], 2) + ":" + zeroDisplay(currentMilliSecLap[playerId], 3);
             }
+            Debug.Log(bestLapMin + ":" + bestlapSec + ":" + bestLapMSec);
+            Debug.Log(currentMinLap[playerId] + ":" + currentSecLap[playerId] + ":" + currentMilliSecLap[playerId]);
         }
         else
             GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId]= zeroDisplay(currentMinLap[playerId], 2) + ":" + zeroDisplay(currentSecLap[playerId], 2) + ":" + zeroDisplay(currentMilliSecLap[playerId], 3);
