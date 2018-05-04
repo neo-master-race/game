@@ -33,12 +33,12 @@ public class Checkpoints_Check : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Checkpoints_Check>().isStartFinishLine)
         {
-            if (car.name!= "Front_Collider1" && car.name != "Front_Collider2" && !car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
+            if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && !car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
             {
                 car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
                 car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
                 car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
-            } 
+            }
             else
             {
                 if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
@@ -47,7 +47,7 @@ public class Checkpoints_Check : MonoBehaviour
                     car.GetComponent<Player_Info_Ingame>().cp_count++;
                     car.GetComponent<Player_Info_Ingame>().wentThrough[car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1] = true;
                 }
-                    
+
                 /*for (int i = 0; i <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; i++)
                 {
                     if (car.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
@@ -56,19 +56,34 @@ public class Checkpoints_Check : MonoBehaviour
                 if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
                 {
                     GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer(0);
-                    car.GetComponent<Player_Info_Ingame>().lap_count++;
-                    car.GetComponent<Player_Info_Ingame>().virtual_lap_count++;
-                    
-                    if (car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
-                        GameObject.Find("LapCounter").GetComponent<LapCount>().setCurrentLap(car.GetComponent<Player_Info_Ingame>().lap_count);
-                    car.GetComponent<Player_Info_Ingame>().cp_count = 0;
-                    for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
-                        car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
-                    car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
-                    //GameObject.Find("Race_Control").GetComponent<player_info_server>().players_laps[0] = 5;
+                    if ((car.GetComponent<Player_Info_Ingame>().lap_count == GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber)
+                        && car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                    {
+                        for(int i =0;i< GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players.Length;i++)
+                        {
+                            if(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                            {
+                                GameObject.Find("TimeCounter").GetComponent<Timer>().stopGlobalTimer(i);
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                        car.GetComponent<Player_Info_Ingame>().lap_count++;
+                        car.GetComponent<Player_Info_Ingame>().virtual_lap_count++;
+
+                        if (car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                            GameObject.Find("LapCounter").GetComponent<LapCount>().setCurrentLap(car.GetComponent<Player_Info_Ingame>().lap_count);
+                        car.GetComponent<Player_Info_Ingame>().cp_count = 0;
+                        for (int j = 0; j <= car.GetComponent<Player_Info_Ingame>().wentThrough.Length - 1; j++)
+                            car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
+                        car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
+                        //GameObject.Find("Race_Control").GetComponent<player_info_server>().players_laps[0] = 5;
+                        if (car.name != "Front_Collider1" && car.name != "Front_Collider2")
+                            car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
+                    }
                 }
-                if (car.name != "Front_Collider1" && car.name != "Front_Collider2")
-                    car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
             }
         }
         else

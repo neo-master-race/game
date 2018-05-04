@@ -14,6 +14,7 @@ public class LapCount : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         InitialLapInfos(1, 3);
+        
 	}
 	
 	// Update is called once per frame
@@ -30,6 +31,7 @@ public class LapCount : MonoBehaviour {
     public void setRaceLapNumber(int lapNumber)
     {
         raceLapNumber = lapNumber;
+        GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber=lapNumber;
         displayLapInfos();
     }
 

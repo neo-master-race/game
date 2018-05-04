@@ -9,6 +9,8 @@ public class RaceInformations : MonoBehaviour {
     public GameObject[] playerLeaderboard;
 
     [Header("InRace Info")]
+    public int raceLapNumber;
+    [Space(10)]
     public int[] playerLapCount;
     public string[] playerGlobalTimes;
     public string[] playerLapTimes;
