@@ -6,6 +6,7 @@ public class UserStats : MonoBehaviour {
 
     [Header("User Informations")]
     public string username;
+    public bool isOnRoomList = false;
 
     [Header("User Global Stats")]
     public int raceNb;

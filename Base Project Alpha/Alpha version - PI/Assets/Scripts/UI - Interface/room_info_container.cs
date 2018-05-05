@@ -66,8 +66,14 @@ public class room_info_container : MonoBehaviour {
         createRooms();
     }
 
+    public void notOnRoomList()
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+    }
+
     public void network_call()
     {
+        GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = true;
         GameObject.Find("Network").GetComponent<Network>().roomListRequest();
     }
 
