@@ -381,6 +381,41 @@ class Network : MonoBehaviour {
         }
 
         break;
+      case "room_list_response":
+        Protocol.RoomListResponse rlr = parsedData.RoomListResponse;
+
+        foreach (Protocol.RoomListItem rli in rlr.RoomList) {
+          List<string> playersUsernameList = new List<string>();
+          List<int> playersNbRacesList = new List<int>();
+          List<int> playersNbWinsList = new List<int>();
+          List<string> playersRecordList = new List<string>();
+
+          IEnumerator<Protocol.Player> numPlayers = rli.Players.GetEnumerator();
+          while (numPlayers.MoveNext()) {
+            playersUsernameList.Add(numPlayers.Current.Username);
+            playersNbRacesList.Add(numPlayers.Current.NbRaces);
+            playersNbWinsList.Add(numPlayers.Current.NbWins);
+            playersRecordList.Add(numPlayers.Current.Record);
+            Debug.Log("Added player " + numPlayers.Current.Username +
+                      " for room #" + rli.Id);
+          }
+
+          string[] playersUsername = playersUsernameList.ToArray();
+          int[] playersNbRaces = playersNbRacesList.ToArray();
+          int[] playersNbWins = playersNbWinsList.ToArray();
+          string[] playersRecord = playersRecordList.ToArray();
+
+          GameObject.Find("Rooms_Script")
+              .GetComponent<room_info_container>()
+              .roomConstructor(rli.Id, rli.RoomType, rli.IdCircuit,
+                               rli.MaxPlayers, rli.NbPlayers, playersUsername,
+                               playersNbRaces, playersNbWins, playersRecord);
+
+          Debug.Log("Added room #" + rli.Id);
+        }
+
+        Debug.Log("Got response and created all rooms");
+        break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
