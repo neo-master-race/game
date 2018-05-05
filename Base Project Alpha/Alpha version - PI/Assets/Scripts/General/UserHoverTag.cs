@@ -19,6 +19,8 @@ public class UserHoverTag : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(this.transform.parent.localEulerAngles.y);
+        this.transform.localEulerAngles = new Vector3(0, 180+(GameObject.Find("Stratos").transform.localEulerAngles.y-this.transform.parent.localEulerAngles.y), 0);
         for (int i = 0; i < GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().playersLeaderboard.Length; i++)
         {
             if (!GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
