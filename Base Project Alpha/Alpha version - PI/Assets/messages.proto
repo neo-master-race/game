@@ -54,6 +54,9 @@ message CreateRoom {
 
 message RoomListRequest {}
 message RoomListResponse {
+  repeated RoomList room_list = 1;
+}
+message RoomList {
   string id = 1;
   int32 room_type = 2;
   int32 id_circuit = 3;
