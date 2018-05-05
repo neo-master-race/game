@@ -23,7 +23,6 @@ public class menu_selection : MonoBehaviour {
     [Header("Game Type Choice buttons")]
     public GameObject soloButton;
     public GameObject multiButton;
-    public GameObject tutoButton;
 
     [Header("Multiplayer Section")]
     public GameObject multiplayerUI;
@@ -144,11 +143,6 @@ public class menu_selection : MonoBehaviour {
                 //change la couleur du bouton multi en vert
                 multiButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
-
-            case "Tuto_Text":
-                //change la couleur du bouton tuto en vert
-                tutoButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
-                break;
             /************************************************************************************
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
@@ -245,11 +239,6 @@ public class menu_selection : MonoBehaviour {
                 //change la couleur du bouton multi en blanc
                 multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
-
-            case "Tuto_Text":
-                //change la couleur du bouton tuto en blanc
-                tutoButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
-                break;
             /************************************************************************************
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
@@ -318,7 +307,6 @@ public class menu_selection : MonoBehaviour {
             case "Play_Text":
                 soloButton.SetActive(true);
                 multiButton.SetActive(true);
-                tutoButton.SetActive(true);
 
                 playButton.SetActive(false);
                 customizeButton.SetActive(false);
@@ -363,15 +351,10 @@ public class menu_selection : MonoBehaviour {
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
                 soloButton.SetActive(false);
                 multiButton.SetActive(false);
-                tutoButton.SetActive(false);
 
                 multiplayerUI.SetActive(true);
 
 
-                break;
-
-            case "Tuto_Text":
-                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
                 break;
             /************************************************************************************
              *                        BOUTONS DU TYPE DE PARTIE                                 *
@@ -419,8 +402,6 @@ public class menu_selection : MonoBehaviour {
         soloButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
         multiButton.SetActive(false);
         multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
-        tutoButton.SetActive(false);
-        tutoButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
 
         //circuit1Button.SetActive(false);
         //circuit2Button.SetActive(false);
@@ -467,7 +448,6 @@ public class menu_selection : MonoBehaviour {
             case 4:
                 soloButton.SetActive(true);
                 multiButton.SetActive(true);
-                tutoButton.SetActive(true);
                 break;
 
             

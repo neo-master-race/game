@@ -55,19 +55,20 @@ public class Checkpoints_Check : MonoBehaviour
                 }*/
                 if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
                 {
-                    GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer(0);
-                    if ((car.GetComponent<Player_Info_Ingame>().lap_count == GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber)
-                        && car.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+
+                    for (int i = 0; i < players.Length; i++)
                     {
-                        for(int i =0;i< GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players.Length;i++)
+                        if (car.gameObject == players[i])
                         {
-                            if(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                            GameObject.Find("TimeCounter").GetComponent<Timer>().resetTimer(i);
+                            if (car.GetComponent<Player_Info_Ingame>().lap_count == GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber)
                             {
                                 GameObject.Find("TimeCounter").GetComponent<Timer>().stopGlobalTimer(i);
                             }
                         }
+                            
                     }
-                    else
+                    if(!(car.GetComponent<Player_Info_Ingame>().lap_count == GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber))
                     {
 
                         car.GetComponent<Player_Info_Ingame>().lap_count++;
@@ -128,8 +129,8 @@ public class Checkpoints_Check : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        
+        players = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players;
+
         foreach (GameObject player in players)
         {
             for (int i = 0; i < cpNumber; i++)

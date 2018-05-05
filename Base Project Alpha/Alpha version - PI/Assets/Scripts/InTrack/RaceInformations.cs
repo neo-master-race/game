@@ -32,10 +32,11 @@ public class RaceInformations : MonoBehaviour {
 	void Update () {
         players = GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().players;
         playerLeaderboard = GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().playersLeaderboard;
-
+        i = 0;
         foreach(GameObject playr in players)
         {
             playerLapCount[i] = players[i].GetComponent<Player_Info_Ingame>().lap_count;
+            i++;
         }
     }
 }
