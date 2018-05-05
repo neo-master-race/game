@@ -460,10 +460,16 @@ class Network : MonoBehaviour {
   // request for creating a room
  public
   void createRoom(int type, int circuit, int maxPlayers) {
-    sendMessage(new Protocol.Message {
-      Type = "create_room",
-      CreateRoom = new Protocol.CreateRoom{RoomType = type, IdCircuit = circuit,
-                                           MaxPlayers = maxPlayers}
-    });
+    sendMessage(new Protocol.Message{
+        Type = "create_room",
+        CreateRoom = new Protocol.CreateRoom{
+            RoomType = type, IdCircuit = circuit, MaxPlayers = maxPlayers}});
+  }
+
+ public
+  void roomListRequest() {
+    sendMessage(
+        new Protocol.Message{Type = "room_list_request",
+                             RoomListRequest = new Protocol.RoomListRequest()});
   }
 }
