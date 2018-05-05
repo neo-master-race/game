@@ -66,6 +66,11 @@ public class room_info_container : MonoBehaviour {
         createRooms();
     }
 
+    public void network_call()
+    {
+        GameObject.Find("Network").GetComponent<Network>().roomListRequest();
+    }
+
 
     void setRoomAttributes(GameObject room,string roomGameMode,int roomIndex)
     {
