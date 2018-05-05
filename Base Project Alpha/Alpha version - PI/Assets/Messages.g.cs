@@ -38,38 +38,39 @@ namespace Protocol {
             "bnQYASABKAkSDAoEdXNlchgCIAEoCSIaCgpEaXNjb25uZWN0EgwKBHVzZXIY",
             "ASABKAkiSAoKQ3JlYXRlUm9vbRIRCglyb29tX3R5cGUYASABKAUSEgoKaWRf",
             "Y2lyY3VpdBgCIAEoBRITCgttYXhfcGxheWVycxgDIAEoBSIRCg9Sb29tTGlz",
-            "dFJlcXVlc3QiOQoQUm9vbUxpc3RSZXNwb25zZRIlCglyb29tX2xpc3QYASAD",
-            "KAsyEi5wcm90b2NvbC5Sb29tTGlzdCLLAQoIUm9vbUxpc3QSCgoCaWQYASAB",
-            "KAkSEQoJcm9vbV90eXBlGAIgASgFEhIKCmlkX2NpcmN1aXQYAyABKAUSEwoL",
-            "bWF4X3BsYXllcnMYBCABKAUSEgoKbmJfcGxheWVycxgFIAEoBRIYChBwbGF5",
-            "ZXJzX3VzZXJuYW1lGAYgAygJEhgKEHBsYXllcnNfbmJfcmFjZXMYByADKAUS",
-            "FwoPcGxheWVyc19uYl93aW5zGAggAygFEhYKDnBsYXllcnNfcmVjb3JkGAkg",
-            "AygJIhcKCVN0YXJ0Um9vbRIKCgJpZBgBIAEoCSIWCghKb2luUm9vbRIKCgJp",
-            "ZBgBIAEoCSIkChBTdGFydGluZ1Bvc2l0aW9uEhAKCHBvc2l0aW9uGAEgAygF",
-            "IjUKD1JlZ2lzdGVyUmVxdWVzdBIQCgh1c2VybmFtZRgBIAEoCRIQCghwYXNz",
-            "d29yZBgCIAEoCSIyCgxMb2dpblJlcXVlc3QSEAoIdXNlcm5hbWUYASABKAkS",
-            "EAoIcGFzc3dvcmQYAiABKAkiNQoQUmVnaXN0ZXJSZXNwb25zZRIPCgdzdWNj",
-            "ZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIgASgJIjIKDUxvZ2luUmVzcG9uc2US",
-            "DwoHc3VjY2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSLGBgoHTWVzc2Fn",
-            "ZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgCIAEoCzIVLnByb3Rv",
-            "Y29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXllcl9wb3NpdGlvbhgD",
-            "IAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0aW9uSAASPAoUdXBk",
-            "YXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2NvbC5VcGRhdGVQbGF5",
-            "ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQucHJvdG9jb2wuRGlz",
-            "Y29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVzX3JlcXVlc3QYBiAB",
-            "KAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNSZXF1ZXN0SAASKwoL",
-            "Y3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVhdGVSb29tSAASKQoK",
-            "c3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0Um9vbUgAEicKCWpv",
-            "aW5fcm9vbRgJIAEoCzISLnByb3RvY29sLkpvaW5Sb29tSAASNwoRc3RhcnRp",
-            "bmdfcG9zaXRpb24YCiABKAsyGi5wcm90b2NvbC5TdGFydGluZ1Bvc2l0aW9u",
-            "SAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgLIAEoCzIZLnByb3RvY29sLlJlZ2lz",
-            "dGVyUmVxdWVzdEgAEi8KDWxvZ2luX3JlcXVlc3QYDCABKAsyFi5wcm90b2Nv",
-            "bC5Mb2dpblJlcXVlc3RIABI3ChFyZWdpc3Rlcl9yZXNwb25zZRgNIAEoCzIa",
-            "LnByb3RvY29sLlJlZ2lzdGVyUmVzcG9uc2VIABIxCg5sb2dpbl9yZXNwb25z",
-            "ZRgOIAEoCzIXLnByb3RvY29sLkxvZ2luUmVzcG9uc2VIABI2ChFyb29tX2xp",
-            "c3RfcmVxdWVzdBgPIAEoCzIZLnByb3RvY29sLlJvb21MaXN0UmVxdWVzdEgA",
-            "EjgKEnJvb21fbGlzdF9yZXNwb25zZRgQIAEoCzIaLnByb3RvY29sLlJvb21M",
-            "aXN0UmVzcG9uc2VIAEIFCgNtc2diBnByb3RvMw=="));
+            "dFJlcXVlc3QiPQoQUm9vbUxpc3RSZXNwb25zZRIpCglyb29tX2xpc3QYASAD",
+            "KAsyFi5wcm90b2NvbC5Sb29tTGlzdEl0ZW0ijQEKDFJvb21MaXN0SXRlbRIK",
+            "CgJpZBgBIAEoCRIRCglyb29tX3R5cGUYAiABKAUSEgoKaWRfY2lyY3VpdBgD",
+            "IAEoBRITCgttYXhfcGxheWVycxgEIAEoBRISCgpuYl9wbGF5ZXJzGAUgASgF",
+            "EiEKB3BsYXllcnMYBiADKAsyEC5wcm90b2NvbC5QbGF5ZXIiTQoGUGxheWVy",
+            "EhAKCHVzZXJuYW1lGAEgASgJEhAKCG5iX3JhY2VzGAIgASgFEg8KB25iX3dp",
+            "bnMYAyABKAUSDgoGcmVjb3JkGAQgASgJIhcKCVN0YXJ0Um9vbRIKCgJpZBgB",
+            "IAEoCSIWCghKb2luUm9vbRIKCgJpZBgBIAEoCSIkChBTdGFydGluZ1Bvc2l0",
+            "aW9uEhAKCHBvc2l0aW9uGAEgAygFIjUKD1JlZ2lzdGVyUmVxdWVzdBIQCgh1",
+            "c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIyCgxMb2dpblJlcXVl",
+            "c3QSEAoIdXNlcm5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiNQoQUmVn",
+            "aXN0ZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIg",
+            "ASgJIjIKDUxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2Vy",
+            "bmFtZRgCIAEoCSLGBgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRf",
+            "bWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBk",
+            "YXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBs",
+            "YXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsy",
+            "HC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0",
+            "GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5",
+            "ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5",
+            "ZXJTdGF0dXNSZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90",
+            "b2NvbC5DcmVhdGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3Rv",
+            "Y29sLlN0YXJ0Um9vbUgAEicKCWpvaW5fcm9vbRgJIAEoCzISLnByb3RvY29s",
+            "LkpvaW5Sb29tSAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5wcm90",
+            "b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgL",
+            "IAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2luX3Jl",
+            "cXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFyZWdp",
+            "c3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVzcG9u",
+            "c2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxvZ2lu",
+            "UmVzcG9uc2VIABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEoCzIZLnByb3Rv",
+            "Y29sLlJvb21MaXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9yZXNwb25zZRgQ",
+            "IAEoCzIaLnByb3RvY29sLlJvb21MaXN0UmVzcG9uc2VIAEIFCgNtc2diBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,8 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.CreateRoom), global::Protocol.CreateRoom.Parser, new[]{ "RoomType", "IdCircuit", "MaxPlayers" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListRequest), global::Protocol.RoomListRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListResponse), global::Protocol.RoomListResponse.Parser, new[]{ "RoomList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomList), global::Protocol.RoomList.Parser, new[]{ "Id", "RoomType", "IdCircuit", "MaxPlayers", "NbPlayers", "PlayersUsername", "PlayersNbRaces", "PlayersNbWins", "PlayersRecord" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListItem), global::Protocol.RoomListItem.Parser, new[]{ "Id", "RoomType", "IdCircuit", "MaxPlayers", "NbPlayers", "Players" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Player), global::Protocol.Player.Parser, new[]{ "Username", "NbRaces", "NbWins", "Record" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartRoom), global::Protocol.StartRoom.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoom), global::Protocol.JoinRoom.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
@@ -1557,11 +1559,11 @@ namespace Protocol {
 
     /// <summary>Field number for the "room_list" field.</summary>
     public const int RoomListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Protocol.RoomList> _repeated_roomList_codec
-        = pb::FieldCodec.ForMessage(10, global::Protocol.RoomList.Parser);
-    private readonly pbc::RepeatedField<global::Protocol.RoomList> roomList_ = new pbc::RepeatedField<global::Protocol.RoomList>();
+    private static readonly pb::FieldCodec<global::Protocol.RoomListItem> _repeated_roomList_codec
+        = pb::FieldCodec.ForMessage(10, global::Protocol.RoomListItem.Parser);
+    private readonly pbc::RepeatedField<global::Protocol.RoomListItem> roomList_ = new pbc::RepeatedField<global::Protocol.RoomListItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Protocol.RoomList> RoomList {
+    public pbc::RepeatedField<global::Protocol.RoomListItem> RoomList {
       get { return roomList_; }
     }
 
@@ -1632,10 +1634,10 @@ namespace Protocol {
 
   }
 
-  public sealed partial class RoomList : pb::IMessage<RoomList> {
-    private static readonly pb::MessageParser<RoomList> _parser = new pb::MessageParser<RoomList>(() => new RoomList());
+  public sealed partial class RoomListItem : pb::IMessage<RoomListItem> {
+    private static readonly pb::MessageParser<RoomListItem> _parser = new pb::MessageParser<RoomListItem>(() => new RoomListItem());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<RoomList> Parser { get { return _parser; } }
+    public static pb::MessageParser<RoomListItem> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1648,28 +1650,25 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RoomList() {
+    public RoomListItem() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RoomList(RoomList other) : this() {
+    public RoomListItem(RoomListItem other) : this() {
       id_ = other.id_;
       roomType_ = other.roomType_;
       idCircuit_ = other.idCircuit_;
       maxPlayers_ = other.maxPlayers_;
       nbPlayers_ = other.nbPlayers_;
-      playersUsername_ = other.playersUsername_.Clone();
-      playersNbRaces_ = other.playersNbRaces_.Clone();
-      playersNbWins_ = other.playersNbWins_.Clone();
-      playersRecord_ = other.playersRecord_.Clone();
+      players_ = other.players_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RoomList Clone() {
-      return new RoomList(this);
+    public RoomListItem Clone() {
+      return new RoomListItem(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -1727,53 +1726,23 @@ namespace Protocol {
       }
     }
 
-    /// <summary>Field number for the "players_username" field.</summary>
-    public const int PlayersUsernameFieldNumber = 6;
-    private static readonly pb::FieldCodec<string> _repeated_playersUsername_codec
-        = pb::FieldCodec.ForString(50);
-    private readonly pbc::RepeatedField<string> playersUsername_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "players" field.</summary>
+    public const int PlayersFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Protocol.Player> _repeated_players_codec
+        = pb::FieldCodec.ForMessage(50, global::Protocol.Player.Parser);
+    private readonly pbc::RepeatedField<global::Protocol.Player> players_ = new pbc::RepeatedField<global::Protocol.Player>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> PlayersUsername {
-      get { return playersUsername_; }
-    }
-
-    /// <summary>Field number for the "players_nb_races" field.</summary>
-    public const int PlayersNbRacesFieldNumber = 7;
-    private static readonly pb::FieldCodec<int> _repeated_playersNbRaces_codec
-        = pb::FieldCodec.ForInt32(58);
-    private readonly pbc::RepeatedField<int> playersNbRaces_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> PlayersNbRaces {
-      get { return playersNbRaces_; }
-    }
-
-    /// <summary>Field number for the "players_nb_wins" field.</summary>
-    public const int PlayersNbWinsFieldNumber = 8;
-    private static readonly pb::FieldCodec<int> _repeated_playersNbWins_codec
-        = pb::FieldCodec.ForInt32(66);
-    private readonly pbc::RepeatedField<int> playersNbWins_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> PlayersNbWins {
-      get { return playersNbWins_; }
-    }
-
-    /// <summary>Field number for the "players_record" field.</summary>
-    public const int PlayersRecordFieldNumber = 9;
-    private static readonly pb::FieldCodec<string> _repeated_playersRecord_codec
-        = pb::FieldCodec.ForString(74);
-    private readonly pbc::RepeatedField<string> playersRecord_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> PlayersRecord {
-      get { return playersRecord_; }
+    public pbc::RepeatedField<global::Protocol.Player> Players {
+      get { return players_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as RoomList);
+      return Equals(other as RoomListItem);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(RoomList other) {
+    public bool Equals(RoomListItem other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1785,10 +1754,7 @@ namespace Protocol {
       if (IdCircuit != other.IdCircuit) return false;
       if (MaxPlayers != other.MaxPlayers) return false;
       if (NbPlayers != other.NbPlayers) return false;
-      if(!playersUsername_.Equals(other.playersUsername_)) return false;
-      if(!playersNbRaces_.Equals(other.playersNbRaces_)) return false;
-      if(!playersNbWins_.Equals(other.playersNbWins_)) return false;
-      if(!playersRecord_.Equals(other.playersRecord_)) return false;
+      if(!players_.Equals(other.players_)) return false;
       return true;
     }
 
@@ -1800,10 +1766,7 @@ namespace Protocol {
       if (IdCircuit != 0) hash ^= IdCircuit.GetHashCode();
       if (MaxPlayers != 0) hash ^= MaxPlayers.GetHashCode();
       if (NbPlayers != 0) hash ^= NbPlayers.GetHashCode();
-      hash ^= playersUsername_.GetHashCode();
-      hash ^= playersNbRaces_.GetHashCode();
-      hash ^= playersNbWins_.GetHashCode();
-      hash ^= playersRecord_.GetHashCode();
+      hash ^= players_.GetHashCode();
       return hash;
     }
 
@@ -1834,10 +1797,7 @@ namespace Protocol {
         output.WriteRawTag(40);
         output.WriteInt32(NbPlayers);
       }
-      playersUsername_.WriteTo(output, _repeated_playersUsername_codec);
-      playersNbRaces_.WriteTo(output, _repeated_playersNbRaces_codec);
-      playersNbWins_.WriteTo(output, _repeated_playersNbWins_codec);
-      playersRecord_.WriteTo(output, _repeated_playersRecord_codec);
+      players_.WriteTo(output, _repeated_players_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1858,15 +1818,12 @@ namespace Protocol {
       if (NbPlayers != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(NbPlayers);
       }
-      size += playersUsername_.CalculateSize(_repeated_playersUsername_codec);
-      size += playersNbRaces_.CalculateSize(_repeated_playersNbRaces_codec);
-      size += playersNbWins_.CalculateSize(_repeated_playersNbWins_codec);
-      size += playersRecord_.CalculateSize(_repeated_playersRecord_codec);
+      size += players_.CalculateSize(_repeated_players_codec);
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(RoomList other) {
+    public void MergeFrom(RoomListItem other) {
       if (other == null) {
         return;
       }
@@ -1885,10 +1842,7 @@ namespace Protocol {
       if (other.NbPlayers != 0) {
         NbPlayers = other.NbPlayers;
       }
-      playersUsername_.Add(other.playersUsername_);
-      playersNbRaces_.Add(other.playersNbRaces_);
-      playersNbWins_.Add(other.playersNbWins_);
-      playersRecord_.Add(other.playersRecord_);
+      players_.Add(other.players_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1920,21 +1874,208 @@ namespace Protocol {
             break;
           }
           case 50: {
-            playersUsername_.AddEntriesFrom(input, _repeated_playersUsername_codec);
+            players_.AddEntriesFrom(input, _repeated_players_codec);
             break;
           }
-          case 58:
-          case 56: {
-            playersNbRaces_.AddEntriesFrom(input, _repeated_playersNbRaces_codec);
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Player : pb::IMessage<Player> {
+    private static readonly pb::MessageParser<Player> _parser = new pb::MessageParser<Player>(() => new Player());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Player> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Player() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Player(Player other) : this() {
+      username_ = other.username_;
+      nbRaces_ = other.nbRaces_;
+      nbWins_ = other.nbWins_;
+      record_ = other.record_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Player Clone() {
+      return new Player(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "nb_races" field.</summary>
+    public const int NbRacesFieldNumber = 2;
+    private int nbRaces_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NbRaces {
+      get { return nbRaces_; }
+      set {
+        nbRaces_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "nb_wins" field.</summary>
+    public const int NbWinsFieldNumber = 3;
+    private int nbWins_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NbWins {
+      get { return nbWins_; }
+      set {
+        nbWins_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "record" field.</summary>
+    public const int RecordFieldNumber = 4;
+    private string record_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Record {
+      get { return record_; }
+      set {
+        record_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Player);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Player other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (NbRaces != other.NbRaces) return false;
+      if (NbWins != other.NbWins) return false;
+      if (Record != other.Record) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (NbRaces != 0) hash ^= NbRaces.GetHashCode();
+      if (NbWins != 0) hash ^= NbWins.GetHashCode();
+      if (Record.Length != 0) hash ^= Record.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (NbRaces != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(NbRaces);
+      }
+      if (NbWins != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(NbWins);
+      }
+      if (Record.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Record);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (NbRaces != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NbRaces);
+      }
+      if (NbWins != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NbWins);
+      }
+      if (Record.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Record);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Player other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.NbRaces != 0) {
+        NbRaces = other.NbRaces;
+      }
+      if (other.NbWins != 0) {
+        NbWins = other.NbWins;
+      }
+      if (other.Record.Length != 0) {
+        Record = other.Record;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Username = input.ReadString();
             break;
           }
-          case 66:
-          case 64: {
-            playersNbWins_.AddEntriesFrom(input, _repeated_playersNbWins_codec);
+          case 16: {
+            NbRaces = input.ReadInt32();
             break;
           }
-          case 74: {
-            playersRecord_.AddEntriesFrom(input, _repeated_playersRecord_codec);
+          case 24: {
+            NbWins = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Record = input.ReadString();
             break;
           }
         }
@@ -1953,7 +2094,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2073,7 +2214,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2190,7 +2331,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2300,7 +2441,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2445,7 +2586,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2590,7 +2731,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2735,7 +2876,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2884,7 +3025,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

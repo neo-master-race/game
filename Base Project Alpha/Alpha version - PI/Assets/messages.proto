@@ -44,7 +44,6 @@ message ChatMessage {
 // to others
 message Disconnect { string user = 1; }
 
-
 // request to create a new room
 message CreateRoom {
   int32 room_type = 1;
@@ -53,19 +52,25 @@ message CreateRoom {
 }
 
 message RoomListRequest {}
+
 message RoomListResponse {
-  repeated RoomList room_list = 1;
+  repeated RoomListItem room_list = 1;
 }
-message RoomList {
+
+message RoomListItem {
   string id = 1;
   int32 room_type = 2;
   int32 id_circuit = 3;
   int32 max_players = 4;
   int32 nb_players = 5;
-  repeated string players_username = 6;
-  repeated int32 players_nb_races = 7;
-  repeated int32 players_nb_wins = 8;
-  repeated string players_record = 9;
+  repeated Player players = 6;
+}
+
+message Player {
+  string username = 1;
+  int32 nb_races = 2;
+  int32 nb_wins = 3;
+  string record = 4;
 }
 
 // starts a game
