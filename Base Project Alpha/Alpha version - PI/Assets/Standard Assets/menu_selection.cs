@@ -412,6 +412,8 @@ public class menu_selection : MonoBehaviour {
 
         userInfo.SetActive(false);
         userStats.SetActive(false);
+
+        multiplayerUI.SetActive(false);
     }
 
     //Schneberger Maxime
@@ -446,6 +448,7 @@ public class menu_selection : MonoBehaviour {
                 break;
 
             case 4:
+                disable_all();
                 soloButton.SetActive(true);
                 multiButton.SetActive(true);
                 break;
