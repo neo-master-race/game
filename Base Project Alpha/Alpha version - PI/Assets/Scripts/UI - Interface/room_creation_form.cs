@@ -273,9 +273,21 @@ public class room_creation_form : MonoBehaviour {
                 //currentRoomCreated.ActivePlayers = new string[maxPlayers];
                 //currentRoomCreated.ActivePlayers[0] = GameObject.Find("UserStats").GetComponent<UserStats>().username;
                 //currentRoomCreated.roomAccessibility = RoomAccesibility.Public;
+                int roomTypeInt;
+                if (currentRoomCreated.room == RoomType.SingleRace)
+                    roomTypeInt = 1;
+                else
+                    roomTypeInt = 2;
 
+                int trackIndex;
+                if(currentRoomCreated.circuits[0]== Circuit.Track1)
+                    trackIndex=1;
+                else if (currentRoomCreated.circuits[0] == Circuit.Track1)
+                    trackIndex = 2;
+                else
+                    trackIndex = 3;
 
-
+                GameObject.Find("Network").GetComponent<Network>().createRoom(roomTypeInt, trackIndex, currentRoomCreated.MaximumPlayersNb);
 
                 //GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Add(currentRoomCreated);
                 GameObject.Find("Rooms_Script").GetComponent<room_info_container>().createRooms();
