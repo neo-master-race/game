@@ -51,26 +51,28 @@ namespace Protocol {
             "c3QSEAoIdXNlcm5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiNQoQUmVn",
             "aXN0ZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIg",
             "ASgJIjIKDUxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2Vy",
-            "bmFtZRgCIAEoCSLGBgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRf",
-            "bWVzc2FnZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBk",
-            "YXRlX3BsYXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBs",
-            "YXllclBvc2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsy",
-            "HC5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0",
-            "GAUgASgLMhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5",
-            "ZXJfc3RhdHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5",
-            "ZXJTdGF0dXNSZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90",
-            "b2NvbC5DcmVhdGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3Rv",
-            "Y29sLlN0YXJ0Um9vbUgAEicKCWpvaW5fcm9vbRgJIAEoCzISLnByb3RvY29s",
-            "LkpvaW5Sb29tSAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5wcm90",
-            "b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgL",
-            "IAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2luX3Jl",
-            "cXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFyZWdp",
-            "c3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVzcG9u",
-            "c2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxvZ2lu",
-            "UmVzcG9uc2VIABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEoCzIZLnByb3Rv",
-            "Y29sLlJvb21MaXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9yZXNwb25zZRgQ",
-            "IAEoCzIaLnByb3RvY29sLlJvb21MaXN0UmVzcG9uc2VIAEIFCgNtc2diBnBy",
-            "b3RvMw=="));
+            "bmFtZRgCIAEoCSIiCg5DaGFuZ2VVc2VybmFtZRIQCgh1c2VybmFtZRgBIAEo",
+            "CSL7BgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgC",
+            "IAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXll",
+            "cl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0",
+            "aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2Nv",
+            "bC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQu",
+            "cHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVz",
+            "X3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNS",
+            "ZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVh",
+            "dGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0",
+            "Um9vbUgAEicKCWpvaW5fcm9vbRgJIAEoCzISLnByb3RvY29sLkpvaW5Sb29t",
+            "SAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5wcm90b2NvbC5TdGFy",
+            "dGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgLIAEoCzIZLnBy",
+            "b3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2luX3JlcXVlc3QYDCAB",
+            "KAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFyZWdpc3Rlcl9yZXNw",
+            "b25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVzcG9uc2VIABIxCg5s",
+            "b2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxvZ2luUmVzcG9uc2VI",
+            "ABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEoCzIZLnByb3RvY29sLlJvb21M",
+            "aXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9yZXNwb25zZRgQIAEoCzIaLnBy",
+            "b3RvY29sLlJvb21MaXN0UmVzcG9uc2VIABIzCg9jaGFuZ2VfdXNlcm5hbWUY",
+            "ESABKAsyGC5wcm90b2NvbC5DaGFuZ2VVc2VybmFtZUgAQgUKA21zZ2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,8 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginRequest), global::Protocol.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChangeUsername), global::Protocol.ChangeUsername.Parser, new[]{ "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -3014,6 +3017,123 @@ namespace Protocol {
 
   }
 
+  public sealed partial class ChangeUsername : pb::IMessage<ChangeUsername> {
+    private static readonly pb::MessageParser<ChangeUsername> _parser = new pb::MessageParser<ChangeUsername>(() => new ChangeUsername());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ChangeUsername> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeUsername() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeUsername(ChangeUsername other) : this() {
+      username_ = other.username_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ChangeUsername Clone() {
+      return new ChangeUsername(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ChangeUsername);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ChangeUsername other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ChangeUsername other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
@@ -3025,7 +3145,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3088,6 +3208,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.RoomListResponse:
           RoomListResponse = other.RoomListResponse.Clone();
+          break;
+        case MsgOneofCase.ChangeUsername:
+          ChangeUsername = other.ChangeUsername.Clone();
           break;
       }
 
@@ -3277,6 +3400,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "change_username" field.</summary>
+    public const int ChangeUsernameFieldNumber = 17;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.ChangeUsername ChangeUsername {
+      get { return msgCase_ == MsgOneofCase.ChangeUsername ? (global::Protocol.ChangeUsername) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.ChangeUsername;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -3296,6 +3430,7 @@ namespace Protocol {
       LoginResponse = 14,
       RoomListRequest = 15,
       RoomListResponse = 16,
+      ChangeUsername = 17,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3338,6 +3473,7 @@ namespace Protocol {
       if (!object.Equals(LoginResponse, other.LoginResponse)) return false;
       if (!object.Equals(RoomListRequest, other.RoomListRequest)) return false;
       if (!object.Equals(RoomListResponse, other.RoomListResponse)) return false;
+      if (!object.Equals(ChangeUsername, other.ChangeUsername)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -3361,6 +3497,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.LoginResponse) hash ^= LoginResponse.GetHashCode();
       if (msgCase_ == MsgOneofCase.RoomListRequest) hash ^= RoomListRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.RoomListResponse) hash ^= RoomListResponse.GetHashCode();
+      if (msgCase_ == MsgOneofCase.ChangeUsername) hash ^= ChangeUsername.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -3436,6 +3573,10 @@ namespace Protocol {
         output.WriteRawTag(130, 1);
         output.WriteMessage(RoomListResponse);
       }
+      if (msgCase_ == MsgOneofCase.ChangeUsername) {
+        output.WriteRawTag(138, 1);
+        output.WriteMessage(ChangeUsername);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3488,6 +3629,9 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.RoomListResponse) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoomListResponse);
+      }
+      if (msgCase_ == MsgOneofCase.ChangeUsername) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChangeUsername);
       }
       return size;
     }
@@ -3545,6 +3689,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.RoomListResponse:
           RoomListResponse = other.RoomListResponse;
+          break;
+        case MsgOneofCase.ChangeUsername:
+          ChangeUsername = other.ChangeUsername;
           break;
       }
 
@@ -3695,6 +3842,15 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             RoomListResponse = subBuilder;
+            break;
+          }
+          case 138: {
+            global::Protocol.ChangeUsername subBuilder = new global::Protocol.ChangeUsername();
+            if (msgCase_ == MsgOneofCase.ChangeUsername) {
+              subBuilder.MergeFrom(ChangeUsername);
+            }
+            input.ReadMessage(subBuilder);
+            ChangeUsername = subBuilder;
             break;
           }
         }
