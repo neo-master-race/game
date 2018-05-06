@@ -416,7 +416,7 @@ class Network : MonoBehaviour {
 
           GameObject.Find("Rooms_Script")
               .GetComponent<room_info_container>()
-              .roomConstructor(rli.Id, rli.RoomType, rli.IdCircuit,
+              .addOrUpdateRoom(rli.Id, rli.RoomType, rli.IdCircuit,
                                rli.MaxPlayers, rli.NbPlayers, playersUsername,
                                playersNbRaces, playersNbWins, playersRecord);
 

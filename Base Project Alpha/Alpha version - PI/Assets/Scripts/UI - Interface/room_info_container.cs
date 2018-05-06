@@ -88,54 +88,57 @@ public class room_info_container : MonoBehaviour {
         
     }
 
-    public void addOrUpdateRoom(bool wannaAdd,string id, int room_type, int id_circuit, int max_players, int nb_players,
+    public void addOrUpdateRoom(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
-        if(wannaAdd)
+        bool found = false;
+
+        for (int i=0; i<rooms.Count; i++)
+        {
+            if (rooms[i].roomIndex == id)
+            {
+                switch (room_type)
+                {
+                    case 2:
+                        rooms[i].room = RoomType.Tournament;
+                        break;
+                    default:
+                        rooms[i].room = RoomType.SingleRace;
+                        break;
+                }
+
+                // which circuit
+                switch (id_circuit)
+                {
+                    case 2:
+                        rooms[i].circuits[0] = Circuit.Track2;
+                        break;
+                    case 3:
+                        rooms[i].circuits[0] = Circuit.Track3;
+                        break;
+                    default:
+                        rooms[i].circuits[0] = Circuit.Track1;
+                        break;
+                }
+
+
+                rooms[i].MaximumPlayersNb = max_players;
+                rooms[i].currentPlayersNb = nb_players;
+                rooms[i].ActivePlayers = players_username;
+                rooms[i].roomAccessibility = RoomAccesibility.Public;
+                rooms[i].playersRaceNb = players_nb_races;
+                rooms[i].playersRaceWin = players_nb_wins;
+                rooms[i].playersRaceRecord = players_record;
+                createRooms();
+
+                found = true;
+                break;
+            }
+        }
+
+        if (!found)
         {
             roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record);
-        }
-        else
-        {
-            for(int i=0;i<rooms.Count;i++)
-            {
-                if(rooms[i].roomIndex==id)
-                {
-                    switch (room_type)
-                    {
-                        case 2:
-                            rooms[i].room = RoomType.Tournament;
-                            break;
-                        default:
-                            rooms[i].room = RoomType.SingleRace;
-                            break;
-                    }
-
-                    // which circuit
-                    switch (id_circuit)
-                    {
-                        case 2:
-                            rooms[i].circuits[0] = Circuit.Track2;
-                            break;
-                        case 3:
-                            rooms[i].circuits[0] = Circuit.Track3;
-                            break;
-                        default:
-                            rooms[i].circuits[0] = Circuit.Track1;
-                            break;
-                    }
-
-
-                    rooms[i].MaximumPlayersNb = max_players;
-                    rooms[i].currentPlayersNb = nb_players;
-                    rooms[i].ActivePlayers = players_username;
-                    rooms[i].roomAccessibility = RoomAccesibility.Public;
-                    rooms[i].playersRaceNb = players_nb_races;
-                    rooms[i].playersRaceWin = players_nb_wins;
-                    rooms[i].playersRaceRecord = players_record;
-                    createRooms();
-                }
-            }
         }
     }
 
