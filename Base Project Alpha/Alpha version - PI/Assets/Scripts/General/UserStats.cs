@@ -27,6 +27,16 @@ public class UserStats : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
     }
 
+    public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3)
+    {
+        username = usernam;
+        raceNb = numberOfRaces;
+        raceVictory = numberOfWins;
+        track1LapRecord = recordTrack1;
+        track2LapRecord = recordTrack2;
+        track3LapRecord = recordTrack3;
+    }
+
     // Update is called once per frame
     void Update () {
             
