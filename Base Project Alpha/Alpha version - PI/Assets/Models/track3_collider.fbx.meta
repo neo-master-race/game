@@ -1,20 +1,18 @@
 fileFormatVersion: 2
-guid: 1fd790c6ce2d5ac40addc1f58e5b4895
-timeCreated: 1525469749
+guid: 5e0939b610cbbac47accb024aea32a5a
+timeCreated: 1525615890
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: black.001
-    2100002: side.001
+    2100000: center.001
+    2100002: black.001
     2100004: walls.001
-    2100006: center.001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plane.007
-    4300002: Plane.011
+    4300000: Plane.010
   externalObjects: {}
   materials:
     importMaterials: 1

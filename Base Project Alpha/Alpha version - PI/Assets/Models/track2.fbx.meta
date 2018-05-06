@@ -6,14 +6,146 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Camera.001
+    100006: Cube
+    100008: Cube.001
+    100010: Cube.002
+    100012: Cube.003
+    100014: Cube.004
+    100016: Cube.005
+    100018: Cube.006
+    100020: Empty
+    100022: Lamp
+    100024: NurbsCircle
+    100026: NurbsCircle.001
+    100028: NurbsCircle.002
+    100030: NurbsCircle.003
+    100032: NurbsCircle.004
+    100034: Plane
+    100036: Plane.001
+    100038: Plane.002
+    100040: Plane.003
+    100042: Plane.004
+    100044: Plane.005
+    100046: Plane.006
+    100048: Plane.007
+    100050: Plane.008
     400000: //RootNode
+    400002: Camera
+    400004: Camera.001
+    400006: Cube
+    400008: Cube.001
+    400010: Cube.002
+    400012: Cube.003
+    400014: Cube.004
+    400016: Cube.005
+    400018: Cube.006
+    400020: Empty
+    400022: Lamp
+    400024: NurbsCircle
+    400026: NurbsCircle.001
+    400028: NurbsCircle.002
+    400030: NurbsCircle.003
+    400032: NurbsCircle.004
+    400034: Plane
+    400036: Plane.001
+    400038: Plane.002
+    400040: Plane.003
+    400042: Plane.004
+    400044: Plane.005
+    400046: Plane.006
+    400048: Plane.007
+    400050: Plane.008
+    2000000: Camera
+    2000002: Camera.001
     2100000: black
     2100002: side
     2100004: walls
     2100006: center
+    2100008: No Name
+    2100010: pole
+    2100012: light_strong
+    2100014: light_weak
+    2100016: turn
+    2100018: paint
+    2100020: plastic
+    2100022: metal
+    2100024: headlight
+    2100026: hidden
+    2100028: window
+    2100030: tail light
+    2100032: turn light
+    2100034: black.001
+    2100036: side.001
+    2100038: walls.001
+    2100040: center.001
     2300000: //RootNode
+    2300002: Cube
+    2300004: Cube.001
+    2300006: Cube.002
+    2300008: Cube.003
+    2300010: Cube.004
+    2300012: Cube.005
+    2300014: Cube.006
+    2300016: NurbsCircle
+    2300018: NurbsCircle.001
+    2300020: NurbsCircle.002
+    2300022: NurbsCircle.003
+    2300024: NurbsCircle.004
+    2300026: Plane
+    2300028: Plane.001
+    2300030: Plane.002
+    2300032: Plane.003
+    2300034: Plane.004
+    2300036: Plane.005
+    2300038: Plane.006
+    2300040: Plane.007
+    2300042: Plane.008
     3300000: //RootNode
+    3300002: Cube
+    3300004: Cube.001
+    3300006: Cube.002
+    3300008: Cube.003
+    3300010: Cube.004
+    3300012: Cube.005
+    3300014: Cube.006
+    3300016: NurbsCircle
+    3300018: NurbsCircle.001
+    3300020: NurbsCircle.002
+    3300022: NurbsCircle.003
+    3300024: NurbsCircle.004
+    3300026: Plane
+    3300028: Plane.001
+    3300030: Plane.002
+    3300032: Plane.003
+    3300034: Plane.004
+    3300036: Plane.005
+    3300038: Plane.006
+    3300040: Plane.007
+    3300042: Plane.008
     4300000: Plane.003
+    4300002: Plane.008
+    4300004: Cube.003
+    4300006: Plane.005
+    4300008: Cube.002
+    4300010: NurbsCircle.003
+    4300012: NurbsCircle.002
+    4300014: NurbsCircle.001
+    4300016: Plane.006
+    4300018: Plane.002
+    4300020: Plane.001
+    4300022: NurbsCircle
+    4300024: Plane.004
+    4300026: Plane
+    4300028: Cube
+    4300030: Cube.001
+    4300032: Cube.004
+    4300034: Cube.005
+    4300036: Cube.006
+    4300038: NurbsCircle.004
+    4300040: Plane.007
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
