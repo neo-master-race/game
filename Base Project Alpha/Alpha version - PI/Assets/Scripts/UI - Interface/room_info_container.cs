@@ -91,6 +91,7 @@ public class room_info_container : MonoBehaviour {
     public void notOnRoomList()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+        this.rooms = new List<Room>(new Room[0]);
     }
 
     public void network_call()
