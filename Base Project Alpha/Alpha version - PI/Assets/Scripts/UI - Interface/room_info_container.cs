@@ -37,6 +37,11 @@ public class room_info_container : MonoBehaviour {
     [Header("Room Creation")]
     public List<Room> rooms;
 
+    [Header("GameObjects")]
+    public GameObject lobby;
+    public GameObject room;
+    public GameObject scrollbar;
+
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
@@ -140,6 +145,13 @@ public class room_info_container : MonoBehaviour {
         {
             roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record);
         }
+    }
+
+    public void goToLobby()
+    {
+        lobby.SetActive(true);
+        room.SetActive(false);
+        scrollbar.SetActive(false);
     }
 
     public void reset_list()
