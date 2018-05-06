@@ -194,6 +194,10 @@ public class room_info_container : MonoBehaviour {
                 room.transform.Find("Circuit3").GetComponent<RawImage>().texture = track3Texture;
         }
         room.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[roomIndex].currentPlayersNb + "/" + rooms[roomIndex].MaximumPlayersNb;
+        for(int i =0;i< rooms[roomIndex].ActivePlayers.Length;i++)
+        {
+            room.transform.Find("Player" + (i + 1)).GetComponent<Text>().text = "- "+rooms[roomIndex].ActivePlayers[i];
+        }
     }
 
 
