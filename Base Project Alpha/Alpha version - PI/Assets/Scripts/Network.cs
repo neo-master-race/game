@@ -508,4 +508,9 @@ class Network : MonoBehaviour {
         new Protocol.Message{Type = "room_list_request",
                              RoomListRequest = new Protocol.RoomListRequest()});
   }
+
+ public
+  void joinGameRequest(string gameId) {
+    Debug.Log("asked to join game #" + gameId);
+  }
 }
