@@ -519,6 +519,9 @@ class Network : MonoBehaviour {
 
  public
   void joinGameRequest(string gameId) {
-    Debug.Log("asked to join game #" + gameId);
+    Debug.Log("asked to join room #" + gameId);
+    sendMessage(new Protocol.Message{
+        Type = "join_room_request",
+        JoinRoomRequest = new Protocol.JoinRoomRequest{Id = gameId}});
   }
 }

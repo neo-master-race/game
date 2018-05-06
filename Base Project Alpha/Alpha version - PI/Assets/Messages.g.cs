@@ -45,34 +45,37 @@ namespace Protocol {
             "EiEKB3BsYXllcnMYBiADKAsyEC5wcm90b2NvbC5QbGF5ZXIiTQoGUGxheWVy",
             "EhAKCHVzZXJuYW1lGAEgASgJEhAKCG5iX3JhY2VzGAIgASgFEg8KB25iX3dp",
             "bnMYAyABKAUSDgoGcmVjb3JkGAQgASgJIhcKCVN0YXJ0Um9vbRIKCgJpZBgB",
-            "IAEoCSIWCghKb2luUm9vbRIKCgJpZBgBIAEoCSIkChBTdGFydGluZ1Bvc2l0",
-            "aW9uEhAKCHBvc2l0aW9uGAEgAygFIjUKD1JlZ2lzdGVyUmVxdWVzdBIQCgh1",
-            "c2VybmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIyCgxMb2dpblJlcXVl",
-            "c3QSEAoIdXNlcm5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiNQoQUmVn",
-            "aXN0ZXJSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIg",
-            "ASgJIjIKDUxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2Vy",
-            "bmFtZRgCIAEoCSIiCg5DaGFuZ2VVc2VybmFtZRIQCgh1c2VybmFtZRgBIAEo",
-            "CSL7BgoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgC",
-            "IAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXll",
-            "cl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0",
-            "aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2Nv",
-            "bC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQu",
-            "cHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVz",
-            "X3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNS",
-            "ZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVh",
-            "dGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0",
-            "Um9vbUgAEicKCWpvaW5fcm9vbRgJIAEoCzISLnByb3RvY29sLkpvaW5Sb29t",
-            "SAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5wcm90b2NvbC5TdGFy",
-            "dGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgLIAEoCzIZLnBy",
-            "b3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2luX3JlcXVlc3QYDCAB",
-            "KAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFyZWdpc3Rlcl9yZXNw",
-            "b25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVzcG9uc2VIABIxCg5s",
-            "b2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxvZ2luUmVzcG9uc2VI",
-            "ABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEoCzIZLnByb3RvY29sLlJvb21M",
-            "aXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9yZXNwb25zZRgQIAEoCzIaLnBy",
-            "b3RvY29sLlJvb21MaXN0UmVzcG9uc2VIABIzCg9jaGFuZ2VfdXNlcm5hbWUY",
-            "ESABKAsyGC5wcm90b2NvbC5DaGFuZ2VVc2VybmFtZUgAQgUKA21zZ2IGcHJv",
-            "dG8z"));
+            "IAEoCSIdCg9Kb2luUm9vbVJlcXVlc3QSCgoCaWQYASABKAkiSQoQSm9pblJv",
+            "b21SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEiQKBHJvb20YAiABKAsyFi5w",
+            "cm90b2NvbC5Sb29tTGlzdEl0ZW0iJAoQU3RhcnRpbmdQb3NpdGlvbhIQCghw",
+            "b3NpdGlvbhgBIAMoBSI1Cg9SZWdpc3RlclJlcXVlc3QSEAoIdXNlcm5hbWUY",
+            "ASABKAkSEAoIcGFzc3dvcmQYAiABKAkiMgoMTG9naW5SZXF1ZXN0EhAKCHVz",
+            "ZXJuYW1lGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIjUKEFJlZ2lzdGVyUmVz",
+            "cG9uc2USDwoHc3VjY2VzcxgBIAEoCBIQCgh1c2VybmFtZRgCIAEoCSIyCg1M",
+            "b2dpblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUYAiAB",
+            "KAkiIgoOQ2hhbmdlVXNlcm5hbWUSEAoIdXNlcm5hbWUYASABKAkixAcKB01l",
+            "c3NhZ2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UYAiABKAsyFS5w",
+            "cm90b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5ZXJfcG9zaXRp",
+            "b24YAyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3NpdGlvbkgAEjwK",
+            "FHVwZGF0ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwucHJvdG9jb2wuVXBkYXRl",
+            "UGxheWVyU3RhdHVzSAASKgoKZGlzY29ubmVjdBgFIAEoCzIULnByb3RvY29s",
+            "LkRpc2Nvbm5lY3RIABJLChx1cGRhdGVfcGxheWVyX3N0YXR1c19yZXF1ZXN0",
+            "GAYgASgLMiMucHJvdG9jb2wuVXBkYXRlUGxheWVyU3RhdHVzUmVxdWVzdEgA",
+            "EisKC2NyZWF0ZV9yb29tGAcgASgLMhQucHJvdG9jb2wuQ3JlYXRlUm9vbUgA",
+            "EikKCnN0YXJ0X3Jvb20YCCABKAsyEy5wcm90b2NvbC5TdGFydFJvb21IABI2",
+            "ChFqb2luX3Jvb21fcmVxdWVzdBgJIAEoCzIZLnByb3RvY29sLkpvaW5Sb29t",
+            "UmVxdWVzdEgAEjcKEXN0YXJ0aW5nX3Bvc2l0aW9uGAogASgLMhoucHJvdG9j",
+            "b2wuU3RhcnRpbmdQb3NpdGlvbkgAEjUKEHJlZ2lzdGVyX3JlcXVlc3QYCyAB",
+            "KAsyGS5wcm90b2NvbC5SZWdpc3RlclJlcXVlc3RIABIvCg1sb2dpbl9yZXF1",
+            "ZXN0GAwgASgLMhYucHJvdG9jb2wuTG9naW5SZXF1ZXN0SAASNwoRcmVnaXN0",
+            "ZXJfcmVzcG9uc2UYDSABKAsyGi5wcm90b2NvbC5SZWdpc3RlclJlc3BvbnNl",
+            "SAASMQoObG9naW5fcmVzcG9uc2UYDiABKAsyFy5wcm90b2NvbC5Mb2dpblJl",
+            "c3BvbnNlSAASNgoRcm9vbV9saXN0X3JlcXVlc3QYDyABKAsyGS5wcm90b2Nv",
+            "bC5Sb29tTGlzdFJlcXVlc3RIABI4ChJyb29tX2xpc3RfcmVzcG9uc2UYECAB",
+            "KAsyGi5wcm90b2NvbC5Sb29tTGlzdFJlc3BvbnNlSAASMwoPY2hhbmdlX3Vz",
+            "ZXJuYW1lGBEgASgLMhgucHJvdG9jb2wuQ2hhbmdlVXNlcm5hbWVIABI4ChJq",
+            "b2luX3Jvb21fcmVzcG9uc2UYEiABKAsyGi5wcm90b2NvbC5Kb2luUm9vbVJl",
+            "c3BvbnNlSABCBQoDbXNnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,14 +91,15 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RoomListItem), global::Protocol.RoomListItem.Parser, new[]{ "Id", "RoomType", "IdCircuit", "MaxPlayers", "NbPlayers", "Players" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Player), global::Protocol.Player.Parser, new[]{ "Username", "NbRaces", "NbWins", "Record" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartRoom), global::Protocol.StartRoom.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoom), global::Protocol.JoinRoom.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoomRequest), global::Protocol.JoinRoomRequest.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.JoinRoomResponse), global::Protocol.JoinRoomResponse.Parser, new[]{ "Success", "Room" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterRequest), global::Protocol.RegisterRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginRequest), global::Protocol.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChangeUsername), global::Protocol.ChangeUsername.Parser, new[]{ "Username" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoom", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -2210,10 +2214,10 @@ namespace Protocol {
   /// <summary>
   ///  join a room
   /// </summary>
-  public sealed partial class JoinRoom : pb::IMessage<JoinRoom> {
-    private static readonly pb::MessageParser<JoinRoom> _parser = new pb::MessageParser<JoinRoom>(() => new JoinRoom());
+  public sealed partial class JoinRoomRequest : pb::IMessage<JoinRoomRequest> {
+    private static readonly pb::MessageParser<JoinRoomRequest> _parser = new pb::MessageParser<JoinRoomRequest>(() => new JoinRoomRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<JoinRoom> Parser { get { return _parser; } }
+    public static pb::MessageParser<JoinRoomRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -2226,20 +2230,20 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JoinRoom() {
+    public JoinRoomRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JoinRoom(JoinRoom other) : this() {
+    public JoinRoomRequest(JoinRoomRequest other) : this() {
       id_ = other.id_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JoinRoom Clone() {
-      return new JoinRoom(this);
+    public JoinRoomRequest Clone() {
+      return new JoinRoomRequest(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -2255,11 +2259,11 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as JoinRoom);
+      return Equals(other as JoinRoomRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(JoinRoom other) {
+    public bool Equals(JoinRoomRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2300,7 +2304,7 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(JoinRoom other) {
+    public void MergeFrom(JoinRoomRequest other) {
       if (other == null) {
         return;
       }
@@ -2327,6 +2331,157 @@ namespace Protocol {
 
   }
 
+  public sealed partial class JoinRoomResponse : pb::IMessage<JoinRoomResponse> {
+    private static readonly pb::MessageParser<JoinRoomResponse> _parser = new pb::MessageParser<JoinRoomResponse>(() => new JoinRoomResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<JoinRoomResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoomResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoomResponse(JoinRoomResponse other) : this() {
+      success_ = other.success_;
+      Room = other.room_ != null ? other.Room.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JoinRoomResponse Clone() {
+      return new JoinRoomResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "room" field.</summary>
+    public const int RoomFieldNumber = 2;
+    private global::Protocol.RoomListItem room_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.RoomListItem Room {
+      get { return room_; }
+      set {
+        room_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as JoinRoomResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(JoinRoomResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (!object.Equals(Room, other.Room)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (room_ != null) hash ^= Room.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (room_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Room);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (room_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Room);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(JoinRoomResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.room_ != null) {
+        if (room_ == null) {
+          room_ = new global::Protocol.RoomListItem();
+        }
+        Room.MergeFrom(other.Room);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (room_ == null) {
+              room_ = new global::Protocol.RoomListItem();
+            }
+            input.ReadMessage(room_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class StartingPosition : pb::IMessage<StartingPosition> {
     private static readonly pb::MessageParser<StartingPosition> _parser = new pb::MessageParser<StartingPosition>(() => new StartingPosition());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2334,7 +2489,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2444,7 +2599,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2589,7 +2744,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2734,7 +2889,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2879,7 +3034,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3024,7 +3179,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3145,7 +3300,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3185,8 +3340,8 @@ namespace Protocol {
         case MsgOneofCase.StartRoom:
           StartRoom = other.StartRoom.Clone();
           break;
-        case MsgOneofCase.JoinRoom:
-          JoinRoom = other.JoinRoom.Clone();
+        case MsgOneofCase.JoinRoomRequest:
+          JoinRoomRequest = other.JoinRoomRequest.Clone();
           break;
         case MsgOneofCase.StartingPosition:
           StartingPosition = other.StartingPosition.Clone();
@@ -3211,6 +3366,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.ChangeUsername:
           ChangeUsername = other.ChangeUsername.Clone();
+          break;
+        case MsgOneofCase.JoinRoomResponse:
+          JoinRoomResponse = other.JoinRoomResponse.Clone();
           break;
       }
 
@@ -3312,14 +3470,14 @@ namespace Protocol {
       }
     }
 
-    /// <summary>Field number for the "join_room" field.</summary>
-    public const int JoinRoomFieldNumber = 9;
+    /// <summary>Field number for the "join_room_request" field.</summary>
+    public const int JoinRoomRequestFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Protocol.JoinRoom JoinRoom {
-      get { return msgCase_ == MsgOneofCase.JoinRoom ? (global::Protocol.JoinRoom) msg_ : null; }
+    public global::Protocol.JoinRoomRequest JoinRoomRequest {
+      get { return msgCase_ == MsgOneofCase.JoinRoomRequest ? (global::Protocol.JoinRoomRequest) msg_ : null; }
       set {
         msg_ = value;
-        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.JoinRoom;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.JoinRoomRequest;
       }
     }
 
@@ -3411,6 +3569,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "join_room_response" field.</summary>
+    public const int JoinRoomResponseFieldNumber = 18;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.JoinRoomResponse JoinRoomResponse {
+      get { return msgCase_ == MsgOneofCase.JoinRoomResponse ? (global::Protocol.JoinRoomResponse) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.JoinRoomResponse;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -3422,7 +3591,7 @@ namespace Protocol {
       UpdatePlayerStatusRequest = 6,
       CreateRoom = 7,
       StartRoom = 8,
-      JoinRoom = 9,
+      JoinRoomRequest = 9,
       StartingPosition = 10,
       RegisterRequest = 11,
       LoginRequest = 12,
@@ -3431,6 +3600,7 @@ namespace Protocol {
       RoomListRequest = 15,
       RoomListResponse = 16,
       ChangeUsername = 17,
+      JoinRoomResponse = 18,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3465,7 +3635,7 @@ namespace Protocol {
       if (!object.Equals(UpdatePlayerStatusRequest, other.UpdatePlayerStatusRequest)) return false;
       if (!object.Equals(CreateRoom, other.CreateRoom)) return false;
       if (!object.Equals(StartRoom, other.StartRoom)) return false;
-      if (!object.Equals(JoinRoom, other.JoinRoom)) return false;
+      if (!object.Equals(JoinRoomRequest, other.JoinRoomRequest)) return false;
       if (!object.Equals(StartingPosition, other.StartingPosition)) return false;
       if (!object.Equals(RegisterRequest, other.RegisterRequest)) return false;
       if (!object.Equals(LoginRequest, other.LoginRequest)) return false;
@@ -3474,6 +3644,7 @@ namespace Protocol {
       if (!object.Equals(RoomListRequest, other.RoomListRequest)) return false;
       if (!object.Equals(RoomListResponse, other.RoomListResponse)) return false;
       if (!object.Equals(ChangeUsername, other.ChangeUsername)) return false;
+      if (!object.Equals(JoinRoomResponse, other.JoinRoomResponse)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -3489,7 +3660,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.UpdatePlayerStatusRequest) hash ^= UpdatePlayerStatusRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.CreateRoom) hash ^= CreateRoom.GetHashCode();
       if (msgCase_ == MsgOneofCase.StartRoom) hash ^= StartRoom.GetHashCode();
-      if (msgCase_ == MsgOneofCase.JoinRoom) hash ^= JoinRoom.GetHashCode();
+      if (msgCase_ == MsgOneofCase.JoinRoomRequest) hash ^= JoinRoomRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.StartingPosition) hash ^= StartingPosition.GetHashCode();
       if (msgCase_ == MsgOneofCase.RegisterRequest) hash ^= RegisterRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.LoginRequest) hash ^= LoginRequest.GetHashCode();
@@ -3498,6 +3669,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.RoomListRequest) hash ^= RoomListRequest.GetHashCode();
       if (msgCase_ == MsgOneofCase.RoomListResponse) hash ^= RoomListResponse.GetHashCode();
       if (msgCase_ == MsgOneofCase.ChangeUsername) hash ^= ChangeUsername.GetHashCode();
+      if (msgCase_ == MsgOneofCase.JoinRoomResponse) hash ^= JoinRoomResponse.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -3541,9 +3713,9 @@ namespace Protocol {
         output.WriteRawTag(66);
         output.WriteMessage(StartRoom);
       }
-      if (msgCase_ == MsgOneofCase.JoinRoom) {
+      if (msgCase_ == MsgOneofCase.JoinRoomRequest) {
         output.WriteRawTag(74);
-        output.WriteMessage(JoinRoom);
+        output.WriteMessage(JoinRoomRequest);
       }
       if (msgCase_ == MsgOneofCase.StartingPosition) {
         output.WriteRawTag(82);
@@ -3577,6 +3749,10 @@ namespace Protocol {
         output.WriteRawTag(138, 1);
         output.WriteMessage(ChangeUsername);
       }
+      if (msgCase_ == MsgOneofCase.JoinRoomResponse) {
+        output.WriteRawTag(146, 1);
+        output.WriteMessage(JoinRoomResponse);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3606,8 +3782,8 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.StartRoom) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartRoom);
       }
-      if (msgCase_ == MsgOneofCase.JoinRoom) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(JoinRoom);
+      if (msgCase_ == MsgOneofCase.JoinRoomRequest) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(JoinRoomRequest);
       }
       if (msgCase_ == MsgOneofCase.StartingPosition) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartingPosition);
@@ -3632,6 +3808,9 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.ChangeUsername) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChangeUsername);
+      }
+      if (msgCase_ == MsgOneofCase.JoinRoomResponse) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(JoinRoomResponse);
       }
       return size;
     }
@@ -3666,8 +3845,8 @@ namespace Protocol {
         case MsgOneofCase.StartRoom:
           StartRoom = other.StartRoom;
           break;
-        case MsgOneofCase.JoinRoom:
-          JoinRoom = other.JoinRoom;
+        case MsgOneofCase.JoinRoomRequest:
+          JoinRoomRequest = other.JoinRoomRequest;
           break;
         case MsgOneofCase.StartingPosition:
           StartingPosition = other.StartingPosition;
@@ -3692,6 +3871,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.ChangeUsername:
           ChangeUsername = other.ChangeUsername;
+          break;
+        case MsgOneofCase.JoinRoomResponse:
+          JoinRoomResponse = other.JoinRoomResponse;
           break;
       }
 
@@ -3773,12 +3955,12 @@ namespace Protocol {
             break;
           }
           case 74: {
-            global::Protocol.JoinRoom subBuilder = new global::Protocol.JoinRoom();
-            if (msgCase_ == MsgOneofCase.JoinRoom) {
-              subBuilder.MergeFrom(JoinRoom);
+            global::Protocol.JoinRoomRequest subBuilder = new global::Protocol.JoinRoomRequest();
+            if (msgCase_ == MsgOneofCase.JoinRoomRequest) {
+              subBuilder.MergeFrom(JoinRoomRequest);
             }
             input.ReadMessage(subBuilder);
-            JoinRoom = subBuilder;
+            JoinRoomRequest = subBuilder;
             break;
           }
           case 82: {
@@ -3851,6 +4033,15 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             ChangeUsername = subBuilder;
+            break;
+          }
+          case 146: {
+            global::Protocol.JoinRoomResponse subBuilder = new global::Protocol.JoinRoomResponse();
+            if (msgCase_ == MsgOneofCase.JoinRoomResponse) {
+              subBuilder.MergeFrom(JoinRoomResponse);
+            }
+            input.ReadMessage(subBuilder);
+            JoinRoomResponse = subBuilder;
             break;
           }
         }
