@@ -58,6 +58,11 @@ class Network : MonoBehaviour {
       socketReady = true;
 
       Debug.Log("socket is ready");
+
+      sendMessage(new Protocol.Message{
+          Type = "change_username",
+          ChangeUsername = new Protocol.ChangeUsername{Username = clientName}});
+
       UpdatePlayerStatus();
     } catch (Exception e) {
       Debug.Log("socket error: " + e.Message);
@@ -155,6 +160,9 @@ class Network : MonoBehaviour {
   void logout() {
     // just generate a new random clientName
     clientName = "Invité-" + new System.Random().Next(1, 65536);
+    sendMessage(new Protocol.Message{
+        Type = "change_username",
+        ChangeUsername = new Protocol.ChangeUsername{Username = clientName}});
   }
 
   // send a message (UpdatePlayerPosition, ChatMessage, ...) to the socket
