@@ -383,6 +383,7 @@ class Network : MonoBehaviour {
         break;
       case "room_list_response":
         Protocol.RoomListResponse rlr = parsedData.RoomListResponse;
+        Debug.Log(rlr);
 
         foreach (Protocol.RoomListItem rli in rlr.RoomList) {
           List<string> playersUsernameList = new List<string>();

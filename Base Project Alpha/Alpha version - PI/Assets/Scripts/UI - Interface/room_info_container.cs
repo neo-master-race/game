@@ -40,20 +40,35 @@ public class room_info_container : MonoBehaviour {
     public void roomConstructor(string id, int room_type, int id_circuit,int max_players, int nb_players,
         string[] players_username,int[] players_nb_races,int[] players_nb_wins, string[] players_record)
     {
+        Debug.Log("ok1");
         Room currRoom=new Room();
+        Debug.Log("ok1.1");
+        
         currRoom.roomIndex = id;
 
-        if (room_type == 1)
-            currRoom.room = RoomType.SingleRace;
-        else if(room_type==2)
-            currRoom.room = RoomType.SingleRace;
+        // which room type
+        switch (room_type) {
+            case 2:
+                currRoom.room = RoomType.Tournament;
+                break;
+            default:
+                currRoom.room = RoomType.SingleRace;
+                break;
+        }
 
-        if (id_circuit == 1)
-            currRoom.circuits[0] = Circuit.Track1;
-        else if (id_circuit == 2)
-            currRoom.circuits[0] = Circuit.Track2;
-        else if (id_circuit == 3)
-            currRoom.circuits[0] = Circuit.Track3;
+        // which circuit
+        switch (id_circuit) {
+            case 2:
+                currRoom.circuits[0] = Circuit.Track2;
+                break;
+            case 3:
+                currRoom.circuits[0] = Circuit.Track3;
+                break;
+            default:
+                currRoom.circuits[0] = Circuit.Track1;
+                break;
+        }
+        Debug.Log("ok2");
 
         currRoom.MaximumPlayersNb = max_players;
         currRoom.currentPlayersNb = nb_players;
@@ -62,8 +77,14 @@ public class room_info_container : MonoBehaviour {
         currRoom.playersRaceNb = players_nb_races;
         currRoom.playersRaceWin = players_nb_wins;
         currRoom.playersRaceRecord = players_record;
+        Debug.Log("ok3");
+        
         rooms.Add(currRoom);
+        Debug.Log("ok4");
+        
         createRooms();
+        Debug.Log("ok5");
+        
     }
 
     public void notOnRoomList()
