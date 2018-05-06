@@ -198,6 +198,7 @@ public class room_info_container : MonoBehaviour {
         {
             room.transform.Find("Player" + (i + 1)).GetComponent<Text>().text = "- "+rooms[roomIndex].ActivePlayers[i];
         }
+        room.transform.GetChild(0).GetComponent<room_index_container>().roomIndex= rooms[roomIndex].roomIndex;
     }
 
 
