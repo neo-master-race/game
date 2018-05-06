@@ -37,13 +37,13 @@ public class room_info_container : MonoBehaviour {
     [Header("Room Creation")]
     public List<Room> rooms;
 
-    public void roomConstructor(string id, int room_type, int id_circuit,int max_players, int nb_players,
-        string[] players_username,int[] players_nb_races,int[] players_nb_wins, string[] players_record)
+    public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
+        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
 
-        Room currRoom=new Room();
+        Room currRoom = new Room();
 
-        
+
         currRoom.roomIndex = id;
 
         // which room type
@@ -79,19 +79,75 @@ public class room_info_container : MonoBehaviour {
         currRoom.playersRaceWin = players_nb_wins;
         currRoom.playersRaceRecord = players_record;
 
-        
+
         rooms.Add(currRoom);
 
-        
+
         createRooms();
 
         
     }
 
+    public void addOrUpdateRoom(bool wannaAdd,string id, int room_type, int id_circuit, int max_players, int nb_players,
+        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
+    {
+        if(wannaAdd)
+        {
+            roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record);
+        }
+        else
+        {
+            for(int i=0;i<rooms.Count;i++)
+            {
+                if(rooms[i].roomIndex==id)
+                {
+                    switch (room_type)
+                    {
+                        case 2:
+                            rooms[i].room = RoomType.Tournament;
+                            break;
+                        default:
+                            rooms[i].room = RoomType.SingleRace;
+                            break;
+                    }
+
+                    // which circuit
+                    switch (id_circuit)
+                    {
+                        case 2:
+                            rooms[i].circuits[0] = Circuit.Track2;
+                            break;
+                        case 3:
+                            rooms[i].circuits[0] = Circuit.Track3;
+                            break;
+                        default:
+                            rooms[i].circuits[0] = Circuit.Track1;
+                            break;
+                    }
+
+
+                    rooms[i].MaximumPlayersNb = max_players;
+                    rooms[i].currentPlayersNb = nb_players;
+                    rooms[i].ActivePlayers = players_username;
+                    rooms[i].roomAccessibility = RoomAccesibility.Public;
+                    rooms[i].playersRaceNb = players_nb_races;
+                    rooms[i].playersRaceWin = players_nb_wins;
+                    rooms[i].playersRaceRecord = players_record;
+                    createRooms();
+                }
+            }
+        }
+    }
+
+    public void reset_list()
+    {
+        this.rooms = new List<Room>(new Room[0]);
+    }
+
     public void notOnRoomList()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
-        this.rooms = new List<Room>(new Room[0]);
+        reset_list();
     }
 
     public void network_call()
@@ -141,9 +197,21 @@ public class room_info_container : MonoBehaviour {
     }
 
 
+    public void reset_list_visual()
+    {
+        roomParent.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
+        roomParent.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
+        for (int i = 0; i < roomParent.transform.childCount; i++)
+        {
+            Destroy(roomParent.transform.GetChild(0).gameObject);
+        }
+    }
+
+
     public void createRooms()
     {
-        for (int i = roomParent.transform.childCount; i < rooms.Count; i++)
+        reset_list_visual();
+        for (int i = 0; i < rooms.Count; i++)
         {
             if (rooms[i].room == RoomType.SingleRace)
             {
