@@ -207,6 +207,8 @@ public class room_info_container : MonoBehaviour {
                     {
                         GameObject player = Instantiate(playerInWait, lobby.transform);
                         player.GetComponent<RectTransform>().anchoredPosition = new Vector2(207.5f + i * 128.75f, -30f);
+                        player.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + i + "\n\nEn attente";
+
                     }
                 }
             }
