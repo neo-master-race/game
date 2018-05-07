@@ -282,7 +282,7 @@ public class room_creation_form : MonoBehaviour {
                 int trackIndex;
                 if(currentRoomCreated.circuits[0]== Circuit.Track1)
                     trackIndex=1;
-                else if (currentRoomCreated.circuits[0] == Circuit.Track1)
+                else if (currentRoomCreated.circuits[0] == Circuit.Track2)
                     trackIndex = 2;
                 else
                     trackIndex = 3;
