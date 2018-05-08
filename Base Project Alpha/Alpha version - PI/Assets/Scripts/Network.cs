@@ -422,10 +422,33 @@ class Network : MonoBehaviour {
         break;
       case "join_room_response":
         Protocol.JoinRoomResponse jrr = parsedData.JoinRoomResponse;
+        Protocol.RoomListItem rlitem = jrr.Room;
+
         if (jrr.Success) {
+          List<string> playersUsernameList = new List<string>();
+          List<int> playersNbRacesList = new List<int>();
+          List<int> playersNbWinsList = new List<int>();
+          List<string> playersRecordList = new List<string>();
+
+          IEnumerator<Protocol.Player> numPlayers =
+              rlitem.Players.GetEnumerator();
+          while (numPlayers.MoveNext()) {
+            playersUsernameList.Add(numPlayers.Current.Username);
+            playersNbRacesList.Add(numPlayers.Current.NbRaces);
+            playersNbWinsList.Add(numPlayers.Current.NbWins);
+            playersRecordList.Add(numPlayers.Current.Record);
+          }
+
+          string[] playersUsername = playersUsernameList.ToArray();
+          int[] playersNbRaces = playersNbRacesList.ToArray();
+          int[] playersNbWins = playersNbWinsList.ToArray();
+          string[] playersRecord = playersRecordList.ToArray();
+
           GameObject.Find("Rooms_Script")
               .GetComponent<room_info_container>()
-              .goToLobby();
+              .goToLobby(rlitem.Id, rlitem.RoomType, rlitem.IdCircuit,
+                         rlitem.MaxPlayers, rlitem.NbPlayers, playersUsername,
+                         playersNbRaces, playersNbWins, playersRecord);
         }
         break;
       default:

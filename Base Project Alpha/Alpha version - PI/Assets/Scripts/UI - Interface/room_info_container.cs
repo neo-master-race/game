@@ -153,7 +153,8 @@ public class room_info_container : MonoBehaviour {
         }
     }
 
-    public void goToLobby()
+    public void goToLobby(string id, int room_type, int id_circuit, int max_players, int nb_players,
+        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
         lobby.SetActive(true);
         room.SetActive(false);
