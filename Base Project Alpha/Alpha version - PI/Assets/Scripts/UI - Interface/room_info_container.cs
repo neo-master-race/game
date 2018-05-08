@@ -164,9 +164,9 @@ public class room_info_container : MonoBehaviour {
         {
             if (rooms[j].roomIndex==GameObject.Find("UserStats").GetComponent<UserStats>().inLobby)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < rooms[j].MaximumPlayersNb; i++)
                 {
-                    if(i< (rooms[j].ActivePlayers.Length+1))
+                    if(i< rooms[j].ActivePlayers.Length)
                     {
                         GameObject player = Instantiate(playerOnLobby, lobby.transform);
                         player.GetComponent<RectTransform>().anchoredPosition = new Vector2(207.5f + i * 128.75f, -30f);
@@ -207,7 +207,7 @@ public class room_info_container : MonoBehaviour {
                     {
                         GameObject player = Instantiate(playerInWait, lobby.transform);
                         player.GetComponent<RectTransform>().anchoredPosition = new Vector2(207.5f + i * 128.75f, -30f);
-                        player.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + i + "\n\nEn attente";
+                        player.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + (i+1) + "\n\nEn attente";
 
                     }
                 }
