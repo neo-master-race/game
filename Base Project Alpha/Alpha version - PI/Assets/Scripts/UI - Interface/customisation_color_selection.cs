@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
+public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,IDragHandler, IEndDragHandler
 {
     public Slider colorPicked;
     public Material gradient3D;
@@ -23,6 +23,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
     private float cursorLocalPositionX = -1f;
     private float cursorLocalPositionY = -1f;
 
+    public bool beginDrag = false;
+
     // Use this for initialization
     void Start () {
 
@@ -31,12 +33,63 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
 
-        cursorPositionX = pointerData.position.x;
-        cursorPositionY = pointerData.position.y;
-        GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
-        cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
-        cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
-        vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+        if(pointerData.pointerEnter.name== "3D_Zone_Selection")
+        {
+            cursorPositionX = pointerData.position.x;
+            cursorPositionY = pointerData.position.y;
+            GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
+            cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
+            cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
+            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag = true;
+        }
+
+    }
+
+    public void OnDrag(PointerEventData pointerData)
+    {
+
+        if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag == true && pointerData.pointerEnter.name == "3D_Zone_Selection")
+        {
+            cursorPositionX = pointerData.position.x;
+            cursorPositionY = pointerData.position.y;
+            GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
+            cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
+            cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
+            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+        }
+        else if(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag == true)
+        {
+            Vector3[] v = new Vector3[4];
+            GameObject.Find("3D_Zone_Selection").GetComponent<RectTransform>().GetWorldCorners(v);
+            for (var i = 0; i < 4; i++)
+            {
+                Debug.Log("World Corner " + i + " : " + v[i]);
+            }
+            if (pointerData.position.x < v[0].x)
+                cursorPositionX = v[0].x;
+            else if (pointerData.position.x > v[2].x)
+                cursorPositionX = v[2].x;
+            else
+                cursorPositionX = pointerData.position.x;
+
+            if (pointerData.position.y < v[0].y)
+                cursorPositionY = v[0].y;
+            else if (pointerData.position.y > v[2].y)
+                cursorPositionY = v[2].y;
+            else
+                cursorPositionY = pointerData.position.y;
+            GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
+            cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
+            cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
+            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+        }
+
+    }
+
+    public void OnEndDrag(PointerEventData pointerData)
+    {
+        GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag = false;
     }
 
     //suivant la position du slider sur le gradient 2D choisi par l'utilisateur change les paramètres du gradient (carré) 3D pour changer la tonalité de couleur en temps réel
