@@ -56,6 +56,10 @@ public class menu_selection : MonoBehaviour {
 	public InputField inscriptionPasswd;
 	public InputField inscriptionPasswdConf;
 
+    [Header("Customisation")]
+    public GameObject customUI;
+    public GameObject noncustomBackground;
+
 
 
     //Schneberger Maxime
@@ -316,7 +320,9 @@ public class menu_selection : MonoBehaviour {
                 break;
 
             case "Customize_Text":
-
+                disable_all();
+                customUI.SetActive(true);
+                noncustomBackground.SetActive(false);
 
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
                 break;

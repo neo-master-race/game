@@ -18,6 +18,20 @@ public class UserStats : MonoBehaviour {
     public string track2LapRecord;
     public string track3LapRecord;
 
+    [Header("User Cars")]
+    public int Car1R;
+    public int Car1G;
+    public int Car1B;
+    public int Car2R;
+    public int Car2G;
+    public int Car2B;
+    public int Car3R;
+    public int Car3G;
+    public int Car3B;
+    public int Car4R;
+    public int Car4G;
+    public int Car4B;
+
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
