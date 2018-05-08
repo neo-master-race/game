@@ -391,7 +391,6 @@ class Network : MonoBehaviour {
         break;
       case "room_list_response":
         Protocol.RoomListResponse rlr = parsedData.RoomListResponse;
-        Debug.Log(rlr);
 
         foreach (Protocol.RoomListItem rli in rlr.RoomList) {
           List<string> playersUsernameList = new List<string>();
@@ -405,8 +404,6 @@ class Network : MonoBehaviour {
             playersNbRacesList.Add(numPlayers.Current.NbRaces);
             playersNbWinsList.Add(numPlayers.Current.NbWins);
             playersRecordList.Add(numPlayers.Current.Record);
-            Debug.Log("Added player " + numPlayers.Current.Username +
-                      " for room #" + rli.Id);
           }
 
           string[] playersUsername = playersUsernameList.ToArray();
@@ -419,11 +416,17 @@ class Network : MonoBehaviour {
               .addOrUpdateRoom(rli.Id, rli.RoomType, rli.IdCircuit,
                                rli.MaxPlayers, rli.NbPlayers, playersUsername,
                                playersNbRaces, playersNbWins, playersRecord);
-
-          Debug.Log("Added room #" + rli.Id);
         }
 
         Debug.Log("Got response and created all rooms");
+        break;
+      case "join_room_response":
+        Protocol.JoinRoomResponse jrr = parsedData.JoinRoomResponse;
+        if (jrr.Success) {
+          GameObject.Find("Rooms_Script")
+              .GetComponent<room_info_container>()
+              .goToLobby();
+        }
         break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
