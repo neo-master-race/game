@@ -159,6 +159,7 @@ public class room_info_container : MonoBehaviour {
         lobby.SetActive(true);
         room.SetActive(false);
         scrollbar.SetActive(false);
+        GameObject.Find("UserStats").GetComponent<UserStats>().inLobby = id;
 
         
         for(int j=0;j<rooms.Count;j++)
