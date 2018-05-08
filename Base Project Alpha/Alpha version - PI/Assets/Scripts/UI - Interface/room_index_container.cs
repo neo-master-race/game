@@ -12,7 +12,7 @@ public class room_index_container : MonoBehaviour, IPointerClickHandler {
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().inLobby = roomIndex;
-        GameObject.Find("Rooms_Script").GetComponent<room_info_container>().goToLobby();
+        //GameObject.Find("Rooms_Script").GetComponent<room_info_container>().goToLobby();
         GameObject.Find("Network").GetComponent<Network>().joinGameRequest(roomIndex);
     }
 
