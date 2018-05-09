@@ -451,6 +451,14 @@ class Network : MonoBehaviour {
                          playersNbRaces, playersNbWins, playersRecord);
         }
         break;
+      case "start_room":
+        Protocol.StartRoom sr = parsedData.StartRoom;
+
+        if (sr.Success) {
+          Debug.Log("Start the room plz!!!");
+        }
+
+        break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
