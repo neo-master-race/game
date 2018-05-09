@@ -13,7 +13,10 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
     public Slider colorPicked;
     public Material gradient3D;
 
-    public Material vehicleMainColor;
+    public Material StratosMainColor;
+    public Material PorscheMainColor;
+    public Material LamborghiniMainColor;
+    //public Material PorscheMainColor;
 
     private Color vehicle_color;
 
@@ -90,7 +93,12 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
             GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
             cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
             cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
-            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            if(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
+                StratosMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
+                PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+                LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag = true;
         }
 
@@ -106,7 +114,12 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
             GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
             cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
             cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
-            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
+                StratosMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
+                PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+                LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
         }
         else if(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag == true)
         {
@@ -132,7 +145,12 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
             GameObject.Find("cursor_texture").transform.position = new Vector3(cursorPositionX, cursorPositionY);
             cursorLocalPositionX = GameObject.Find("cursor_texture").transform.localPosition.x;
             cursorLocalPositionY = GameObject.Find("cursor_texture").transform.localPosition.y;
-            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
+                StratosMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
+                PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+                LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
         }
 
     }
@@ -177,6 +195,13 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         vehicle_color=calculate_color_range(colorPicked.value);
         gradient3D.SetColor("_Color_TopR", vehicle_color);
         if(cursorLocalPositionX>=0 && cursorLocalPositionY>=0)
-            vehicleMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+        {
+            if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
+                StratosMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
+                PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+                LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+        }  
     }
 }
