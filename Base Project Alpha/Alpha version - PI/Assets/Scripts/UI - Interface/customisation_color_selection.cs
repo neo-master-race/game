@@ -25,10 +25,60 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
 
     public bool beginDrag = false;
 
+    [Header("arrow variables")]
+    public int carIndex = 1;
+    public GameObject leftArrow;
+    public GameObject rightArrow;
+
+    [Header("Cars")]
+    public GameObject Stratos;
+    public GameObject Porsche;
+    public GameObject Lamborghini;
+
+
     // Use this for initialization
     void Start () {
+        
+    }
 
-	}
+    void disableAllCars()
+    {
+        Stratos.SetActive(false);
+        Porsche.SetActive(false);
+        Lamborghini.SetActive(false);
+        //Stratos.SetActive(false);
+    }
+
+    public void onArrowClick(GameObject arrow)
+    {
+        if(arrow.gameObject.name=="LeftArrow")
+            GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex--;
+        else
+            GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex++;
+
+        disableAllCars();
+        if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex==1)
+        {
+            Stratos.SetActive(true);
+            leftArrow.SetActive(false);
+        }
+        else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
+        {
+            Porsche.SetActive(true);
+            leftArrow.SetActive(true);
+            rightArrow.SetActive(true);
+        }
+        else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+        {
+            Lamborghini.SetActive(true);
+            rightArrow.SetActive(false);
+        }
+        /*else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+        {
+            Stratos.SetActive(true);
+            leftArrow.SetActive(false);
+        }*/
+    }
 	
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
     public void OnPointerDown (PointerEventData pointerData) {
