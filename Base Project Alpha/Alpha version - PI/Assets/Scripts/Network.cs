@@ -558,4 +558,18 @@ class Network : MonoBehaviour {
         Type = "join_room_request",
         JoinRoomRequest = new Protocol.JoinRoomRequest{Id = gameId}});
   }
+
+ public
+  void sendUserStatsToDB(string username,int race,int victory,string recordt1,string recordt2,string recordt3,
+     int car1red, int car1green, int car1blue,
+     int car2red, int car2green, int car2blue,
+     int car3red, int car3green, int car3blue,
+     int car4red, int car4green, int car4blue,
+     float car1slider,int car1redTR, int car1greenTR, int car1blueTR,float car1cursorX,float car1cursorY,
+     float car2slider, int car2redTR, int car2greenTR, int car2blueTR, float car2cursorX, float car2cursorY,
+     float car3slider, int car3redTR, int car3greenTR, int car3blueTR, float car3cursorX, float car3cursorY,
+     float car4slider, int car4redTR, int car4greenTR, int car4blueTR, float car4cursorX, float car4cursorY)
+    {
+
+    }
 }
