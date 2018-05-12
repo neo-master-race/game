@@ -30,8 +30,15 @@ public class RaceInformations : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        players = GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().players;
-        playerLeaderboard = GameObject.Find("Stratos").GetComponent<Player_Info_Ingame>().playersLeaderboard;
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                players =player.GetComponent<Player_Info_Ingame>().players;
+                playerLeaderboard = player.GetComponent<Player_Info_Ingame>().playersLeaderboard;
+            }
+        }
+        
         i = 0;
         foreach(GameObject playr in players)
         {
