@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public enum RoomType { SingleRace, Tournament };
@@ -28,6 +30,7 @@ public class room_info_container : MonoBehaviour {
     public GameObject roomParent;
     public GameObject roomSinglePrefab;
     public GameObject roomTournamentPrefab;
+    public GameObject roomstatetext;
 
     [Header("Circuit Images")]
     public Texture track1Texture;
@@ -203,7 +206,7 @@ public class room_info_container : MonoBehaviour {
                         else
                             player.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = unfilledStar;
 
-                        player.transform.parent.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[j].ActivePlayers.Length + 1 + "/" + rooms[j].MaximumPlayersNb + "\nJoueurs";
+                        player.transform.parent.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[j].ActivePlayers.Length + "/" + rooms[j].MaximumPlayersNb + "\nJoueurs";
                     }
                     else
                     {
@@ -215,6 +218,24 @@ public class room_info_container : MonoBehaviour {
                 }
             }
         }     
+    }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+        SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
+    }
+
+    public IEnumerator roomStartCountdown(float waitTime)
+    {
+        while (waitTime>=0.0f)
+        {
+            roomstatetext.GetComponent<Text>().text = "La partie démarre dans " + (int)waitTime + " secondes.";
+            yield return new WaitForSeconds(1.0f);
+            waitTime -= 1.0f;
+        }
+        startGame();
+        yield break;
     }
 
     public void reset_list()

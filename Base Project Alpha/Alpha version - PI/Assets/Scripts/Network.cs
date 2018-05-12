@@ -455,7 +455,10 @@ class Network : MonoBehaviour {
         Protocol.StartRoom sr = parsedData.StartRoom;
 
         if (sr.Success) {
-          Debug.Log("Start the room plz!!!");
+                    IEnumerator coroutine;
+                    coroutine = GameObject.Find("Rooms_Script").GetComponent<room_info_container>().roomStartCountdown(10.0f);
+                    StartCoroutine(coroutine);
+                    Debug.Log("Start the room plz!!!");
         }
 
         break;
