@@ -12,10 +12,18 @@ public class startLightsSequence : MonoBehaviour {
     public Texture greenLight;
 
     private int lightSequenceStep = 0;
+    public GameObject localPlayer;
 
 	// Use this for initialization
 	void Start () {
-        GameObject.Find("Stratos").GetComponent<CarController>().enabled = false;
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                player.GetComponent<CarController>().enabled = false;
+                localPlayer = player;
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -39,7 +47,7 @@ public class startLightsSequence : MonoBehaviour {
                 {
                     GameObject.Find("Light" + i).GetComponent<RawImage>().texture = greenLight;
                 }
-                GameObject.Find("Stratos").GetComponent<CarController>().enabled = true;
+                localPlayer.GetComponent<CarController>().enabled = true;
                 timerInBetweenLights = 2.0f;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[0] = true;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[1] = true;

@@ -32,6 +32,33 @@ public class UserStats : MonoBehaviour {
     public int Car4G;
     public int Car4B;
 
+    public float stratosValueSlider;
+    public float porscheValueSlider;
+    public float lamborghiniValueSlider;
+    public float fordValueSlider;
+
+    public int stratosTopRR;
+    public int stratosTopRG;
+    public int stratosTopRB;
+    public int porscheTopRR;
+    public int porscheTopRG;
+    public int porscheTopRB;
+    public int lamborghiniTopRR;
+    public int lamborghiniTopRG;
+    public int lamborghiniTopRB;
+    public int fordTopRR;
+    public int fordTopRG;
+    public int fordTopRB;
+
+    public float stratosCursorX;
+    public float stratosCursorY;
+    public float porscheCursorX;
+    public float porscheCursorY;
+    public float lamborghiniCursorX;
+    public float lamborghiniCursorY;
+    public float fordCursorX;
+    public float fordCursorY;
+
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -42,7 +69,15 @@ public class UserStats : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
     }
 
-    public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3)
+    public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3,
+         int car1red, int car1green, int car1blue,
+         int car2red, int car2green, int car2blue,
+         int car3red, int car3green, int car3blue,
+         int car4red, int car4green, int car4blue,
+         float car1slider, int car1redTR, int car1greenTR, int car1blueTR, float car1cursorX, float car1cursorY,
+         float car2slider, int car2redTR, int car2greenTR, int car2blueTR, float car2cursorX, float car2cursorY,
+         float car3slider, int car3redTR, int car3greenTR, int car3blueTR, float car3cursorX, float car3cursorY,
+         float car4slider, int car4redTR, int car4greenTR, int car4blueTR, float car4cursorX, float car4cursorY)
     {
         username = usernam;
         raceNb = numberOfRaces;
@@ -50,7 +85,48 @@ public class UserStats : MonoBehaviour {
         track1LapRecord = recordTrack1;
         track2LapRecord = recordTrack2;
         track3LapRecord = recordTrack3;
-    }
+
+        Car1R = car1red;
+        Car1G = car1green;
+        Car1B = car1blue;
+        Car2R = car2red;
+        Car2G = car2green;
+        Car2B = car2blue;
+        Car3R = car3red;
+        Car3G = car3green;
+        Car3B = car3blue;
+        Car4R = car4red;
+        Car4G = car4green;
+        Car4B = car4blue;
+
+        stratosValueSlider = car1slider;
+        porscheValueSlider = car2slider;
+        lamborghiniValueSlider = car3slider;
+        fordValueSlider = car4slider;
+
+
+        stratosTopRR = car1redTR;
+        porscheTopRR = car2redTR;
+        lamborghiniTopRR = car3redTR;
+        fordTopRR = car4redTR;
+        stratosTopRG = car1greenTR;
+        porscheTopRG = car2greenTR;
+        lamborghiniTopRG = car3greenTR;
+        fordTopRG = car4greenTR;
+        stratosTopRB = car1blueTR;
+        porscheTopRB = car2blueTR;
+        lamborghiniTopRB = car3blueTR;
+        fordTopRB = car4blueTR;
+
+        stratosCursorX = car1cursorX;
+        stratosCursorY = car1cursorY;
+        porscheCursorX = car2cursorX;
+        porscheCursorY = car2cursorY;
+        lamborghiniCursorX = car3cursorX;
+        lamborghiniCursorY = car3cursorY;
+        fordCursorX = car4cursorX;
+        fordCursorY = car4cursorY;
+}
 
     // Update is called once per frame
     void Update () {
