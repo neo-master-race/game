@@ -25,12 +25,16 @@ public class menu_selection : MonoBehaviour {
     public GameObject multiButton;
 
     [Header("Multiplayer Section")]
-    public GameObject multiplayerUI;
+	public GameObject multiplayerUI;
 
-    [Header("Circuits buttons")]
-    public GameObject circuit1Button;
-    public GameObject circuit2Button;
-    public GameObject circuit3Button;
+	[Header("Track Selection")]
+	public GameObject trackSelection;
+	public GameObject trackConfirm;
+
+	[Header("Circuits buttons")]
+	public GameObject circuit1Button;
+	public GameObject circuit2Button;
+	public GameObject circuit3Button;
 
     [Header("Profile section")]
     public GameObject userInfo;
@@ -349,8 +353,9 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Solo_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 4;
-                SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
-                SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
+				trackSelection.SetActive(true);
+				soloButton.SetActive(false);
+				multiButton.SetActive(false);
                 break;
 
             case "Multi_Text":
@@ -366,9 +371,28 @@ public class menu_selection : MonoBehaviour {
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
 
-            case "Back_Text_Menu":
-                want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
-                break;
+
+			/************************************************************************************
+			*                        BOUTON DE CONFIRMATION DU CIRCUIT                          *
+			* **********************************************************************************/
+
+			case "Confirm_Text_Menu":
+				GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 5;
+				trackSelection.SetActive(false);
+
+				int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
+				SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+				if (nbTrack == 1)
+					SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
+				if (nbTrack == 2) 
+					SceneManager.LoadScene("Track2", LoadSceneMode.Additive);
+				if (nbTrack == 3) 
+					SceneManager.LoadScene("Track3", LoadSceneMode.Additive);
+				break;
+
+			case "Back_Text_Menu":
+            want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+            break;
 
 
 
@@ -383,7 +407,7 @@ public class menu_selection : MonoBehaviour {
              *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
              * **********************************************************************************/
         }
-    }
+	}
 
 
     //Schneberger Maxime
@@ -408,6 +432,8 @@ public class menu_selection : MonoBehaviour {
         soloButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
         multiButton.SetActive(false);
         multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
+
+		trackSelection.SetActive(false);
 
         //circuit1Button.SetActive(false);
         //circuit2Button.SetActive(false);

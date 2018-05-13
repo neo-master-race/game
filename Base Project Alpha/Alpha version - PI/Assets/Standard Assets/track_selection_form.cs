@@ -61,6 +61,7 @@ public class track_selection_form : MonoBehaviour {
 			Difficulty = 3;
 			//TrackInfo.text = "Track 3";
 		}
+
 	}
 
 	public void previousLap ()
