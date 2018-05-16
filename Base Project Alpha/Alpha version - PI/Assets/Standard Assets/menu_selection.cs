@@ -376,6 +376,10 @@ public class menu_selection : MonoBehaviour {
 				
 				break;
 
+            /************************************************************************************
+            *                        BOUTON DE CONFIRMATION DU VEHICULE                         *
+            * **********************************************************************************/
+
             case "ConfirmCar":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 6;
                 carSelection.SetActive(false);
