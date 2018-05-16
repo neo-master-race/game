@@ -253,6 +253,32 @@ public class room_info_container : MonoBehaviour {
                             currentPlayer.transform.GetChild(0).GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
 
                         }
+                        for(int k= rooms[j].ActivePlayers.Length; k<rooms[j].MaximumPlayersNb;k++)
+                        {
+                            GameObject currentPlayer = player2OnLobby;
+                            if (k == 1)
+                                currentPlayer = player2OnLobby;
+                            if (k == 2)
+                                currentPlayer = player3OnLobby;
+                            if (k == 3)
+                                currentPlayer = player4OnLobby;
+
+                            currentPlayer.SetActive(false);
+                        }
+                        for (int k =0 ; k < rooms[j].ActivePlayers.Length; k++)
+                        {
+                            GameObject currentPlayer = player1InWait;
+                            if (k == 0)
+                                currentPlayer = player1InWait;
+                            if (k == 1)
+                                currentPlayer = player2InWait;
+                            if (k == 2)
+                                currentPlayer = player3InWait;
+                            if (k == 3)
+                                currentPlayer = player4InWait;
+
+                            currentPlayer.SetActive(false);
+                        }
                     }
                 }
             }
