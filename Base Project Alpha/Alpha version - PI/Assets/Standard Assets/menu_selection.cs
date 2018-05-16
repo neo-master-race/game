@@ -51,15 +51,6 @@ public class menu_selection : MonoBehaviour {
     public int confirm_start=0;
     public String start_action="";
 
-	[Header("Menu index")]
-	public int currentIndex = 1;
-	public int maxIndex = 0;
-	public InputField connexionUser;
-	public InputField connexionPasswd;
-	public InputField inscriptionUser;
-	public InputField inscriptionPasswd;
-	public InputField inscriptionPasswdConf;
-
     [Header("Customisation")]
     public GameObject customUI;
     public GameObject noncustomBackground;
@@ -269,14 +260,10 @@ public class menu_selection : MonoBehaviour {
              *                          BOUTONS D'ENTREE                                        *
              * **********************************************************************************/
             case "Log_In_Text":
-				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex = 1;
-				GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex = 2;
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
                 break;
 
             case "Sign_Up_Text":
-				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex = 1;
-				GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex = 3;
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
                 break;
 
@@ -490,63 +477,4 @@ public class menu_selection : MonoBehaviour {
         GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step--;
     }
 
-    void Update () {
-		// changement de zone d'entree de texte avec le tab
-		if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 3)
-		{
-			if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
-				inscriptionUser.ActivateInputField ();
-			else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
-				inscriptionPasswd.ActivateInputField ();
-			else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 3)
-				inscriptionPasswdConf.ActivateInputField ();
-		} 
-		else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 2)
-		{
-			if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
-				connexionUser.ActivateInputField ();
-			else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
-				connexionPasswd.ActivateInputField ();
-		}
-
-		if (Input.GetKeyDown(KeyCode.Tab))
-		{
-			if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex < GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex)
-			{
-				Debug.Log (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex);
-
-				GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex++;
-				Debug.Log (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex);
-				if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 3)
-				{
-					if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
-						inscriptionUser.ActivateInputField ();
-					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
-						inscriptionPasswd.ActivateInputField ();
-					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 3)
-						inscriptionPasswdConf.ActivateInputField ();
-				} 
-				else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().maxIndex == 2)
-				{
-					if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 1)
-						connexionUser.ActivateInputField ();
-					else if (GameObject.Find("Script_Source").GetComponent<menu_selection>().currentIndex == 2)
-						connexionPasswd.ActivateInputField ();
-				}
-			}
-		}
-
-
-
-
-
-			if (inscriptionUser.isFocused || connexionUser.isFocused)
-				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 1;
-			if (inscriptionPasswd.isFocused || connexionPasswd.isFocused)
-				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 2;		
-			if (inscriptionPasswdConf.isFocused)
-				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().currentIndex = 3;		
-			
-	
-    }
 }
