@@ -51,32 +51,55 @@ namespace Protocol {
             "dG9jb2wuUm9vbUxpc3RJdGVtIiQKEFN0YXJ0aW5nUG9zaXRpb24SEAoIcG9z",
             "aXRpb24YASADKAUiNQoPUmVnaXN0ZXJSZXF1ZXN0EhAKCHVzZXJuYW1lGAEg",
             "ASgJEhAKCHBhc3N3b3JkGAIgASgJIjIKDExvZ2luUmVxdWVzdBIQCgh1c2Vy",
-            "bmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSI1ChBSZWdpc3RlclJlc3Bv",
-            "bnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUYAiABKAkiMgoNTG9n",
-            "aW5SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCHVzZXJuYW1lGAIgASgJ",
-            "IiIKDkNoYW5nZVVzZXJuYW1lEhAKCHVzZXJuYW1lGAEgASgJIsQHCgdNZXNz",
-            "YWdlEgwKBHR5cGUYASABKAkSLQoMY2hhdF9tZXNzYWdlGAIgASgLMhUucHJv",
-            "dG9jb2wuQ2hhdE1lc3NhZ2VIABJAChZ1cGRhdGVfcGxheWVyX3Bvc2l0aW9u",
-            "GAMgASgLMh4ucHJvdG9jb2wuVXBkYXRlUGxheWVyUG9zaXRpb25IABI8ChR1",
-            "cGRhdGVfcGxheWVyX3N0YXR1cxgEIAEoCzIcLnByb3RvY29sLlVwZGF0ZVBs",
-            "YXllclN0YXR1c0gAEioKCmRpc2Nvbm5lY3QYBSABKAsyFC5wcm90b2NvbC5E",
-            "aXNjb25uZWN0SAASSwocdXBkYXRlX3BsYXllcl9zdGF0dXNfcmVxdWVzdBgG",
-            "IAEoCzIjLnByb3RvY29sLlVwZGF0ZVBsYXllclN0YXR1c1JlcXVlc3RIABIr",
-            "CgtjcmVhdGVfcm9vbRgHIAEoCzIULnByb3RvY29sLkNyZWF0ZVJvb21IABIp",
-            "CgpzdGFydF9yb29tGAggASgLMhMucHJvdG9jb2wuU3RhcnRSb29tSAASNgoR",
-            "am9pbl9yb29tX3JlcXVlc3QYCSABKAsyGS5wcm90b2NvbC5Kb2luUm9vbVJl",
-            "cXVlc3RIABI3ChFzdGFydGluZ19wb3NpdGlvbhgKIAEoCzIaLnByb3RvY29s",
-            "LlN0YXJ0aW5nUG9zaXRpb25IABI1ChByZWdpc3Rlcl9yZXF1ZXN0GAsgASgL",
-            "MhkucHJvdG9jb2wuUmVnaXN0ZXJSZXF1ZXN0SAASLwoNbG9naW5fcmVxdWVz",
-            "dBgMIAEoCzIWLnByb3RvY29sLkxvZ2luUmVxdWVzdEgAEjcKEXJlZ2lzdGVy",
-            "X3Jlc3BvbnNlGA0gASgLMhoucHJvdG9jb2wuUmVnaXN0ZXJSZXNwb25zZUgA",
-            "EjEKDmxvZ2luX3Jlc3BvbnNlGA4gASgLMhcucHJvdG9jb2wuTG9naW5SZXNw",
-            "b25zZUgAEjYKEXJvb21fbGlzdF9yZXF1ZXN0GA8gASgLMhkucHJvdG9jb2wu",
-            "Um9vbUxpc3RSZXF1ZXN0SAASOAoScm9vbV9saXN0X3Jlc3BvbnNlGBAgASgL",
-            "MhoucHJvdG9jb2wuUm9vbUxpc3RSZXNwb25zZUgAEjMKD2NoYW5nZV91c2Vy",
-            "bmFtZRgRIAEoCzIYLnByb3RvY29sLkNoYW5nZVVzZXJuYW1lSAASOAoSam9p",
-            "bl9yb29tX3Jlc3BvbnNlGBIgASgLMhoucHJvdG9jb2wuSm9pblJvb21SZXNw",
-            "b25zZUgAQgUKA21zZ2IGcHJvdG8z"));
+            "bmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSJeChBSZWdpc3RlclJlc3Bv",
+            "bnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUYAiABKAkSJwoKdXNl",
+            "cl9zdGF0cxgDIAEoCzITLnByb3RvY29sLlVzZXJTdGF0cyJbCg1Mb2dpblJl",
+            "c3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIdXNlcm5hbWUYAiABKAkSJwoK",
+            "dXNlcl9zdGF0cxgDIAEoCzITLnByb3RvY29sLlVzZXJTdGF0cyIiCg5DaGFu",
+            "Z2VVc2VybmFtZRIQCgh1c2VybmFtZRgBIAEoCSKyBgoJVXNlclN0YXRzEhAK",
+            "CHVzZXJuYW1lGAEgASgJEgwKBHJhY2UYAiABKAUSDwoHdmljdG9yeRgDIAEo",
+            "BRIQCghyZWNvcmR0MRgEIAEoCRIQCghyZWNvcmR0MhgFIAEoCRIQCghyZWNv",
+            "cmR0MxgGIAEoCRIPCgdjYXIxcmVkGAcgASgFEhEKCWNhcjFncmVlbhgIIAEo",
+            "BRIQCghjYXIxYmx1ZRgJIAEoBRIPCgdjYXIycmVkGAogASgFEhEKCWNhcjJn",
+            "cmVlbhgLIAEoBRIQCghjYXIyYmx1ZRgMIAEoBRIPCgdjYXIzcmVkGA0gASgF",
+            "EhEKCWNhcjNncmVlbhgOIAEoBRIQCghjYXIzYmx1ZRgPIAEoBRIPCgdjYXI0",
+            "cmVkGBAgASgFEhEKCWNhcjRncmVlbhgRIAEoBRIQCghjYXI0Ymx1ZRgSIAEo",
+            "BRISCgpjYXIxc2xpZGVyGBMgASgCEhEKCWNhcjFyZWRUUhgUIAEoBRITCgtj",
+            "YXIxZ3JlZW5UUhgVIAEoBRISCgpjYXIxYmx1ZVRSGBYgASgFEhMKC2NhcjFj",
+            "dXJzb3JYGBcgASgCEhMKC2NhcjFjdXJzb3JZGBggASgCEhIKCmNhcjJzbGlk",
+            "ZXIYGSABKAISEQoJY2FyMnJlZFRSGBogASgFEhMKC2NhcjJncmVlblRSGBsg",
+            "ASgFEhIKCmNhcjJibHVlVFIYHCABKAUSEwoLY2FyMmN1cnNvclgYHSABKAIS",
+            "EwoLY2FyMmN1cnNvclkYHiABKAISEgoKY2FyM3NsaWRlchgfIAEoAhIRCglj",
+            "YXIzcmVkVFIYICABKAUSEwoLY2FyM2dyZWVuVFIYISABKAUSEgoKY2FyM2Js",
+            "dWVUUhgiIAEoBRITCgtjYXIzY3Vyc29yWBgjIAEoAhITCgtjYXIzY3Vyc29y",
+            "WRgkIAEoAhISCgpjYXI0c2xpZGVyGCUgASgCEhEKCWNhcjRyZWRUUhgmIAEo",
+            "BRITCgtjYXI0Z3JlZW5UUhgnIAEoBRISCgpjYXI0Ymx1ZVRSGCggASgFEhMK",
+            "C2NhcjRjdXJzb3JYGCkgASgCEhMKC2NhcjRjdXJzb3JZGCogASgCIjcKDFNl",
+            "dFVzZXJTdGF0cxInCgp1c2VyX3N0YXRzGAEgASgLMhMucHJvdG9jb2wuVXNl",
+            "clN0YXRzIjwKEVVzZXJTdGF0c1Jlc3BvbnNlEicKCnVzZXJfc3RhdHMYASAB",
+            "KAsyEy5wcm90b2NvbC5Vc2VyU3RhdHMiDgoMR2V0VXNlclN0YXRzIsQHCgdN",
+            "ZXNzYWdlEgwKBHR5cGUYASABKAkSLQoMY2hhdF9tZXNzYWdlGAIgASgLMhUu",
+            "cHJvdG9jb2wuQ2hhdE1lc3NhZ2VIABJAChZ1cGRhdGVfcGxheWVyX3Bvc2l0",
+            "aW9uGAMgASgLMh4ucHJvdG9jb2wuVXBkYXRlUGxheWVyUG9zaXRpb25IABI8",
+            "ChR1cGRhdGVfcGxheWVyX3N0YXR1cxgEIAEoCzIcLnByb3RvY29sLlVwZGF0",
+            "ZVBsYXllclN0YXR1c0gAEioKCmRpc2Nvbm5lY3QYBSABKAsyFC5wcm90b2Nv",
+            "bC5EaXNjb25uZWN0SAASSwocdXBkYXRlX3BsYXllcl9zdGF0dXNfcmVxdWVz",
+            "dBgGIAEoCzIjLnByb3RvY29sLlVwZGF0ZVBsYXllclN0YXR1c1JlcXVlc3RI",
+            "ABIrCgtjcmVhdGVfcm9vbRgHIAEoCzIULnByb3RvY29sLkNyZWF0ZVJvb21I",
+            "ABIpCgpzdGFydF9yb29tGAggASgLMhMucHJvdG9jb2wuU3RhcnRSb29tSAAS",
+            "NgoRam9pbl9yb29tX3JlcXVlc3QYCSABKAsyGS5wcm90b2NvbC5Kb2luUm9v",
+            "bVJlcXVlc3RIABI3ChFzdGFydGluZ19wb3NpdGlvbhgKIAEoCzIaLnByb3Rv",
+            "Y29sLlN0YXJ0aW5nUG9zaXRpb25IABI1ChByZWdpc3Rlcl9yZXF1ZXN0GAsg",
+            "ASgLMhkucHJvdG9jb2wuUmVnaXN0ZXJSZXF1ZXN0SAASLwoNbG9naW5fcmVx",
+            "dWVzdBgMIAEoCzIWLnByb3RvY29sLkxvZ2luUmVxdWVzdEgAEjcKEXJlZ2lz",
+            "dGVyX3Jlc3BvbnNlGA0gASgLMhoucHJvdG9jb2wuUmVnaXN0ZXJSZXNwb25z",
+            "ZUgAEjEKDmxvZ2luX3Jlc3BvbnNlGA4gASgLMhcucHJvdG9jb2wuTG9naW5S",
+            "ZXNwb25zZUgAEjYKEXJvb21fbGlzdF9yZXF1ZXN0GA8gASgLMhkucHJvdG9j",
+            "b2wuUm9vbUxpc3RSZXF1ZXN0SAASOAoScm9vbV9saXN0X3Jlc3BvbnNlGBAg",
+            "ASgLMhoucHJvdG9jb2wuUm9vbUxpc3RSZXNwb25zZUgAEjMKD2NoYW5nZV91",
+            "c2VybmFtZRgRIAEoCzIYLnByb3RvY29sLkNoYW5nZVVzZXJuYW1lSAASOAoS",
+            "am9pbl9yb29tX3Jlc3BvbnNlGBIgASgLMhoucHJvdG9jb2wuSm9pblJvb21S",
+            "ZXNwb25zZUgAQgUKA21zZ2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,9 +120,13 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.StartingPosition), global::Protocol.StartingPosition.Parser, new[]{ "Position" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterRequest), global::Protocol.RegisterRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginRequest), global::Protocol.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.RegisterResponse), global::Protocol.RegisterResponse.Parser, new[]{ "Success", "Username", "UserStats" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LoginResponse), global::Protocol.LoginResponse.Parser, new[]{ "Success", "Username", "UserStats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.ChangeUsername), global::Protocol.ChangeUsername.Parser, new[]{ "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UserStats), global::Protocol.UserStats.Parser, new[]{ "Username", "Race", "Victory", "Recordt1", "Recordt2", "Recordt3", "Car1Red", "Car1Green", "Car1Blue", "Car2Red", "Car2Green", "Car2Blue", "Car3Red", "Car3Green", "Car3Blue", "Car4Red", "Car4Green", "Car4Blue", "Car1Slider", "Car1RedTR", "Car1GreenTR", "Car1BlueTR", "Car1CursorX", "Car1CursorY", "Car2Slider", "Car2RedTR", "Car2GreenTR", "Car2BlueTR", "Car2CursorX", "Car2CursorY", "Car3Slider", "Car3RedTR", "Car3GreenTR", "Car3BlueTR", "Car3CursorX", "Car3CursorY", "Car4Slider", "Car4RedTR", "Car4GreenTR", "Car4BlueTR", "Car4CursorX", "Car4CursorY" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.SetUserStats), global::Protocol.SetUserStats.Parser, new[]{ "UserStats" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UserStatsResponse), global::Protocol.UserStatsResponse.Parser, new[]{ "UserStats" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.GetUserStats), global::Protocol.GetUserStats.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse" }, new[]{ "Msg" }, null, null)
           }));
     }
@@ -2943,6 +2970,7 @@ namespace Protocol {
     public RegisterResponse(RegisterResponse other) : this() {
       success_ = other.success_;
       username_ = other.username_;
+      UserStats = other.userStats_ != null ? other.UserStats.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2972,6 +3000,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "user_stats" field.</summary>
+    public const int UserStatsFieldNumber = 3;
+    private global::Protocol.UserStats userStats_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UserStats UserStats {
+      get { return userStats_; }
+      set {
+        userStats_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as RegisterResponse);
@@ -2987,6 +3026,7 @@ namespace Protocol {
       }
       if (Success != other.Success) return false;
       if (Username != other.Username) return false;
+      if (!object.Equals(UserStats, other.UserStats)) return false;
       return true;
     }
 
@@ -2995,6 +3035,7 @@ namespace Protocol {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (userStats_ != null) hash ^= UserStats.GetHashCode();
       return hash;
     }
 
@@ -3013,6 +3054,10 @@ namespace Protocol {
         output.WriteRawTag(18);
         output.WriteString(Username);
       }
+      if (userStats_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UserStats);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3023,6 +3068,9 @@ namespace Protocol {
       }
       if (Username.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (userStats_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserStats);
       }
       return size;
     }
@@ -3037,6 +3085,12 @@ namespace Protocol {
       }
       if (other.Username.Length != 0) {
         Username = other.Username;
+      }
+      if (other.userStats_ != null) {
+        if (userStats_ == null) {
+          userStats_ = new global::Protocol.UserStats();
+        }
+        UserStats.MergeFrom(other.UserStats);
       }
     }
 
@@ -3054,6 +3108,13 @@ namespace Protocol {
           }
           case 18: {
             Username = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (userStats_ == null) {
+              userStats_ = new global::Protocol.UserStats();
+            }
+            input.ReadMessage(userStats_);
             break;
           }
         }
@@ -3088,6 +3149,7 @@ namespace Protocol {
     public LoginResponse(LoginResponse other) : this() {
       success_ = other.success_;
       username_ = other.username_;
+      UserStats = other.userStats_ != null ? other.UserStats.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3117,6 +3179,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "user_stats" field.</summary>
+    public const int UserStatsFieldNumber = 3;
+    private global::Protocol.UserStats userStats_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UserStats UserStats {
+      get { return userStats_; }
+      set {
+        userStats_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as LoginResponse);
@@ -3132,6 +3205,7 @@ namespace Protocol {
       }
       if (Success != other.Success) return false;
       if (Username != other.Username) return false;
+      if (!object.Equals(UserStats, other.UserStats)) return false;
       return true;
     }
 
@@ -3140,6 +3214,7 @@ namespace Protocol {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (userStats_ != null) hash ^= UserStats.GetHashCode();
       return hash;
     }
 
@@ -3158,6 +3233,10 @@ namespace Protocol {
         output.WriteRawTag(18);
         output.WriteString(Username);
       }
+      if (userStats_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UserStats);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3168,6 +3247,9 @@ namespace Protocol {
       }
       if (Username.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (userStats_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserStats);
       }
       return size;
     }
@@ -3182,6 +3264,12 @@ namespace Protocol {
       }
       if (other.Username.Length != 0) {
         Username = other.Username;
+      }
+      if (other.userStats_ != null) {
+        if (userStats_ == null) {
+          userStats_ = new global::Protocol.UserStats();
+        }
+        UserStats.MergeFrom(other.UserStats);
       }
     }
 
@@ -3199,6 +3287,13 @@ namespace Protocol {
           }
           case 18: {
             Username = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (userStats_ == null) {
+              userStats_ = new global::Protocol.UserStats();
+            }
+            input.ReadMessage(userStats_);
             break;
           }
         }
@@ -3324,6 +3419,1616 @@ namespace Protocol {
 
   }
 
+  public sealed partial class UserStats : pb::IMessage<UserStats> {
+    private static readonly pb::MessageParser<UserStats> _parser = new pb::MessageParser<UserStats>(() => new UserStats());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserStats> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStats() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStats(UserStats other) : this() {
+      username_ = other.username_;
+      race_ = other.race_;
+      victory_ = other.victory_;
+      recordt1_ = other.recordt1_;
+      recordt2_ = other.recordt2_;
+      recordt3_ = other.recordt3_;
+      car1Red_ = other.car1Red_;
+      car1Green_ = other.car1Green_;
+      car1Blue_ = other.car1Blue_;
+      car2Red_ = other.car2Red_;
+      car2Green_ = other.car2Green_;
+      car2Blue_ = other.car2Blue_;
+      car3Red_ = other.car3Red_;
+      car3Green_ = other.car3Green_;
+      car3Blue_ = other.car3Blue_;
+      car4Red_ = other.car4Red_;
+      car4Green_ = other.car4Green_;
+      car4Blue_ = other.car4Blue_;
+      car1Slider_ = other.car1Slider_;
+      car1RedTR_ = other.car1RedTR_;
+      car1GreenTR_ = other.car1GreenTR_;
+      car1BlueTR_ = other.car1BlueTR_;
+      car1CursorX_ = other.car1CursorX_;
+      car1CursorY_ = other.car1CursorY_;
+      car2Slider_ = other.car2Slider_;
+      car2RedTR_ = other.car2RedTR_;
+      car2GreenTR_ = other.car2GreenTR_;
+      car2BlueTR_ = other.car2BlueTR_;
+      car2CursorX_ = other.car2CursorX_;
+      car2CursorY_ = other.car2CursorY_;
+      car3Slider_ = other.car3Slider_;
+      car3RedTR_ = other.car3RedTR_;
+      car3GreenTR_ = other.car3GreenTR_;
+      car3BlueTR_ = other.car3BlueTR_;
+      car3CursorX_ = other.car3CursorX_;
+      car3CursorY_ = other.car3CursorY_;
+      car4Slider_ = other.car4Slider_;
+      car4RedTR_ = other.car4RedTR_;
+      car4GreenTR_ = other.car4GreenTR_;
+      car4BlueTR_ = other.car4BlueTR_;
+      car4CursorX_ = other.car4CursorX_;
+      car4CursorY_ = other.car4CursorY_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStats Clone() {
+      return new UserStats(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "race" field.</summary>
+    public const int RaceFieldNumber = 2;
+    private int race_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Race {
+      get { return race_; }
+      set {
+        race_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "victory" field.</summary>
+    public const int VictoryFieldNumber = 3;
+    private int victory_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Victory {
+      get { return victory_; }
+      set {
+        victory_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "recordt1" field.</summary>
+    public const int Recordt1FieldNumber = 4;
+    private string recordt1_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Recordt1 {
+      get { return recordt1_; }
+      set {
+        recordt1_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recordt2" field.</summary>
+    public const int Recordt2FieldNumber = 5;
+    private string recordt2_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Recordt2 {
+      get { return recordt2_; }
+      set {
+        recordt2_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "recordt3" field.</summary>
+    public const int Recordt3FieldNumber = 6;
+    private string recordt3_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Recordt3 {
+      get { return recordt3_; }
+      set {
+        recordt3_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "car1red" field.</summary>
+    public const int Car1RedFieldNumber = 7;
+    private int car1Red_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1Red {
+      get { return car1Red_; }
+      set {
+        car1Red_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1green" field.</summary>
+    public const int Car1GreenFieldNumber = 8;
+    private int car1Green_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1Green {
+      get { return car1Green_; }
+      set {
+        car1Green_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1blue" field.</summary>
+    public const int Car1BlueFieldNumber = 9;
+    private int car1Blue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1Blue {
+      get { return car1Blue_; }
+      set {
+        car1Blue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2red" field.</summary>
+    public const int Car2RedFieldNumber = 10;
+    private int car2Red_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2Red {
+      get { return car2Red_; }
+      set {
+        car2Red_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2green" field.</summary>
+    public const int Car2GreenFieldNumber = 11;
+    private int car2Green_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2Green {
+      get { return car2Green_; }
+      set {
+        car2Green_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2blue" field.</summary>
+    public const int Car2BlueFieldNumber = 12;
+    private int car2Blue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2Blue {
+      get { return car2Blue_; }
+      set {
+        car2Blue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3red" field.</summary>
+    public const int Car3RedFieldNumber = 13;
+    private int car3Red_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3Red {
+      get { return car3Red_; }
+      set {
+        car3Red_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3green" field.</summary>
+    public const int Car3GreenFieldNumber = 14;
+    private int car3Green_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3Green {
+      get { return car3Green_; }
+      set {
+        car3Green_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3blue" field.</summary>
+    public const int Car3BlueFieldNumber = 15;
+    private int car3Blue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3Blue {
+      get { return car3Blue_; }
+      set {
+        car3Blue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4red" field.</summary>
+    public const int Car4RedFieldNumber = 16;
+    private int car4Red_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4Red {
+      get { return car4Red_; }
+      set {
+        car4Red_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4green" field.</summary>
+    public const int Car4GreenFieldNumber = 17;
+    private int car4Green_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4Green {
+      get { return car4Green_; }
+      set {
+        car4Green_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4blue" field.</summary>
+    public const int Car4BlueFieldNumber = 18;
+    private int car4Blue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4Blue {
+      get { return car4Blue_; }
+      set {
+        car4Blue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1slider" field.</summary>
+    public const int Car1SliderFieldNumber = 19;
+    private float car1Slider_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car1Slider {
+      get { return car1Slider_; }
+      set {
+        car1Slider_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1redTR" field.</summary>
+    public const int Car1RedTRFieldNumber = 20;
+    private int car1RedTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1RedTR {
+      get { return car1RedTR_; }
+      set {
+        car1RedTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1greenTR" field.</summary>
+    public const int Car1GreenTRFieldNumber = 21;
+    private int car1GreenTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1GreenTR {
+      get { return car1GreenTR_; }
+      set {
+        car1GreenTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1blueTR" field.</summary>
+    public const int Car1BlueTRFieldNumber = 22;
+    private int car1BlueTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car1BlueTR {
+      get { return car1BlueTR_; }
+      set {
+        car1BlueTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1cursorX" field.</summary>
+    public const int Car1CursorXFieldNumber = 23;
+    private float car1CursorX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car1CursorX {
+      get { return car1CursorX_; }
+      set {
+        car1CursorX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car1cursorY" field.</summary>
+    public const int Car1CursorYFieldNumber = 24;
+    private float car1CursorY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car1CursorY {
+      get { return car1CursorY_; }
+      set {
+        car1CursorY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2slider" field.</summary>
+    public const int Car2SliderFieldNumber = 25;
+    private float car2Slider_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car2Slider {
+      get { return car2Slider_; }
+      set {
+        car2Slider_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2redTR" field.</summary>
+    public const int Car2RedTRFieldNumber = 26;
+    private int car2RedTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2RedTR {
+      get { return car2RedTR_; }
+      set {
+        car2RedTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2greenTR" field.</summary>
+    public const int Car2GreenTRFieldNumber = 27;
+    private int car2GreenTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2GreenTR {
+      get { return car2GreenTR_; }
+      set {
+        car2GreenTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2blueTR" field.</summary>
+    public const int Car2BlueTRFieldNumber = 28;
+    private int car2BlueTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car2BlueTR {
+      get { return car2BlueTR_; }
+      set {
+        car2BlueTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2cursorX" field.</summary>
+    public const int Car2CursorXFieldNumber = 29;
+    private float car2CursorX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car2CursorX {
+      get { return car2CursorX_; }
+      set {
+        car2CursorX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car2cursorY" field.</summary>
+    public const int Car2CursorYFieldNumber = 30;
+    private float car2CursorY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car2CursorY {
+      get { return car2CursorY_; }
+      set {
+        car2CursorY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3slider" field.</summary>
+    public const int Car3SliderFieldNumber = 31;
+    private float car3Slider_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car3Slider {
+      get { return car3Slider_; }
+      set {
+        car3Slider_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3redTR" field.</summary>
+    public const int Car3RedTRFieldNumber = 32;
+    private int car3RedTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3RedTR {
+      get { return car3RedTR_; }
+      set {
+        car3RedTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3greenTR" field.</summary>
+    public const int Car3GreenTRFieldNumber = 33;
+    private int car3GreenTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3GreenTR {
+      get { return car3GreenTR_; }
+      set {
+        car3GreenTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3blueTR" field.</summary>
+    public const int Car3BlueTRFieldNumber = 34;
+    private int car3BlueTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car3BlueTR {
+      get { return car3BlueTR_; }
+      set {
+        car3BlueTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3cursorX" field.</summary>
+    public const int Car3CursorXFieldNumber = 35;
+    private float car3CursorX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car3CursorX {
+      get { return car3CursorX_; }
+      set {
+        car3CursorX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car3cursorY" field.</summary>
+    public const int Car3CursorYFieldNumber = 36;
+    private float car3CursorY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car3CursorY {
+      get { return car3CursorY_; }
+      set {
+        car3CursorY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4slider" field.</summary>
+    public const int Car4SliderFieldNumber = 37;
+    private float car4Slider_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car4Slider {
+      get { return car4Slider_; }
+      set {
+        car4Slider_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4redTR" field.</summary>
+    public const int Car4RedTRFieldNumber = 38;
+    private int car4RedTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4RedTR {
+      get { return car4RedTR_; }
+      set {
+        car4RedTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4greenTR" field.</summary>
+    public const int Car4GreenTRFieldNumber = 39;
+    private int car4GreenTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4GreenTR {
+      get { return car4GreenTR_; }
+      set {
+        car4GreenTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4blueTR" field.</summary>
+    public const int Car4BlueTRFieldNumber = 40;
+    private int car4BlueTR_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Car4BlueTR {
+      get { return car4BlueTR_; }
+      set {
+        car4BlueTR_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4cursorX" field.</summary>
+    public const int Car4CursorXFieldNumber = 41;
+    private float car4CursorX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car4CursorX {
+      get { return car4CursorX_; }
+      set {
+        car4CursorX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "car4cursorY" field.</summary>
+    public const int Car4CursorYFieldNumber = 42;
+    private float car4CursorY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Car4CursorY {
+      get { return car4CursorY_; }
+      set {
+        car4CursorY_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserStats);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserStats other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Race != other.Race) return false;
+      if (Victory != other.Victory) return false;
+      if (Recordt1 != other.Recordt1) return false;
+      if (Recordt2 != other.Recordt2) return false;
+      if (Recordt3 != other.Recordt3) return false;
+      if (Car1Red != other.Car1Red) return false;
+      if (Car1Green != other.Car1Green) return false;
+      if (Car1Blue != other.Car1Blue) return false;
+      if (Car2Red != other.Car2Red) return false;
+      if (Car2Green != other.Car2Green) return false;
+      if (Car2Blue != other.Car2Blue) return false;
+      if (Car3Red != other.Car3Red) return false;
+      if (Car3Green != other.Car3Green) return false;
+      if (Car3Blue != other.Car3Blue) return false;
+      if (Car4Red != other.Car4Red) return false;
+      if (Car4Green != other.Car4Green) return false;
+      if (Car4Blue != other.Car4Blue) return false;
+      if (Car1Slider != other.Car1Slider) return false;
+      if (Car1RedTR != other.Car1RedTR) return false;
+      if (Car1GreenTR != other.Car1GreenTR) return false;
+      if (Car1BlueTR != other.Car1BlueTR) return false;
+      if (Car1CursorX != other.Car1CursorX) return false;
+      if (Car1CursorY != other.Car1CursorY) return false;
+      if (Car2Slider != other.Car2Slider) return false;
+      if (Car2RedTR != other.Car2RedTR) return false;
+      if (Car2GreenTR != other.Car2GreenTR) return false;
+      if (Car2BlueTR != other.Car2BlueTR) return false;
+      if (Car2CursorX != other.Car2CursorX) return false;
+      if (Car2CursorY != other.Car2CursorY) return false;
+      if (Car3Slider != other.Car3Slider) return false;
+      if (Car3RedTR != other.Car3RedTR) return false;
+      if (Car3GreenTR != other.Car3GreenTR) return false;
+      if (Car3BlueTR != other.Car3BlueTR) return false;
+      if (Car3CursorX != other.Car3CursorX) return false;
+      if (Car3CursorY != other.Car3CursorY) return false;
+      if (Car4Slider != other.Car4Slider) return false;
+      if (Car4RedTR != other.Car4RedTR) return false;
+      if (Car4GreenTR != other.Car4GreenTR) return false;
+      if (Car4BlueTR != other.Car4BlueTR) return false;
+      if (Car4CursorX != other.Car4CursorX) return false;
+      if (Car4CursorY != other.Car4CursorY) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Race != 0) hash ^= Race.GetHashCode();
+      if (Victory != 0) hash ^= Victory.GetHashCode();
+      if (Recordt1.Length != 0) hash ^= Recordt1.GetHashCode();
+      if (Recordt2.Length != 0) hash ^= Recordt2.GetHashCode();
+      if (Recordt3.Length != 0) hash ^= Recordt3.GetHashCode();
+      if (Car1Red != 0) hash ^= Car1Red.GetHashCode();
+      if (Car1Green != 0) hash ^= Car1Green.GetHashCode();
+      if (Car1Blue != 0) hash ^= Car1Blue.GetHashCode();
+      if (Car2Red != 0) hash ^= Car2Red.GetHashCode();
+      if (Car2Green != 0) hash ^= Car2Green.GetHashCode();
+      if (Car2Blue != 0) hash ^= Car2Blue.GetHashCode();
+      if (Car3Red != 0) hash ^= Car3Red.GetHashCode();
+      if (Car3Green != 0) hash ^= Car3Green.GetHashCode();
+      if (Car3Blue != 0) hash ^= Car3Blue.GetHashCode();
+      if (Car4Red != 0) hash ^= Car4Red.GetHashCode();
+      if (Car4Green != 0) hash ^= Car4Green.GetHashCode();
+      if (Car4Blue != 0) hash ^= Car4Blue.GetHashCode();
+      if (Car1Slider != 0F) hash ^= Car1Slider.GetHashCode();
+      if (Car1RedTR != 0) hash ^= Car1RedTR.GetHashCode();
+      if (Car1GreenTR != 0) hash ^= Car1GreenTR.GetHashCode();
+      if (Car1BlueTR != 0) hash ^= Car1BlueTR.GetHashCode();
+      if (Car1CursorX != 0F) hash ^= Car1CursorX.GetHashCode();
+      if (Car1CursorY != 0F) hash ^= Car1CursorY.GetHashCode();
+      if (Car2Slider != 0F) hash ^= Car2Slider.GetHashCode();
+      if (Car2RedTR != 0) hash ^= Car2RedTR.GetHashCode();
+      if (Car2GreenTR != 0) hash ^= Car2GreenTR.GetHashCode();
+      if (Car2BlueTR != 0) hash ^= Car2BlueTR.GetHashCode();
+      if (Car2CursorX != 0F) hash ^= Car2CursorX.GetHashCode();
+      if (Car2CursorY != 0F) hash ^= Car2CursorY.GetHashCode();
+      if (Car3Slider != 0F) hash ^= Car3Slider.GetHashCode();
+      if (Car3RedTR != 0) hash ^= Car3RedTR.GetHashCode();
+      if (Car3GreenTR != 0) hash ^= Car3GreenTR.GetHashCode();
+      if (Car3BlueTR != 0) hash ^= Car3BlueTR.GetHashCode();
+      if (Car3CursorX != 0F) hash ^= Car3CursorX.GetHashCode();
+      if (Car3CursorY != 0F) hash ^= Car3CursorY.GetHashCode();
+      if (Car4Slider != 0F) hash ^= Car4Slider.GetHashCode();
+      if (Car4RedTR != 0) hash ^= Car4RedTR.GetHashCode();
+      if (Car4GreenTR != 0) hash ^= Car4GreenTR.GetHashCode();
+      if (Car4BlueTR != 0) hash ^= Car4BlueTR.GetHashCode();
+      if (Car4CursorX != 0F) hash ^= Car4CursorX.GetHashCode();
+      if (Car4CursorY != 0F) hash ^= Car4CursorY.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Race != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Race);
+      }
+      if (Victory != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Victory);
+      }
+      if (Recordt1.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Recordt1);
+      }
+      if (Recordt2.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Recordt2);
+      }
+      if (Recordt3.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Recordt3);
+      }
+      if (Car1Red != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Car1Red);
+      }
+      if (Car1Green != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Car1Green);
+      }
+      if (Car1Blue != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Car1Blue);
+      }
+      if (Car2Red != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Car2Red);
+      }
+      if (Car2Green != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Car2Green);
+      }
+      if (Car2Blue != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Car2Blue);
+      }
+      if (Car3Red != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Car3Red);
+      }
+      if (Car3Green != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Car3Green);
+      }
+      if (Car3Blue != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Car3Blue);
+      }
+      if (Car4Red != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(Car4Red);
+      }
+      if (Car4Green != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(Car4Green);
+      }
+      if (Car4Blue != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(Car4Blue);
+      }
+      if (Car1Slider != 0F) {
+        output.WriteRawTag(157, 1);
+        output.WriteFloat(Car1Slider);
+      }
+      if (Car1RedTR != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(Car1RedTR);
+      }
+      if (Car1GreenTR != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(Car1GreenTR);
+      }
+      if (Car1BlueTR != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(Car1BlueTR);
+      }
+      if (Car1CursorX != 0F) {
+        output.WriteRawTag(189, 1);
+        output.WriteFloat(Car1CursorX);
+      }
+      if (Car1CursorY != 0F) {
+        output.WriteRawTag(197, 1);
+        output.WriteFloat(Car1CursorY);
+      }
+      if (Car2Slider != 0F) {
+        output.WriteRawTag(205, 1);
+        output.WriteFloat(Car2Slider);
+      }
+      if (Car2RedTR != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(Car2RedTR);
+      }
+      if (Car2GreenTR != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(Car2GreenTR);
+      }
+      if (Car2BlueTR != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(Car2BlueTR);
+      }
+      if (Car2CursorX != 0F) {
+        output.WriteRawTag(237, 1);
+        output.WriteFloat(Car2CursorX);
+      }
+      if (Car2CursorY != 0F) {
+        output.WriteRawTag(245, 1);
+        output.WriteFloat(Car2CursorY);
+      }
+      if (Car3Slider != 0F) {
+        output.WriteRawTag(253, 1);
+        output.WriteFloat(Car3Slider);
+      }
+      if (Car3RedTR != 0) {
+        output.WriteRawTag(128, 2);
+        output.WriteInt32(Car3RedTR);
+      }
+      if (Car3GreenTR != 0) {
+        output.WriteRawTag(136, 2);
+        output.WriteInt32(Car3GreenTR);
+      }
+      if (Car3BlueTR != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteInt32(Car3BlueTR);
+      }
+      if (Car3CursorX != 0F) {
+        output.WriteRawTag(157, 2);
+        output.WriteFloat(Car3CursorX);
+      }
+      if (Car3CursorY != 0F) {
+        output.WriteRawTag(165, 2);
+        output.WriteFloat(Car3CursorY);
+      }
+      if (Car4Slider != 0F) {
+        output.WriteRawTag(173, 2);
+        output.WriteFloat(Car4Slider);
+      }
+      if (Car4RedTR != 0) {
+        output.WriteRawTag(176, 2);
+        output.WriteInt32(Car4RedTR);
+      }
+      if (Car4GreenTR != 0) {
+        output.WriteRawTag(184, 2);
+        output.WriteInt32(Car4GreenTR);
+      }
+      if (Car4BlueTR != 0) {
+        output.WriteRawTag(192, 2);
+        output.WriteInt32(Car4BlueTR);
+      }
+      if (Car4CursorX != 0F) {
+        output.WriteRawTag(205, 2);
+        output.WriteFloat(Car4CursorX);
+      }
+      if (Car4CursorY != 0F) {
+        output.WriteRawTag(213, 2);
+        output.WriteFloat(Car4CursorY);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Race != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Race);
+      }
+      if (Victory != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Victory);
+      }
+      if (Recordt1.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Recordt1);
+      }
+      if (Recordt2.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Recordt2);
+      }
+      if (Recordt3.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Recordt3);
+      }
+      if (Car1Red != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car1Red);
+      }
+      if (Car1Green != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car1Green);
+      }
+      if (Car1Blue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car1Blue);
+      }
+      if (Car2Red != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car2Red);
+      }
+      if (Car2Green != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car2Green);
+      }
+      if (Car2Blue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car2Blue);
+      }
+      if (Car3Red != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car3Red);
+      }
+      if (Car3Green != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car3Green);
+      }
+      if (Car3Blue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Car3Blue);
+      }
+      if (Car4Red != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4Red);
+      }
+      if (Car4Green != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4Green);
+      }
+      if (Car4Blue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4Blue);
+      }
+      if (Car1Slider != 0F) {
+        size += 2 + 4;
+      }
+      if (Car1RedTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car1RedTR);
+      }
+      if (Car1GreenTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car1GreenTR);
+      }
+      if (Car1BlueTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car1BlueTR);
+      }
+      if (Car1CursorX != 0F) {
+        size += 2 + 4;
+      }
+      if (Car1CursorY != 0F) {
+        size += 2 + 4;
+      }
+      if (Car2Slider != 0F) {
+        size += 2 + 4;
+      }
+      if (Car2RedTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car2RedTR);
+      }
+      if (Car2GreenTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car2GreenTR);
+      }
+      if (Car2BlueTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car2BlueTR);
+      }
+      if (Car2CursorX != 0F) {
+        size += 2 + 4;
+      }
+      if (Car2CursorY != 0F) {
+        size += 2 + 4;
+      }
+      if (Car3Slider != 0F) {
+        size += 2 + 4;
+      }
+      if (Car3RedTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car3RedTR);
+      }
+      if (Car3GreenTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car3GreenTR);
+      }
+      if (Car3BlueTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car3BlueTR);
+      }
+      if (Car3CursorX != 0F) {
+        size += 2 + 4;
+      }
+      if (Car3CursorY != 0F) {
+        size += 2 + 4;
+      }
+      if (Car4Slider != 0F) {
+        size += 2 + 4;
+      }
+      if (Car4RedTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4RedTR);
+      }
+      if (Car4GreenTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4GreenTR);
+      }
+      if (Car4BlueTR != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Car4BlueTR);
+      }
+      if (Car4CursorX != 0F) {
+        size += 2 + 4;
+      }
+      if (Car4CursorY != 0F) {
+        size += 2 + 4;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserStats other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Race != 0) {
+        Race = other.Race;
+      }
+      if (other.Victory != 0) {
+        Victory = other.Victory;
+      }
+      if (other.Recordt1.Length != 0) {
+        Recordt1 = other.Recordt1;
+      }
+      if (other.Recordt2.Length != 0) {
+        Recordt2 = other.Recordt2;
+      }
+      if (other.Recordt3.Length != 0) {
+        Recordt3 = other.Recordt3;
+      }
+      if (other.Car1Red != 0) {
+        Car1Red = other.Car1Red;
+      }
+      if (other.Car1Green != 0) {
+        Car1Green = other.Car1Green;
+      }
+      if (other.Car1Blue != 0) {
+        Car1Blue = other.Car1Blue;
+      }
+      if (other.Car2Red != 0) {
+        Car2Red = other.Car2Red;
+      }
+      if (other.Car2Green != 0) {
+        Car2Green = other.Car2Green;
+      }
+      if (other.Car2Blue != 0) {
+        Car2Blue = other.Car2Blue;
+      }
+      if (other.Car3Red != 0) {
+        Car3Red = other.Car3Red;
+      }
+      if (other.Car3Green != 0) {
+        Car3Green = other.Car3Green;
+      }
+      if (other.Car3Blue != 0) {
+        Car3Blue = other.Car3Blue;
+      }
+      if (other.Car4Red != 0) {
+        Car4Red = other.Car4Red;
+      }
+      if (other.Car4Green != 0) {
+        Car4Green = other.Car4Green;
+      }
+      if (other.Car4Blue != 0) {
+        Car4Blue = other.Car4Blue;
+      }
+      if (other.Car1Slider != 0F) {
+        Car1Slider = other.Car1Slider;
+      }
+      if (other.Car1RedTR != 0) {
+        Car1RedTR = other.Car1RedTR;
+      }
+      if (other.Car1GreenTR != 0) {
+        Car1GreenTR = other.Car1GreenTR;
+      }
+      if (other.Car1BlueTR != 0) {
+        Car1BlueTR = other.Car1BlueTR;
+      }
+      if (other.Car1CursorX != 0F) {
+        Car1CursorX = other.Car1CursorX;
+      }
+      if (other.Car1CursorY != 0F) {
+        Car1CursorY = other.Car1CursorY;
+      }
+      if (other.Car2Slider != 0F) {
+        Car2Slider = other.Car2Slider;
+      }
+      if (other.Car2RedTR != 0) {
+        Car2RedTR = other.Car2RedTR;
+      }
+      if (other.Car2GreenTR != 0) {
+        Car2GreenTR = other.Car2GreenTR;
+      }
+      if (other.Car2BlueTR != 0) {
+        Car2BlueTR = other.Car2BlueTR;
+      }
+      if (other.Car2CursorX != 0F) {
+        Car2CursorX = other.Car2CursorX;
+      }
+      if (other.Car2CursorY != 0F) {
+        Car2CursorY = other.Car2CursorY;
+      }
+      if (other.Car3Slider != 0F) {
+        Car3Slider = other.Car3Slider;
+      }
+      if (other.Car3RedTR != 0) {
+        Car3RedTR = other.Car3RedTR;
+      }
+      if (other.Car3GreenTR != 0) {
+        Car3GreenTR = other.Car3GreenTR;
+      }
+      if (other.Car3BlueTR != 0) {
+        Car3BlueTR = other.Car3BlueTR;
+      }
+      if (other.Car3CursorX != 0F) {
+        Car3CursorX = other.Car3CursorX;
+      }
+      if (other.Car3CursorY != 0F) {
+        Car3CursorY = other.Car3CursorY;
+      }
+      if (other.Car4Slider != 0F) {
+        Car4Slider = other.Car4Slider;
+      }
+      if (other.Car4RedTR != 0) {
+        Car4RedTR = other.Car4RedTR;
+      }
+      if (other.Car4GreenTR != 0) {
+        Car4GreenTR = other.Car4GreenTR;
+      }
+      if (other.Car4BlueTR != 0) {
+        Car4BlueTR = other.Car4BlueTR;
+      }
+      if (other.Car4CursorX != 0F) {
+        Car4CursorX = other.Car4CursorX;
+      }
+      if (other.Car4CursorY != 0F) {
+        Car4CursorY = other.Car4CursorY;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 16: {
+            Race = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Victory = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Recordt1 = input.ReadString();
+            break;
+          }
+          case 42: {
+            Recordt2 = input.ReadString();
+            break;
+          }
+          case 50: {
+            Recordt3 = input.ReadString();
+            break;
+          }
+          case 56: {
+            Car1Red = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Car1Green = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Car1Blue = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Car2Red = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Car2Green = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Car2Blue = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Car3Red = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            Car3Green = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Car3Blue = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            Car4Red = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            Car4Green = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            Car4Blue = input.ReadInt32();
+            break;
+          }
+          case 157: {
+            Car1Slider = input.ReadFloat();
+            break;
+          }
+          case 160: {
+            Car1RedTR = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            Car1GreenTR = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            Car1BlueTR = input.ReadInt32();
+            break;
+          }
+          case 189: {
+            Car1CursorX = input.ReadFloat();
+            break;
+          }
+          case 197: {
+            Car1CursorY = input.ReadFloat();
+            break;
+          }
+          case 205: {
+            Car2Slider = input.ReadFloat();
+            break;
+          }
+          case 208: {
+            Car2RedTR = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            Car2GreenTR = input.ReadInt32();
+            break;
+          }
+          case 224: {
+            Car2BlueTR = input.ReadInt32();
+            break;
+          }
+          case 237: {
+            Car2CursorX = input.ReadFloat();
+            break;
+          }
+          case 245: {
+            Car2CursorY = input.ReadFloat();
+            break;
+          }
+          case 253: {
+            Car3Slider = input.ReadFloat();
+            break;
+          }
+          case 256: {
+            Car3RedTR = input.ReadInt32();
+            break;
+          }
+          case 264: {
+            Car3GreenTR = input.ReadInt32();
+            break;
+          }
+          case 272: {
+            Car3BlueTR = input.ReadInt32();
+            break;
+          }
+          case 285: {
+            Car3CursorX = input.ReadFloat();
+            break;
+          }
+          case 293: {
+            Car3CursorY = input.ReadFloat();
+            break;
+          }
+          case 301: {
+            Car4Slider = input.ReadFloat();
+            break;
+          }
+          case 304: {
+            Car4RedTR = input.ReadInt32();
+            break;
+          }
+          case 312: {
+            Car4GreenTR = input.ReadInt32();
+            break;
+          }
+          case 320: {
+            Car4BlueTR = input.ReadInt32();
+            break;
+          }
+          case 333: {
+            Car4CursorX = input.ReadFloat();
+            break;
+          }
+          case 341: {
+            Car4CursorY = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  permettra d'insérer les valeurs en BDD
+  /// </summary>
+  public sealed partial class SetUserStats : pb::IMessage<SetUserStats> {
+    private static readonly pb::MessageParser<SetUserStats> _parser = new pb::MessageParser<SetUserStats>(() => new SetUserStats());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetUserStats> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetUserStats() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetUserStats(SetUserStats other) : this() {
+      UserStats = other.userStats_ != null ? other.UserStats.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetUserStats Clone() {
+      return new SetUserStats(this);
+    }
+
+    /// <summary>Field number for the "user_stats" field.</summary>
+    public const int UserStatsFieldNumber = 1;
+    private global::Protocol.UserStats userStats_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UserStats UserStats {
+      get { return userStats_; }
+      set {
+        userStats_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetUserStats);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetUserStats other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(UserStats, other.UserStats)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (userStats_ != null) hash ^= UserStats.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (userStats_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(UserStats);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (userStats_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserStats);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetUserStats other) {
+      if (other == null) {
+        return;
+      }
+      if (other.userStats_ != null) {
+        if (userStats_ == null) {
+          userStats_ = new global::Protocol.UserStats();
+        }
+        UserStats.MergeFrom(other.UserStats);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (userStats_ == null) {
+              userStats_ = new global::Protocol.UserStats();
+            }
+            input.ReadMessage(userStats_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  permettra de retrouner les valeurs en BDD
+  /// </summary>
+  public sealed partial class UserStatsResponse : pb::IMessage<UserStatsResponse> {
+    private static readonly pb::MessageParser<UserStatsResponse> _parser = new pb::MessageParser<UserStatsResponse>(() => new UserStatsResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserStatsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStatsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStatsResponse(UserStatsResponse other) : this() {
+      UserStats = other.userStats_ != null ? other.UserStats.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserStatsResponse Clone() {
+      return new UserStatsResponse(this);
+    }
+
+    /// <summary>Field number for the "user_stats" field.</summary>
+    public const int UserStatsFieldNumber = 1;
+    private global::Protocol.UserStats userStats_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.UserStats UserStats {
+      get { return userStats_; }
+      set {
+        userStats_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserStatsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserStatsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(UserStats, other.UserStats)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (userStats_ != null) hash ^= UserStats.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (userStats_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(UserStats);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (userStats_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserStats);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserStatsResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.userStats_ != null) {
+        if (userStats_ == null) {
+          userStats_ = new global::Protocol.UserStats();
+        }
+        UserStats.MergeFrom(other.UserStats);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (userStats_ == null) {
+              userStats_ = new global::Protocol.UserStats();
+            }
+            input.ReadMessage(userStats_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///  un message vide, qui servira à déclencher l'envoi d'un UserStatsResponse de
+  ///  la part du serveur vers le client
+  /// </summary>
+  public sealed partial class GetUserStats : pb::IMessage<GetUserStats> {
+    private static readonly pb::MessageParser<GetUserStats> _parser = new pb::MessageParser<GetUserStats>(() => new GetUserStats());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetUserStats> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[23]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetUserStats() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetUserStats(GetUserStats other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetUserStats Clone() {
+      return new GetUserStats(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetUserStats);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetUserStats other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetUserStats other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
@@ -3335,7 +5040,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

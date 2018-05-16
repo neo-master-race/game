@@ -357,6 +357,7 @@ class Network : MonoBehaviour {
         string registredUsername = registerResponse.Username;
 
         if (registredSuccess) {
+          updateUserStats(registerResponse.UserStats);
           GameObject.Find("LogRegForm")
               .GetComponent<log_reg_form>()
               .RegisterSuccess();
@@ -376,6 +377,7 @@ class Network : MonoBehaviour {
         string loggedUsername = loginResponse.Username;
 
         if (loggedSuccess) {
+          updateUserStats(loginResponse.UserStats);
           GameObject.Find("LogRegForm")
               .GetComponent<log_reg_form>()
               .LogInSuccess();
@@ -455,10 +457,11 @@ class Network : MonoBehaviour {
         Protocol.StartRoom sr = parsedData.StartRoom;
 
         if (sr.Success) {
-                    IEnumerator coroutine;
-                    coroutine = GameObject.Find("Rooms_Script").GetComponent<room_info_container>().roomStartCountdown(10.0f);
-                    StartCoroutine(coroutine);
-                    Debug.Log("Start the room plz!!!");
+          IEnumerator coroutine;
+          coroutine = GameObject.Find("Rooms_Script")
+                          .GetComponent<room_info_container>()
+                          .roomStartCountdown(10.0f);
+          StartCoroutine(coroutine);
         }
 
         break;
@@ -466,6 +469,23 @@ class Network : MonoBehaviour {
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
     }
+  }
+
+ private
+  void updateUserStats(Protocol.UserStats us) {
+    GameObject.Find("UserStats")
+        .GetComponent<UserStats>()
+        .setUserStats(
+            us.Username, us.Race, us.Victory, us.Recordt1, us.Recordt2,
+            us.Recordt3, us.Car1Red, us.Car1Green, us.Car1Blue, us.Car2Red,
+            us.Car2Green, us.Car2Blue, us.Car3Red, us.Car3Green, us.Car3Blue,
+            us.Car4Red, us.Car4Green, us.Car4Blue, us.Car1Slider, us.Car1RedTR,
+            us.Car1GreenTR, us.Car1BlueTR, us.Car1CursorX, us.Car1CursorY,
+            us.Car2Slider, us.Car2RedTR, us.Car2GreenTR, us.Car2BlueTR,
+            us.Car2CursorX, us.Car2CursorY, us.Car3Slider, us.Car3RedTR,
+            us.Car3GreenTR, us.Car3BlueTR, us.Car3CursorX, us.Car3CursorY,
+            us.Car4Slider, us.Car4RedTR, us.Car4GreenTR, us.Car4BlueTR,
+            us.Car4CursorX, us.Car4CursorY);
   }
 
   // tell the network to send player's current position to all others
@@ -556,23 +576,52 @@ class Network : MonoBehaviour {
 
  public
   void joinGameRequest(string gameId) {
-    Debug.Log("asked to join room #" + gameId);
     sendMessage(new Protocol.Message{
         Type = "join_room_request",
         JoinRoomRequest = new Protocol.JoinRoomRequest{Id = gameId}});
   }
 
  public
-  void sendUserStatsToDB(string username,int race,int victory,string recordt1,string recordt2,string recordt3,
-     int car1red, int car1green, int car1blue,
-     int car2red, int car2green, int car2blue,
-     int car3red, int car3green, int car3blue,
-     int car4red, int car4green, int car4blue,
-     float car1slider,int car1redTR, int car1greenTR, int car1blueTR,float car1cursorX,float car1cursorY,
-     float car2slider, int car2redTR, int car2greenTR, int car2blueTR, float car2cursorX, float car2cursorY,
-     float car3slider, int car3redTR, int car3greenTR, int car3blueTR, float car3cursorX, float car3cursorY,
-     float car4slider, int car4redTR, int car4greenTR, int car4blueTR, float car4cursorX, float car4cursorY)
-    {
-
-    }
+  void sendUserStatsToDB(string username,
+                         int race,
+                         int victory,
+                         string recordt1,
+                         string recordt2,
+                         string recordt3,
+                         int car1red,
+                         int car1green,
+                         int car1blue,
+                         int car2red,
+                         int car2green,
+                         int car2blue,
+                         int car3red,
+                         int car3green,
+                         int car3blue,
+                         int car4red,
+                         int car4green,
+                         int car4blue,
+                         float car1slider,
+                         int car1redTR,
+                         int car1greenTR,
+                         int car1blueTR,
+                         float car1cursorX,
+                         float car1cursorY,
+                         float car2slider,
+                         int car2redTR,
+                         int car2greenTR,
+                         int car2blueTR,
+                         float car2cursorX,
+                         float car2cursorY,
+                         float car3slider,
+                         int car3redTR,
+                         int car3greenTR,
+                         int car3blueTR,
+                         float car3cursorX,
+                         float car3cursorY,
+                         float car4slider,
+                         int car4redTR,
+                         int car4greenTR,
+                         int car4blueTR,
+                         float car4cursorX,
+                         float car4cursorY) {}
 }
