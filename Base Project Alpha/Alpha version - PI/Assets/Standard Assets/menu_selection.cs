@@ -31,7 +31,11 @@ public class menu_selection : MonoBehaviour {
 	public GameObject trackSelection;
 	public GameObject trackConfirm;
 
-	[Header("Circuits buttons")]
+    [Header("Car Selection")]
+    public GameObject carSelection;
+    public GameObject carConfirm;
+
+    [Header("Circuits buttons")]
 	public GameObject circuit1Button;
 	public GameObject circuit2Button;
 	public GameObject circuit3Button;
@@ -366,33 +370,41 @@ public class menu_selection : MonoBehaviour {
 			case "Confirm_Text_Menu":
 				GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 5;
 				trackSelection.SetActive(false);
+                carSelection.SetActive(true);
 
-				int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
-				SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+                
+				
+				break;
+
+            case "ConfirmCar":
+                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 6;
+                carSelection.SetActive(false);
+
+                int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
+                SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
 				if (nbTrack == 1)
 					SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
 				if (nbTrack == 2) 
 					SceneManager.LoadScene("Track2", LoadSceneMode.Additive);
 				if (nbTrack == 3) 
 					SceneManager.LoadScene("Track3", LoadSceneMode.Additive);
-				break;
+                break;
 
-			case "Back_Text_Menu":
-            want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
-            break;
-
-
-
-            /************************************************************************************
-             *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
-             * **********************************************************************************/
-            //case "RoomCreationSubmitText":
+            case "Back_Text_Menu":
+                want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+                break;
 
 
+                /************************************************************************************
+                 *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
+                 * **********************************************************************************/
+                //case "RoomCreationSubmitText":
 
-            /************************************************************************************
-             *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
-             * **********************************************************************************/
+
+
+                /************************************************************************************
+                 *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
+                 * **********************************************************************************/
         }
 	}
 
@@ -421,6 +433,7 @@ public class menu_selection : MonoBehaviour {
         multiButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
 
 		trackSelection.SetActive(false);
+        carSelection.SetActive(false);
 
         //circuit1Button.SetActive(false);
         //circuit2Button.SetActive(false);
@@ -470,6 +483,10 @@ public class menu_selection : MonoBehaviour {
                 disable_all();
                 soloButton.SetActive(true);
                 multiButton.SetActive(true);
+                break;
+            case 5:
+                disable_all();
+                trackSelection.SetActive(true);
                 break;
 
             
