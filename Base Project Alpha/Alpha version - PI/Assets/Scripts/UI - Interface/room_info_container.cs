@@ -250,7 +250,7 @@ public class room_info_container : MonoBehaviour {
                                 currentPlayer = player4InWait;
                                 player4InWait.SetActive(true);
                             }
-                            currentPlayer.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
+                            currentPlayer.transform.GetChild(0).GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
 
                         }
                     }
@@ -333,9 +333,12 @@ public class room_info_container : MonoBehaviour {
                             currentPlayer.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = unfilledStar;
 
                         currentPlayer.transform.parent.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[j].ActivePlayers.Length + "/" + rooms[j].MaximumPlayersNb + "\nJoueurs";
+                        Debug.Log("heu" + i);
                     }
-                    else
+                    else if(i >= rooms[j].ActivePlayers.Length)
                     {
+                        Debug.Log(i);
+                        Debug.Log(rooms[j].MaximumPlayersNb);
                         GameObject currentPlayer = player1InWait;
                         if (i == 0)
                         {
@@ -358,8 +361,7 @@ public class room_info_container : MonoBehaviour {
                             currentPlayer = player4InWait;
                             player4InWait.SetActive(true);
                         }
-                        currentPlayer.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
-
+                        currentPlayer.transform.GetChild(0).GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
                     }
                 }
             }
