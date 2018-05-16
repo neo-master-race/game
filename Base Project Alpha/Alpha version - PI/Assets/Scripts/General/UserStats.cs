@@ -7,6 +7,7 @@ public class UserStats : MonoBehaviour {
     [Header("User Informations")]
     public string username;
     public bool isOnRoomList = false;
+    public bool isOnLobby = false;
     public string inLobby;
 
     [Header("User Global Stats")]

@@ -154,6 +154,63 @@ public class room_info_container : MonoBehaviour {
         {
             roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record);
         }
+
+        if(GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby)
+        {
+            for (int j = 0; j < rooms.Count; j++)
+            {
+                if (rooms[j].roomIndex == GameObject.Find("UserStats").GetComponent<UserStats>().inLobby)
+                {
+                    for (int i = 0; i < rooms[j].MaximumPlayersNb; i++)
+                    {
+                        if (i < rooms[j].ActivePlayers.Length)
+                        {
+                            GameObject player = Instantiate(playerOnLobby, lobby.transform);
+                            player.GetComponent<RectTransform>().anchoredPosition = new Vector2(207.5f + i * 128.75f, -30f);
+                            player.GetComponent<Text>().text = rooms[j].ActivePlayers[i];
+                            player.transform.Find("Player1RacesImage/Player1RacesText").GetComponent<Text>().text = rooms[j].playersRaceNb[i].ToString();
+                            player.transform.Find("Player1RaceWinImage/Player1RaceWinText").GetComponent<Text>().text = rooms[j].playersRaceWin[i].ToString();
+                            player.transform.Find("Player1RaceWinImage/Player1RaceWinTextPourcent").GetComponent<Text>().text = "(" + (100f * ((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i])).ToString("F0") + "%)";
+                            player.transform.Find("TrackOneLapRecord_Time").GetComponent<Text>().text = rooms[j].playersRaceRecord[i];
+
+                            if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.8f && rooms[j].playersRaceNb[i] >= 50)
+                                player.transform.Find("Stars/Star5").GetComponent<RawImage>().texture = filledStar;
+                            else
+                                player.transform.Find("Stars/Star5").GetComponent<RawImage>().texture = unfilledStar;
+
+                            if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.6f && rooms[j].playersRaceNb[i] >= 30)
+                                player.transform.Find("Stars/Star4").GetComponent<RawImage>().texture = filledStar;
+                            else
+                                player.transform.Find("Stars/Star4").GetComponent<RawImage>().texture = unfilledStar;
+
+                            if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.4f && rooms[j].playersRaceNb[i] >= 15)
+                                player.transform.Find("Stars/Star3").GetComponent<RawImage>().texture = filledStar;
+                            else
+                                player.transform.Find("Stars/Star3").GetComponent<RawImage>().texture = unfilledStar;
+
+                            if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.2f && rooms[j].playersRaceNb[i] >= 5)
+                                player.transform.Find("Stars/Star2").GetComponent<RawImage>().texture = filledStar;
+                            else
+                                player.transform.Find("Stars/Star2").GetComponent<RawImage>().texture = unfilledStar;
+
+                            if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.1f)
+                                player.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = filledStar;
+                            else
+                                player.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = unfilledStar;
+
+                            player.transform.parent.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[j].ActivePlayers.Length + "/" + rooms[j].MaximumPlayersNb + "\nJoueurs";
+                        }
+                        else
+                        {
+                            GameObject player = Instantiate(playerInWait, lobby.transform);
+                            player.GetComponent<RectTransform>().anchoredPosition = new Vector2(207.5f + i * 128.75f, -30f);
+                            player.transform.Find("Playing4Waiting").GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
+
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void goToLobby(string id, int room_type, int id_circuit, int max_players, int nb_players,
@@ -163,9 +220,12 @@ public class room_info_container : MonoBehaviour {
         room.SetActive(false);
         scrollbar.SetActive(false);
         GameObject.Find("UserStats").GetComponent<UserStats>().inLobby = id;
+        GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = true;
+        GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
 
-        
-        for(int j=0;j<rooms.Count;j++)
+
+
+        for (int j=0;j<rooms.Count;j++)
         {
             if (rooms[j].roomIndex==GameObject.Find("UserStats").GetComponent<UserStats>().inLobby)
             {
