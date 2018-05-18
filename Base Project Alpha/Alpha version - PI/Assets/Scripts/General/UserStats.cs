@@ -19,6 +19,9 @@ public class UserStats : MonoBehaviour {
     public string track2LapRecord;
     public string track3LapRecord;
 
+    [Header("Session Infos")]
+    public int carIndex = 1;
+
     [Header("User Cars")]
     public int Car1R;
     public int Car1G;

@@ -27,7 +27,13 @@ class Network : MonoBehaviour {
   GameObject carsContainer;
  public
   GameObject carPrefab;
- private
+ public
+  GameObject car2Prefab;
+ public
+  GameObject car3Prefab;
+ public
+  GameObject car4Prefab;
+    private
   int fps = 30;
 
   [Header("User Log Informations")] public String username;
