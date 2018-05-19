@@ -9,6 +9,7 @@ public class UserStats : MonoBehaviour {
     public bool isOnRoomList = false;
     public bool isOnLobby = false;
     public string inLobby;
+    public int onTrackNb = 0;
 
     [Header("User Global Stats")]
     public int raceNb;
@@ -71,6 +72,11 @@ public class UserStats : MonoBehaviour {
     public void isGuest()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
+    }
+
+    public void setTrack(GameObject track)
+    {
+        onTrackNb = track.GetComponent<track_selection_form>().nbTrack;
     }
 
     public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3,

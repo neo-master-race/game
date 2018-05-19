@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_Info_Ingame : MonoBehaviour {
 
@@ -46,6 +47,12 @@ public class Player_Info_Ingame : MonoBehaviour {
         wentThrough = new bool[GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().checkpoints_collider.Length];
         distanceToWaypoint = new float[GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().wayPoints.Length];
         players = GameObject.FindGameObjectsWithTag("Player");
+        if(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb==1)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track1"));
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track2"));
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
     }
 
     // Update is called once per frame
@@ -132,6 +139,11 @@ public class Player_Info_Ingame : MonoBehaviour {
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count;
             }
             GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
+            if (leaderboardPosition == 1)
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "er";
+            else
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+
             //Debug.Log(leaderboardPosition);
         }
     }

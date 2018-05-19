@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
     public Text TimeObject;
+    public Text TimeObjectBest;
 
     // Time Values
     private int[] currentSecLap=new int[4];
@@ -41,7 +42,7 @@ public class Timer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        TimeObjectBest.text = "--:--.---";
     }
 	
 	// Update is called once per frame
@@ -89,7 +90,7 @@ public class Timer : MonoBehaviour {
     {
         int racelap = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber;
         GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLapTimes[playerId* racelap + GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLapCount[playerId]- 1] = zeroDisplay(currentMinLap[playerId], 2) + ":"+ zeroDisplay(currentSecLap[playerId], 2) + ":"+ zeroDisplay(currentMilliSecLap[playerId], 3);
-        if (GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "-")
+        if (GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--.---")
         {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));
@@ -99,11 +100,14 @@ public class Timer : MonoBehaviour {
             {
                 GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId]= zeroDisplay(currentMinLap[playerId], 2) + ":" + zeroDisplay(currentSecLap[playerId], 2) + ":" + zeroDisplay(currentMilliSecLap[playerId], 3);
             }
-            Debug.Log(bestLapMin + ":" + bestlapSec + ":" + bestLapMSec);
-            Debug.Log(currentMinLap[playerId] + ":" + currentSecLap[playerId] + ":" + currentMilliSecLap[playerId]);
+            //Debug.Log(bestLapMin + ":" + bestlapSec + ":" + bestLapMSec);
+            //Debug.Log(currentMinLap[playerId] + ":" + currentSecLap[playerId] + ":" + currentMilliSecLap[playerId]);
         }
         else
             GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId]= zeroDisplay(currentMinLap[playerId], 2) + ":" + zeroDisplay(currentSecLap[playerId], 2) + ":" + zeroDisplay(currentMilliSecLap[playerId], 3);
+
+        if (players[playerId].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            TimeObjectBest.text = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId];
         timeValLap[playerId] = 0;
         currentSecLap[playerId] = 0;
         currentMilliSecLap[playerId] = 0;

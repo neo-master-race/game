@@ -449,11 +449,13 @@ public class menu_selection : MonoBehaviour {
                 int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
                 SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
 				if (nbTrack == 1)
-					SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
-				if (nbTrack == 2) 
-					SceneManager.LoadScene("Track2", LoadSceneMode.Additive);
-				if (nbTrack == 3) 
-					SceneManager.LoadScene("Track3", LoadSceneMode.Additive);
+                    SceneManager.LoadScene("Track1", LoadSceneMode.Additive); 
+				if (nbTrack == 2)
+                    SceneManager.LoadScene("Track2", LoadSceneMode.Additive);
+                if (nbTrack == 3)
+                    SceneManager.LoadScene("Track3", LoadSceneMode.Additive);
+
+
                 break;
 
 			/************************************************************************************
@@ -502,9 +504,9 @@ public class menu_selection : MonoBehaviour {
 	}
 
 
-    //Schneberger Maxime
-    //désactive les objets du menu sauf le bouton retour qui active cette fonction afin de réactiver les bons par la suite
-    void disable_all()
+//Schneberger Maxime
+//désactive les objets du menu sauf le bouton retour qui active cette fonction afin de réactiver les bons par la suite
+void disable_all()
     {
         logInButton.SetActive(false);
         logInButton.GetComponent<RawImage>().color = new Color(255, 255, 255);

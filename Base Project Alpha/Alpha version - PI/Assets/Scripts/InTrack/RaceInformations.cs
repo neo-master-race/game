@@ -14,7 +14,7 @@ public class RaceInformations : MonoBehaviour {
     public int[] playerLapCount;
     public string[] playerGlobalTimes;
     public string[] playerLapTimes;
-    public string[] playerBestLapTimes= { "-", "-", "-", "-" };
+    public string[] playerBestLapTimes= { "--:--.---", "--:--.---", "--:--.---", "--:--.---" };
 
 
     private int i = 0;
