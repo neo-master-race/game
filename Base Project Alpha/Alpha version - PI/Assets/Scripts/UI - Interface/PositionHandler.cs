@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PositionHandler : MonoBehaviour {
 
     public Text positionObject;
+    public Text positionObjectend;
     private string ordinalIndicator; // example : st, nd, etc..
     
     public int playerPosition;
@@ -61,7 +62,8 @@ public class PositionHandler : MonoBehaviour {
 
     public void displayPositionInfos()
     {
-        positionObject.text = playerPosition.ToString() + ordinalIndicator;
+        positionObject.text = playerPosition.ToString();
+        positionObjectend.text = ordinalIndicator;
     }
 
     public void incrementPlayerPosition()
@@ -89,16 +91,10 @@ public class PositionHandler : MonoBehaviour {
         switch(pos)
         {
             case 1:
-                ordinalIndicator = "st";
-                break;
-            case 2:
-                ordinalIndicator = "nd";
-                break;
-            case 3:
-                ordinalIndicator = "rd";
+                ordinalIndicator = "er";
                 break;
             default:
-                ordinalIndicator = "th";
+                ordinalIndicator = "ème";
                 break;
         }
     }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LapCount : MonoBehaviour {
 
     public Text LapObject;
+    public Text LapObjectTotal;
     public int raceLapNumber;
     public int currentLap;
 
@@ -43,6 +44,7 @@ public class LapCount : MonoBehaviour {
 
     public void displayLapInfos()
     {
-        LapObject.text = currentLap + "/" + raceLapNumber;
+        LapObject.text = currentLap.ToString();
+        LapObjectTotal.text = raceLapNumber.ToString();
     }
 }
