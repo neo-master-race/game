@@ -33,7 +33,14 @@ public class menu_selection : MonoBehaviour {
 
     [Header("Car Selection")]
     public GameObject carSelection;
-    public GameObject carConfirm;
+	public GameObject carConfirm;
+
+	[Header("Back")]
+	public GameObject backMenu;
+	public GameObject canvas;
+	public GameObject home;
+	public GameObject quit;
+	public GameObject cancel;
 
     [Header("Circuits buttons")]
 	public GameObject circuit1Button;
@@ -57,7 +64,7 @@ public class menu_selection : MonoBehaviour {
 
     [Header("Customisation")]
     public GameObject customUI;
-    public GameObject noncustomBackground;
+	public GameObject noncustomBackground;
 
 
 
@@ -101,7 +108,7 @@ public class menu_selection : MonoBehaviour {
 
             case "Back_Text":
                 //change la couleur du bouton back en vert
-                backButtonForm.GetComponent<RawImage>().color = new Color(0, 255, 0);
+                backButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNEXION                                   *
@@ -150,10 +157,36 @@ public class menu_selection : MonoBehaviour {
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
 
-            case "Back_Text_Menu":
-                //change la couleur du bouton retour en vert
-                backButton.GetComponent<RawImage>().color = new Color(0, 255, 0);
-                break;
+
+			/************************************************************************************
+            *                              BOUTONS DE RETOUR                                    *
+            * **********************************************************************************/
+
+
+			case "Back_Text_Menu":
+				//change la couleur du bouton retour en vert
+				backButtonForm.GetComponent<RawImage>().color = new Color(0, 255, 0);
+				break;
+
+			case "Back_menu_Text_Menu":
+				//change la couleur du bouton retour en vert
+				backMenu.GetComponent<RawImage>().color = new Color(0, 255, 0);
+				break;
+
+			case "Logout_Text_Menu":
+				//change la couleur du bouton deconnexion en vert
+				home.GetComponent<RawImage>().color = new Color(0, 255, 0);
+				break;
+
+			case "Quit_Text_Menu":
+				//change la couleur du bouton quitter en vert
+				quit.GetComponent<RawImage>().color = new Color(0, 255, 0);
+				break;
+
+			case "Cancel_Text_Menu":
+				//change la couleur du bouton annuler en vert
+				cancel.GetComponent<RawImage>().color = new Color(0, 255, 0);
+				break;
         }
     }
 
@@ -197,7 +230,7 @@ public class menu_selection : MonoBehaviour {
 
             case "Back_Text":
                 //change la couleur du bouton play_as_guest en blanc
-                backButtonForm.GetComponent<RawImage>().color = new Color(255, 0, 0);
+                backButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNEXION                                   *
@@ -246,11 +279,37 @@ public class menu_selection : MonoBehaviour {
              *                        BOUTONS DU TYPE DE PARTIE                                 *
              * **********************************************************************************/
 
-            case "Back_Text_Menu":
-                //change la couleur du bouton retour en vert
-                backButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
-                break;
-        }
+
+			/************************************************************************************
+            *                              BOUTONS DE RETOUR                                    *
+            * **********************************************************************************/
+
+
+			case "Back_Text_Menu":
+				//change la couleur du bouton retour en blanc
+				backButtonForm.GetComponent<RawImage>().color = new Color(255, 255, 255);
+				break;
+
+			case "Back_menu_Text_Menu":
+			//change la couleur du bouton retour en blanc
+				backMenu.GetComponent<RawImage>().color = new Color(255, 255, 255);
+				break;
+
+			case "Logout_Text_Menu":
+				//change la couleur du bouton deconnexion en blanc
+				home.GetComponent<RawImage>().color = new Color(255, 255, 255);
+				break;
+
+			case "Quit_Text_Menu":
+				//change la couleur du bouton quitter en blanc
+				quit.GetComponent<RawImage>().color = new Color(255, 255, 255);
+				break;
+
+			case "Cancel_Text_Menu":
+				//change la couleur du bouton annuler en blanc
+				cancel.GetComponent<RawImage>().color = new Color(255, 255, 255);
+				break;
+	        }
     }
 
 
@@ -265,10 +324,12 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Log_In_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
+				backButtonForm.SetActive (false);
                 break;
 
             case "Sign_Up_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
+				backButtonForm.SetActive (false);
                 break;
 
             case "Play_As_Guest_Text":
@@ -291,6 +352,7 @@ public class menu_selection : MonoBehaviour {
 
             case "Back_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 0;
+				backButtonForm.SetActive (true);
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNEXION                                   *
@@ -396,10 +458,37 @@ public class menu_selection : MonoBehaviour {
 
                 break;
 
-            case "Back_Text_Menu":
-                want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
-                break;
+			/************************************************************************************
+            *                              BOUTONS DE RETOUR                                    *
+            * **********************************************************************************/
 
+
+			case "Back_Text_Menu":
+				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+				break;
+
+			case "Back_menu_Text_Menu":
+					disable_all ();
+					GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step++;
+
+					canvas.SetActive (true);
+					home.SetActive (true);
+					quit.SetActive (true);
+					cancel.SetActive (true);
+					break;
+
+			case "Logout_Text_Menu":
+				GameObject.Find("Script_Source").GetComponent<menu_selection> ().selection_step = 2;
+				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+				break;
+
+			case "Quit_Text_Menu":
+				want_to_back(0);
+				break;
+
+			case "Cancel_Text_Menu":
+				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+				break;
 
                 /************************************************************************************
                  *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
@@ -446,58 +535,89 @@ void disable_all()
         //circuit3Button.SetActive(false);
 
         confirmButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
-        backButtonForm.GetComponent<RawImage>().color = new Color(255, 0, 0);
+        backButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
 
         userInfo.SetActive(false);
         userStats.SetActive(false);
 
         multiplayerUI.SetActive(false);
+
+		canvas.SetActive(false);
+		home.SetActive(false);
+		quit.SetActive(false);
+		cancel.SetActive(false);
+
+		backButtonForm.GetComponent<RawImage>().color = new Color(255, 255, 255);
+		backMenu.GetComponent<RawImage>().color = new Color(255, 255, 255);
+		home.GetComponent<RawImage>().color = new Color(255, 255, 255);
+		quit.GetComponent<RawImage>().color = new Color(255, 255, 255);
+		cancel.GetComponent<RawImage>().color = new Color(255, 255, 255);
     }
 
     //Schneberger Maxime
     //si l'utilisateur appuie sur retour, on revient un cran en arrière dans le menu
     void want_to_back(int step)
-    {
-        disable_all();
-        switch(step)
-        {
-            case 2:
-                logInButton.SetActive(true);
-                signUpButton.SetActive(true);
-                playAsGuestButton.SetActive(true);
+	{
+		if (GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step > 0) {
+			disable_all ();
+			switch (step) {
+			case 1:
+				logInButton.SetActive (true);
+				signUpButton.SetActive (true);
+				playAsGuestButton.SetActive (true);
 
-                GameObject.Find("Play_As_Guest").GetComponent<RawImage>().enabled = true;
-                GameObject.Find("Play_As_Guest_Text").GetComponent<Text>().enabled = true;
-                GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest = false;
-                break;
+				GameObject.Find ("Play_As_Guest").GetComponent<RawImage> ().enabled = true;
+				GameObject.Find ("Play_As_Guest_Text").GetComponent<Text> ().enabled = true;
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().is_guest = false;
+				break;
 
-            case 3:
-                if(!GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest)
-                {
-                    playButton.SetActive(true);
-                    customizeButton.SetActive(true);
-                    profileButton.SetActive(true);
-                }
-                else
-                {
-                    want_to_back(2);
-                    GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step--;
-                }
-                break;
+			case 2:
+				logInButton.SetActive (true);
+				signUpButton.SetActive (true);
+				playAsGuestButton.SetActive (true);
 
-            case 4:
-                disable_all();
-                soloButton.SetActive(true);
-                multiButton.SetActive(true);
-                break;
-            case 5:
-                disable_all();
-                trackSelection.SetActive(true);
-                break;
+				GameObject.Find ("Play_As_Guest").GetComponent<RawImage> ().enabled = true;
+				GameObject.Find ("Play_As_Guest_Text").GetComponent<Text> ().enabled = true;
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().is_guest = false;
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step--;
+				break;
 
-            
-        }
-        GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step--;
-    }
+			case 3:
+				if (!GameObject.Find ("Script_Source").GetComponent<menu_selection> ().is_guest) {
+					playButton.SetActive (true);
+					customizeButton.SetActive (true);
+					profileButton.SetActive (true);
+				} else {
+					want_to_back (2);
+					GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step--;
+				}
+				break;
 
+			case 4:
+				disable_all ();
+				soloButton.SetActive (true);
+				multiButton.SetActive (true);
+				break;
+
+			case 5:
+				disable_all ();
+				trackSelection.SetActive (true);
+				break;
+
+			case 6:
+				disable_all ();
+				carSelection.SetActive (true);
+				break;
+	            
+			}
+			GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step--;
+		}
+		else
+			Application.Quit ();
+		
+		if (GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step < 2)
+			backMenu.SetActive (false);
+		if (GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step == 1)
+			backButtonForm.SetActive (false);
+	}
 }
