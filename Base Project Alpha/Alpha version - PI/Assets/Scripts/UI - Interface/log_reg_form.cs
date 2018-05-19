@@ -16,8 +16,9 @@ public class log_reg_form : MonoBehaviour {
     public GameObject profile_button;
     public GameObject solo_button;
     public GameObject multi_button;
-    public GameObject tuto_button;
-    public GameObject backButton;
+	public GameObject tuto_button;
+	public GameObject backButton;
+	public GameObject backMenuButton;
 
     // Use this for initialization
     void Start () {
@@ -33,11 +34,14 @@ public class log_reg_form : MonoBehaviour {
         GameObject.Find("Success_Login").GetComponent<Text>().text = message;
         log_reg_canvas.SetActive(false);
         backButton.SetActive(false);
+		backMenuButton.SetActive(false);
         yield return new WaitForSeconds(3.0f);
 
-
+		GameObject.Find("Success_Login").GetComponent<Text>().enabled = false;
         after_canvas.SetActive(false);
         backButton.SetActive(true);
+		backMenuButton.SetActive(true);
+
 
         if (!is_guest)
         {
