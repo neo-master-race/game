@@ -22,6 +22,9 @@ public class UserStats : MonoBehaviour {
 
     [Header("Session Infos")]
     public int carIndex = 1;
+    public int currentCarR;
+    public int currentCarG;
+    public int currentCarB;
 
     [Header("User Cars")]
     public int Car1R;

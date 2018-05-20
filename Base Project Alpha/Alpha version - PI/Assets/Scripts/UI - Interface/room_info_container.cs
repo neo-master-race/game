@@ -594,6 +594,9 @@ public class room_info_container : MonoBehaviour {
             carSelectRightArrow.SetActive(true);
             carName.text = "Stratos";
             carImage.texture = stratosImage;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car1R;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car1G;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car1B;
         }
         else if (carIndex == 2)
         {
@@ -601,6 +604,9 @@ public class room_info_container : MonoBehaviour {
             carSelectRightArrow.SetActive(true);
             carName.text = "Porsche";
             carImage.texture = porscheImage;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car2R;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car2G;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car2B;
         }
         else if (carIndex == 3)
         {
@@ -608,6 +614,9 @@ public class room_info_container : MonoBehaviour {
             carSelectRightArrow.SetActive(false);
             carName.text = "Lamborghini";
             carImage.texture = lamboImage;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car3R;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car3G;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car3B;
         }
         /*else if(carIndex==4)
         {
