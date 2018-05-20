@@ -71,6 +71,15 @@ public class room_info_container : MonoBehaviour {
     public GameObject carSelect;
     public GameObject createRoom;
     public GameObject userStats;
+    public int carIndexChoice = 1;
+    public GameObject carSelectLeftArrow;
+    public GameObject carSelectRightArrow;
+    public Text carName;
+    public RawImage carImage;
+    public Texture stratosImage;
+    public Texture porscheImage;
+    public Texture lamboImage;
+    public Texture fordImage;
 
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
@@ -574,6 +583,48 @@ public class room_info_container : MonoBehaviour {
         carSelect.SetActive(true);
         createRoom.SetActive(false);
         userStats.SetActive(false);
+    }
+
+
+    public void setCarChoice(int carIndex)
+    {
+        if(carIndex==1)
+        {
+            carSelectLeftArrow.SetActive(false);
+            carSelectRightArrow.SetActive(true);
+            carName.text = "Stratos";
+            carImage.texture = stratosImage;
+        }
+        else if (carIndex == 2)
+        {
+            carSelectLeftArrow.SetActive(true);
+            carSelectRightArrow.SetActive(true);
+            carName.text = "Porsche";
+            carImage.texture = porscheImage;
+        }
+        else if (carIndex == 3)
+        {
+            carSelectLeftArrow.SetActive(true);
+            carSelectRightArrow.SetActive(false);
+            carName.text = "Lamborghini";
+            carImage.texture = lamboImage;
+        }
+        /*else if(carIndex==4)
+        {
+            carSelectLeftArrow.SetActive(false);
+            carImage.texture = stratosImage;
+        }*/
+    }
+
+    public void hittedArrow(GameObject arrow)
+    {
+        if (arrow.name == "CarSelectLeftArrow")
+            carIndexChoice--;
+        else if (arrow.name == "CarSelectRightArrow")
+            carIndexChoice++;
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().carIndex = carIndexChoice;
+        setCarChoice(carIndexChoice);
     }
 
 
