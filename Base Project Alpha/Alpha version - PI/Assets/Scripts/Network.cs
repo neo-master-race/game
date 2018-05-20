@@ -235,10 +235,31 @@ class Network : MonoBehaviour {
 
   // get the player (or create if needed)
  private
-  GameObject getPlayer(string clientName) {
+  GameObject getPlayer(string clientName, int cType, int cR, int cG, int cB) {
     GameObject player;
     if (!players.ContainsKey(clientName)) {
-      player = Instantiate(carPrefab, carsContainer.transform) as GameObject;
+      switch (cType) {
+        case 1:
+          player =
+              Instantiate(carPrefab, carsContainer.transform) as GameObject;
+          break;
+        case 2:
+          player =
+              Instantiate(car2Prefab, carsContainer.transform) as GameObject;
+          break;
+        case 3:
+          player =
+              Instantiate(car3Prefab, carsContainer.transform) as GameObject;
+          break;
+        case 4:
+          player =
+              Instantiate(car4Prefab, carsContainer.transform) as GameObject;
+          break;
+        default:
+          player =
+              Instantiate(carPrefab, carsContainer.transform) as GameObject;
+          break;
+      }
 
       player.GetComponent<Player_Info_Ingame>().userName = clientName;
       player.GetComponent<Player_Info_Ingame>().isLocalPlayer = false;
@@ -269,7 +290,7 @@ class Network : MonoBehaviour {
         if (user == clientName)
           break;
 
-        player = getPlayer(user);
+        player = getPlayer(user, upp.CarType, upp.CarR, upp.CarG, upp.CarB);
 
         player.transform.localPosition =
             new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
@@ -303,7 +324,7 @@ class Network : MonoBehaviour {
         if (user == clientName)
           break;
 
-        player = getPlayer(user);
+        player = getPlayer(user, 0, 0, 0, 0);
 
         Debug.Log("Got status response from " + user);
         player.GetComponent<Player_Info_Ingame>().lap_count = lapCount;
@@ -341,7 +362,7 @@ class Network : MonoBehaviour {
         break;
       case "disconnect":
         user = parsedData.Disconnect.User;
-        Destroy(getPlayer(user));
+        Destroy(getPlayer(user, 0, 0, 0, 0));
         players.Remove(user);
         break;
       case "starting_position":
