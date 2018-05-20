@@ -440,6 +440,13 @@ class Network : MonoBehaviour {
           int[] playersNbWins = playersNbWinsList.ToArray();
           string[] playersRecord = playersRecordList.ToArray();
 
+          List<int> rliStartingPositionsList = new List<int>();
+          IEnumerator<int> numSP = rli.StartingPositions.GetEnumerator();
+          while (numSP.MoveNext()) {
+            rliStartingPositionsList.Add(numSP.Current);
+          }
+          int[] rliStartingPositions = rliStartingPositionsList.ToArray();
+
           GameObject.Find("Rooms_Script")
               .GetComponent<room_info_container>()
               .addOrUpdateRoom(rli.Id, rli.RoomType, rli.IdCircuit,
@@ -472,6 +479,13 @@ class Network : MonoBehaviour {
           int[] playersNbRaces = playersNbRacesList.ToArray();
           int[] playersNbWins = playersNbWinsList.ToArray();
           string[] playersRecord = playersRecordList.ToArray();
+
+          List<int> rlitemStartingPositionsList = new List<int>();
+          IEnumerator<int> nSP = rlitem.StartingPositions.GetEnumerator();
+          while (nSP.MoveNext()) {
+            rlitemStartingPositionsList.Add(nSP.Current);
+          }
+          int[] rlitemStartingPositions = rlitemStartingPositionsList.ToArray();
 
           GameObject.Find("Rooms_Script")
               .GetComponent<room_info_container>()
