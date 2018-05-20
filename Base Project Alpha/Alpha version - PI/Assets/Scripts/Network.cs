@@ -500,10 +500,26 @@ class Network : MonoBehaviour {
                             Protocol.Vector vecRotation,
                             Protocol.Vector vecScale,
                             Protocol.Vector vecVelocity) {
+    int carType =
+        GameObject.Find("UserStats").GetComponent<UserStats>().carIndex;
+    int carR =
+        GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR;
+    int carG =
+        GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG;
+    int carB =
+        GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB;
+
     // all together
-    Protocol.UpdatePlayerPosition upp = new Protocol.UpdatePlayerPosition{
-        Position = vecPosition, Direction = vecRotation, Scale = vecScale,
-        User = clientName, Velocity = vecVelocity};
+    Protocol.UpdatePlayerPosition upp =
+        new Protocol.UpdatePlayerPosition{Position = vecPosition,
+                                          Direction = vecRotation,
+                                          Scale = vecScale,
+                                          User = clientName,
+                                          Velocity = vecVelocity,
+                                          CarType = carType,
+                                          CarR = carR,
+                                          CarG = carG,
+                                          CarB = carB};
 
     // final message that we can send
     Protocol.Message msg = new Protocol.Message{Type = "update_player_position",
