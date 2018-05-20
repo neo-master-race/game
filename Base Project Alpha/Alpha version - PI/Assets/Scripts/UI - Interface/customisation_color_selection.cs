@@ -52,6 +52,13 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
     public float lamborghiniCursorX;
     public float lamborghiniCursorY;
 
+    [Header("back buttons")]
+    public GameObject play_button;
+    public GameObject customize_button;
+    public GameObject profile_button;
+    public GameObject customUI;
+    public GameObject noncustomBackground;
+
 
     // Use this for initialization
     void Start () {
@@ -269,12 +276,10 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
 
     float calculate_slider_value(Color32 carColor)
     {
-        Debug.Log(carColor);
         if(carColor.b==0)
         {
             if (carColor.r >= 254)
             {
-                Debug.Log("oui");
                 return (float)(carColor.g / 255f) * 0.1666f;
             }   
             else
@@ -307,6 +312,62 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
 
         Color vehicle_color2 = new Color(vehicle_color2_x, vehicle_color2_y, vehicle_color2_z);
         return vehicle_color2;
+    }
+
+    public void wannaSave ()
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car1R = (int)((StratosMainColor.color.r)*255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car1G = (int)((StratosMainColor.color.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car1B = (int)((StratosMainColor.color.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car2R = (int)((PorscheMainColor.color.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car2G = (int)((PorscheMainColor.color.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car2B = (int)((PorscheMainColor.color.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car3R = (int)((LamborghiniMainColor.color.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car3G = (int)((LamborghiniMainColor.color.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car3B = (int)((LamborghiniMainColor.color.b) * 255f);
+
+        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4R = (int)((.color.r) * 255f);
+        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4G = (int)((StratosMainColor.color.g) * 255f);
+        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4B = (int)((StratosMainColor.color.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosValueSlider = stratosValueSlider;
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheValueSlider = porscheValueSlider;
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniValueSlider = lamborghiniValueSlider;
+        //GameObject.Find("UserStats").GetComponent<UserStats>().fordValueSlider = fordValueSlider;
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR= (int)((stratosTopR.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG = (int)((stratosTopR.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRB = (int)((stratosTopR.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRR = (int)((porscheTopR.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRG = (int)((porscheTopR.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRB = (int)((porscheTopR.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRR = (int)((lamborghiniTopR.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRG = (int)((lamborghiniTopR.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRB = (int)((lamborghiniTopR.b) * 255f);
+
+        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR = (int)((stratosTopR.r) * 255f);
+        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG = (int)((stratosTopR.g) * 255f);
+        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRB = (int)((stratosTopR.b) * 255f);
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX = stratosCursorX;
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY = stratosCursorY;
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorX = porscheCursorX;
+        GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorY = porscheCursorY;
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorX = lamborghiniCursorX;
+        GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorY = lamborghiniCursorY;
+        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX = stratosCursorX;
+        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY = stratosCursorY;
+
+        play_button.SetActive(true);
+        customize_button.SetActive(true);
+        profile_button.SetActive(true);
+
+        customUI.SetActive(false);
+        noncustomBackground.SetActive(true);
     }
 
     // Update is called once per frame
