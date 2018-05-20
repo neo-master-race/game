@@ -67,6 +67,11 @@ public class room_info_container : MonoBehaviour {
     public Text raceWin;
     public Text raceWinpourcent;
 
+    [Header("Lobby Stuffs")]
+    public GameObject carSelect;
+    public GameObject createRoom;
+    public GameObject userStats;
+
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
@@ -375,8 +380,6 @@ public class room_info_container : MonoBehaviour {
                     }
                     else if(i >= rooms[j].ActivePlayers.Length)
                     {
-                        Debug.Log(i);
-                        Debug.Log(rooms[j].MaximumPlayersNb);
                         GameObject currentPlayer = player1InWait;
                         if (i == 0)
                         {
@@ -564,6 +567,13 @@ public class room_info_container : MonoBehaviour {
             star1.GetComponent<RawImage>().texture = filledStar;
         else
             star1.GetComponent<RawImage>().texture = unfilledStar;
+    }
+
+    public void activelobbyStuff ()
+    {
+        carSelect.SetActive(true);
+        createRoom.SetActive(false);
+        userStats.SetActive(false);
     }
 
 
