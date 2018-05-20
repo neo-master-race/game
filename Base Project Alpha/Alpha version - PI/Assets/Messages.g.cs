@@ -77,7 +77,7 @@ namespace Protocol {
             "C2NhcjRjdXJzb3JYGCkgASgCEhMKC2NhcjRjdXJzb3JZGCogASgCIjcKDFNl",
             "dFVzZXJTdGF0cxInCgp1c2VyX3N0YXRzGAEgASgLMhMucHJvdG9jb2wuVXNl",
             "clN0YXRzIjwKEVVzZXJTdGF0c1Jlc3BvbnNlEicKCnVzZXJfc3RhdHMYASAB",
-            "KAsyEy5wcm90b2NvbC5Vc2VyU3RhdHMiDgoMR2V0VXNlclN0YXRzIsQHCgdN",
+            "KAsyEy5wcm90b2NvbC5Vc2VyU3RhdHMiDgoMR2V0VXNlclN0YXRzIqgICgdN",
             "ZXNzYWdlEgwKBHR5cGUYASABKAkSLQoMY2hhdF9tZXNzYWdlGAIgASgLMhUu",
             "cHJvdG9jb2wuQ2hhdE1lc3NhZ2VIABJAChZ1cGRhdGVfcGxheWVyX3Bvc2l0",
             "aW9uGAMgASgLMh4ucHJvdG9jb2wuVXBkYXRlUGxheWVyUG9zaXRpb25IABI8",
@@ -99,7 +99,9 @@ namespace Protocol {
             "ASgLMhoucHJvdG9jb2wuUm9vbUxpc3RSZXNwb25zZUgAEjMKD2NoYW5nZV91",
             "c2VybmFtZRgRIAEoCzIYLnByb3RvY29sLkNoYW5nZVVzZXJuYW1lSAASOAoS",
             "am9pbl9yb29tX3Jlc3BvbnNlGBIgASgLMhoucHJvdG9jb2wuSm9pblJvb21S",
-            "ZXNwb25zZUgAQgUKA21zZ2IGcHJvdG8z"));
+            "ZXNwb25zZUgAEjAKDnNldF91c2VyX3N0YXRzGBMgASgLMhYucHJvdG9jb2wu",
+            "U2V0VXNlclN0YXRzSAASMAoOZ2V0X3VzZXJfc3RhdHMYFCABKAsyFi5wcm90",
+            "b2NvbC5HZXRVc2VyU3RhdHNIAEIFCgNtc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -127,7 +129,7 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.SetUserStats), global::Protocol.SetUserStats.Parser, new[]{ "UserStats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UserStatsResponse), global::Protocol.UserStatsResponse.Parser, new[]{ "UserStats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.GetUserStats), global::Protocol.GetUserStats.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse", "SetUserStats", "GetUserStats" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -5110,6 +5112,12 @@ namespace Protocol {
         case MsgOneofCase.JoinRoomResponse:
           JoinRoomResponse = other.JoinRoomResponse.Clone();
           break;
+        case MsgOneofCase.SetUserStats:
+          SetUserStats = other.SetUserStats.Clone();
+          break;
+        case MsgOneofCase.GetUserStats:
+          GetUserStats = other.GetUserStats.Clone();
+          break;
       }
 
     }
@@ -5320,6 +5328,28 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "set_user_stats" field.</summary>
+    public const int SetUserStatsFieldNumber = 19;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.SetUserStats SetUserStats {
+      get { return msgCase_ == MsgOneofCase.SetUserStats ? (global::Protocol.SetUserStats) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.SetUserStats;
+      }
+    }
+
+    /// <summary>Field number for the "get_user_stats" field.</summary>
+    public const int GetUserStatsFieldNumber = 20;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.GetUserStats GetUserStats {
+      get { return msgCase_ == MsgOneofCase.GetUserStats ? (global::Protocol.GetUserStats) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.GetUserStats;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -5341,6 +5371,8 @@ namespace Protocol {
       RoomListResponse = 16,
       ChangeUsername = 17,
       JoinRoomResponse = 18,
+      SetUserStats = 19,
+      GetUserStats = 20,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5385,6 +5417,8 @@ namespace Protocol {
       if (!object.Equals(RoomListResponse, other.RoomListResponse)) return false;
       if (!object.Equals(ChangeUsername, other.ChangeUsername)) return false;
       if (!object.Equals(JoinRoomResponse, other.JoinRoomResponse)) return false;
+      if (!object.Equals(SetUserStats, other.SetUserStats)) return false;
+      if (!object.Equals(GetUserStats, other.GetUserStats)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -5410,6 +5444,8 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.RoomListResponse) hash ^= RoomListResponse.GetHashCode();
       if (msgCase_ == MsgOneofCase.ChangeUsername) hash ^= ChangeUsername.GetHashCode();
       if (msgCase_ == MsgOneofCase.JoinRoomResponse) hash ^= JoinRoomResponse.GetHashCode();
+      if (msgCase_ == MsgOneofCase.SetUserStats) hash ^= SetUserStats.GetHashCode();
+      if (msgCase_ == MsgOneofCase.GetUserStats) hash ^= GetUserStats.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -5493,6 +5529,14 @@ namespace Protocol {
         output.WriteRawTag(146, 1);
         output.WriteMessage(JoinRoomResponse);
       }
+      if (msgCase_ == MsgOneofCase.SetUserStats) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(SetUserStats);
+      }
+      if (msgCase_ == MsgOneofCase.GetUserStats) {
+        output.WriteRawTag(162, 1);
+        output.WriteMessage(GetUserStats);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5551,6 +5595,12 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.JoinRoomResponse) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(JoinRoomResponse);
+      }
+      if (msgCase_ == MsgOneofCase.SetUserStats) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SetUserStats);
+      }
+      if (msgCase_ == MsgOneofCase.GetUserStats) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GetUserStats);
       }
       return size;
     }
@@ -5614,6 +5664,12 @@ namespace Protocol {
           break;
         case MsgOneofCase.JoinRoomResponse:
           JoinRoomResponse = other.JoinRoomResponse;
+          break;
+        case MsgOneofCase.SetUserStats:
+          SetUserStats = other.SetUserStats;
+          break;
+        case MsgOneofCase.GetUserStats:
+          GetUserStats = other.GetUserStats;
           break;
       }
 
@@ -5782,6 +5838,24 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             JoinRoomResponse = subBuilder;
+            break;
+          }
+          case 154: {
+            global::Protocol.SetUserStats subBuilder = new global::Protocol.SetUserStats();
+            if (msgCase_ == MsgOneofCase.SetUserStats) {
+              subBuilder.MergeFrom(SetUserStats);
+            }
+            input.ReadMessage(subBuilder);
+            SetUserStats = subBuilder;
+            break;
+          }
+          case 162: {
+            global::Protocol.GetUserStats subBuilder = new global::Protocol.GetUserStats();
+            if (msgCase_ == MsgOneofCase.GetUserStats) {
+              subBuilder.MergeFrom(GetUserStats);
+            }
+            input.ReadMessage(subBuilder);
+            GetUserStats = subBuilder;
             break;
           }
         }

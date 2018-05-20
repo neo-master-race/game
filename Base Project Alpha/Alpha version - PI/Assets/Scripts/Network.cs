@@ -33,7 +33,7 @@ class Network : MonoBehaviour {
   GameObject car3Prefab;
  public
   GameObject car4Prefab;
-    private
+ private
   int fps = 30;
 
   [Header("User Log Informations")] public String username;
@@ -588,8 +588,7 @@ class Network : MonoBehaviour {
   }
 
  public
-  void sendUserStatsToDB(string username,
-                         int race,
+  void sendUserStatsToDB(int race,
                          int victory,
                          string recordt1,
                          string recordt2,
@@ -629,5 +628,8 @@ class Network : MonoBehaviour {
                          int car4greenTR,
                          int car4blueTR,
                          float car4cursorX,
-                         float car4cursorY) {}
+                         float car4cursorY) {
+    sendMessage(new Protocol.Message{
+        Type = "set_user_stats", SetUserStats = new Protocol.SetUserStats{}});
+  }
 }
