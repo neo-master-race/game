@@ -57,6 +57,16 @@ public class room_info_container : MonoBehaviour {
     public Texture filledStar;
     public Texture unfilledStar;
 
+    [Header("Player Statistics")]
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
+    public GameObject star4;
+    public GameObject star5;
+    public Text raceNb;
+    public Text raceWin;
+    public Text raceWinpourcent;
+
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
     {
@@ -330,36 +340,38 @@ public class room_info_container : MonoBehaviour {
                         currentPlayer.GetComponent<Text>().text = rooms[j].ActivePlayers[i];
                         currentPlayer.transform.Find("Player1RacesImage/Player1RacesText").GetComponent<Text>().text = rooms[j].playersRaceNb[i].ToString();
                         currentPlayer.transform.Find("Player1RaceWinImage/Player1RaceWinText").GetComponent<Text>().text = rooms[j].playersRaceWin[i].ToString();
-                        currentPlayer.transform.Find("Player1RaceWinImage/Player1RaceWinTextPourcent").GetComponent<Text>().text = "(" + (100f * ((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i])).ToString("F0") + "%)";
+                        if (rooms[j].playersRaceNb[i] == 0)
+                            currentPlayer.transform.Find("Player1RaceWinImage/Player1RaceWinTextPourcent").GetComponent<Text>().text = "-";
+                        else
+                            currentPlayer.transform.Find("Player1RaceWinImage/Player1RaceWinTextPourcent").GetComponent<Text>().text = "(" + (100f * ((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i])).ToString("F0") + "%)";
                         currentPlayer.transform.Find("TrackOneLapRecord_Time").GetComponent<Text>().text = rooms[j].playersRaceRecord[i];
 
-                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.8f && rooms[j].playersRaceNb[i] >= 50)
+                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) >= 0.8f && rooms[j].playersRaceNb[i] >= 50)
                             currentPlayer.transform.Find("Stars/Star5").GetComponent<RawImage>().texture = filledStar;
                         else
                             currentPlayer.transform.Find("Stars/Star5").GetComponent<RawImage>().texture = unfilledStar;
 
-                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.6f && rooms[j].playersRaceNb[i] >= 30)
+                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) >= 0.6f && rooms[j].playersRaceNb[i] >= 30)
                             currentPlayer.transform.Find("Stars/Star4").GetComponent<RawImage>().texture = filledStar;
                         else
                             currentPlayer.transform.Find("Stars/Star4").GetComponent<RawImage>().texture = unfilledStar;
 
-                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.4f && rooms[j].playersRaceNb[i] >= 15)
+                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) >= 0.4f && rooms[j].playersRaceNb[i] >= 15)
                             currentPlayer.transform.Find("Stars/Star3").GetComponent<RawImage>().texture = filledStar;
                         else
                             currentPlayer.transform.Find("Stars/Star3").GetComponent<RawImage>().texture = unfilledStar;
 
-                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.2f && rooms[j].playersRaceNb[i] >= 5)
+                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) >= 0.2f && rooms[j].playersRaceNb[i] >= 5)
                             currentPlayer.transform.Find("Stars/Star2").GetComponent<RawImage>().texture = filledStar;
                         else
                             currentPlayer.transform.Find("Stars/Star2").GetComponent<RawImage>().texture = unfilledStar;
 
-                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) > 0.1f)
+                        if (((float)rooms[j].playersRaceWin[i] / (float)rooms[j].playersRaceNb[i]) >= 0.1f)
                             currentPlayer.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = filledStar;
                         else
                             currentPlayer.transform.Find("Stars/Star1").GetComponent<RawImage>().texture = unfilledStar;
 
                         currentPlayer.transform.parent.transform.Find("PlayerNB").GetComponent<Text>().text = rooms[j].ActivePlayers.Length + "/" + rooms[j].MaximumPlayersNb + "\nJoueurs";
-                        Debug.Log("heu" + i);
                     }
                     else if(i >= rooms[j].ActivePlayers.Length)
                     {
@@ -519,9 +531,46 @@ public class room_info_container : MonoBehaviour {
     }
 
 
+    public void setStats()
+    {
+        raceNb.text = GameObject.Find("UserStats").GetComponent<UserStats>().raceNb.ToString();
+        raceWin.text = GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory.ToString();
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().raceNb == 0)
+            raceWinpourcent.text = "-";
+        else
+            raceWinpourcent.text = "(" + (100f * ((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb)).ToString("F0") + "%)";
+
+        if (((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb) >= 0.8f && GameObject.Find("UserStats").GetComponent<UserStats>().raceNb >= 50)
+            star5.GetComponent<RawImage>().texture = filledStar;
+        else
+            star5.GetComponent<RawImage>().texture = unfilledStar;
+
+        if (((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb) >= 0.6f && GameObject.Find("UserStats").GetComponent<UserStats>().raceNb >= 30)
+            star4.GetComponent<RawImage>().texture = filledStar;
+        else
+            star4.GetComponent<RawImage>().texture = unfilledStar;
+
+        if (((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb) >= 0.4f && GameObject.Find("UserStats").GetComponent<UserStats>().raceNb >= 15)
+            star3.GetComponent<RawImage>().texture = filledStar;
+        else
+            star3.GetComponent<RawImage>().texture = unfilledStar;
+
+        if (((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb) >= 0.2f && GameObject.Find("UserStats").GetComponent<UserStats>().raceNb >= 5)
+            star2.GetComponent<RawImage>().texture = filledStar;
+        else
+            star2.GetComponent<RawImage>().texture = unfilledStar;
+
+        if (((float)GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory / (float)GameObject.Find("UserStats").GetComponent<UserStats>().raceNb) >= 0.1f)
+            star1.GetComponent<RawImage>().texture = filledStar;
+        else
+            star1.GetComponent<RawImage>().texture = unfilledStar;
+    }
+
+
     // Use this for initialization
     void Start () {
         createRooms();
+        setStats();
     }
 	
 	// Update is called once per frame
