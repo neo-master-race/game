@@ -66,6 +66,7 @@ message RoomListItem {
   int32 max_players = 4;
   int32 nb_players = 5;
   repeated Player players = 6;
+  repeated int32 starting_positions = 7;
 }
 
 message Player {
