@@ -73,6 +73,35 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         //Stratos.SetActive(false);
     }
 
+    public void setStats()
+    {
+        stratosValueSlider = GameObject.Find("UserStats").GetComponent<UserStats>().stratosValueSlider;
+        stratosTopR=new Color (GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR/255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRB / 255f);
+        porscheValueSlider = GameObject.Find("UserStats").GetComponent<UserStats>().porscheValueSlider;
+        porscheTopR = new Color(GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRR / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRG / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().porscheTopRB / 255f);
+        lamborghiniValueSlider = GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniValueSlider;
+        lamborghiniTopR = new Color(GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRR / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRG / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRB / 255f);
+
+        colorPicked.value = stratosValueSlider;
+        gradient3D.SetColor("_Color_TopR", stratosTopR);
+        stratosCursorX = GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX;
+        stratosCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY;
+        porscheCursorX = GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorX;
+        porscheCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorY;
+        lamborghiniCursorX = GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorX;
+        lamborghiniCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorY;
+
+        cursorLocalPositionX = stratosCursorX;
+        cursorLocalPositionY = stratosCursorY;
+        GameObject.Find("cursor_texture").transform.localPosition = new Vector2(cursorLocalPositionX, cursorLocalPositionY);
+    }
+
     public void onArrowClick(GameObject arrow)
     {
         if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
