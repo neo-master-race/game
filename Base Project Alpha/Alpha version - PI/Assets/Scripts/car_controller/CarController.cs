@@ -37,11 +37,13 @@ public class CarController : MonoBehaviour
     public float current_speed=8000f;
 
     public bool isLocalPlayer;
-    private int limiter = 0;
 
     public Vector3 centerOfMass;
 
     public bool canDrive = false;
+
+    private float nextAction = .0f;
+    private float periodAction = .2f;
 
 
     void Start()
@@ -110,12 +112,12 @@ public class CarController : MonoBehaviour
                         acceleration = -1.0f;
                     }
                     /* if (MaxRotation < Mathf.Abs(padRotation))
-                     {
-                         padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation);
-                     }*/
+                    {
+                        padRotation = (0.0f < padRotation) ? MaxRotation : -(MaxRotation);
+                    }*/
                     /*
-                     * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
-                     */
+                    * Zone morte. Si la rotation est inférieure à MinRotation, elle est nulle. 
+                    */
                     float MinRotation = 0.1f;
                     if (Mathf.Abs(padRotation) < MinRotation)
                     {
@@ -153,12 +155,11 @@ public class CarController : MonoBehaviour
                 vitesse = thrust;// + Mathf.Abs(turnValue * turnStrength);
 
             }
-            // limit the message per second rate
-            limiter += 1;
-            limiter = limiter % 6;
-            // if the player moved, send his new position
-            if (/*isLocalPlayer && */limiter == 0/* && vitesse != 0*/)
-            {
+
+
+            // if the period is passed, sends his position
+            if (Time.time > nextAction) {
+                nextAction = Time.time + periodAction;
                 updatePlayerPosition();
             }
         }

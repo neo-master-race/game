@@ -35,17 +35,10 @@ class Network : MonoBehaviour {
   GameObject car4Prefab;
  public
   Material otherPlayerMat;
- private
-  int fps = 30;
 
   [Header("User Log Informations")] public String username;
  public
   String password;
-
-  void Awake() {
-    QualitySettings.vSyncCount = 0;
-    Application.targetFrameRate = fps;
-  }
 
   // Use this for initialization
  private
@@ -55,7 +48,6 @@ class Network : MonoBehaviour {
 
     players = new Hashtable();
     clientName = "Invité-" + new System.Random().Next(1, 65536);
-    Debug.Log("network started");
 
     string host = "pi-2.ludovic-muller.fr";
     Int32 port = 4242;
@@ -65,14 +57,13 @@ class Network : MonoBehaviour {
       stream = socket.GetStream();
       socketReady = true;
 
-      Debug.Log("socket is ready");
-
       sendMessage(new Protocol.Message{
           Type = "change_username",
           ChangeUsername = new Protocol.ChangeUsername{Username = clientName}});
 
       UpdatePlayerStatus();
     } catch (Exception e) {
+      socketReady = false;
       Debug.Log("socket error: " + e.Message);
     }
   }
@@ -80,8 +71,6 @@ class Network : MonoBehaviour {
   // Update is called once per frame
  private
   void Update() {
-    if (Application.targetFrameRate != fps)
-      Application.targetFrameRate = fps;
     if (socketReady) {
       while (stream.DataAvailable) {
         onIncomingData();
@@ -246,22 +235,34 @@ class Network : MonoBehaviour {
         case 1:
           player =
               Instantiate(carPrefab, carsContainer.transform) as GameObject;
-          player.transform.Find("stratos").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
+          player.transform.Find("stratos")
+              .transform.GetChild(0)
+              .GetComponent<MeshRenderer>()
+              .material = currPlayerMat;
           break;
         case 2:
           player =
               Instantiate(car2Prefab, carsContainer.transform) as GameObject;
-          player.transform.Find("porsche").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
+          player.transform.Find("porsche")
+              .transform.GetChild(0)
+              .GetComponent<MeshRenderer>()
+              .material = currPlayerMat;
           break;
         case 3:
           player =
               Instantiate(car3Prefab, carsContainer.transform) as GameObject;
-          player.transform.Find("lamborghini").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
+          player.transform.Find("lamborghini")
+              .transform.GetChild(0)
+              .GetComponent<MeshRenderer>()
+              .material = currPlayerMat;
           break;
         case 4:
           player =
               Instantiate(car4Prefab, carsContainer.transform) as GameObject;
-          player.transform.Find("ford").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
+          player.transform.Find("ford")
+              .transform.GetChild(0)
+              .GetComponent<MeshRenderer>()
+              .material = currPlayerMat;
           break;
         default:
           player =
