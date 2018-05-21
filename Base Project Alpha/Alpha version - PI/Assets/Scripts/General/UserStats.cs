@@ -141,6 +141,53 @@ public class UserStats : MonoBehaviour {
         fordCursorY = car4cursorY;
 }
 
+    public void sendStats()
+    {
+        GameObject.Find("Network").GetComponent<Network>().sendUserStatsToDB(
+            raceNb,
+            raceVictory,
+            track1LapRecord,
+            track2LapRecord,
+            track3LapRecord,
+            Car1R,
+            Car1G,
+            Car1B,
+            Car2R,
+            Car2G,
+            Car2B,
+            Car3R,
+            Car3G,
+            Car3B,
+            Car4R,
+            Car4G,
+            Car4B,
+            stratosValueSlider,
+            stratosTopRR,
+            stratosTopRG,
+            stratosTopRB,
+            stratosCursorX,
+            stratosCursorY,
+            porscheValueSlider,
+            porscheTopRR,
+            porscheTopRG,
+            porscheTopRB,
+            porscheCursorX,
+            porscheCursorY,
+            lamborghiniValueSlider,
+            lamborghiniTopRR,
+            lamborghiniTopRG,
+            lamborghiniTopRB,
+            lamborghiniCursorX,
+            lamborghiniCursorY,
+            fordValueSlider,
+            fordTopRR,
+            fordTopRG,
+            fordTopRB,
+            fordCursorX,
+            fordCursorY
+            );
+    }
+
     // Update is called once per frame
     void Update () {
             

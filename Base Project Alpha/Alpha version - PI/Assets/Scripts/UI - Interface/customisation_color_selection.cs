@@ -362,6 +362,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX = stratosCursorX;
         //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY = stratosCursorY;
 
+        GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
+
         play_button.SetActive(true);
         customize_button.SetActive(true);
         profile_button.SetActive(true);
