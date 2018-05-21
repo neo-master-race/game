@@ -33,7 +33,7 @@ public class Checkpoints_Check : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Checkpoints_Check>().isStartFinishLine)
         {
-            if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && !car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
+            if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2" && !car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce)
             {
                 car.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce = true;
                 car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
@@ -41,7 +41,7 @@ public class Checkpoints_Check : MonoBehaviour
             }
             else
             {
-                if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
+                if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber
                     && car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
                 {
                     car.GetComponent<Player_Info_Ingame>().cp_count++;
@@ -53,7 +53,7 @@ public class Checkpoints_Check : MonoBehaviour
                     if (car.GetComponent<Player_Info_Ingame>().wentThrough[i] == true)
                         car.GetComponent<Player_Info_Ingame>().cp_count++;
                 }*/
-                if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
+                if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().cp_count == car.GetComponent<Player_Info_Ingame>().wentThrough.Length))
                 {
 
                     for (int i = 0; i < players.Length; i++)
@@ -81,7 +81,7 @@ public class Checkpoints_Check : MonoBehaviour
                             car.GetComponent<Player_Info_Ingame>().wentThrough[j] = false;
                         car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber = 1;
                         //GameObject.Find("Race_Control").GetComponent<player_info_server>().players_laps[0] = 5;
-                        if (car.name != "Front_Collider1" && car.name != "Front_Collider2")
+                        if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2")
                             car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = 1;
                     }
                 }
@@ -89,7 +89,7 @@ public class Checkpoints_Check : MonoBehaviour
         }
         else
         {
-            if (car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
+            if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
                 && car.GetComponent<Player_Info_Ingame>().nextCheckpointNumber == car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber))
             {
                 car.GetComponent<Player_Info_Ingame>().wentThrough[this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber - 1] = true;
@@ -97,7 +97,7 @@ public class Checkpoints_Check : MonoBehaviour
                 car.GetComponent<Player_Info_Ingame>().cp_count++;
                 car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
             }
-            else if(car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber != this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
+            else if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2" && (car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber != this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber
                 && car.GetComponent<Player_Info_Ingame>().secondLastHittedCP > car.GetComponent<Player_Info_Ingame>().lastHittedCP))
             {
                 car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber;
@@ -106,7 +106,7 @@ public class Checkpoints_Check : MonoBehaviour
             }
             else
             {
-                if (car.name != "Front_Collider1" && car.name != "Front_Collider2")
+                if (car.name != "frontColliderR" && car.name != "frontColliderL" && car.name != "frontColliderRight" && car.name != "frontColliderLeft" && car.name != "Front_Collider1" && car.name != "Front_Collider2")
                 {
                     car.GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber = this.gameObject.GetComponent<Checkpoints_Check>().checkpointNumber + 1;
                     car.GetComponent<Player_Info_Ingame>().secondLastHittedCP = car.GetComponent<Player_Info_Ingame>().lastHittedCP;

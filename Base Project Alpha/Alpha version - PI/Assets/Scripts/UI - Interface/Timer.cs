@@ -9,11 +9,8 @@ public class Timer : MonoBehaviour {
 
     public Text TimeObject;
     public Text TimeObjectBest;
-	public RectTransform dropObject;
-	public RectTransform dropObjectChild;
-	public float dropDistance;
-	public bool dropping=false;
-	private int dropSpeed=1;
+    public Text TimeObjectDelta;
+    public RectTransform dropObject;
 
     // Time Values
     private int[] currentSecLap=new int[4];
@@ -80,39 +77,6 @@ public class Timer : MonoBehaviour {
                     TimeObject.text = minStringLap[i] + ":" + secStringLap[i] + "." + milliSecStringLap[i];
             }
         }
-
-		Vector2 sD = dropObject.sizeDelta;
-		Vector2 Pos = dropObject.localPosition;
-		Vector2 childPos = dropObjectChild.localPosition;
-		if (dropping) {
-			if (dropObject.sizeDelta.y < dropDistance) {
-				dropObject.sizeDelta = new Vector2(sD.x, sD.y + dropSpeed);
-				dropObject.localPosition = new Vector2( Pos.x, Pos.y - dropSpeed);
-				if (childPos.y > -93f)
-					dropObjectChild.localPosition = new Vector2 (childPos.x, childPos.y - dropSpeed/2f);
-				else
-					dropObjectChild.localPosition = new Vector2 (childPos.x, -93f);
-			} 
-			else {
-				dropObject.sizeDelta = new Vector2(sD.x, dropDistance);
-				dropObject.localPosition = new Vector2( Pos.x, -76.6f);
-				dropObjectChild.localPosition = new Vector2 (childPos.x, -93f);
-			}
-		}
-		else {
-			if (dropObject.sizeDelta.y > 0){
-				dropObject.sizeDelta = new Vector2(sD.x, sD.y - dropSpeed);
-				dropObject.localPosition = new Vector2( Pos.x, Pos.y + dropSpeed);
-				Debug.Log (childPos.y);
-				if (childPos.y < 0)
-					dropObjectChild.localPosition = new Vector2 (childPos.x, childPos.y + dropSpeed/1.5f);
-			}
-			else {
-				dropObject.sizeDelta = new Vector2(sD.x, 0);
-				dropObject.localPosition = new Vector2( Pos.x, 173.4f);
-				dropObjectChild.localPosition = new Vector2 (childPos.x, 0);
-			}
-		}
     }
 
     string zeroDisplay(int toclock, int zeros)
@@ -133,10 +97,44 @@ public class Timer : MonoBehaviour {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));
             int bestLapMSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(6, 3));
+
             if(currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (currentSecLap[playerId]< bestlapSec))
             || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
             {
+                TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(0, 1, 0);
+                if ((bestLapMSec - currentMilliSecLap[playerId]) < 0)
+                {
+                    if ((bestlapSec - currentSecLap[playerId]) < 0)
+                        TimeObjectDelta.text = "- " + (bestLapMin - (1+currentMinLap[playerId])) + ":" + zeroDisplay(((59+bestlapSec) - currentSecLap[playerId]),2) + "." + zeroDisplay(((1000+bestLapMSec) - currentMilliSecLap[playerId]),3);
+                    else
+                        TimeObjectDelta.text = "- " + (bestLapMin - currentMinLap[playerId]) + ":" + zeroDisplay(((-1+bestlapSec) - currentSecLap[playerId]),2) + "." + zeroDisplay(((1000+bestLapMSec) - currentMilliSecLap[playerId]),3);
+                }
+                else
+                {
+                    if ((bestlapSec - currentSecLap[playerId]) < 0)
+                        TimeObjectDelta.text = "- " + (bestLapMin - (1+currentMinLap[playerId])) + ":" + zeroDisplay(((60 + bestlapSec) - currentSecLap[playerId]), 2) + "." + zeroDisplay((bestLapMSec - currentMilliSecLap[playerId]), 3);
+                    else
+                        TimeObjectDelta.text = "- " + (bestLapMin - currentMinLap[playerId]) + ":" + zeroDisplay((bestlapSec - currentSecLap[playerId]), 2) + "." + zeroDisplay((bestLapMSec - currentMilliSecLap[playerId]), 3);
+                }
                 GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId]= zeroDisplay(currentMinLap[playerId], 2) + ":" + zeroDisplay(currentSecLap[playerId], 2) + ":" + zeroDisplay(currentMilliSecLap[playerId], 3);
+            }
+            else
+            {
+                TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(1, 0, 0);
+                if ((currentMilliSecLap[playerId]-bestLapMSec) < 0)
+                {
+                    if ((currentSecLap[playerId]-bestlapSec) < 0)
+                        TimeObjectDelta.text = "+ " + (currentMinLap[playerId] - (1+bestLapMin)) + ":" + zeroDisplay(((59 + currentSecLap[playerId]) - bestlapSec), 2) + "." + zeroDisplay(((1000 + currentMilliSecLap[playerId]) - bestLapMSec), 3);
+                    else
+                        TimeObjectDelta.text = "+ " + (currentMinLap[playerId] - bestLapMin) + ":" + zeroDisplay(((-1 + currentSecLap[playerId]) - bestlapSec), 2) + "." + zeroDisplay(((1000 + currentMilliSecLap[playerId]) - bestLapMSec), 3);
+                }
+                else
+                {
+                    if ((currentSecLap[playerId] - bestlapSec) < 0)
+                        TimeObjectDelta.text = "+ " + (currentMinLap[playerId] -(1+bestLapMin)) + ":" + zeroDisplay(((60 + currentSecLap[playerId]) - bestlapSec), 2) + "." + zeroDisplay((currentMilliSecLap[playerId] - bestLapMSec), 3);
+                    else
+                        TimeObjectDelta.text = "+ " + (currentMinLap[playerId] - bestLapMin) + ":" + zeroDisplay((currentSecLap[playerId] - bestlapSec), 2) + "." + zeroDisplay((currentMilliSecLap[playerId] - bestLapMSec), 3);
+                }
             }
             //Debug.Log(bestLapMin + ":" + bestlapSec + ":" + bestLapMSec);
             //Debug.Log(currentMinLap[playerId] + ":" + currentSecLap[playerId] + ":" + currentMilliSecLap[playerId]);
@@ -158,7 +156,24 @@ public class Timer : MonoBehaviour {
         GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerGlobalTimes[playerId] = zeroDisplay(currentMinGlobal[playerId], 2) + ":" + zeroDisplay(currentSecGlobal[playerId], 2) + ":" + zeroDisplay(currentMilliSecGlobal[playerId], 3);
     }
 
-	public void DisplayDuration (){
-		dropping = true;
-	}
+	public IEnumerator dropDownDelta (){
+        Vector2 targetpos = new Vector2(dropObject.offsetMin.x, -100);
+        while(dropObject.offsetMin.y>-50)
+        { 
+            dropObject.offsetMin = Vector2.Lerp(dropObject.offsetMin, targetpos,2f*Time.deltaTime);
+            yield return null;
+        }
+
+    }
+
+    public IEnumerator sendBackDelta()
+    {
+        Vector2 targetpos = new Vector2(dropObject.offsetMin.x, 50);
+        while (dropObject.offsetMin.y < 0)
+        {
+            dropObject.offsetMin = Vector2.Lerp(dropObject.offsetMin, targetpos,2f* Time.deltaTime);
+            yield return null;
+        }
+
+    }
 }
