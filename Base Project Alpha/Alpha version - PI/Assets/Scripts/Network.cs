@@ -117,7 +117,6 @@ class Network : MonoBehaviour {
 
  public
   void login() {
-    Debug.Log("call to login function");
     if (username == "" || password == "") {
       GameObject.Find("LogRegForm")
           .GetComponent<log_reg_form>()
@@ -136,7 +135,6 @@ class Network : MonoBehaviour {
 
  public
   void register() {
-    Debug.Log("call to register function");
     if (username == "" || password == "") {
       GameObject.Find("LogRegForm")
           .GetComponent<log_reg_form>()
@@ -335,7 +333,6 @@ class Network : MonoBehaviour {
 
         player = getPlayer(user, 0, 0, 0, 0);
 
-        Debug.Log("Got status response from " + user);
         player.GetComponent<Player_Info_Ingame>().lap_count = lapCount;
         player.GetComponent<Player_Info_Ingame>().hasHitSFLineOnce =
             hasHitSFLineOnce;
@@ -354,8 +351,6 @@ class Network : MonoBehaviour {
         break;
       case "update_player_status_request":
         GameObject[] cars = GameObject.FindGameObjectsWithTag("Player");
-
-        Debug.Log("Got request");
 
         foreach (GameObject car in cars) {
           if (car.GetComponent<CarController>().isLocalPlayer) {
@@ -398,7 +393,6 @@ class Network : MonoBehaviour {
               .GetComponent<log_reg_form>()
               .RegisterSuccess();
           clientName = registredUsername;
-          Debug.Log("Sucessfully registred as " + clientName);
         } else {
           Debug.Log("Error while trying to register as " + registredUsername);
           GameObject.Find("LogRegForm")
@@ -418,7 +412,6 @@ class Network : MonoBehaviour {
               .GetComponent<log_reg_form>()
               .LogInSuccess();
           clientName = loggedUsername;
-          Debug.Log("Sucessfully logged in as " + clientName);
         } else {
           Debug.Log("Error while trying to log in as " + loggedUsername);
           GameObject.Find("LogRegForm")
@@ -464,7 +457,6 @@ class Network : MonoBehaviour {
                                rliStartingPositions);
         }
 
-        Debug.Log("Got response and created all rooms");
         break;
       case "join_room_response":
         Protocol.JoinRoomResponse jrr = parsedData.JoinRoomResponse;
