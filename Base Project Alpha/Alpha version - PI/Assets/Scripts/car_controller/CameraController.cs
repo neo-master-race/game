@@ -20,6 +20,14 @@ public class CameraController : MonoBehaviour
     public bool followBehind = true;
     public float rotationDamping = 10.0f;
 
+    private void Start()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Destroy(GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>()); 
+        }
+    }
+
     void Update()
     {
         if(useAdvancedCamera)
