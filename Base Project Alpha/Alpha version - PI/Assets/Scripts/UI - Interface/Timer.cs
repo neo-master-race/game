@@ -163,7 +163,7 @@ public class Timer : MonoBehaviour {
             dropObject.offsetMin = Vector2.Lerp(dropObject.offsetMin, targetpos,2f*Time.deltaTime);
             yield return null;
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(sendBackDelta());
 
     }
