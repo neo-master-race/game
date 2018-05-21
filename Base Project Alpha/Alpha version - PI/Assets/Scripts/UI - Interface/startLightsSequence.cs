@@ -20,7 +20,7 @@ public class startLightsSequence : MonoBehaviour {
         {
             if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
-                player.GetComponent<CarController>().enabled = false;
+                player.GetComponent<CarController>().canDrive = false;
                 localPlayer = player;
             }
         }
@@ -53,6 +53,7 @@ public class startLightsSequence : MonoBehaviour {
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[1] = true;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[2] = true;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[3] = true;
+                localPlayer.GetComponent<CarController>().canDrive = true;
             }
             if (lightSequenceStep == 7)
             {
