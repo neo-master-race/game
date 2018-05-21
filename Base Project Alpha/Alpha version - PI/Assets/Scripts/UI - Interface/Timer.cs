@@ -9,6 +9,12 @@ public class Timer : MonoBehaviour {
 
     public Text TimeObject;
     public Text TimeObjectBest;
+	public RectTransform dropObject;
+	public RectTransform dropObjectChild;
+	public float dropTime;
+	public float dropDistance;
+	public bool dropping=false;
+	private int dropSpeed=1;
 
     // Time Values
     private int[] currentSecLap=new int[4];
@@ -75,6 +81,39 @@ public class Timer : MonoBehaviour {
                     TimeObject.text = minStringLap[i] + ":" + secStringLap[i] + "." + milliSecStringLap[i];
             }
         }
+
+		Vector2 sD = dropObject.sizeDelta;
+		Vector2 Pos = dropObject.localPosition;
+		Vector2 childPos = dropObjectChild.localPosition;
+		if (dropping) {
+			if (dropObject.sizeDelta.y < dropDistance) {
+				dropObject.sizeDelta = new Vector2(sD.x, sD.y + dropSpeed);
+				dropObject.localPosition = new Vector2( Pos.x, Pos.y - dropSpeed);
+				if (childPos.y > -93f)
+					dropObjectChild.localPosition = new Vector2 (childPos.x, childPos.y - dropSpeed/2f);
+				else
+					dropObjectChild.localPosition = new Vector2 (childPos.x, -93f);
+			} 
+			else {
+				dropObject.sizeDelta = new Vector2(sD.x, dropDistance);
+				dropObject.localPosition = new Vector2( Pos.x, -76.6f);
+				dropObjectChild.localPosition = new Vector2 (childPos.x, -93f);
+			}
+		}
+		else {
+			if (dropObject.sizeDelta.y > 0){
+				dropObject.sizeDelta = new Vector2(sD.x, sD.y - dropSpeed);
+				dropObject.localPosition = new Vector2( Pos.x, Pos.y + dropSpeed);
+				Debug.Log (childPos.y);
+				if (childPos.y < 0)
+					dropObjectChild.localPosition = new Vector2 (childPos.x, childPos.y + dropSpeed/1.5f);
+			}
+			else {
+				dropObject.sizeDelta = new Vector2(sD.x, 0);
+				dropObject.localPosition = new Vector2( Pos.x, 173.4f);
+				dropObjectChild.localPosition = new Vector2 (childPos.x, 0);
+			}
+		}
     }
 
     string zeroDisplay(int toclock, int zeros)
@@ -120,4 +159,7 @@ public class Timer : MonoBehaviour {
         GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerGlobalTimes[playerId] = zeroDisplay(currentMinGlobal[playerId], 2) + ":" + zeroDisplay(currentSecGlobal[playerId], 2) + ":" + zeroDisplay(currentMilliSecGlobal[playerId], 3);
     }
 
+	public void DisplayDuration (){
+		dropping = true;
+	}
 }
