@@ -8,6 +8,7 @@ public class UserHoverTag : MonoBehaviour {
     public Text username;
     public GameObject localPlayer;
 
+
 	// Use this for initialization
 	void Start () {
         username.text =
@@ -39,7 +40,7 @@ public class UserHoverTag : MonoBehaviour {
         }*/
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            if (!player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
                 player.transform.Find("userName/userNameTexture/userNamePosition").GetComponent<Text>().enabled = false;
                 player.transform.Find("userName/userNameTexture/userNameText").GetComponent<Text>().enabled = false;
