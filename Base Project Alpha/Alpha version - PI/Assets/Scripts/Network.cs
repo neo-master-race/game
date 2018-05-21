@@ -33,6 +33,8 @@ class Network : MonoBehaviour {
   GameObject car3Prefab;
  public
   GameObject car4Prefab;
+ public
+  Material otherPlayerMat;
  private
   int fps = 30;
 
@@ -238,22 +240,28 @@ class Network : MonoBehaviour {
   GameObject getPlayer(string clientName, int cType, int cR, int cG, int cB) {
     GameObject player;
     if (!players.ContainsKey(clientName)) {
+      Material currPlayerMat = new Material(otherPlayerMat);
+      currPlayerMat.color = new Color32((byte)cR, (byte)cG, (byte)cB, 255);
       switch (cType) {
         case 1:
           player =
               Instantiate(carPrefab, carsContainer.transform) as GameObject;
+          player.transform.Find("stratos").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
           break;
         case 2:
           player =
               Instantiate(car2Prefab, carsContainer.transform) as GameObject;
+          player.transform.Find("porsche").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
           break;
         case 3:
           player =
               Instantiate(car3Prefab, carsContainer.transform) as GameObject;
+          player.transform.Find("lamborghini").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
           break;
         case 4:
           player =
               Instantiate(car4Prefab, carsContainer.transform) as GameObject;
+          player.transform.Find("ford").transform.GetChild(0).GetComponent<MeshRenderer>().material = currPlayerMat;
           break;
         default:
           player =
