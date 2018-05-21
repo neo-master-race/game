@@ -451,7 +451,8 @@ class Network : MonoBehaviour {
               .GetComponent<room_info_container>()
               .addOrUpdateRoom(rli.Id, rli.RoomType, rli.IdCircuit,
                                rli.MaxPlayers, rli.NbPlayers, playersUsername,
-                               playersNbRaces, playersNbWins, playersRecord, rliStartingPositions);
+                               playersNbRaces, playersNbWins, playersRecord,
+                               rliStartingPositions);
         }
 
         Debug.Log("Got response and created all rooms");
@@ -683,47 +684,29 @@ class Network : MonoBehaviour {
     sendMessage(new Protocol.Message{
         Type = "set_user_stats",
         SetUserStats = new Protocol.SetUserStats{
-            UserStats = new Protocol.UserStats{Race = race,
-                                               Victory = victory,
-                                               Recordt1 = recordt1,
-                                               Recordt2 = recordt2,
-                                               Recordt3 = recordt3,
-                                               Car1Red = car1red,
-                                               Car1Green = car1green,
-                                               Car1Blue = car1blue,
-                                               Car2Red = car2red,
-                                               Car2Green = car2green,
-                                               Car2Blue = car2blue,
-                                               Car3Red = car3red,
-                                               Car3Green = car3green,
-                                               Car3Blue = car3blue,
-                                               Car4Red = car4red,
-                                               Car4Green = car4green,
-                                               Car4Blue = car4blue,
-                                               Car1Slider = car1slider,
-                                               Car1RedTR = car1redTR,
-                                               Car1GreenTR = car1greenTR,
-                                               Car1BlueTR = car1blueTR,
-                                               Car1CursorX = car1cursorX,
-                                               Car1CursorY = car1cursorY,
-                                               Car2Slider = car2slider,
-                                               Car2RedTR = car2redTR,
-                                               Car2GreenTR = car2greenTR,
-                                               Car2BlueTR = car2blueTR,
-                                               Car2CursorX = car2cursorX,
-                                               Car2CursorY = car2cursorY,
-                                               Car3Slider = car3slider,
-                                               Car3RedTR = car3redTR,
-                                               Car3GreenTR = car3greenTR,
-                                               Car3BlueTR = car3blueTR,
-                                               Car3CursorX = car3cursorX,
-                                               Car3CursorY = car3cursorY,
-                                               Car4Slider = car4slider,
-                                               Car4RedTR = car4redTR,
-                                               Car4GreenTR = car4greenTR,
-                                               Car4BlueTR = car4blueTR,
-                                               Car4CursorX = car4cursorX,
-                                               Car4CursorY = car4cursorY}
+            UserStats =
+                new Protocol.UserStats{
+                    Username = clientName,     Race = race,
+                    Victory = victory,         Recordt1 = recordt1,
+                    Recordt2 = recordt2,       Recordt3 = recordt3,
+                    Car1Red = car1red,         Car1Green = car1green,
+                    Car1Blue = car1blue,       Car2Red = car2red,
+                    Car2Green = car2green,     Car2Blue = car2blue,
+                    Car3Red = car3red,         Car3Green = car3green,
+                    Car3Blue = car3blue,       Car4Red = car4red,
+                    Car4Green = car4green,     Car4Blue = car4blue,
+                    Car1Slider = car1slider,   Car1RedTR = car1redTR,
+                    Car1GreenTR = car1greenTR, Car1BlueTR = car1blueTR,
+                    Car1CursorX = car1cursorX, Car1CursorY = car1cursorY,
+                    Car2Slider = car2slider,   Car2RedTR = car2redTR,
+                    Car2GreenTR = car2greenTR, Car2BlueTR = car2blueTR,
+                    Car2CursorX = car2cursorX, Car2CursorY = car2cursorY,
+                    Car3Slider = car3slider,   Car3RedTR = car3redTR,
+                    Car3GreenTR = car3greenTR, Car3BlueTR = car3blueTR,
+                    Car3CursorX = car3cursorX, Car3CursorY = car3cursorY,
+                    Car4Slider = car4slider,   Car4RedTR = car4redTR,
+                    Car4GreenTR = car4greenTR, Car4BlueTR = car4blueTR,
+                    Car4CursorX = car4cursorX, Car4CursorY = car4cursorY}
 
         }});
   }
