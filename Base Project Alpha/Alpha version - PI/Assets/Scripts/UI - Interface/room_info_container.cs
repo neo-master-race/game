@@ -22,6 +22,7 @@ public class Room
     public int[] playersRaceNb;
     public int[] playersRaceWin;
     public string[] playersRaceRecord;
+    public int[] startingPositions;
 }
 
 public class room_info_container : MonoBehaviour {
@@ -82,7 +83,7 @@ public class room_info_container : MonoBehaviour {
     public Texture fordImage;
 
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
-        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
+        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record, int[] startingPositions)
     {
 
         Room currRoom = new Room();
@@ -122,7 +123,8 @@ public class room_info_container : MonoBehaviour {
         currRoom.playersRaceNb = players_nb_races;
         currRoom.playersRaceWin = players_nb_wins;
         currRoom.playersRaceRecord = players_record;
-
+        currRoom.startingPositions = new int[max_players];
+        currRoom.startingPositions = startingPositions;
 
         rooms.Add(currRoom);
 
@@ -133,7 +135,7 @@ public class room_info_container : MonoBehaviour {
     }
 
     public void addOrUpdateRoom(string id, int room_type, int id_circuit, int max_players, int nb_players,
-        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record)
+        string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record, int[] startingPositions)
     {
         bool found = false;
 
@@ -179,10 +181,9 @@ public class room_info_container : MonoBehaviour {
                 break;
             }
         }
-
         if (!found)
         {
-            roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record);
+            roomConstructor(id, room_type, id_circuit, max_players, nb_players, players_username, players_nb_races, players_nb_wins, players_record,startingPositions);
         }
 
         if(GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby)
@@ -304,6 +305,9 @@ public class room_info_container : MonoBehaviour {
                             currentPlayer.SetActive(false);
                         }
                     }
+                    rooms[j].startingPositions = new int[rooms[j].MaximumPlayersNb];
+                    rooms[j].startingPositions = startingPositions;
+                    
                 }
             }
         }

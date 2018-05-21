@@ -451,7 +451,7 @@ class Network : MonoBehaviour {
               .GetComponent<room_info_container>()
               .addOrUpdateRoom(rli.Id, rli.RoomType, rli.IdCircuit,
                                rli.MaxPlayers, rli.NbPlayers, playersUsername,
-                               playersNbRaces, playersNbWins, playersRecord);
+                               playersNbRaces, playersNbWins, playersRecord, rliStartingPositions);
         }
 
         Debug.Log("Got response and created all rooms");
