@@ -101,7 +101,7 @@ public class Timer : MonoBehaviour {
             if(currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (currentSecLap[playerId]< bestlapSec))
             || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
             {
-                TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(0, 1, 0);
+                TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(0, 0.65f, 0);
                 if ((bestLapMSec - currentMilliSecLap[playerId]) < 0)
                 {
                     if ((bestlapSec - currentSecLap[playerId]) < 0)
