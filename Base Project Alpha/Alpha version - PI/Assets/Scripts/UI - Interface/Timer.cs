@@ -97,7 +97,7 @@ public class Timer : MonoBehaviour {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));
             int bestLapMSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(6, 3));
-
+            StartCoroutine(dropDownDelta());
             if(currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (currentSecLap[playerId]< bestlapSec))
             || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
             {
@@ -163,6 +163,8 @@ public class Timer : MonoBehaviour {
             dropObject.offsetMin = Vector2.Lerp(dropObject.offsetMin, targetpos,2f*Time.deltaTime);
             yield return null;
         }
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(sendBackDelta());
 
     }
 
