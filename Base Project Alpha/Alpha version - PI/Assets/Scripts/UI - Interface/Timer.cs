@@ -11,7 +11,6 @@ public class Timer : MonoBehaviour {
     public Text TimeObjectBest;
 	public RectTransform dropObject;
 	public RectTransform dropObjectChild;
-	public float dropTime;
 	public float dropDistance;
 	public bool dropping=false;
 	private int dropSpeed=1;
