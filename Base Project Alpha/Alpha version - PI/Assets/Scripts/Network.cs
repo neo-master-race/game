@@ -369,18 +369,18 @@ class Network : MonoBehaviour {
         Destroy(getPlayer(user, 0, 0, 0, 0));
         players.Remove(user);
         break;
-      case "starting_position":
-        Protocol.StartingPosition sp = parsedData.StartingPosition;
-        IEnumerator<int> numInt = sp.Position.GetEnumerator();
-        List<int> listInt = new List<int>();
-        while (numInt.MoveNext()) {
-          listInt.Add(numInt.Current);
-        }
-        int[] positions = listInt.ToArray();
+      // case "starting_position":
+      //   Protocol.StartingPosition sp = parsedData.StartingPosition;
+      //   IEnumerator<int> numInt = sp.Position.GetEnumerator();
+      //   List<int> listInt = new List<int>();
+      //   while (numInt.MoveNext()) {
+      //     listInt.Add(numInt.Current);
+      //   }
+      //   int[] positions = listInt.ToArray();
 
-        // @TODO: do something with positions
+      //   // @TODO: do something with positions
 
-        break;
+      //   break;
       case "register_response":
         Protocol.RegisterResponse registerResponse =
             parsedData.RegisterResponse;
@@ -482,12 +482,13 @@ class Network : MonoBehaviour {
           int[] playersNbWins = playersNbWinsList.ToArray();
           string[] playersRecord = playersRecordList.ToArray();
 
-          List<int> rlitemStartingPositionsList = new List<int>();
-          IEnumerator<int> nSP = rlitem.StartingPositions.GetEnumerator();
-          while (nSP.MoveNext()) {
-            rlitemStartingPositionsList.Add(nSP.Current);
-          }
-          int[] rlitemStartingPositions = rlitemStartingPositionsList.ToArray();
+          // List<int> rlitemStartingPositionsList = new List<int>();
+          // IEnumerator<int> nSP = rlitem.StartingPositions.GetEnumerator();
+          // while (nSP.MoveNext()) {
+          //   rlitemStartingPositionsList.Add(nSP.Current);
+          // }
+          // int[] rlitemStartingPositions =
+          // rlitemStartingPositionsList.ToArray();
 
           GameObject.Find("Rooms_Script")
               .GetComponent<room_info_container>()
