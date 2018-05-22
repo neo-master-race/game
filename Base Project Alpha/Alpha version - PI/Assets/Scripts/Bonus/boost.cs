@@ -9,6 +9,7 @@ public class boost : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("ah");
         if (other.tag =="Player" )
         {
             CarController playerController=other.GetComponent<CarController>();
