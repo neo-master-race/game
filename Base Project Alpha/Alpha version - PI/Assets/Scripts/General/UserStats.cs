@@ -10,6 +10,7 @@ public class UserStats : MonoBehaviour {
     public bool isOnLobby = false;
     public string inLobby;
     public int onTrackNb = 0;
+    public bool playingSolo = false;
 
     [Header("User Global Stats")]
     public int raceNb;
@@ -70,6 +71,11 @@ public class UserStats : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void setsolo ()
+    {
+        playingSolo = true;
     }
 
     public void isGuest()

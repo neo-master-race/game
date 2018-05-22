@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaceInformations : MonoBehaviour {
 
@@ -17,12 +18,14 @@ public class RaceInformations : MonoBehaviour {
     public string[] playerBestLapTimes= { "--:--.---", "--:--.---", "--:--.---", "--:--.---" };
 
     [Header("final leaderboard")]
-    public GameObject endScreen;
+    public GameObject endScreenSolo;
+    public GameObject endScreenMulti;
     public GameObject timeUI;
     public GameObject lapUI;
     public GameObject positionUI;
     public GameObject controlUI;
     public GameObject leaderboardUI;
+    public bool hasFinished = false;
 
 
     private int i = 0;
@@ -36,15 +39,30 @@ public class RaceInformations : MonoBehaviour {
         playerLapCount = new int[4];
     }
 
+    public void setSoloScreen ()
+    {
+        endScreenSolo.SetActive(true);
+    }
+
+    public void setMultiScreen()
+    {
+        endScreenMulti.SetActive(true);
+    }
+
     public IEnumerator showEndScreen()
     {
+        hasFinished = true;
         yield return new WaitForSeconds(5f);
         timeUI.SetActive(false);
         lapUI.SetActive(false);
         positionUI.SetActive(false);
         controlUI.SetActive(false);
         leaderboardUI.SetActive(false);
-        endScreen.SetActive(true);
+        GameObject.Find("EndScreen").GetComponent<RawImage>().enabled = true;
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
+            setSoloScreen();
+        else
+            setMultiScreen();
     }
 
     // Update is called once per frame

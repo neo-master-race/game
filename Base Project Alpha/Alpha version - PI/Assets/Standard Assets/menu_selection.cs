@@ -445,7 +445,6 @@ public class menu_selection : MonoBehaviour {
             case "ConfirmCar":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 6;
                 carSelection.SetActive(false);
-
                 int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
                 SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
 				if (nbTrack == 1)
