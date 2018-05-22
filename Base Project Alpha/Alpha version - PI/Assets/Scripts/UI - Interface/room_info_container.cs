@@ -615,18 +615,23 @@ public class room_info_container : MonoBehaviour {
         else if (carIndex == 3)
         {
             carSelectLeftArrow.SetActive(true);
-            carSelectRightArrow.SetActive(false);
+            carSelectRightArrow.SetActive(true);
             carName.text = "Lamborghini";
             carImage.texture = lamboImage;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car3R;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car3G;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car3B;
         }
-        /*else if(carIndex==4)
+        else if(carIndex==4)
         {
-            carSelectLeftArrow.SetActive(false);
-            carImage.texture = stratosImage;
-        }*/
+            carSelectLeftArrow.SetActive(true);
+            carSelectRightArrow.SetActive(false);
+            carName.text = "Ford";
+            carImage.texture = fordImage;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car4R;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car4G;
+            GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car4B;
+        }
     }
 
     public void hittedArrow(GameObject arrow)
