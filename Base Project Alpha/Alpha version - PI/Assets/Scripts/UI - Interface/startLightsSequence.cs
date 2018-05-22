@@ -53,6 +53,7 @@ public class startLightsSequence : MonoBehaviour {
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[1] = true;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[2] = true;
                 GameObject.Find("TimeCounter").GetComponent<Timer>().timerOn[3] = true;
+                localPlayer.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
                 localPlayer.GetComponent<CarController>().canDrive = true;
             }
             if (lightSequenceStep == 7)
