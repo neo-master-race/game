@@ -22,8 +22,28 @@ public class log_reg_form : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().isBack)
+        {
+            GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
+            login_button.SetActive(false);
+            register_button.SetActive(false);
+            play_as_guest_button.SetActive(false);
+
+            backButton.SetActive(true);
+            backMenuButton.SetActive(true);
+            solo_button.SetActive(true);
+            multi_button.SetActive(true);
+
+            GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
+        }
+
+    }
+
+    public void setTrack(GameObject track)
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = track.GetComponent<track_selection_form>().nbTrack;
+        GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = track.GetComponent<track_selection_form>().nbLaps;
+    }
 
     public IEnumerator go_to_menu(String message, bool is_guest)
     {

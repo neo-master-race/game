@@ -40,11 +40,22 @@ class Network : MonoBehaviour {
  public
   String password;
 
-  // Use this for initialization
+
+ private static Network playerInstance;
+
+    // Use this for initialization
  private
   void Start() {
     DontDestroyOnLoad(this.gameObject);
-    carsContainer = GameObject.Find("Cars");
+        if (playerInstance == null)
+        {
+            playerInstance = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
+        carsContainer = GameObject.Find("Cars");
 
     players = new Hashtable();
     clientName = "Invité-" + new System.Random().Next(1, 65536);

@@ -128,7 +128,6 @@ public class RaceInformations : MonoBehaviour {
 
     public void setSoloScreen ()
     {
-        Debug.Log("ah");
         endScreenSolo.SetActive(true);
         string record = "";
         if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)

@@ -68,7 +68,6 @@ public class menu_selection : MonoBehaviour {
 	public GameObject noncustomBackground;
 
 
-
     //Schneberger Maxime
     //Quand le pointeur de la souris entre dans un object possédant un event trigger lié avec ce script
     public void OnPointer_Enter () {

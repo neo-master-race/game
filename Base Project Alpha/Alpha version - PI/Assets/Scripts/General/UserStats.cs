@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserStats : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class UserStats : MonoBehaviour {
     public int currentCarR;
     public int currentCarG;
     public int currentCarB;
+    public bool isBack = false;
 
     [Header("User Cars")]
     public int Car1R;
@@ -69,9 +71,33 @@ public class UserStats : MonoBehaviour {
     public float fordCursorX;
     public float fordCursorY;
 
+
+
+    private static UserStats playerInstance;
+
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
+        if (playerInstance == null)
+        {
+            playerInstance = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
+    }
+
+    public void gobacktomenu ()
+    {
+        SceneManager.LoadScene("entryScene", LoadSceneMode.Single);
+        isBack = true;
+        isOnRoomList = false;
+        isOnLobby = false;
+        inLobby=null;
+        onTrackNb = 0;
+        playingSolo = false;
+        trackLapNumber = 0;
     }
 
     public void setsolo ()
@@ -82,12 +108,6 @@ public class UserStats : MonoBehaviour {
     public void isGuest()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
-    }
-
-    public void setTrack(GameObject track)
-    {
-        onTrackNb = track.GetComponent<track_selection_form>().nbTrack;
-        trackLapNumber = track.GetComponent<track_selection_form>().nbLaps;
     }
 
     public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3,
