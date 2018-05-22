@@ -66,7 +66,7 @@ public class RaceInformations : MonoBehaviour {
         }
 
         bool everybodyHasFinished = true;
-        for(int j=0;j<=players.Length;j++)
+        for(int j=0;j<players.Length;j++)
         {
             if (playerGlobalTimes[j] == "--:--.---")
                 everybodyHasFinished = false;
