@@ -11,6 +11,7 @@ public class UserStats : MonoBehaviour {
     public string inLobby;
     public int onTrackNb = 0;
     public bool playingSolo = false;
+    public int trackLapNumber = 0;
 
     [Header("User Global Stats")]
     public int raceNb;
@@ -86,6 +87,7 @@ public class UserStats : MonoBehaviour {
     public void setTrack(GameObject track)
     {
         onTrackNb = track.GetComponent<track_selection_form>().nbTrack;
+        trackLapNumber = track.GetComponent<track_selection_form>().nbLaps;
     }
 
     public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3,

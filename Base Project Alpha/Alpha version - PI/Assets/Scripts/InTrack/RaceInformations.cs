@@ -85,7 +85,7 @@ public class RaceInformations : MonoBehaviour {
         }
         else
         {
-            if ((bestLapMSec - bestLapMSec) < 0)
+            if ((LapMSec - bestLapMSec) < 0)
             {
                 if ((lapSec - bestlapSec) < 0)
                     return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((59 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + LapMSec) - bestLapMSec), 3);
