@@ -31,6 +31,7 @@ public class RaceInformations : MonoBehaviour {
     public GameObject lap4;
     public GameObject lap5;
     public bool hasFinished = false;
+    private bool onlyOnce = true;
 
 
     private int i = 0;
@@ -122,6 +123,7 @@ public class RaceInformations : MonoBehaviour {
 
     public void setSoloScreen ()
     {
+        Debug.Log("ah");
         endScreenSolo.SetActive(true);
         string record = "";
         if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
@@ -130,13 +132,13 @@ public class RaceInformations : MonoBehaviour {
             record = GameObject.Find("UserStats").GetComponent<UserStats>().track2LapRecord;
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
             record = GameObject.Find("UserStats").GetComponent<UserStats>().track3LapRecord;
-        if (raceLapNumber==1)
+        if (raceLapNumber == 1)
         {
             lap1.SetActive(true);
             lap1.transform.Find("Lap1Time").GetComponent<Text>().text = playerLapTimes[0];
-            lap1.transform.Find("Lap1Delta").GetComponent<Text>().text = getDelta(playerLapTimes[0],record);
+            lap1.transform.Find("Lap1Delta").GetComponent<Text>().text = getDelta(playerLapTimes[0], record);
         }
-        else if(raceLapNumber == 2)
+        else if (raceLapNumber == 2)
         {
             lap2.SetActive(true);
             lap2.transform.Find("Lap1Time").GetComponent<Text>().text = playerLapTimes[0];
@@ -144,7 +146,7 @@ public class RaceInformations : MonoBehaviour {
             lap2.transform.Find("Lap2Time").GetComponent<Text>().text = playerLapTimes[1];
             lap2.transform.Find("Lap2Delta").GetComponent<Text>().text = getDelta(playerLapTimes[1], record);
         }
-        else if(raceLapNumber == 3)
+        else if (raceLapNumber == 3)
         {
             lap3.SetActive(true);
             lap3.transform.Find("Lap1Time").GetComponent<Text>().text = playerLapTimes[0];
@@ -154,7 +156,7 @@ public class RaceInformations : MonoBehaviour {
             lap3.transform.Find("Lap3Time").GetComponent<Text>().text = playerLapTimes[2];
             lap3.transform.Find("Lap3Delta").GetComponent<Text>().text = getDelta(playerLapTimes[2], record);
         }
-        else if(raceLapNumber == 4)
+        else if (raceLapNumber == 4)
         {
             lap4.SetActive(true);
             lap4.transform.Find("Lap1Time").GetComponent<Text>().text = playerLapTimes[0];
@@ -166,7 +168,7 @@ public class RaceInformations : MonoBehaviour {
             lap4.transform.Find("Lap4Time").GetComponent<Text>().text = playerLapTimes[3];
             lap4.transform.Find("Lap4Delta").GetComponent<Text>().text = getDelta(playerLapTimes[3], record);
         }
-        else if(raceLapNumber == 5)
+        else if (raceLapNumber == 5)
         {
             lap5.SetActive(true);
             lap5.transform.Find("Lap1Time").GetComponent<Text>().text = playerLapTimes[0];
@@ -249,7 +251,11 @@ public class RaceInformations : MonoBehaviour {
             if (playerGlobalTimes[j] == "--:--.---")
                 everybodyHasFinished = false;
         }
-        if (everybodyHasFinished)
+        if (everybodyHasFinished && onlyOnce)
+        {
+            onlyOnce = false;
             StartCoroutine(showEndScreen());
+        }
+            
     }
 }
