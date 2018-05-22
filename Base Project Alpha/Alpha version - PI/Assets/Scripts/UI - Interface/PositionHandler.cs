@@ -14,10 +14,12 @@ public class PositionHandler : MonoBehaviour {
     public int playerPosition;
     public int totalPlayers;
 
+    public GameObject positionparent;
+
 	// Use this for initialization
 	void Start () {
         initialPositionInfos(4, 4);
-
+        setpos(4);
     }
 	
 	// Update is called once per frame
@@ -95,6 +97,41 @@ public class PositionHandler : MonoBehaviour {
                 break;
             default:
                 ordinalIndicator = "ème";
+                break;
+        }
+    }
+
+    public void setpos(int pos)
+    {
+        switch (pos)
+        {
+            case 1:
+                GameObject.Find("PositionText").GetComponent<Text>().text = "1";
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "er";
+                positionparent.GetComponent<Image>().color = new Color32(235,205,0, 200);
+                GameObject.Find("PositionText").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                GameObject.Find("PositionText2").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                break;
+            case 2:
+                GameObject.Find("PositionText").GetComponent<Text>().text = "2";
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+                positionparent.GetComponent<Image>().color = new Color32(120,120,120, 200);
+                GameObject.Find("PositionText").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                GameObject.Find("PositionText2").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                break;
+            case 3:
+                GameObject.Find("PositionText").GetComponent<Text>().text = "3";
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+                positionparent.GetComponent<Image>().color = new Color32(170, 80, 50, 200);
+                GameObject.Find("PositionText").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                GameObject.Find("PositionText2").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                break;
+            case 4:
+                GameObject.Find("PositionText").GetComponent<Text>().text = "4";
+                GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+                positionparent.GetComponent<Image>().color = new Color32(60, 16, 104, 200);
+                GameObject.Find("PositionText").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                GameObject.Find("PositionText2").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
                 break;
         }
     }

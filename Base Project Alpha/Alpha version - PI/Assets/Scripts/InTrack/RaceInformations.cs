@@ -43,6 +43,11 @@ public class RaceInformations : MonoBehaviour {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         //playerGlobalTimes = 
         playerLapCount = new int[4];
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
+        {
+            leaderboardUI.SetActive(false);
+            GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(1);
+        } 
     }
 
     string zeroDisplay(int toclock, int zeros)

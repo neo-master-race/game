@@ -141,10 +141,7 @@ public class Player_Info_Ingame : MonoBehaviour {
             if(!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished)
             { 
                 GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
-                if (leaderboardPosition == 1)
-                    GameObject.Find("PositionText2").GetComponent<Text>().text = "er";
-                else
-                    GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+                GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(leaderboardPosition);
             }
         }
     }
