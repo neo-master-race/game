@@ -14,7 +14,7 @@ public class LapCount : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        InitialLapInfos(1, 3);
+        InitialLapInfos(1, GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber);
         
 	}
 	

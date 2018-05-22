@@ -18,7 +18,7 @@ public class track_selection_form : MonoBehaviour {
 	public int Difficulty;
 	public Text TrackInfo;
 	public int nbTrack;
-	private int nbLaps;
+	public int nbLaps;
 	private int MaxTrack=3;
 
 	// Use this for initialization
