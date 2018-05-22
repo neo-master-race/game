@@ -71,16 +71,16 @@ public class RaceInformations : MonoBehaviour {
             if ((bestLapMSec - LapMSec) < 0)
             {
                 if ((bestlapSec - lapSec) < 0)
-                    return "- " + (bestLapMin - (1 + LapMin)) + ":" + zeroDisplay(((59 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - bestLapMSec), 3);
+                    return "- " + (bestLapMin - (1 + LapMin)) + ":" + zeroDisplay(((59 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - LapMSec), 3);
                 else
-                    return "- " + (bestLapMin - LapMin) + ":" + zeroDisplay(((-1 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - bestLapMSec), 3);
+                    return "- " + (bestLapMin - LapMin) + ":" + zeroDisplay(((-1 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - LapMSec), 3);
             }
             else
             {
                 if ((bestlapSec - lapSec) < 0)
-                    return "- " + (bestLapMin - (1 + LapMin)) + ":" + zeroDisplay(((60 + bestlapSec) - lapSec), 2) + "." + zeroDisplay((bestLapMSec - bestLapMSec), 3);
+                    return "- " + (bestLapMin - (1 + LapMin)) + ":" + zeroDisplay(((60 + bestlapSec) - lapSec), 2) + "." + zeroDisplay((bestLapMSec - LapMSec), 3);
                 else
-                    return "- " + (bestLapMin - LapMin) + ":" + zeroDisplay((bestlapSec - lapSec), 2) + "." + zeroDisplay((bestLapMSec - bestLapMSec), 3);
+                    return "- " + (bestLapMin - LapMin) + ":" + zeroDisplay((bestlapSec - lapSec), 2) + "." + zeroDisplay((bestLapMSec - LapMSec), 3);
             }
         }
         else
@@ -88,18 +88,36 @@ public class RaceInformations : MonoBehaviour {
             if ((bestLapMSec - bestLapMSec) < 0)
             {
                 if ((lapSec - bestlapSec) < 0)
-                    return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((59 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - bestLapMSec), 3);
+                    return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((59 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + LapMSec) - bestLapMSec), 3);
                 else
-                    return "+ " + (LapMin - bestLapMin) + ":" + zeroDisplay(((-1 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - bestLapMSec), 3);
+                    return "+ " + (LapMin - bestLapMin) + ":" + zeroDisplay(((-1 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + LapMSec) - bestLapMSec), 3);
             }
             else
             {
                 if ((lapSec - bestlapSec) < 0)
-                    return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((60 + lapSec) - bestlapSec), 2) + "." + zeroDisplay((bestLapMSec - bestLapMSec), 3);
+                    return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((60 + lapSec) - bestlapSec), 2) + "." + zeroDisplay((LapMSec - bestLapMSec), 3);
                 else
-                    return "+ " + (LapMin - bestLapMin) + ":" + zeroDisplay((lapSec - bestlapSec), 2) + "." + zeroDisplay((bestLapMSec - bestLapMSec), 3);
+                    return "+ " + (LapMin - bestLapMin) + ":" + zeroDisplay((lapSec - bestlapSec), 2) + "." + zeroDisplay((LapMSec - bestLapMSec), 3);
             }
         }
+    }
+
+    public bool isnewRecord(string lap, string best)
+    {
+        if (best == "--:--:--")
+            return true;
+        int bestLapMin = int.Parse(best.Substring(0, 2));
+        int bestlapSec = int.Parse(best.Substring(3, 2));
+        int bestLapMSec = int.Parse(best.Substring(6, 3));
+
+        int LapMin = int.Parse(lap.Substring(0, 2));
+        int lapSec = int.Parse(lap.Substring(3, 2));
+        int LapMSec = int.Parse(lap.Substring(6, 3));
+
+        if (LapMin < bestLapMin || ((LapMin == bestLapMin) && (lapSec < bestlapSec))
+            || ((LapMin == bestLapMin) && (bestlapSec == lapSec) && (LapMSec < bestLapMSec)))
+        { return true; }
+        return false;
     }
 
     public void setSoloScreen ()
@@ -162,6 +180,28 @@ public class RaceInformations : MonoBehaviour {
             lap5.transform.Find("Lap5Time").GetComponent<Text>().text = playerLapTimes[4];
             lap5.transform.Find("Lap5Delta").GetComponent<Text>().text = getDelta(playerLapTimes[4], record);
         }
+        endScreenSolo.transform.Find("RecordNowStringBackground/RecordNowStringtext").GetComponent<Text>().text = playerBestLapTimes[0];
+        bool gotNewRecord = false;
+        string newrecord = "";
+        gotNewRecord = isnewRecord(playerBestLapTimes[0], record);
+        if(gotNewRecord)
+        {
+            newrecord = playerBestLapTimes[0];
+            if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track1LapRecord = newrecord;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track2LapRecord = newrecord;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track3LapRecord = newrecord;
+
+            GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
+        }
+            
+
+        if (gotNewRecord)
+            endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = newrecord;
+        else
+            endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = playerBestLapTimes[0];
     }
 
     public void setMultiScreen()
