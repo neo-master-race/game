@@ -712,4 +712,10 @@ class Network : MonoBehaviour {
 
         }});
   }
+
+ public
+  void leaveRoom() {
+    sendMessage(new Protocol.Message{Type = "leave_room",
+                                     LeaveRoom = new Protocol.LeaveRoom()});
+  }
 }
