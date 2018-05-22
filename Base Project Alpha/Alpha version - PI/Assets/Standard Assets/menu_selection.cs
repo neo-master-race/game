@@ -547,6 +547,9 @@ void disable_all()
 		quit.SetActive(false);
 		cancel.SetActive(false);
 
+		customUI.SetActive (false);
+		noncustomBackground.SetActive (true);
+
 		backButtonForm.GetComponent<RawImage>().color = new Color(255, 255, 255);
 		backMenu.GetComponent<RawImage>().color = new Color(255, 255, 255);
 		home.GetComponent<RawImage>().color = new Color(255, 255, 255);
