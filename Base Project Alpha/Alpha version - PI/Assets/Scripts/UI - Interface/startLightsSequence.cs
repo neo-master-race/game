@@ -28,6 +28,13 @@ public class startLightsSequence : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                localPlayer = player;
+            }
+        }
         timerInBetweenLights -= Time.deltaTime;
         if(timerInBetweenLights<0 && lightSequenceStep<=7)
         {

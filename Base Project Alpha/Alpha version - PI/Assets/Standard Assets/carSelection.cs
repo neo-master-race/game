@@ -9,7 +9,7 @@ public class carSelection : MonoBehaviour {
     public GameObject selectionGoLeft;
     public GameObject selectionGoRight;
 
-    private int selectedVehicule = 0;
+    public int selectedVehicule = 0;
     private int totalVehiculeNumber = 4;
 
     public void uptText(int selected)
@@ -51,7 +51,6 @@ public class carSelection : MonoBehaviour {
                 {
                     selectedVehicule--;
                 }
-
                 uptText(selectedVehicule);
                 break;
 

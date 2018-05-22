@@ -40,6 +40,36 @@ public class Player_Info_Ingame : MonoBehaviour {
     public string[] playersGlobalTime;
     public string[] playersLapTimes;
 
+    void Awake()
+    {
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 1)
+        {
+            Destroy(GameObject.Find("Porsche"));
+            Destroy(GameObject.Find("Lamborghini"));
+            Destroy(GameObject.Find("Ford"));
+        }
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 2)
+        {
+            Destroy(GameObject.Find("Stratos"));
+            Destroy(GameObject.Find("Lamborghini"));
+            Destroy(GameObject.Find("Ford"));
+        }
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 3)
+        {
+            Destroy(GameObject.Find("Stratos"));
+            Destroy(GameObject.Find("Porsche"));
+            Destroy(GameObject.Find("Ford"));
+        }
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 4)
+        {
+            Destroy(GameObject.Find("Stratos"));
+            Destroy(GameObject.Find("Porsche"));
+            Destroy(GameObject.Find("Lamborghini"));
+        }
+       
+        
+    }
+
     // Use this for initialization
     void Start()
     {

@@ -19,6 +19,7 @@ public class log_reg_form : MonoBehaviour {
 	public GameObject tuto_button;
 	public GameObject backButton;
 	public GameObject backMenuButton;
+    public GameObject carSelection;
 
     // Use this for initialization
     void Start () {
@@ -37,6 +38,11 @@ public class log_reg_form : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
         }
 
+    }
+
+    public void setvehicle ()
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().carIndex = carSelection.GetComponent<carSelection>().selectedVehicule+1;
     }
 
     public void setTrack(GameObject track)

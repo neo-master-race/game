@@ -30,7 +30,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if(useAdvancedCamera)
+        target = GameObject.FindGameObjectWithTag("Player").transform.Find("targetCamera");
+        if (useAdvancedCamera)
         {
             Vector3 wantedPosition;
             if (followBehind)
