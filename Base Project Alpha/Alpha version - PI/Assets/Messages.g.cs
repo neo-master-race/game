@@ -79,31 +79,33 @@ namespace Protocol {
             "CgtjYXI0Y3Vyc29yWBgpIAEoAhITCgtjYXI0Y3Vyc29yWRgqIAEoAiI3CgxT",
             "ZXRVc2VyU3RhdHMSJwoKdXNlcl9zdGF0cxgBIAEoCzITLnByb3RvY29sLlVz",
             "ZXJTdGF0cyI8ChFVc2VyU3RhdHNSZXNwb25zZRInCgp1c2VyX3N0YXRzGAEg",
-            "ASgLMhMucHJvdG9jb2wuVXNlclN0YXRzIg4KDEdldFVzZXJTdGF0cyKoCAoH",
-            "TWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2FnZRgCIAEoCzIV",
-            "LnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3BsYXllcl9wb3Np",
-            "dGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBvc2l0aW9uSAAS",
-            "PAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90b2NvbC5VcGRh",
-            "dGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgLMhQucHJvdG9j",
-            "b2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3RhdHVzX3JlcXVl",
-            "c3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNSZXF1ZXN0",
-            "SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5DcmVhdGVSb29t",
-            "SAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0YXJ0Um9vbUgA",
-            "EjYKEWpvaW5fcm9vbV9yZXF1ZXN0GAkgASgLMhkucHJvdG9jb2wuSm9pblJv",
-            "b21SZXF1ZXN0SAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiABKAsyGi5wcm90",
-            "b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJfcmVxdWVzdBgL",
-            "IAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8KDWxvZ2luX3Jl",
-            "cXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RIABI3ChFyZWdp",
-            "c3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lzdGVyUmVzcG9u",
-            "c2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3RvY29sLkxvZ2lu",
-            "UmVzcG9uc2VIABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEoCzIZLnByb3Rv",
-            "Y29sLlJvb21MaXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9yZXNwb25zZRgQ",
-            "IAEoCzIaLnByb3RvY29sLlJvb21MaXN0UmVzcG9uc2VIABIzCg9jaGFuZ2Vf",
-            "dXNlcm5hbWUYESABKAsyGC5wcm90b2NvbC5DaGFuZ2VVc2VybmFtZUgAEjgK",
-            "EmpvaW5fcm9vbV9yZXNwb25zZRgSIAEoCzIaLnByb3RvY29sLkpvaW5Sb29t",
-            "UmVzcG9uc2VIABIwCg5zZXRfdXNlcl9zdGF0cxgTIAEoCzIWLnByb3RvY29s",
-            "LlNldFVzZXJTdGF0c0gAEjAKDmdldF91c2VyX3N0YXRzGBQgASgLMhYucHJv",
-            "dG9jb2wuR2V0VXNlclN0YXRzSABCBQoDbXNnYgZwcm90bzM="));
+            "ASgLMhMucHJvdG9jb2wuVXNlclN0YXRzIg4KDEdldFVzZXJTdGF0cyILCglM",
+            "ZWF2ZVJvb20i0wgKB01lc3NhZ2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21l",
+            "c3NhZ2UYAiABKAsyFS5wcm90b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0",
+            "ZV9wbGF5ZXJfcG9zaXRpb24YAyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5",
+            "ZXJQb3NpdGlvbkgAEjwKFHVwZGF0ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwu",
+            "cHJvdG9jb2wuVXBkYXRlUGxheWVyU3RhdHVzSAASKgoKZGlzY29ubmVjdBgF",
+            "IAEoCzIULnByb3RvY29sLkRpc2Nvbm5lY3RIABJLChx1cGRhdGVfcGxheWVy",
+            "X3N0YXR1c19yZXF1ZXN0GAYgASgLMiMucHJvdG9jb2wuVXBkYXRlUGxheWVy",
+            "U3RhdHVzUmVxdWVzdEgAEisKC2NyZWF0ZV9yb29tGAcgASgLMhQucHJvdG9j",
+            "b2wuQ3JlYXRlUm9vbUgAEikKCnN0YXJ0X3Jvb20YCCABKAsyEy5wcm90b2Nv",
+            "bC5TdGFydFJvb21IABI2ChFqb2luX3Jvb21fcmVxdWVzdBgJIAEoCzIZLnBy",
+            "b3RvY29sLkpvaW5Sb29tUmVxdWVzdEgAEjcKEXN0YXJ0aW5nX3Bvc2l0aW9u",
+            "GAogASgLMhoucHJvdG9jb2wuU3RhcnRpbmdQb3NpdGlvbkgAEjUKEHJlZ2lz",
+            "dGVyX3JlcXVlc3QYCyABKAsyGS5wcm90b2NvbC5SZWdpc3RlclJlcXVlc3RI",
+            "ABIvCg1sb2dpbl9yZXF1ZXN0GAwgASgLMhYucHJvdG9jb2wuTG9naW5SZXF1",
+            "ZXN0SAASNwoRcmVnaXN0ZXJfcmVzcG9uc2UYDSABKAsyGi5wcm90b2NvbC5S",
+            "ZWdpc3RlclJlc3BvbnNlSAASMQoObG9naW5fcmVzcG9uc2UYDiABKAsyFy5w",
+            "cm90b2NvbC5Mb2dpblJlc3BvbnNlSAASNgoRcm9vbV9saXN0X3JlcXVlc3QY",
+            "DyABKAsyGS5wcm90b2NvbC5Sb29tTGlzdFJlcXVlc3RIABI4ChJyb29tX2xp",
+            "c3RfcmVzcG9uc2UYECABKAsyGi5wcm90b2NvbC5Sb29tTGlzdFJlc3BvbnNl",
+            "SAASMwoPY2hhbmdlX3VzZXJuYW1lGBEgASgLMhgucHJvdG9jb2wuQ2hhbmdl",
+            "VXNlcm5hbWVIABI4ChJqb2luX3Jvb21fcmVzcG9uc2UYEiABKAsyGi5wcm90",
+            "b2NvbC5Kb2luUm9vbVJlc3BvbnNlSAASMAoOc2V0X3VzZXJfc3RhdHMYEyAB",
+            "KAsyFi5wcm90b2NvbC5TZXRVc2VyU3RhdHNIABIwCg5nZXRfdXNlcl9zdGF0",
+            "cxgUIAEoCzIWLnByb3RvY29sLkdldFVzZXJTdGF0c0gAEikKCmxlYXZlX3Jv",
+            "b20YFSABKAsyEy5wcm90b2NvbC5MZWF2ZVJvb21IAEIFCgNtc2diBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -131,7 +133,8 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.SetUserStats), global::Protocol.SetUserStats.Parser, new[]{ "UserStats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.UserStatsResponse), global::Protocol.UserStatsResponse.Parser, new[]{ "UserStats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.GetUserStats), global::Protocol.GetUserStats.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse", "SetUserStats", "GetUserStats" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LeaveRoom), global::Protocol.LeaveRoom.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse", "SetUserStats", "GetUserStats", "LeaveRoom" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -5166,6 +5169,95 @@ namespace Protocol {
 
   }
 
+  public sealed partial class LeaveRoom : pb::IMessage<LeaveRoom> {
+    private static readonly pb::MessageParser<LeaveRoom> _parser = new pb::MessageParser<LeaveRoom>(() => new LeaveRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LeaveRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[24]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LeaveRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LeaveRoom(LeaveRoom other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LeaveRoom Clone() {
+      return new LeaveRoom(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LeaveRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LeaveRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LeaveRoom other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
@@ -5177,7 +5269,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5252,6 +5344,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.GetUserStats:
           GetUserStats = other.GetUserStats.Clone();
+          break;
+        case MsgOneofCase.LeaveRoom:
+          LeaveRoom = other.LeaveRoom.Clone();
           break;
       }
 
@@ -5485,6 +5580,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "leave_room" field.</summary>
+    public const int LeaveRoomFieldNumber = 21;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.LeaveRoom LeaveRoom {
+      get { return msgCase_ == MsgOneofCase.LeaveRoom ? (global::Protocol.LeaveRoom) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.LeaveRoom;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -5508,6 +5614,7 @@ namespace Protocol {
       JoinRoomResponse = 18,
       SetUserStats = 19,
       GetUserStats = 20,
+      LeaveRoom = 21,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5554,6 +5661,7 @@ namespace Protocol {
       if (!object.Equals(JoinRoomResponse, other.JoinRoomResponse)) return false;
       if (!object.Equals(SetUserStats, other.SetUserStats)) return false;
       if (!object.Equals(GetUserStats, other.GetUserStats)) return false;
+      if (!object.Equals(LeaveRoom, other.LeaveRoom)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -5581,6 +5689,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.JoinRoomResponse) hash ^= JoinRoomResponse.GetHashCode();
       if (msgCase_ == MsgOneofCase.SetUserStats) hash ^= SetUserStats.GetHashCode();
       if (msgCase_ == MsgOneofCase.GetUserStats) hash ^= GetUserStats.GetHashCode();
+      if (msgCase_ == MsgOneofCase.LeaveRoom) hash ^= LeaveRoom.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -5672,6 +5781,10 @@ namespace Protocol {
         output.WriteRawTag(162, 1);
         output.WriteMessage(GetUserStats);
       }
+      if (msgCase_ == MsgOneofCase.LeaveRoom) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(LeaveRoom);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5736,6 +5849,9 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.GetUserStats) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(GetUserStats);
+      }
+      if (msgCase_ == MsgOneofCase.LeaveRoom) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LeaveRoom);
       }
       return size;
     }
@@ -5805,6 +5921,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.GetUserStats:
           GetUserStats = other.GetUserStats;
+          break;
+        case MsgOneofCase.LeaveRoom:
+          LeaveRoom = other.LeaveRoom;
           break;
       }
 
@@ -5991,6 +6110,15 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             GetUserStats = subBuilder;
+            break;
+          }
+          case 170: {
+            global::Protocol.LeaveRoom subBuilder = new global::Protocol.LeaveRoom();
+            if (msgCase_ == MsgOneofCase.LeaveRoom) {
+              subBuilder.MergeFrom(LeaveRoom);
+            }
+            input.ReadMessage(subBuilder);
+            LeaveRoom = subBuilder;
             break;
           }
         }
