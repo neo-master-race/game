@@ -20,6 +20,9 @@ public class track_selection_form : MonoBehaviour {
 	public int nbTrack;
 	public int nbLaps;
 	private int MaxTrack=3;
+	public GameObject Star1;
+	public GameObject Star2;
+	public GameObject Star3;
 
 	// Use this for initialization
 	void Start () {
@@ -46,20 +49,29 @@ public class track_selection_form : MonoBehaviour {
 		if (nbTrack == 1) {
 			TrackName.text = "Euromir";
 			TrackVisible.transform.GetComponent<RawImage>().texture = circuit1;
-			Difficulty = 1;
-			//TrackInfo.text = "Euromir";
+			Difficulty = 2;
+			Star1.SetActive (true);
+			Star2.SetActive (true);
+			Star3.SetActive (false);
+			TrackInfo.text = "Euromir propose une balance entre phases d’accélérations et parties techniques, permettant aux débutants d’apprendre à maitriser la voiture, avec un peu de défis.";
 		}
 		if (nbTrack == 2) {
 			TrackName.text = "Monaco";
 			TrackVisible.transform.GetComponent<RawImage>().texture = circuit2;
-			Difficulty = 2;
-			//TrackInfo.text = "Monaco";
+			Difficulty = 3;
+			Star1.SetActive (true);
+			Star2.SetActive (true);
+			Star3.SetActive (true);
+			TrackInfo.text = "Monaco est quasiment identiques à son homologue réel sans les virages incurvés. Il comporte de nombreux passage très punitif si mal gérés.";
 		}
 		if (nbTrack == 3) {
-			TrackName.text = "Track 3";
+			TrackName.text = "Super 8";
 			TrackVisible.transform.GetComponent<RawImage>().texture = circuit3;
-			Difficulty = 3;
-			//TrackInfo.text = "Track 3";
+			Difficulty = 1;
+			Star1.SetActive (true);
+			Star2.SetActive (false);
+			Star3.SetActive (false);
+			TrackInfo.text = "Super8 est composé de larges virages et de lignes droites permettant aux débutants de bien se familiariser avec les contrôles du véhicule en virage. Il possède aussi un saut.";
 		}
 
 	}
