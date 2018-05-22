@@ -138,13 +138,14 @@ public class Player_Info_Ingame : MonoBehaviour {
                 else
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count;
             }
-            GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
-            if (leaderboardPosition == 1)
-                GameObject.Find("PositionText2").GetComponent<Text>().text = "er";
-            else
-                GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
-
-            //Debug.Log(leaderboardPosition);
+            if(!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished)
+            { 
+                GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
+                if (leaderboardPosition == 1)
+                    GameObject.Find("PositionText2").GetComponent<Text>().text = "er";
+                else
+                    GameObject.Find("PositionText2").GetComponent<Text>().text = "ème";
+            }
         }
     }
 }
