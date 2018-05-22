@@ -201,7 +201,7 @@ public class RaceInformations : MonoBehaviour {
         if (gotNewRecord)
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = newrecord;
         else
-            endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = playerBestLapTimes[0];
+            endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = record;
     }
 
     public void setMultiScreen()
