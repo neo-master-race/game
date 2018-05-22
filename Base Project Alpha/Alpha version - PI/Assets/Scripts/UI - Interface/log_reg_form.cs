@@ -43,6 +43,7 @@ public class log_reg_form : MonoBehaviour {
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = track.GetComponent<track_selection_form>().nbTrack;
         GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = track.GetComponent<track_selection_form>().nbLaps;
+        GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = true;
     }
 
     public IEnumerator go_to_menu(String message, bool is_guest)

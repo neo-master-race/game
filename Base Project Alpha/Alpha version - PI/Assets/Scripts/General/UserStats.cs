@@ -100,11 +100,6 @@ public class UserStats : MonoBehaviour {
         trackLapNumber = 0;
     }
 
-    public void setsolo ()
-    {
-        playingSolo = true;
-    }
-
     public void isGuest()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
