@@ -41,6 +41,7 @@ public class menu_selection : MonoBehaviour {
 	public GameObject home;
 	public GameObject quit;
 	public GameObject cancel;
+	public GameObject canvasText;
 
     [Header("Circuits buttons")]
 	public GameObject circuit1Button;
@@ -442,9 +443,13 @@ public class menu_selection : MonoBehaviour {
             *                        BOUTON DE CONFIRMATION DU VEHICULE                         *
             * **********************************************************************************/
 
-            case "ConfirmCar":
-                GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 6;
-                carSelection.SetActive(false);
+		case "ConfirmCar":
+			GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step = 6;
+			carSelection.SetActive (false);
+			backMenu.SetActive (false);
+			backButtonForm.SetActive (false);
+			canvas.SetActive (true);
+			canvasText.SetActive (true);
                 int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
                 SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
 				if (nbTrack == 1)
@@ -545,6 +550,7 @@ void disable_all()
 		home.SetActive(false);
 		quit.SetActive(false);
 		cancel.SetActive(false);
+		canvasText.SetActive (false);
 
 		customUI.SetActive (false);
 		noncustomBackground.SetActive (true);
