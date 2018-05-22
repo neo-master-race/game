@@ -16,7 +16,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
     public Material StratosMainColor;
     public Material PorscheMainColor;
     public Material LamborghiniMainColor;
-    //public Material PorscheMainColor;
+    public Material FordMainColor;
 
     private Color vehicle_color;
 
@@ -37,20 +37,25 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
     public GameObject Stratos;
     public GameObject Porsche;
     public GameObject Lamborghini;
+    public GameObject Ford;
 
     [Header("picker")]
     public float stratosValueSlider;
     public float porscheValueSlider;
     public float lamborghiniValueSlider;
+    public float fordValueSlider;
     public Color stratosTopR;
     public Color porscheTopR;
     public Color lamborghiniTopR;
+    public Color fordTopR;
     public float stratosCursorX;
     public float stratosCursorY;
     public float porscheCursorX;
     public float porscheCursorY;
     public float lamborghiniCursorX;
     public float lamborghiniCursorY;
+    public float fordCursorX;
+    public float fordCursorY;
 
     [Header("back buttons")]
     public GameObject play_button;
@@ -70,7 +75,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         Stratos.SetActive(false);
         Porsche.SetActive(false);
         Lamborghini.SetActive(false);
-        //Stratos.SetActive(false);
+        Ford.SetActive(false);
     }
 
     public void setStats()
@@ -87,6 +92,10 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         lamborghiniTopR = new Color(GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRR / 255f,
             GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRG / 255f,
             GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRB / 255f);
+        fordValueSlider = GameObject.Find("UserStats").GetComponent<UserStats>().fordValueSlider;
+        fordTopR = new Color(GameObject.Find("UserStats").GetComponent<UserStats>().fordTopRR / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().fordTopRG / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().fordTopRB / 255f);
 
         colorPicked.value = stratosValueSlider;
         gradient3D.SetColor("_Color_TopR", stratosTopR);
@@ -96,6 +105,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         porscheCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorY;
         lamborghiniCursorX = GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorX;
         lamborghiniCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorY;
+        fordCursorX = GameObject.Find("UserStats").GetComponent<UserStats>().fordCursorX;
+        fordCursorY = GameObject.Find("UserStats").GetComponent<UserStats>().fordCursorY;
 
         cursorLocalPositionX = stratosCursorX;
         cursorLocalPositionY = stratosCursorY;
@@ -119,6 +130,11 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
             lamborghiniValueSlider = colorPicked.value;
             lamborghiniTopR = gradient3D.GetColor("_Color_TopR");
         }
+        else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+        {
+            fordValueSlider = colorPicked.value;
+            fordTopR = gradient3D.GetColor("_Color_TopR");
+        }
 
         if (arrow.gameObject.name=="LeftArrow")
             GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex--;
@@ -132,6 +148,7 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         {
             Stratos.SetActive(true);
             leftArrow.SetActive(false);
+            rightArrow.SetActive(true);
             colorPicked.value = stratosValueSlider;
             gradient3D.SetColor("_Color_TopR", stratosTopR);
             cursorLocalPositionX = stratosCursorX;
@@ -158,19 +175,26 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
         {
             Lamborghini.SetActive(true);
-            rightArrow.SetActive(false);
+            leftArrow.SetActive(true);
+            rightArrow.SetActive(true);
 
             colorPicked.value = lamborghiniValueSlider;
             gradient3D.SetColor("_Color_TopR", lamborghiniTopR);
             cursorLocalPositionX = lamborghiniCursorX;
             cursorLocalPositionY = lamborghiniCursorY;
         }
-        GameObject.Find("cursor_texture").transform.localPosition = new Vector2(cursorLocalPositionX, cursorLocalPositionY);
-        /*else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+        else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
         {
-            Stratos.SetActive(true);
-            leftArrow.SetActive(false);
-        }*/
+            leftArrow.SetActive(true);
+            rightArrow.SetActive(false);
+            Ford.SetActive(true);
+
+            colorPicked.value = fordValueSlider;
+            gradient3D.SetColor("_Color_TopR", fordTopR);
+            cursorLocalPositionX = fordCursorX;
+            cursorLocalPositionY = fordCursorY;
+        }
+        GameObject.Find("cursor_texture").transform.localPosition = new Vector2(cursorLocalPositionX, cursorLocalPositionY);
     }
 	
     //Lors d'un clic sur un élément affecté par ce script, envoie la position de la souris dans la fonction de changement de couleur du véhicule pour en changer la couleur
@@ -189,6 +213,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
                 PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
                 LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+                FordMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag = true;
             if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
             {
@@ -211,6 +237,13 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
                 lamborghiniCursorX = cursorLocalPositionX;
                 lamborghiniCursorY = cursorLocalPositionY;
             }
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+            {
+                fordValueSlider = colorPicked.value;
+                fordTopR = gradient3D.GetColor("_Color_TopR");
+                fordCursorX = cursorLocalPositionX;
+                fordCursorY = cursorLocalPositionY;
+            }
         }
 
     }
@@ -231,6 +264,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
                 PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
                 LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+                FordMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
         }
         else if(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().beginDrag == true)
         {
@@ -262,6 +297,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
                 PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
                 LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
+                FordMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
         }
 
     }
@@ -283,6 +320,11 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         {
             lamborghiniCursorX = cursorLocalPositionX;
             lamborghiniCursorY = cursorLocalPositionY;
+        }
+        else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+        {
+            fordCursorX = cursorLocalPositionX;
+            fordCursorY = cursorLocalPositionY;
         }
     }
 
@@ -357,14 +399,14 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         GameObject.Find("UserStats").GetComponent<UserStats>().Car3G = (int)((LamborghiniMainColor.color.g) * 255f);
         GameObject.Find("UserStats").GetComponent<UserStats>().Car3B = (int)((LamborghiniMainColor.color.b) * 255f);
 
-        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4R = (int)((.color.r) * 255f);
-        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4G = (int)((StratosMainColor.color.g) * 255f);
-        //GameObject.Find("UserStats").GetComponent<UserStats>().Car4B = (int)((StratosMainColor.color.b) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car4R = (int)((FordMainColor.color.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car4G = (int)((FordMainColor.color.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().Car4B = (int)((FordMainColor.color.b) * 255f);
 
         GameObject.Find("UserStats").GetComponent<UserStats>().stratosValueSlider = stratosValueSlider;
         GameObject.Find("UserStats").GetComponent<UserStats>().porscheValueSlider = porscheValueSlider;
         GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniValueSlider = lamborghiniValueSlider;
-        //GameObject.Find("UserStats").GetComponent<UserStats>().fordValueSlider = fordValueSlider;
+        GameObject.Find("UserStats").GetComponent<UserStats>().fordValueSlider = fordValueSlider;
 
         GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR= (int)((stratosTopR.r) * 255f);
         GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG = (int)((stratosTopR.g) * 255f);
@@ -378,9 +420,9 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRG = (int)((lamborghiniTopR.g) * 255f);
         GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniTopRB = (int)((lamborghiniTopR.b) * 255f);
 
-        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR = (int)((stratosTopR.r) * 255f);
-        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG = (int)((stratosTopR.g) * 255f);
-        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRB = (int)((stratosTopR.b) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRR = (int)((fordTopR.r) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRG = (int)((fordTopR.g) * 255f);
+        GameObject.Find("UserStats").GetComponent<UserStats>().stratosTopRB = (int)((fordTopR.b) * 255f);
 
         GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX = stratosCursorX;
         GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY = stratosCursorY;
@@ -388,8 +430,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         GameObject.Find("UserStats").GetComponent<UserStats>().porscheCursorY = porscheCursorY;
         GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorX = lamborghiniCursorX;
         GameObject.Find("UserStats").GetComponent<UserStats>().lamborghiniCursorY = lamborghiniCursorY;
-        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorX = stratosCursorX;
-        //GameObject.Find("UserStats").GetComponent<UserStats>().stratosCursorY = stratosCursorY;
+        GameObject.Find("UserStats").GetComponent<UserStats>().fordCursorX = fordCursorX;
+        GameObject.Find("UserStats").GetComponent<UserStats>().fordCursorY = fordCursorY;
 
         GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
 
@@ -414,6 +456,8 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
                 PorscheMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 3)
                 LamborghiniMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
+            else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 4)
+                FordMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
         }
     }
 }
