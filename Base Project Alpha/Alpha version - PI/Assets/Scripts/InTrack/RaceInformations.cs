@@ -254,7 +254,7 @@ public class RaceInformations : MonoBehaviour {
         {
             for(int j=0;j<players.Length;j++)
             {
-                if (playerGlobalTimes[j] != "--:--.---" || players[j].GetComponent<Player_Info_Ingame>().lap_count== GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber)
+                if (playerGlobalTimes[j] != "--:--.---")
                     everybodyHasFinished = true;
             }
         }
