@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class log_reg_form : MonoBehaviour {
 
     public GameObject log_reg_canvas;
+    public GameObject display_error;
+    public GameObject user_input;
+    public GameObject pwd_input;
     public GameObject after_canvas;
     public GameObject register_button;
     public GameObject login_button;
@@ -107,6 +110,21 @@ public class log_reg_form : MonoBehaviour {
         StartCoroutine(go_to_menu("Vous vous êtes correctement inscrit\nVous allez être redirigé vers le menu", false));
     }
 
+    public IEnumerator displayError(String msg)
+    {
+        log_reg_canvas.SetActive(true);
+        user_input.SetActive(true);
+        pwd_input.SetActive(true);
+        display_error.SetActive(true);
+        GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = true;
+        GameObject.Find("ErrorDisplayText").GetComponent<Text>().text = msg;
+        yield return new WaitForSeconds(3.0f);
+        GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = false;
+        display_error.SetActive(false);
+
+
+    }
+
     public void LogInSuccess()
     {
         Debug.Log("New user connected");
@@ -117,6 +135,7 @@ public class log_reg_form : MonoBehaviour {
     public void LogInError(String msg)
     {
         Debug.Log(msg);
+        StartCoroutine(displayError(msg));
     }
 
     public void RegisterSuccess()
