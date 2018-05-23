@@ -45,6 +45,7 @@ public class log_reg_form : MonoBehaviour {
             solo_button.SetActive(true);
             multi_button.SetActive(true);
 
+			GameObject.Find ("TitleCanvas").SetActive (false);
             GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
         }
 
