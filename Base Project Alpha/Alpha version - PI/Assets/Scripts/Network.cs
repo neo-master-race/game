@@ -40,22 +40,19 @@ class Network : MonoBehaviour {
  public
   String password;
 
+ private
+  static Network playerInstance;
 
- private static Network playerInstance;
-
-    // Use this for initialization
+  // Use this for initialization
  private
   void Start() {
     DontDestroyOnLoad(this.gameObject);
-        if (playerInstance == null)
-        {
-            playerInstance = this;
-        }
-        else
-        {
-            DestroyObject(gameObject);
-        }
-        carsContainer = GameObject.Find("Cars");
+    if (playerInstance == null) {
+      playerInstance = this;
+    } else {
+      DestroyObject(gameObject);
+    }
+    carsContainer = GameObject.Find("Cars");
 
     players = new Hashtable();
     clientName = "Invité-" + new System.Random().Next(1, 65536);
@@ -728,5 +725,15 @@ class Network : MonoBehaviour {
   void leaveRoom() {
     sendMessage(new Protocol.Message{Type = "leave_room",
                                      LeaveRoom = new Protocol.LeaveRoom()});
+  }
+
+ public
+  void setGlobalRecord(int track, string record) {
+    // @TODO: send message
+  }
+
+ public
+  void getGlobalRecord(int track) {
+    // @TODO: send message
   }
 }
