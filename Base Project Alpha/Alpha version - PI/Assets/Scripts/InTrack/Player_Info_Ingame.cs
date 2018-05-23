@@ -114,6 +114,8 @@ public class Player_Info_Ingame : MonoBehaviour {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("track2"));
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
+
+        GameObject.Find("Text").GetComponent<Text>().text = GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition.ToString();
     }
 
     // Update is called once per frame

@@ -297,10 +297,12 @@ public class room_creation_form : MonoBehaviour {
                 GameObject.Find("Network").GetComponent<Network>().createRoom(roomTypeInt, trackIndex, currentRoomCreated.MaximumPlayersNb);
 
                 //GameObject.Find("Network").GetComponent<Network>().joinGameRequest(roomIndex);
-
+                
                 //GameObject.Find("Rooms_Script").GetComponent<room_info_container>().rooms.Add(currentRoomCreated);
                 GameObject.Find("Rooms_Script").GetComponent<room_info_container>().createRooms();
                 roomCreationForm.SetActive(false);
+                GameObject.Find("Rooms_Script").GetComponent<room_info_container>().activelobbyStuff();
+                GameObject.Find("Rooms_Script").GetComponent<room_info_container>().setStats();
                 break;
         }
     }

@@ -322,7 +322,7 @@ public class room_info_container : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().inLobby = id;
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = true;
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
-
+        
 
 
         for (int j=0;j<rooms.Count;j++)
@@ -417,12 +417,10 @@ public class room_info_container : MonoBehaviour {
                         }
                         currentPlayer.transform.GetChild(0).GetComponent<Text>().text = "Joueur " + (i + 1) + "\n\nEn attente";
                     }
-                    for(int k=0;k< rooms[j].MaximumPlayersNb; k++)
-                    {
-                        if (rooms[j].ActivePlayers[k] == GameObject.Find("UserStats").GetComponent<UserStats>().username)
-                            GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition = rooms[j].startingPositions[k];
-                    }
-                     GameObject.Find("RoomText").GetComponent<Text>().text = "En attente de "+(rooms[j].MaximumPlayersNb- rooms[j].ActivePlayers.Length)+" joueurs.";
+
+                    
+                    
+                   GameObject.Find("RoomText").GetComponent<Text>().text = "En attente de "+(rooms[j].MaximumPlayersNb- rooms[j].ActivePlayers.Length)+" joueurs.";
                 }
             }
         }     
@@ -431,12 +429,31 @@ public class room_info_container : MonoBehaviour {
 
     public void startGame()
     {
+        for (int j = 0; j < rooms.Count; j++)
+        {
+            if (rooms[j].roomIndex == GameObject.Find("UserStats").GetComponent<UserStats>().inLobby)
+            {
+                for (int k = 0; k < rooms[j].MaximumPlayersNb; k++)
+                {
+                    Debug.Log(rooms[j].MaximumPlayersNb);
+                    Debug.Log(k);
+                    Debug.Log(rooms[j].ActivePlayers[k]);
+                    if (rooms[j].ActivePlayers[k] == GameObject.Find("UserStats").GetComponent<UserStats>().username)
+                    {
+                        GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition = rooms[j].startingPositions[k];
+
+                    }
+
+                }
+            }
+        }
         SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
         SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
     }
 
     public IEnumerator roomStartCountdown(float waitTime)
     {
+        
         while (waitTime>=0.0f)
         {
             roomstatetext.GetComponent<Text>().text = "La partie démarre dans " + (int)waitTime + " secondes.";
