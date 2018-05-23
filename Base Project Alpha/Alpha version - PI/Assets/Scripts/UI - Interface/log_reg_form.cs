@@ -65,6 +65,7 @@ public class log_reg_form : MonoBehaviour {
     public void playMulti()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = true;
+        GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = 3;
     }
 
     public void setcolor ()

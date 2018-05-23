@@ -76,7 +76,7 @@ public class RaceInformations : MonoBehaviour {
         {
             if ((bestLapMSec - LapMSec) < 0)
             {
-                if ((bestlapSec - lapSec) < 0)
+                if ((bestlapSec - lapSec) <= 0)
                     return "- " + (bestLapMin - (1 + LapMin)) + ":" + zeroDisplay(((59 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - LapMSec), 3);
                 else
                     return "- " + (bestLapMin - LapMin) + ":" + zeroDisplay(((-1 + bestlapSec) - lapSec), 2) + "." + zeroDisplay(((1000 + bestLapMSec) - LapMSec), 3);
@@ -93,7 +93,7 @@ public class RaceInformations : MonoBehaviour {
         {
             if ((LapMSec - bestLapMSec) < 0)
             {
-                if ((lapSec - bestlapSec) < 0)
+                if ((lapSec - bestlapSec) <= 0)
                     return "+ " + (LapMin - (1 + bestLapMin)) + ":" + zeroDisplay(((59 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + LapMSec) - bestLapMSec), 3);
                 else
                     return "+ " + (LapMin - bestLapMin) + ":" + zeroDisplay(((-1 + lapSec) - bestlapSec), 2) + "." + zeroDisplay(((1000 + LapMSec) - bestLapMSec), 3);
@@ -252,11 +252,15 @@ public class RaceInformations : MonoBehaviour {
         bool everybodyHasFinished = false;
         if(players.Length>0 && GameObject.Find("StartLights").GetComponent<startLightsSequence>().lightSequenceStep==8)
         {
+            int l = 0;
             for(int j=0;j<players.Length;j++)
             {
                 if (playerGlobalTimes[j] != "--:--.---")
-                    everybodyHasFinished = true;
+                    l++;
+                    
             }
+            if (l == players.Length)
+                everybodyHasFinished = true;
         }
         if (everybodyHasFinished && onlyOnce)
         {

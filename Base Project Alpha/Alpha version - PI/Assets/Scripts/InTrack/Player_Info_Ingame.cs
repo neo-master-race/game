@@ -105,7 +105,15 @@ public class Player_Info_Ingame : MonoBehaviour {
                 this.transform.position = GameObject.Find("Slot3").transform.position;
             else if (GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition == 4)
                 this.transform.position = GameObject.Find("Slot4").transform.position;
+
+            
         }
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track1"));
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track2"));
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
     }
 
     // Update is called once per frame

@@ -104,7 +104,7 @@ public class Timer : MonoBehaviour {
                 TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(0, 0.65f, 0);
                 if ((bestLapMSec - currentMilliSecLap[playerId]) < 0)
                 {
-                    if ((bestlapSec - currentSecLap[playerId]) < 0)
+                    if ((bestlapSec - currentSecLap[playerId]) <= 0)
                         TimeObjectDelta.text = "- " + (bestLapMin - (1+currentMinLap[playerId])) + ":" + zeroDisplay(((59+bestlapSec) - currentSecLap[playerId]),2) + "." + zeroDisplay(((1000+bestLapMSec) - currentMilliSecLap[playerId]),3);
                     else
                         TimeObjectDelta.text = "- " + (bestLapMin - currentMinLap[playerId]) + ":" + zeroDisplay(((-1+bestlapSec) - currentSecLap[playerId]),2) + "." + zeroDisplay(((1000+bestLapMSec) - currentMilliSecLap[playerId]),3);
@@ -123,7 +123,7 @@ public class Timer : MonoBehaviour {
                 TimeObjectDelta.transform.parent.GetComponent<RawImage>().color = new Color(1, 0, 0);
                 if ((currentMilliSecLap[playerId]-bestLapMSec) < 0)
                 {
-                    if ((currentSecLap[playerId]-bestlapSec) < 0)
+                    if ((currentSecLap[playerId]-bestlapSec) <= 0)
                         TimeObjectDelta.text = "+ " + (currentMinLap[playerId] - (1+bestLapMin)) + ":" + zeroDisplay(((59 + currentSecLap[playerId]) - bestlapSec), 2) + "." + zeroDisplay(((1000 + currentMilliSecLap[playerId]) - bestLapMSec), 3);
                     else
                         TimeObjectDelta.text = "+ " + (currentMinLap[playerId] - bestLapMin) + ":" + zeroDisplay(((-1 + currentSecLap[playerId]) - bestlapSec), 2) + "." + zeroDisplay(((1000 + currentMilliSecLap[playerId]) - bestLapMSec), 3);
