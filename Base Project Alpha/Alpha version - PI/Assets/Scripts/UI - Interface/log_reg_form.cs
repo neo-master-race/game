@@ -26,6 +26,11 @@ public class log_reg_form : MonoBehaviour {
 	public GameObject backMenuButton;
     public GameObject carSelection;
 
+    public Material stratosMainMat;
+    public Material porscheMainMat;
+    public Material lamboMainMat;
+    public Material fordMainMat;
+
     // Use this for initialization
     void Start () {
         if (GameObject.Find("UserStats").GetComponent<UserStats>().isBack)
@@ -57,6 +62,30 @@ public class log_reg_form : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = true;
     }
 
+    public void setcolor ()
+    {
+        stratosMainMat.color = new Color(
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car1R / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car1G / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car1B / 255f
+            );
+        porscheMainMat.color = new Color(
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car2R / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car2G / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car2B / 255f
+            );
+        lamboMainMat.color = new Color(
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car3R / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car3G / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car3B / 255f
+            );
+        fordMainMat.color = new Color(
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car4R / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car4G / 255f,
+            GameObject.Find("UserStats").GetComponent<UserStats>().Car4B / 255f
+            );
+    }
+
     public IEnumerator go_to_menu(String message, bool is_guest)
     {
 
@@ -74,7 +103,6 @@ public class log_reg_form : MonoBehaviour {
         backButton.SetActive(true);
 		backMenuButton.SetActive(true);
 
-
         if (!is_guest)
         {
             play_button.SetActive(true);
@@ -87,6 +115,9 @@ public class log_reg_form : MonoBehaviour {
             multi_button.SetActive(true);
             tuto_button.SetActive(true);
         }
+
+
+        
     }
 
     public void towwwlog()
