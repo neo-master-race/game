@@ -448,8 +448,11 @@ public class customisation_color_selection : MonoBehaviour, IPointerDownHandler,
         //appelle la fonction de changement de tonalité et de changement de couleur du véhicule à chaque frame pour avoir un changement adaptatif sans attente d'évènements par l'utilisateur
         vehicle_color=calculate_color_range(colorPicked.value);
         gradient3D.SetColor("_Color_TopR", vehicle_color);
-        if(cursorLocalPositionX>=0 && cursorLocalPositionY>=0)
+        Debug.Log(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().cursorLocalPositionX);
+        Debug.Log(GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().cursorLocalPositionY);
+        if (cursorLocalPositionX>=0 && cursorLocalPositionY>=0)
         {
+            
             if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 1)
                 StratosMainColor.color = calculate_color_general(cursorLocalPositionX, cursorLocalPositionY);
             else if (GameObject.Find("3D_Zone_Selection").GetComponent<customisation_color_selection>().carIndex == 2)
