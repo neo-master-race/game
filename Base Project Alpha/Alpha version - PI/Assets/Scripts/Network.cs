@@ -729,11 +729,16 @@ class Network : MonoBehaviour {
 
  public
   void setGlobalRecord(int track, string record) {
-    // @TODO: send message
+    sendMessage(new Protocol.Message{
+        Type = "set_global_record",
+        SetGlobalRecord =
+            new Protocol.SetGlobalRecord{Track = track, Record = record}});
   }
 
  public
   void getGlobalRecord(int track) {
-    // @TODO: send message
+    sendMessage(new Protocol.Message{
+        Type = "get_global_record",
+        GetGlobalRecord = new Protocol.GetGlobalRecord{Track = track}});
   }
 }

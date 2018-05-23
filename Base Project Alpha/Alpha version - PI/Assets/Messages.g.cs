@@ -82,34 +82,36 @@ namespace Protocol {
             "ASgLMhMucHJvdG9jb2wuVXNlclN0YXRzIg4KDEdldFVzZXJTdGF0cyILCglM",
             "ZWF2ZVJvb20iIAoPR2V0R2xvYmFsUmVjb3JkEg0KBXRyYWNrGAEgASgFIjAK",
             "D1NldEdsb2JhbFJlY29yZBINCgV0cmFjaxgBIAEoBRIOCgZyZWNvcmQYAiAB",
-            "KAkiwwkKB01lc3NhZ2USDAoEdHlwZRgBIAEoCRItCgxjaGF0X21lc3NhZ2UY",
-            "AiABKAsyFS5wcm90b2NvbC5DaGF0TWVzc2FnZUgAEkAKFnVwZGF0ZV9wbGF5",
-            "ZXJfcG9zaXRpb24YAyABKAsyHi5wcm90b2NvbC5VcGRhdGVQbGF5ZXJQb3Np",
-            "dGlvbkgAEjwKFHVwZGF0ZV9wbGF5ZXJfc3RhdHVzGAQgASgLMhwucHJvdG9j",
-            "b2wuVXBkYXRlUGxheWVyU3RhdHVzSAASKgoKZGlzY29ubmVjdBgFIAEoCzIU",
-            "LnByb3RvY29sLkRpc2Nvbm5lY3RIABJLChx1cGRhdGVfcGxheWVyX3N0YXR1",
-            "c19yZXF1ZXN0GAYgASgLMiMucHJvdG9jb2wuVXBkYXRlUGxheWVyU3RhdHVz",
-            "UmVxdWVzdEgAEisKC2NyZWF0ZV9yb29tGAcgASgLMhQucHJvdG9jb2wuQ3Jl",
-            "YXRlUm9vbUgAEikKCnN0YXJ0X3Jvb20YCCABKAsyEy5wcm90b2NvbC5TdGFy",
-            "dFJvb21IABI2ChFqb2luX3Jvb21fcmVxdWVzdBgJIAEoCzIZLnByb3RvY29s",
-            "LkpvaW5Sb29tUmVxdWVzdEgAEjcKEXN0YXJ0aW5nX3Bvc2l0aW9uGAogASgL",
-            "MhoucHJvdG9jb2wuU3RhcnRpbmdQb3NpdGlvbkgAEjUKEHJlZ2lzdGVyX3Jl",
-            "cXVlc3QYCyABKAsyGS5wcm90b2NvbC5SZWdpc3RlclJlcXVlc3RIABIvCg1s",
-            "b2dpbl9yZXF1ZXN0GAwgASgLMhYucHJvdG9jb2wuTG9naW5SZXF1ZXN0SAAS",
-            "NwoRcmVnaXN0ZXJfcmVzcG9uc2UYDSABKAsyGi5wcm90b2NvbC5SZWdpc3Rl",
-            "clJlc3BvbnNlSAASMQoObG9naW5fcmVzcG9uc2UYDiABKAsyFy5wcm90b2Nv",
-            "bC5Mb2dpblJlc3BvbnNlSAASNgoRcm9vbV9saXN0X3JlcXVlc3QYDyABKAsy",
-            "GS5wcm90b2NvbC5Sb29tTGlzdFJlcXVlc3RIABI4ChJyb29tX2xpc3RfcmVz",
-            "cG9uc2UYECABKAsyGi5wcm90b2NvbC5Sb29tTGlzdFJlc3BvbnNlSAASMwoP",
-            "Y2hhbmdlX3VzZXJuYW1lGBEgASgLMhgucHJvdG9jb2wuQ2hhbmdlVXNlcm5h",
-            "bWVIABI4ChJqb2luX3Jvb21fcmVzcG9uc2UYEiABKAsyGi5wcm90b2NvbC5K",
-            "b2luUm9vbVJlc3BvbnNlSAASMAoOc2V0X3VzZXJfc3RhdHMYEyABKAsyFi5w",
-            "cm90b2NvbC5TZXRVc2VyU3RhdHNIABIwCg5nZXRfdXNlcl9zdGF0cxgUIAEo",
-            "CzIWLnByb3RvY29sLkdldFVzZXJTdGF0c0gAEikKCmxlYXZlX3Jvb20YFSAB",
-            "KAsyEy5wcm90b2NvbC5MZWF2ZVJvb21IABI2ChFnZXRfZ2xvYmFsX3JlY29y",
-            "ZBgWIAEoCzIZLnByb3RvY29sLkdldEdsb2JhbFJlY29yZEgAEjYKEXNldF9n",
-            "bG9iYWxfcmVjb3JkGBcgASgLMhkucHJvdG9jb2wuU2V0R2xvYmFsUmVjb3Jk",
-            "SABCBQoDbXNnYgZwcm90bzM="));
+            "KAkiLQoMR2xvYmFsUmVjb3JkEg0KBXRyYWNrGAEgASgFEg4KBnJlY29yZBgC",
+            "IAEoCSL0CQoHTWVzc2FnZRIMCgR0eXBlGAEgASgJEi0KDGNoYXRfbWVzc2Fn",
+            "ZRgCIAEoCzIVLnByb3RvY29sLkNoYXRNZXNzYWdlSAASQAoWdXBkYXRlX3Bs",
+            "YXllcl9wb3NpdGlvbhgDIAEoCzIeLnByb3RvY29sLlVwZGF0ZVBsYXllclBv",
+            "c2l0aW9uSAASPAoUdXBkYXRlX3BsYXllcl9zdGF0dXMYBCABKAsyHC5wcm90",
+            "b2NvbC5VcGRhdGVQbGF5ZXJTdGF0dXNIABIqCgpkaXNjb25uZWN0GAUgASgL",
+            "MhQucHJvdG9jb2wuRGlzY29ubmVjdEgAEksKHHVwZGF0ZV9wbGF5ZXJfc3Rh",
+            "dHVzX3JlcXVlc3QYBiABKAsyIy5wcm90b2NvbC5VcGRhdGVQbGF5ZXJTdGF0",
+            "dXNSZXF1ZXN0SAASKwoLY3JlYXRlX3Jvb20YByABKAsyFC5wcm90b2NvbC5D",
+            "cmVhdGVSb29tSAASKQoKc3RhcnRfcm9vbRgIIAEoCzITLnByb3RvY29sLlN0",
+            "YXJ0Um9vbUgAEjYKEWpvaW5fcm9vbV9yZXF1ZXN0GAkgASgLMhkucHJvdG9j",
+            "b2wuSm9pblJvb21SZXF1ZXN0SAASNwoRc3RhcnRpbmdfcG9zaXRpb24YCiAB",
+            "KAsyGi5wcm90b2NvbC5TdGFydGluZ1Bvc2l0aW9uSAASNQoQcmVnaXN0ZXJf",
+            "cmVxdWVzdBgLIAEoCzIZLnByb3RvY29sLlJlZ2lzdGVyUmVxdWVzdEgAEi8K",
+            "DWxvZ2luX3JlcXVlc3QYDCABKAsyFi5wcm90b2NvbC5Mb2dpblJlcXVlc3RI",
+            "ABI3ChFyZWdpc3Rlcl9yZXNwb25zZRgNIAEoCzIaLnByb3RvY29sLlJlZ2lz",
+            "dGVyUmVzcG9uc2VIABIxCg5sb2dpbl9yZXNwb25zZRgOIAEoCzIXLnByb3Rv",
+            "Y29sLkxvZ2luUmVzcG9uc2VIABI2ChFyb29tX2xpc3RfcmVxdWVzdBgPIAEo",
+            "CzIZLnByb3RvY29sLlJvb21MaXN0UmVxdWVzdEgAEjgKEnJvb21fbGlzdF9y",
+            "ZXNwb25zZRgQIAEoCzIaLnByb3RvY29sLlJvb21MaXN0UmVzcG9uc2VIABIz",
+            "Cg9jaGFuZ2VfdXNlcm5hbWUYESABKAsyGC5wcm90b2NvbC5DaGFuZ2VVc2Vy",
+            "bmFtZUgAEjgKEmpvaW5fcm9vbV9yZXNwb25zZRgSIAEoCzIaLnByb3RvY29s",
+            "LkpvaW5Sb29tUmVzcG9uc2VIABIwCg5zZXRfdXNlcl9zdGF0cxgTIAEoCzIW",
+            "LnByb3RvY29sLlNldFVzZXJTdGF0c0gAEjAKDmdldF91c2VyX3N0YXRzGBQg",
+            "ASgLMhYucHJvdG9jb2wuR2V0VXNlclN0YXRzSAASKQoKbGVhdmVfcm9vbRgV",
+            "IAEoCzITLnByb3RvY29sLkxlYXZlUm9vbUgAEjYKEWdldF9nbG9iYWxfcmVj",
+            "b3JkGBYgASgLMhkucHJvdG9jb2wuR2V0R2xvYmFsUmVjb3JkSAASNgoRc2V0",
+            "X2dsb2JhbF9yZWNvcmQYFyABKAsyGS5wcm90b2NvbC5TZXRHbG9iYWxSZWNv",
+            "cmRIABIvCg1nbG9iYWxfcmVjb3JkGBggASgLMhYucHJvdG9jb2wuR2xvYmFs",
+            "UmVjb3JkSABCBQoDbXNnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -140,7 +142,8 @@ namespace Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.LeaveRoom), global::Protocol.LeaveRoom.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.GetGlobalRecord), global::Protocol.GetGlobalRecord.Parser, new[]{ "Track" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.SetGlobalRecord), global::Protocol.SetGlobalRecord.Parser, new[]{ "Track", "Record" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse", "SetUserStats", "GetUserStats", "LeaveRoom", "GetGlobalRecord", "SetGlobalRecord" }, new[]{ "Msg" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.GlobalRecord), global::Protocol.GlobalRecord.Parser, new[]{ "Track", "Record" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.Message), global::Protocol.Message.Parser, new[]{ "Type", "ChatMessage", "UpdatePlayerPosition", "UpdatePlayerStatus", "Disconnect", "UpdatePlayerStatusRequest", "CreateRoom", "StartRoom", "JoinRoomRequest", "StartingPosition", "RegisterRequest", "LoginRequest", "RegisterResponse", "LoginResponse", "RoomListRequest", "RoomListResponse", "ChangeUsername", "JoinRoomResponse", "SetUserStats", "GetUserStats", "LeaveRoom", "GetGlobalRecord", "SetGlobalRecord", "GlobalRecord" }, new[]{ "Msg" }, null, null)
           }));
     }
     #endregion
@@ -5526,6 +5529,151 @@ namespace Protocol {
 
   }
 
+  public sealed partial class GlobalRecord : pb::IMessage<GlobalRecord> {
+    private static readonly pb::MessageParser<GlobalRecord> _parser = new pb::MessageParser<GlobalRecord>(() => new GlobalRecord());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GlobalRecord> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GlobalRecord() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GlobalRecord(GlobalRecord other) : this() {
+      track_ = other.track_;
+      record_ = other.record_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GlobalRecord Clone() {
+      return new GlobalRecord(this);
+    }
+
+    /// <summary>Field number for the "track" field.</summary>
+    public const int TrackFieldNumber = 1;
+    private int track_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Track {
+      get { return track_; }
+      set {
+        track_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "record" field.</summary>
+    public const int RecordFieldNumber = 2;
+    private string record_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Record {
+      get { return record_; }
+      set {
+        record_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GlobalRecord);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GlobalRecord other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Track != other.Track) return false;
+      if (Record != other.Record) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Track != 0) hash ^= Track.GetHashCode();
+      if (Record.Length != 0) hash ^= Record.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Track != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Track);
+      }
+      if (Record.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Record);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Track != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Track);
+      }
+      if (Record.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Record);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GlobalRecord other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Track != 0) {
+        Track = other.Track;
+      }
+      if (other.Record.Length != 0) {
+        Record = other.Record;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Track = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Record = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///  message that can be exchanged between the client and the server
   ///  TYPE = "chat_message" if ChatMessage (for example)
@@ -5537,7 +5685,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Protocol.MessagesReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5621,6 +5769,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.SetGlobalRecord:
           SetGlobalRecord = other.SetGlobalRecord.Clone();
+          break;
+        case MsgOneofCase.GlobalRecord:
+          GlobalRecord = other.GlobalRecord.Clone();
           break;
       }
 
@@ -5887,6 +6038,17 @@ namespace Protocol {
       }
     }
 
+    /// <summary>Field number for the "global_record" field.</summary>
+    public const int GlobalRecordFieldNumber = 24;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.GlobalRecord GlobalRecord {
+      get { return msgCase_ == MsgOneofCase.GlobalRecord ? (global::Protocol.GlobalRecord) msg_ : null; }
+      set {
+        msg_ = value;
+        msgCase_ = value == null ? MsgOneofCase.None : MsgOneofCase.GlobalRecord;
+      }
+    }
+
     private object msg_;
     /// <summary>Enum of possible cases for the "msg" oneof.</summary>
     public enum MsgOneofCase {
@@ -5913,6 +6075,7 @@ namespace Protocol {
       LeaveRoom = 21,
       GetGlobalRecord = 22,
       SetGlobalRecord = 23,
+      GlobalRecord = 24,
     }
     private MsgOneofCase msgCase_ = MsgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5962,6 +6125,7 @@ namespace Protocol {
       if (!object.Equals(LeaveRoom, other.LeaveRoom)) return false;
       if (!object.Equals(GetGlobalRecord, other.GetGlobalRecord)) return false;
       if (!object.Equals(SetGlobalRecord, other.SetGlobalRecord)) return false;
+      if (!object.Equals(GlobalRecord, other.GlobalRecord)) return false;
       if (MsgCase != other.MsgCase) return false;
       return true;
     }
@@ -5992,6 +6156,7 @@ namespace Protocol {
       if (msgCase_ == MsgOneofCase.LeaveRoom) hash ^= LeaveRoom.GetHashCode();
       if (msgCase_ == MsgOneofCase.GetGlobalRecord) hash ^= GetGlobalRecord.GetHashCode();
       if (msgCase_ == MsgOneofCase.SetGlobalRecord) hash ^= SetGlobalRecord.GetHashCode();
+      if (msgCase_ == MsgOneofCase.GlobalRecord) hash ^= GlobalRecord.GetHashCode();
       hash ^= (int) msgCase_;
       return hash;
     }
@@ -6095,6 +6260,10 @@ namespace Protocol {
         output.WriteRawTag(186, 1);
         output.WriteMessage(SetGlobalRecord);
       }
+      if (msgCase_ == MsgOneofCase.GlobalRecord) {
+        output.WriteRawTag(194, 1);
+        output.WriteMessage(GlobalRecord);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6168,6 +6337,9 @@ namespace Protocol {
       }
       if (msgCase_ == MsgOneofCase.SetGlobalRecord) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(SetGlobalRecord);
+      }
+      if (msgCase_ == MsgOneofCase.GlobalRecord) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GlobalRecord);
       }
       return size;
     }
@@ -6246,6 +6418,9 @@ namespace Protocol {
           break;
         case MsgOneofCase.SetGlobalRecord:
           SetGlobalRecord = other.SetGlobalRecord;
+          break;
+        case MsgOneofCase.GlobalRecord:
+          GlobalRecord = other.GlobalRecord;
           break;
       }
 
@@ -6459,6 +6634,15 @@ namespace Protocol {
             }
             input.ReadMessage(subBuilder);
             SetGlobalRecord = subBuilder;
+            break;
+          }
+          case 194: {
+            global::Protocol.GlobalRecord subBuilder = new global::Protocol.GlobalRecord();
+            if (msgCase_ == MsgOneofCase.GlobalRecord) {
+              subBuilder.MergeFrom(GlobalRecord);
+            }
+            input.ReadMessage(subBuilder);
+            GlobalRecord = subBuilder;
             break;
           }
         }

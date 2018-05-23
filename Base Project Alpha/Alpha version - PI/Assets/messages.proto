@@ -182,6 +182,11 @@ message SetGlobalRecord {
   string record = 2;
 }
 
+message GlobalRecord {
+  int32 track = 1;
+  string record = 2;
+}
+
 // message that can be exchanged between the client and the server
 // TYPE = "chat_message" if ChatMessage (for example)
 message Message {
@@ -209,5 +214,6 @@ message Message {
     LeaveRoom leave_room = 21;
     GetGlobalRecord get_global_record = 22;
     SetGlobalRecord set_global_record = 23;
+    GlobalRecord global_record = 24;
   }
 }
