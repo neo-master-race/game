@@ -55,7 +55,6 @@ public class CarController : MonoBehaviour
                 = new Vector3(0, 1, 0);
 
         }*/
-
         Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
@@ -65,6 +64,12 @@ public class CarController : MonoBehaviour
 
         layerMask = 1 << LayerMask.NameToLayer("Vehicle");
         layerMask = ~layerMask;
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Destroy(transform.Find("Particle System").gameObject);
+            Destroy(transform.Find("Particle System (1)").gameObject);
+        }
 
         buttonForward = GameObject.Find("/PrefabInterface/ControlPanel/AccelerateRawImage");
         buttonBackward = GameObject.Find("/PrefabInterface/ControlPanel/BrakeRawImage");
