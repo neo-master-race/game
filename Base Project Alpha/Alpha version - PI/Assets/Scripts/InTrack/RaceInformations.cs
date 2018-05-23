@@ -33,6 +33,12 @@ public class RaceInformations : MonoBehaviour {
     public bool hasFinished = false;
     private bool onlyOnce = true;
 
+    public GameObject players2;
+    public GameObject players3;
+    public GameObject players4;
+
+    public string trackwr;
+
 
     private int i = 0;
 
@@ -43,11 +49,16 @@ public class RaceInformations : MonoBehaviour {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         //playerGlobalTimes = 
         playerLapCount = new int[4];
+        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb);
         if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
         {
             leaderboardUI.SetActive(false);
             GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(1);
-        } 
+        }
+        /*else if (GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti)
+        {
+
+        }*/
     }
 
     string zeroDisplay(int toclock, int zeros)
@@ -208,11 +219,103 @@ public class RaceInformations : MonoBehaviour {
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = newrecord;
         else
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = record;
+
+        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb);
+        gotNewRecord = false;
+        gotNewRecord = isnewRecord(newrecord, trackwr);
+        if (gotNewRecord)
+            GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
     }
 
     public void setMultiScreen()
     {
         endScreenMulti.SetActive(true);
+        string record = "";
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
+            record = GameObject.Find("UserStats").GetComponent<UserStats>().track1LapRecord;
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
+            record = GameObject.Find("UserStats").GetComponent<UserStats>().track2LapRecord;
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+            record = GameObject.Find("UserStats").GetComponent<UserStats>().track3LapRecord;
+        if (playerLeaderboard.Length == 1)
+        {
+            players2.SetActive(true);
+            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
+            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
+            players2.transform.Find("player2Username").GetComponent<Text>().text = "-";
+            players2.transform.Find("player2TotalTimes").GetComponent<Text>().text = "--:--.--";
+            players2.transform.Find("player2bestTimes").GetComponent<Text>().text = "--:--.--";
+        }
+        if (playerLeaderboard.Length == 2)
+        {
+            players2.SetActive(true);
+            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
+            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
+            players2.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players2.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
+            players2.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
+        }
+        else if (playerLeaderboard.Length == 3)
+        {
+            players3.SetActive(true);
+            players3.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players3.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
+            players3.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
+            players3.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players3.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
+            players3.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
+            players3.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players3.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[2].ToString();
+            players3.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[2].ToString();
+        }
+        else if (playerLeaderboard.Length == 4)
+        {
+            players4.SetActive(true);
+            players4.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players4.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
+            players4.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
+            players4.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players4.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
+            players4.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
+            players4.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players4.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[2].ToString();
+            players4.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[2].ToString();
+            players4.transform.Find("player4Username").GetComponent<Text>().text = playerLeaderboard[3].transform.Find("userName").GetComponent<UserHoverTag>().username.ToString();
+            players4.transform.Find("player4TotalTimes").GetComponent<Text>().text = playerGlobalTimes[3].ToString();
+            players4.transform.Find("player4bestTimes").GetComponent<Text>().text = playerBestLapTimes[3].ToString();
+        }
+
+        string newrecord = "";
+        foreach (GameObject player in playerLeaderboard)
+        {
+            if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                newrecord = playerBestLapTimes[player.GetComponent<Player_Info_Ingame>().leaderboardPosition - 1];
+            }
+        }
+        bool gotNewRecord = false;
+
+        gotNewRecord = isnewRecord(playerBestLapTimes[0], record);
+        if (gotNewRecord)
+        {
+            newrecord = playerBestLapTimes[0];
+            if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track1LapRecord = newrecord;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track2LapRecord = newrecord;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+                GameObject.Find("UserStats").GetComponent<UserStats>().track3LapRecord = newrecord;
+
+            GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
+        }
+
+        
+        gotNewRecord = false;
+        gotNewRecord = isnewRecord(newrecord, trackwr);
+        if (gotNewRecord)
+            GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
     }
 
     public IEnumerator showEndScreen()

@@ -520,6 +520,7 @@ class Network : MonoBehaviour {
       case "global_record":
         Protocol.GlobalRecord gr = parsedData.GlobalRecord;
         Debug.Log(gr.Track + gr.Record);
+        GameObject.Find("RaceInformations").GetComponent<RaceInformations>().trackwr = gr.Record;
         break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);

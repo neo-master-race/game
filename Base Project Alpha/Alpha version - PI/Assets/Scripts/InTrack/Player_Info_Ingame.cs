@@ -119,7 +119,7 @@ public class Player_Info_Ingame : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if(this.gameObject.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+        if (this.gameObject.GetComponent<Player_Info_Ingame>().isLocalPlayer)
         {
             int nb_players_before = players.Length;
             players = GameObject.FindGameObjectsWithTag("Player");
