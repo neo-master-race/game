@@ -42,6 +42,12 @@ public class Player_Info_Ingame : MonoBehaviour {
 
     void Awake()
     {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Destroy(transform.Find("Particle System").gameObject);
+            Destroy(transform.Find("Particle System (1)").gameObject);
+        }
+
         if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 1)
         {
             Destroy(GameObject.Find("Porsche"));

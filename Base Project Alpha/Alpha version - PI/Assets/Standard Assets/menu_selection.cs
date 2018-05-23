@@ -225,7 +225,7 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Confirm_Text":
                 //change la couleur du bouton confirm en blanc
-                confirmButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
+                confirmButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
                 break;
 
             case "Back_Text":
