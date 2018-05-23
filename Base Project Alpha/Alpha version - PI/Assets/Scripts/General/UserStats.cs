@@ -12,6 +12,7 @@ public class UserStats : MonoBehaviour {
     public string inLobby;
     public int onTrackNb = 0;
     public bool playingSolo = false;
+    public bool playingMulti = false;
     public int trackLapNumber = 0;
 
     [Header("User Global Stats")]
