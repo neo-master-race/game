@@ -422,7 +422,7 @@ public class room_info_container : MonoBehaviour {
                         if (rooms[j].ActivePlayers[k] == GameObject.Find("UserStats").GetComponent<UserStats>().username)
                             GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition = rooms[j].startingPositions[k];
                     }
-                        
+                     GameObject.Find("RoomText").GetComponent<Text>().text = "En attente de "+(rooms[j].MaximumPlayersNb- rooms[j].ActivePlayers.Length)+" joueurs.";
                 }
             }
         }     
