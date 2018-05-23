@@ -62,6 +62,11 @@ public class log_reg_form : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = true;
     }
 
+    public void playMulti()
+    {
+        GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = true;
+    }
+
     public void setcolor ()
     {
         stratosMainMat.color = new Color(
