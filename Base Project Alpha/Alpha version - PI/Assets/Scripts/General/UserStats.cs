@@ -103,6 +103,7 @@ public class UserStats : MonoBehaviour {
 		playingMulti = false;
         trackLapNumber = 0;
 		isBack = false;
+		startingPosition = 0;
     }
 
     public void isGuest()
