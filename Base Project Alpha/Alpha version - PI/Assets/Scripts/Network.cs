@@ -517,6 +517,10 @@ class Network : MonoBehaviour {
         }
 
         break;
+      case "global_record":
+        Protocol.GlobalRecord gr = parsedData.GlobalRecord;
+        Debug.Log(gr.Track + gr.Record);
+        break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
