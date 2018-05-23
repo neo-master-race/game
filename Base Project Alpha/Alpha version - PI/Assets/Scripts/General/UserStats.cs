@@ -93,14 +93,16 @@ public class UserStats : MonoBehaviour {
 
     public void gobacktomenu ()
     {
-        SceneManager.LoadScene("entryScene", LoadSceneMode.Single);
-        isBack = true;
+		isBack = true;
+		SceneManager.LoadScene("entryScene", LoadSceneMode.Single);
         isOnRoomList = false;
         isOnLobby = false;
         inLobby=null;
         onTrackNb = 0;
         playingSolo = false;
+		playingMulti = false;
         trackLapNumber = 0;
+		isBack = false;
     }
 
     public void isGuest()
