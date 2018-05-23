@@ -249,11 +249,14 @@ public class RaceInformations : MonoBehaviour {
             i++;
         }
 
-        bool everybodyHasFinished = true;
-        for(int j=0;j<players.Length;j++)
+        bool everybodyHasFinished = false;
+        if(players.Length>0 && GameObject.Find("StartLights").GetComponent<startLightsSequence>().lightSequenceStep==7)
         {
-            if (playerGlobalTimes[j] == "--:--.---")
-                everybodyHasFinished = false;
+            for(int j=0;j<players.Length;j++)
+            {
+                if (playerGlobalTimes[j] != "--:--.---" || players[j].GetComponent<Player_Info_Ingame>().lap_count== GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber)
+                    everybodyHasFinished = true;
+            }
         }
         if (everybodyHasFinished && onlyOnce)
         {
