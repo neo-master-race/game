@@ -537,7 +537,7 @@ void disable_all()
         //circuit2Button.SetActive(false);
         //circuit3Button.SetActive(false);
 
-        confirmButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
+        confirmButton.GetComponent<RawImage>().color = new Color(255, 255, 255);
         backButton.GetComponent<RawImage>().color = new Color(255, 0, 0);
 
         userInfo.SetActive(false);
