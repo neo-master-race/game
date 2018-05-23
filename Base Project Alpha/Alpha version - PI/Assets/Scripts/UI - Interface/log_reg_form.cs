@@ -57,6 +57,10 @@ public class log_reg_form : MonoBehaviour {
 
     }
 
+	public void ErrorOff () {
+		display_error.SetActive(false);
+	}
+
     public void setvehicle ()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().carIndex = carSelection.GetComponent<carSelection>().selectedVehicule+1;
@@ -167,7 +171,8 @@ public class log_reg_form : MonoBehaviour {
         GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = true;
         GameObject.Find("ErrorDisplayText").GetComponent<Text>().text = msg;
         yield return new WaitForSeconds(3.0f);
-        GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = false;
+		if (display_error.activeSelf)
+        	GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = false;
         display_error.SetActive(false);
 
 
