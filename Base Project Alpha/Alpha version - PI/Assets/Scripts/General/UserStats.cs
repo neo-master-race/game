@@ -30,6 +30,7 @@ public class UserStats : MonoBehaviour {
     public int currentCarB;
     public bool isBack = false;
     public bool isguest = false;
+    public int startingPosition;
 
     [Header("User Cars")]
     public int Car1R;
