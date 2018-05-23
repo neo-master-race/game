@@ -100,7 +100,7 @@ public class CarController : MonoBehaviour
             float acceleration = 0.0f;
             if (canDrive)
             {
-                if (Application.platform == RuntimePlatform.Android || true)
+                if (Application.platform == RuntimePlatform.Android)
                 {
                     float padRotation = Input.acceleration.x * 2.5f;
 
