@@ -227,10 +227,10 @@ public class RaceInformations : MonoBehaviour {
         if (gotNewRecord)
         {
             GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
-            endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = newrecord;
+            endScreenSolo.transform.Find("wrStringBackground/wrStringtext").GetComponent<Text>().text = newrecord;
         }
         else
-            endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = trackwr;
+            endScreenSolo.transform.Find("wrStringBackground/wrStringtext").GetComponent<Text>().text = trackwr;
 
 
     }
