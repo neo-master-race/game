@@ -22,6 +22,7 @@ public class log_reg_form : MonoBehaviour {
     public GameObject solo_button;
     public GameObject multi_button;
 	public GameObject tuto_button;
+	public GameObject confirm;
 	public GameObject backButton;
 	public GameObject backMenuButton;
     public GameObject carSelection;
@@ -165,6 +166,7 @@ public class log_reg_form : MonoBehaviour {
         log_reg_canvas.SetActive(true);
         user_input.SetActive(true);
         pwd_input.SetActive(true);
+		confirm.GetComponent<RawImage>().color = new Color(255, 255, 255);
         user_text.GetComponent<Text>().enabled = true;
         pwd_text.GetComponent<Text>().enabled = true;
         display_error.SetActive(true);
