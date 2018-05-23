@@ -126,10 +126,12 @@ public class RaceInformations : MonoBehaviour {
         int bestLapMin = int.Parse(best.Substring(0, 2));
         int bestlapSec = int.Parse(best.Substring(3, 2));
         int bestLapMSec = int.Parse(best.Substring(6, 3));
+        Debug.Log("ah");
 
         int LapMin = int.Parse(lap.Substring(0, 2));
         int lapSec = int.Parse(lap.Substring(3, 2));
         int LapMSec = int.Parse(lap.Substring(6, 3));
+        Debug.Log("ah");
 
         if (LapMin < bestLapMin || ((LapMin == bestLapMin) && (lapSec < bestlapSec))
             || ((LapMin == bestLapMin) && (bestlapSec == lapSec) && (LapMSec < bestLapMSec)))
@@ -220,9 +222,7 @@ public class RaceInformations : MonoBehaviour {
         else
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = record;
 
-        
-
-        gotNewRecord = false;
+        newrecord = playerBestLapTimes[0];
         gotNewRecord = isnewRecord(newrecord, trackwr);
         if (gotNewRecord)
         {
@@ -305,10 +305,9 @@ public class RaceInformations : MonoBehaviour {
         }
         bool gotNewRecord = false;
 
-        gotNewRecord = isnewRecord(playerBestLapTimes[0], record);
+        gotNewRecord = isnewRecord(newrecord, record);
         if (gotNewRecord)
         {
-            newrecord = playerBestLapTimes[0];
             if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 1)
                 GameObject.Find("UserStats").GetComponent<UserStats>().track1LapRecord = newrecord;
             else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
@@ -319,11 +318,13 @@ public class RaceInformations : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
         }
 
-        
-        gotNewRecord = false;
-        gotNewRecord = isnewRecord(newrecord, trackwr);
+
         if (gotNewRecord)
-            GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
+        {
+            gotNewRecord = isnewRecord(newrecord, trackwr);
+            if (gotNewRecord)
+                GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
+        }
     }
 
     public IEnumerator showEndScreen()
