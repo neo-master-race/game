@@ -102,7 +102,7 @@ public class UserStats : MonoBehaviour {
         playingSolo = false;
 		playingMulti = false;
         trackLapNumber = 0;
-		isBack = false;
+		//isBack = false;
 		startingPosition = 0;
     }
 

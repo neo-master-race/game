@@ -473,6 +473,7 @@ public class room_info_container : MonoBehaviour {
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
 		GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
         reset_list();
     }
 
