@@ -8,8 +8,8 @@ public class room_creation_form : MonoBehaviour {
     [Header("Room")]
     public Room currentRoomCreated;
 
-    [Header("Room form variables")]
-    public GameObject roomCreationForm;
+	[Header("Room form variables")]
+	public GameObject roomCreationForm;
     public string toggleIsOn = "Single";
     public string toggle2IsOn = "Public";
     public int maxPlayers = 2;
@@ -32,16 +32,23 @@ public class room_creation_form : MonoBehaviour {
     public Texture circuit1;
     public Texture circuit2;
     public Texture circuit3;
-    public int actualCircuitSelection = 0;
+	public int actualCircuitSelection = 0;
+	public GameObject back;
 
     // Use this for initialization
     void Start () {
         currentRoomCreated.circuits = new Circuit[1];
     }
+		
+	public void closeWindow(){
+		roomCreationForm.SetActive (false);
+		back.SetActive (true);
+	}
 
     public void activateRoomForm ()
     {
         roomCreationForm.SetActive(true);
+		back.SetActive (false);
     }
 
     public void toggleSingleRace()
@@ -297,6 +304,7 @@ public class room_creation_form : MonoBehaviour {
                 break;
         }
     }
+
 
     // Update is called once per frame
     void Update () {
