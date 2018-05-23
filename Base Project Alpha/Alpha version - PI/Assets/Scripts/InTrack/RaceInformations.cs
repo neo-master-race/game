@@ -220,7 +220,8 @@ public class RaceInformations : MonoBehaviour {
         else
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = record;
 
-        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb);
+        endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = trackwr;
+
         gotNewRecord = false;
         gotNewRecord = isnewRecord(newrecord, trackwr);
         if (gotNewRecord)
