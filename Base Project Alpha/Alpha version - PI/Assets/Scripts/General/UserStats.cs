@@ -29,6 +29,7 @@ public class UserStats : MonoBehaviour {
     public int currentCarG;
     public int currentCarB;
     public bool isBack = false;
+    public bool isguest = false;
 
     [Header("User Cars")]
     public int Car1R;
@@ -103,6 +104,10 @@ public class UserStats : MonoBehaviour {
     public void isGuest()
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().username = GameObject.Find("Network").GetComponent<Network>().getClientName();
+        isguest = true;
+        track1LapRecord = "--:--:--";
+        track2LapRecord = "--:--:--";
+        track3LapRecord = "--:--:--";
     }
 
     public void setUserStats(string usernam,int numberOfRaces,int numberOfWins,string recordTrack1, string recordTrack2, string recordTrack3,

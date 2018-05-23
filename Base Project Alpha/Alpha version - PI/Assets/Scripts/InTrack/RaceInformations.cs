@@ -250,7 +250,7 @@ public class RaceInformations : MonoBehaviour {
         }
 
         bool everybodyHasFinished = false;
-        if(players.Length>0 && GameObject.Find("StartLights").GetComponent<startLightsSequence>().lightSequenceStep==7)
+        if(players.Length>0 && GameObject.Find("StartLights").GetComponent<startLightsSequence>().lightSequenceStep==8)
         {
             for(int j=0;j<players.Length;j++)
             {
