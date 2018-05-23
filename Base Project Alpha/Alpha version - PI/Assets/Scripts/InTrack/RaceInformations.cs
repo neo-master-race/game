@@ -126,12 +126,10 @@ public class RaceInformations : MonoBehaviour {
         int bestLapMin = int.Parse(best.Substring(0, 2));
         int bestlapSec = int.Parse(best.Substring(3, 2));
         int bestLapMSec = int.Parse(best.Substring(6, 3));
-        Debug.Log("ah");
 
         int LapMin = int.Parse(lap.Substring(0, 2));
         int lapSec = int.Parse(lap.Substring(3, 2));
         int LapMSec = int.Parse(lap.Substring(6, 3));
-        Debug.Log("ah");
 
         if (LapMin < bestLapMin || ((LapMin == bestLapMin) && (lapSec < bestlapSec))
             || ((LapMin == bestLapMin) && (bestlapSec == lapSec) && (LapMSec < bestLapMSec)))
