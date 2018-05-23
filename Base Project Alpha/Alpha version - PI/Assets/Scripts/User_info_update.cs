@@ -13,8 +13,16 @@ public class User_info_update : MonoBehaviour {
 
     public void OnPointerClick()
     {
-		info.text = "5";
-		//GameObject.Find("UserStats").GetComponent<UserStats>().gobacktomenu();
+		info.text = 
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().username + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().raceNb + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().raceVictory + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track1LapRecord + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track2LapRecord + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track3LapRecord + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track1LapRecord + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track2LapRecord + "\n" +
+		GameObject.Find ("UserStats").GetComponent<UserStats> ().track3LapRecord + "\n";
     }
 
     // Update is called once per frame
