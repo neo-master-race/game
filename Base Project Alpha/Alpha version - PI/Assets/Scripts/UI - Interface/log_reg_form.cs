@@ -10,6 +10,8 @@ public class log_reg_form : MonoBehaviour {
     public GameObject display_error;
     public GameObject user_input;
     public GameObject pwd_input;
+    public GameObject user_text;
+    public GameObject pwd_text;
     public GameObject after_canvas;
     public GameObject register_button;
     public GameObject login_button;
@@ -115,6 +117,8 @@ public class log_reg_form : MonoBehaviour {
         log_reg_canvas.SetActive(true);
         user_input.SetActive(true);
         pwd_input.SetActive(true);
+        user_text.GetComponent<Text>().enabled = true;
+        pwd_text.GetComponent<Text>().enabled = true;
         display_error.SetActive(true);
         GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = true;
         GameObject.Find("ErrorDisplayText").GetComponent<Text>().text = msg;
