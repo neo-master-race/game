@@ -168,7 +168,7 @@ public class room_creation_form : MonoBehaviour {
             {
                 Track1Visible.transform.GetComponent<RawImage>().texture = circuit3;
                 currentRoomCreated.circuits[0] = Circuit.Track3;
-                Track1Name.text = "Track 3";
+                Track1Name.text = "Super 8";
             }
         }
         else
@@ -192,7 +192,7 @@ public class room_creation_form : MonoBehaviour {
                 {
                     Track1Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[0] = Circuit.Track3;
-                    Track1Name.text = "Track 3";
+                    Track1Name.text = "Super 8";
                 }
             }
             else if (actualCircuitSelection == 2)
@@ -213,7 +213,7 @@ public class room_creation_form : MonoBehaviour {
                 {
                     Track2Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[1] = Circuit.Track3;
-                    Track2Name.text = "Track 3";
+                    Track2Name.text = "Super 8";
                 }
             }
             else if (actualCircuitSelection == 3)
@@ -234,7 +234,7 @@ public class room_creation_form : MonoBehaviour {
                 {
                     Track3Visible.transform.GetComponent<RawImage>().texture = circuit3;
                     currentRoomCreated.circuits[2] = Circuit.Track3;
-                    Track3Name.text = "Track 3";
+                    Track3Name.text = "Super 8";
                 }
             }
         }

@@ -40,22 +40,19 @@ class Network : MonoBehaviour {
  public
   String password;
 
+ private
+  static Network playerInstance;
 
- private static Network playerInstance;
-
-    // Use this for initialization
+  // Use this for initialization
  private
   void Start() {
     DontDestroyOnLoad(this.gameObject);
-        if (playerInstance == null)
-        {
-            playerInstance = this;
-        }
-        else
-        {
-            DestroyObject(gameObject);
-        }
-        carsContainer = GameObject.Find("Cars");
+    if (playerInstance == null) {
+      playerInstance = this;
+    } else {
+      DestroyObject(gameObject);
+    }
+    carsContainer = GameObject.Find("Cars");
 
     players = new Hashtable();
     clientName = "Invité-" + new System.Random().Next(1, 65536);
@@ -520,6 +517,10 @@ class Network : MonoBehaviour {
         }
 
         break;
+      case "global_record":
+        Protocol.GlobalRecord gr = parsedData.GlobalRecord;
+        Debug.Log(gr.Track + gr.Record);
+        break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
         break;
@@ -728,5 +729,20 @@ class Network : MonoBehaviour {
   void leaveRoom() {
     sendMessage(new Protocol.Message{Type = "leave_room",
                                      LeaveRoom = new Protocol.LeaveRoom()});
+  }
+
+ public
+  void setGlobalRecord(int track, string record) {
+    sendMessage(new Protocol.Message{
+        Type = "set_global_record",
+        SetGlobalRecord =
+            new Protocol.SetGlobalRecord{Track = track, Record = record}});
+  }
+
+ public
+  void getGlobalRecord(int track) {
+    sendMessage(new Protocol.Message{
+        Type = "get_global_record",
+        GetGlobalRecord = new Protocol.GetGlobalRecord{Track = track}});
   }
 }
