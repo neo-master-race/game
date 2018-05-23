@@ -45,7 +45,14 @@ public class log_reg_form : MonoBehaviour {
             solo_button.SetActive(true);
             multi_button.SetActive(true);
 
-            GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
+			GameObject.Find ("TitleCanvas").SetActive (false);
+			/*GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
+			GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = false;
+			GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
+			GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+			GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = false;
+			GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 0;
+			GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = 0;*/
         }
 
     }
