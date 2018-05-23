@@ -95,6 +95,17 @@ public class Player_Info_Ingame : MonoBehaviour {
     {
         if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
             this.transform.position = GameObject.Find("Slot1").transform.position;
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti)
+        {
+            if(GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition==1)
+                this.transform.position = GameObject.Find("Slot1").transform.position;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition == 2)
+                this.transform.position = GameObject.Find("Slot2").transform.position;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition == 3)
+                this.transform.position = GameObject.Find("Slot3").transform.position;
+            else if (GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition == 4)
+                this.transform.position = GameObject.Find("Slot4").transform.position;
+        }
     }
 
     // Update is called once per frame
