@@ -77,7 +77,7 @@ public class CarController : MonoBehaviour
 
     public void boost(float multiplicator)
     {
-        if(currentAcceleration<3f)
+        if(currentAcceleration<3f && currentAcceleration>0.2f)
         {
             StartCoroutine(accelerationMultiplicator(multiplicator));
             currentAcceleration += multiplicator;
@@ -87,9 +87,18 @@ public class CarController : MonoBehaviour
     IEnumerator accelerationMultiplicator(float multiplicator)
     {
         yield return new WaitForSeconds(3);
-        currentAcceleration -= multiplicator;
-        if (currentAcceleration < 1f)
-            currentAcceleration = 1f;
+        if(multiplicator>0)
+        {
+            currentAcceleration -= multiplicator;
+            if (currentAcceleration < 1f)
+                currentAcceleration = 1f;
+        }
+        else
+        {
+            currentAcceleration -= multiplicator;
+            if (currentAcceleration > 1f)
+                currentAcceleration = 1f;
+        }
     }
 
     void Update()
