@@ -56,7 +56,6 @@ public class CarController : MonoBehaviour
 
         }*/
 
-
         Debug.Log(GetComponent<Player_Info_Ingame>().lap_count);
         body = GetComponent<Rigidbody>();
         body.centerOfMass = Vector3.down;
@@ -66,12 +65,6 @@ public class CarController : MonoBehaviour
 
         layerMask = 1 << LayerMask.NameToLayer("Vehicle");
         layerMask = ~layerMask;
-
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            //Pour que l'orientation de la tablette ne change pas
-            Screen.orientation = ScreenOrientation.LandscapeLeft;
-        }
 
         buttonForward = GameObject.Find("/PrefabInterface/ControlPanel/AccelerateRawImage");
         buttonBackward = GameObject.Find("/PrefabInterface/ControlPanel/BrakeRawImage");
