@@ -220,12 +220,19 @@ public class RaceInformations : MonoBehaviour {
         else
             endScreenSolo.transform.Find("RecordNewStringBackground/RecordNewStringtext").GetComponent<Text>().text = record;
 
-        endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = trackwr;
+        
 
         gotNewRecord = false;
         gotNewRecord = isnewRecord(newrecord, trackwr);
         if (gotNewRecord)
+        {
             GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
+            endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = newrecord;
+        }
+        else
+            endScreenSolo.transform.Find("wrStringtext").GetComponent<Text>().text = trackwr;
+
+
     }
 
     public void setMultiScreen()
@@ -322,7 +329,7 @@ public class RaceInformations : MonoBehaviour {
     public IEnumerator showEndScreen()
     {
         hasFinished = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         timeUI.SetActive(false);
         lapUI.SetActive(false);
         positionUI.SetActive(false);
