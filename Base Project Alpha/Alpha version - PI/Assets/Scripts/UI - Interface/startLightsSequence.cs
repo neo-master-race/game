@@ -11,7 +11,7 @@ public class startLightsSequence : MonoBehaviour {
     public Texture redLight;
     public Texture greenLight;
 
-    private int lightSequenceStep = 0;
+    public int lightSequenceStep = 0;
     public GameObject localPlayer;
 
 	// Use this for initialization
@@ -36,6 +36,9 @@ public class startLightsSequence : MonoBehaviour {
             }
         }
         timerInBetweenLights -= Time.deltaTime;
+        if (lightSequenceStep < 6)
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Info_Ingame>().setpos();
+            
         if(timerInBetweenLights<0 && lightSequenceStep<=7)
         {
             lightSequenceStep++;

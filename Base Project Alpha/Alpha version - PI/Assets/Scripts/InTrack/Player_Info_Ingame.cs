@@ -82,7 +82,13 @@ public class Player_Info_Ingame : MonoBehaviour {
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("track2"));
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));         
+    }
+
+    public void setpos()
+    {
+        if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
+            this.transform.position = GameObject.Find("Slot1").transform.position;
     }
 
     // Update is called once per frame
@@ -128,7 +134,6 @@ public class Player_Info_Ingame : MonoBehaviour {
                 }
                 GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation = true;
             }
-            
             for (int i = 0; i < playersLeaderboard.Length - 1; i++)
             {
                 for (int j = 0; j < playersLeaderboard.Length - 1; j++)
@@ -168,7 +173,7 @@ public class Player_Info_Ingame : MonoBehaviour {
                 else
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count;
             }
-            if(!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished)
+            if (!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished)
             { 
                 GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
                 GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(leaderboardPosition);
