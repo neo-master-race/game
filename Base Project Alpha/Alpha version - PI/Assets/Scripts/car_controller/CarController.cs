@@ -74,6 +74,7 @@ public class CarController : MonoBehaviour
         }
 
         buttonForward = GameObject.Find("/PrefabInterface/ControlPanel/AccelerateRawImage");
+        buttonBackward = GameObject.Find("/PrefabInterface/ControlPanel/BrakeRawImage");
     }
 
     public void boost(float multiplicator)
@@ -99,7 +100,7 @@ public class CarController : MonoBehaviour
             float acceleration = 0.0f;
             if (canDrive)
             {
-                if (Application.platform == RuntimePlatform.Android)
+                if (Application.platform == RuntimePlatform.Android || true)
                 {
                     float padRotation = Input.acceleration.x * 2.5f;
 
@@ -110,6 +111,10 @@ public class CarController : MonoBehaviour
                     else if (buttonBackward.GetComponent<CustomButton>().down)
                     {
                         acceleration = -1.0f;
+                    }
+                    else
+                    {
+                        acceleration = 0.0f; 
                     }
                     /* if (MaxRotation < Mathf.Abs(padRotation))
                     {
