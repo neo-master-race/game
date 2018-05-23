@@ -49,7 +49,15 @@ public class RaceInformations : MonoBehaviour {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         //playerGlobalTimes = 
         playerLapCount = new int[4];
-        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb);
+		int nbTrack = GameObject.Find ("UserStats").GetComponent<UserStats> ().onTrackNb;
+		GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(nbTrack);
+		if(nbTrack==1)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord;
+		if(nbTrack==2)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord;
+		if(nbTrack==3)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
+		
         if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
         {
             leaderboardUI.SetActive(false);

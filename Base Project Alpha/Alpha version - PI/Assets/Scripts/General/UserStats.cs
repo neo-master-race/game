@@ -72,7 +72,12 @@ public class UserStats : MonoBehaviour {
     public float lamborghiniCursorX;
     public float lamborghiniCursorY;
     public float fordCursorX;
-    public float fordCursorY;
+	public float fordCursorY;
+
+	[Header("World Record")]
+	public string track1WorldRecord;
+	public string track2WorldRecord;
+	public string track3WorldRecord;
 
 
 
