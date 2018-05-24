@@ -326,16 +326,19 @@ public class menu_selection : MonoBehaviour {
             case "Log_In_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
 				backButtonForm.SetActive (false);
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Sign_Up_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 1;
 				backButtonForm.SetActive (false);
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Play_As_Guest_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().is_guest = true;
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
             /************************************************************************************
              *                          BOUTONS D'ENTREE                                        *
@@ -349,11 +352,13 @@ public class menu_selection : MonoBehaviour {
              * **********************************************************************************/
             case "Confirm_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 2;
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Back_Text":
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 0;
 				backButtonForm.SetActive (true);
+                GameObject.Find("Retour").GetComponent<AudioSource>().Play();
                 break;
             /************************************************************************************
              *                          BOUTONS DE CONNEXION                                   *
@@ -375,6 +380,7 @@ public class menu_selection : MonoBehaviour {
                 profileButton.SetActive(false);
 
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Customize_Text":
@@ -383,6 +389,7 @@ public class menu_selection : MonoBehaviour {
                 noncustomBackground.SetActive(false);
 
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Profile_Text":
@@ -394,6 +401,7 @@ public class menu_selection : MonoBehaviour {
                 profileButton.SetActive(false);
 
                 GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 3;
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
             /************************************************************************************
              *                        BOUTONS DU MENU PRINCIPAL                                 *
@@ -410,6 +418,7 @@ public class menu_selection : MonoBehaviour {
 				trackSelection.SetActive(true);
 				soloButton.SetActive(false);
 				multiButton.SetActive(false);
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 break;
 
             case "Multi_Text":
@@ -418,7 +427,7 @@ public class menu_selection : MonoBehaviour {
                 multiButton.SetActive(false);
 
                 multiplayerUI.SetActive(true);
-
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
 
                 break;
             /************************************************************************************
@@ -436,7 +445,7 @@ public class menu_selection : MonoBehaviour {
                 carSelection.SetActive(true);
                 carPodium.SetActive(true);
                 noncustomBackground.SetActive(false);
-
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
 
                 break;
 
@@ -451,6 +460,7 @@ public class menu_selection : MonoBehaviour {
 			backButtonForm.SetActive (false);
 			canvas.SetActive (true);
 			canvasText.SetActive (true);
+                GameObject.Find("Valid").GetComponent<AudioSource>().Play();
                 int nbTrack = trackConfirm.GetComponent<track_selection_form>().nbTrack;
                 SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
 				if (nbTrack == 1)
@@ -470,6 +480,7 @@ public class menu_selection : MonoBehaviour {
 
 			case "Back_Text_Menu":
 				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
+                GameObject.Find("Retour").GetComponent<AudioSource>().Play();
 				break;
 
 			case "Back_menu_Text_Menu":
@@ -480,20 +491,24 @@ public class menu_selection : MonoBehaviour {
 					home.SetActive (true);
 					quit.SetActive (true);
 					cancel.SetActive (true);
-					break;
+                GameObject.Find("Retour").GetComponent<AudioSource>().Play();
+                break;
 
 			case "Logout_Text_Menu":
 				GameObject.Find("Script_Source").GetComponent<menu_selection> ().selection_step = 2;
 				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
-				break;
+                GameObject.Find("Quitter").GetComponent<AudioSource>().Play();
+                break;
 
 			case "Quit_Text_Menu":
 				want_to_back(0);
-				break;
+                GameObject.Find("Retour").GetComponent<AudioSource>().Play();
+                break;
 
 			case "Cancel_Text_Menu":
 				want_to_back(GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step);
-				break;
+                GameObject.Find("Retour").GetComponent<AudioSource>().Play();
+                break;
 
                 /************************************************************************************
                  *                        BOUTONS DE L'ECRAN MULTIJOUEUR                            *
