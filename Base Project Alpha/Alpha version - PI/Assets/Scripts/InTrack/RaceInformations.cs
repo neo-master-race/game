@@ -50,14 +50,9 @@ public class RaceInformations : MonoBehaviour {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         //playerGlobalTimes = 
         playerLapCount = new int[4];
-		int nbTrack = GameObject.Find ("UserStats").GetComponent<UserStats> ().onTrackNb;
-		GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(nbTrack);
-		if(nbTrack==1)
-			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord;
-		if(nbTrack==2)
-			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord;
-		if(nbTrack==3)
-			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
+        int nbTrack = GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb;
+        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(nbTrack);
+		
 		
         if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
         {
@@ -384,6 +379,7 @@ public class RaceInformations : MonoBehaviour {
                 playerLeaderboard = player.GetComponent<Player_Info_Ingame>().playersLeaderboard;
             }
         }
+
         
         i = 0;
         foreach(GameObject playr in players)
@@ -410,6 +406,13 @@ public class RaceInformations : MonoBehaviour {
             onlyOnce = false;
             StartCoroutine(showEndScreen());
         }
-            
+
+        int nbTrack2 = GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb;
+        if (nbTrack2 == 1)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord;
+        if (nbTrack2 == 2)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord;
+        if (nbTrack2 == 3)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
     }
 }
