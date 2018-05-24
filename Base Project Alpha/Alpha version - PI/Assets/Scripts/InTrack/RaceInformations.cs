@@ -40,6 +40,9 @@ public class RaceInformations : MonoBehaviour {
 
     public string trackwr;
 
+    public GameObject leaderboard2players;
+    public GameObject leaderboard3players;
+    public GameObject leaderboard4players;
 
     private int i = 0;
 
@@ -442,6 +445,51 @@ public class RaceInformations : MonoBehaviour {
             onlyOnce = false;
             StartCoroutine(showEndScreen());
         }
-            
+
+        int nbTrack2 = GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb;
+        if (nbTrack2 == 1)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord;
+        if (nbTrack2 == 2)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord;
+        if (nbTrack2 == 3)
+            trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
+
+
+
+        if (playerLeaderboard.Length == 2)
+        {
+            leaderboard2players.SetActive(true);
+            leaderboard3players.SetActive(false);
+            leaderboard4players.SetActive(false);
+            leaderboard2players.transform.Find("LeaderboardPlayer1Back/1stPlayer").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard2players.transform.Find("LeaderboardPlayer2Back/2ndPlayer").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+        }
+        else if (playerLeaderboard.Length == 3)
+        {
+            leaderboard2players.SetActive(false);
+            leaderboard3players.SetActive(true);
+            leaderboard4players.SetActive(false);
+            leaderboard3players.transform.Find("LeaderboardPlayer1Back/1stPlayer").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard3players.transform.Find("LeaderboardPlayer2Back/2ndPlayer").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard3players.transform.Find("LeaderboardPlayer3Back/3rdPlayer").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+        }
+        else if (playerLeaderboard.Length == 4)
+        {
+            leaderboard2players.SetActive(false);
+            leaderboard3players.SetActive(false);
+            leaderboard4players.SetActive(true);
+            leaderboard4players.transform.Find("LeaderboardPlayer1Back/1stPlayer").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard4players.transform.Find("LeaderboardPlayer2Back/2ndPlayer").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard4players.transform.Find("LeaderboardPlayer3Back/3rdPlayer").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard4players.transform.Find("LeaderboardPlayer4Back/4thPlayer").GetComponent<Text>().text = playerLeaderboard[3].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+        }
+        else
+        {
+            leaderboard2players.SetActive(false);
+            leaderboard3players.SetActive(false);
+            leaderboard4players.SetActive(false);
+        }
+
+
     }
 }
