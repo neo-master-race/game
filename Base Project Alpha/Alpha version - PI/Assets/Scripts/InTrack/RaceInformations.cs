@@ -44,6 +44,12 @@ public class RaceInformations : MonoBehaviour {
     public GameObject leaderboard3players;
     public GameObject leaderboard4players;
 
+    public GameObject posparent;
+    public GameObject poschild1;
+    public GameObject poschild2;
+
+    public int[] raceStandings;
+
     private int i = 0;
 
 
@@ -257,6 +263,109 @@ public class RaceInformations : MonoBehaviour {
 
     }
 
+    public void setracestandings (int size)
+    {
+        if(size==2)
+        {
+            raceStandings = new int[4];
+            if (isnewRecord(playerGlobalTimes[0], playerGlobalTimes[1]))
+            {
+                raceStandings[0] = 1;
+                raceStandings[1]= 2;
+            }
+            else
+            {
+                raceStandings[0] = 2;
+                raceStandings[1] = 1;
+            }
+        }
+        if (size == 3)
+        {
+            raceStandings = new int[4];
+            if (isnewRecord(playerGlobalTimes[0], playerGlobalTimes[1]))
+            {
+                if (isnewRecord(playerGlobalTimes[0], playerGlobalTimes[2]))
+                {
+                    raceStandings[0] = 1;
+                    if(isnewRecord(playerGlobalTimes[1], playerGlobalTimes[2]))
+                    {
+                        raceStandings[1] = 2;
+                        raceStandings[2] = 3;
+                    }
+                    else
+                    {
+                        raceStandings[1] = 3;
+                        raceStandings[2] = 2;
+                    }
+                        
+                }
+                    
+            }
+            else if (isnewRecord(playerGlobalTimes[1], playerGlobalTimes[0]))
+            {
+                if (isnewRecord(playerGlobalTimes[1], playerGlobalTimes[2]))
+                {
+                    raceStandings[0] = 2;
+                    if (isnewRecord(playerGlobalTimes[0], playerGlobalTimes[2]))
+                    {
+                        raceStandings[1] = 1;
+                        raceStandings[2] = 3;
+                    }
+                    else
+                    {
+                        raceStandings[1] = 3;
+                        raceStandings[2] = 1;
+                    }
+
+                }
+
+            }
+            else if (isnewRecord(playerGlobalTimes[2], playerGlobalTimes[0]))
+            {
+                if (isnewRecord(playerGlobalTimes[2], playerGlobalTimes[1]))
+                {
+                    raceStandings[0] = 3;
+                    if (isnewRecord(playerGlobalTimes[0], playerGlobalTimes[1]))
+                    {
+                        raceStandings[1] = 1;
+                        raceStandings[2] = 2;
+                    }
+                    else
+                    {
+                        raceStandings[1] = 2;
+                        raceStandings[2] = 1;
+                    }
+
+                }
+
+            }
+        }
+        if (size == 4)
+        {
+            setracestandings(3);
+            if (isnewRecord(playerGlobalTimes[3], playerGlobalTimes[raceStandings[0]-1]))
+            {
+                raceStandings[3] = raceStandings[2];
+                raceStandings[2] = raceStandings[1];
+                raceStandings[1] = raceStandings[0];
+                raceStandings[0] = 4;
+            }
+            else if (isnewRecord(playerGlobalTimes[3], playerGlobalTimes[raceStandings[1] - 1]))
+            {
+                raceStandings[3] = raceStandings[2];
+                raceStandings[2] = raceStandings[1];
+                raceStandings[1] = 4;
+            }
+            else if (isnewRecord(playerGlobalTimes[3], playerGlobalTimes[raceStandings[2] - 1]))
+            {
+                raceStandings[3] = raceStandings[2];
+                raceStandings[2] = 4;
+            }
+            else
+                raceStandings[3] = 4;
+        }
+    }
+
     public void setMultiScreen()
     {
         endScreenMulti.SetActive(true);
@@ -278,12 +387,15 @@ public class RaceInformations : MonoBehaviour {
         }
 
         GameObject.Find("Pseudotext").GetComponent<Text>().text = GameObject.Find("UserStats").GetComponent<UserStats>().username.ToString();
+
+        
+
         if (playerLeaderboard.Length == 1)
         {
             players2.SetActive(true);
-            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
-            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
+            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[0] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[0] - 1].ToString();
+            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[0] - 1].ToString();
             players2.transform.Find("player2Username").GetComponent<Text>().text = "-";
             players2.transform.Find("player2TotalTimes").GetComponent<Text>().text = "--:--.--";
             players2.transform.Find("player2bestTimes").GetComponent<Text>().text = "--:--.--";
@@ -291,41 +403,44 @@ public class RaceInformations : MonoBehaviour {
         if (playerLeaderboard.Length == 2)
         {
             players2.SetActive(true);
-            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
-            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
-            players2.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players2.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
-            players2.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
+            setracestandings(2);
+            players2.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[0] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players2.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[0] - 1].ToString();
+            players2.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[0] - 1].ToString();
+            players2.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[1] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players2.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[1] - 1].ToString();
+            players2.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[1] - 1].ToString();
         }
         else if (playerLeaderboard.Length == 3)
         {
             players3.SetActive(true);
-            players3.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players3.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
-            players3.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
-            players3.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players3.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
-            players3.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
-            players3.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players3.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[2].ToString();
-            players3.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[2].ToString();
+            setracestandings(3);
+            players3.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[0] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players3.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[0] - 1].ToString();
+            players3.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[0] - 1].ToString();
+            players3.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[1] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players3.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[1] - 1].ToString();
+            players3.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[1] - 1].ToString();
+            players3.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[2] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players3.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[2] - 1].ToString();
+            players3.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[2] - 1].ToString();
         }
         else if (playerLeaderboard.Length == 4)
         {
             players4.SetActive(true);
-            players4.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players4.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[0].ToString();
-            players4.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[0].ToString();
-            players4.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players4.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[1].ToString();
-            players4.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[1].ToString();
-            players4.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[2].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players4.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[2].ToString();
-            players4.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[2].ToString();
-            players4.transform.Find("player4Username").GetComponent<Text>().text = playerLeaderboard[3].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
-            players4.transform.Find("player4TotalTimes").GetComponent<Text>().text = playerGlobalTimes[3].ToString();
-            players4.transform.Find("player4bestTimes").GetComponent<Text>().text = playerBestLapTimes[3].ToString();
+            setracestandings(4);
+            players4.transform.Find("player1Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[0] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players4.transform.Find("player1TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[0] - 1].ToString();
+            players4.transform.Find("player1bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[0] - 1].ToString();
+            players4.transform.Find("player2Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[1] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players4.transform.Find("player2TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[1] - 1].ToString();
+            players4.transform.Find("player2bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[1] - 1].ToString();
+            players4.transform.Find("player3Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[2] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players4.transform.Find("player3TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[2] - 1].ToString();
+            players4.transform.Find("player3bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[2] - 1].ToString();
+            players4.transform.Find("player4Username").GetComponent<Text>().text = playerLeaderboard[raceStandings[3] - 1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            players4.transform.Find("player4TotalTimes").GetComponent<Text>().text = playerGlobalTimes[raceStandings[3] - 1].ToString();
+            players4.transform.Find("player4bestTimes").GetComponent<Text>().text = playerBestLapTimes[raceStandings[3] - 1].ToString();
         }
 
         string newrecord = "";
@@ -337,35 +452,35 @@ public class RaceInformations : MonoBehaviour {
                 int finalpos = player.GetComponent<Player_Info_Ingame>().leaderboardPosition;
                 if(finalpos==1)
                 {
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "1";
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "er";
-                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(235, 205, 0, 200);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                    poschild1.GetComponent<Text>().text = "1";
+                    poschild2.GetComponent<Text>().text = "er";
+                    posparent.GetComponent<Image>().color = new Color32(235, 205, 0, 200);
+                    poschild1.GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                    poschild2.GetComponent<Text>().color = new Color32(255, 225, 0, 255);
                 }
                 else if (finalpos == 2)
                 {
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "2";
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
-                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(120, 120, 120, 200);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                    poschild1.GetComponent<Text>().text = "2";
+                    poschild2.GetComponent<Text>().text = "ème";
+                    posparent.GetComponent<Image>().color = new Color32(120, 120, 120, 200);
+                    poschild1.GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                    poschild2.GetComponent<Text>().color = new Color32(154, 154, 154, 255);
                 }
                 else if (finalpos == 3)
                 {
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "3";
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
-                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(170, 80, 50, 200);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                    poschild1.GetComponent<Text>().text = "3";
+                    poschild2.GetComponent<Text>().text = "ème";
+                    posparent.GetComponent<Image>().color = new Color32(170, 80, 50, 200);
+                    poschild1.GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                    poschild2.GetComponent<Text>().color = new Color32(207, 120, 50, 255);
                 }
                 else if (finalpos == 4)
                 {
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "4";
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
-                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(60, 16, 104, 200);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
-                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                    poschild1.GetComponent<Text>().text = "4";
+                    poschild2.GetComponent<Text>().text = "ème";
+                    posparent.GetComponent<Image>().color = new Color32(60, 16, 104, 200);
+                    poschild1.GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                    poschild2.GetComponent<Text>().color = new Color32(120, 60, 150, 255);
                 }
             }
         }

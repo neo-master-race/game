@@ -97,7 +97,8 @@ public class Timer : MonoBehaviour {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));
             int bestLapMSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(6));
-            StartCoroutine(dropDownDelta());
+            if(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players[playerId].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+                StartCoroutine(dropDownDelta());
             if(currentMinLap[playerId] < bestLapMin || ((currentMinLap[playerId] == bestLapMin) && (currentSecLap[playerId]< bestlapSec))
             || ((currentMinLap[playerId] == bestLapMin) && (bestlapSec == currentSecLap[playerId]) && (currentMilliSecLap[playerId]<bestLapMSec)))
             {
