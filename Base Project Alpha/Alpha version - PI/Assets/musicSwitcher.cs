@@ -11,7 +11,7 @@ public class musicSwitcher : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        int rdm = Random.Range(1, 4);
+        int rdm = Random.Range(1, 5);
         if (rdm == 1)
             this.GetComponent<AudioSource>().clip = euromir;
         else if (rdm == 2)
