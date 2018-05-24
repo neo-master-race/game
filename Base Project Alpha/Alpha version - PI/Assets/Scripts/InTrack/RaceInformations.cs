@@ -506,6 +506,12 @@ public class RaceInformations : MonoBehaviour {
             if (gotNewRecord)
                 GameObject.Find("Network").GetComponent<Network>().setGlobalRecord(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb, newrecord);
         }
+
+        if (playerLeaderboard[raceStandings[0] - 1].GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            GameObject.Find("UserStats").GetComponent<UserStats>().raceVictory++;
+        GameObject.Find("UserStats").GetComponent<UserStats>().raceNb++;
+
+        GameObject.Find("UserStats").GetComponent<UserStats>().sendStats();
     }
 
     public IEnumerator showEndScreen()
