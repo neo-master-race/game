@@ -44,7 +44,6 @@ public class RaceInformations : MonoBehaviour {
     public GameObject leaderboard3players;
     public GameObject leaderboard4players;
 
-
     private int i = 0;
 
 
@@ -54,9 +53,14 @@ public class RaceInformations : MonoBehaviour {
         playerLapTimes = new string[GameObject.Find("LapCounter").GetComponent<LapCount>().raceLapNumber * 4];
         //playerGlobalTimes = 
         playerLapCount = new int[4];
-        int nbTrack = GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb;
-        GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(nbTrack);
-		
+		int nbTrack = GameObject.Find ("UserStats").GetComponent<UserStats> ().onTrackNb;
+		GameObject.Find("Network").GetComponent<Network>().getGlobalRecord(nbTrack);
+		if(nbTrack==1)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord;
+		if(nbTrack==2)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord;
+		if(nbTrack==3)
+			trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
 		
         if (GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo)
         {
@@ -330,7 +334,39 @@ public class RaceInformations : MonoBehaviour {
             if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
                 newrecord = playerBestLapTimes[player.GetComponent<Player_Info_Ingame>().leaderboardPosition - 1];
-                GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(player.GetComponent<Player_Info_Ingame>().leaderboardPosition);
+                int finalpos = player.GetComponent<Player_Info_Ingame>().leaderboardPosition;
+                if(finalpos==1)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "1";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "er";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(235, 205, 0, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                }
+                else if (finalpos == 2)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "2";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(120, 120, 120, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                }
+                else if (finalpos == 3)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "3";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(170, 80, 50, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                }
+                else if (finalpos == 4)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "4";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(60, 16, 104, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                }
             }
         }
         bool gotNewRecord = false;
@@ -383,7 +419,6 @@ public class RaceInformations : MonoBehaviour {
                 playerLeaderboard = player.GetComponent<Player_Info_Ingame>().playersLeaderboard;
             }
         }
-
         
         i = 0;
         foreach(GameObject playr in players)
@@ -419,12 +454,14 @@ public class RaceInformations : MonoBehaviour {
         if (nbTrack2 == 3)
             trackwr = GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord;
 
-        if(playerLeaderboard.Length==2)
+
+
+        if (playerLeaderboard.Length == 2)
         {
             leaderboard2players.SetActive(true);
             leaderboard3players.SetActive(false);
             leaderboard4players.SetActive(false);
-            leaderboard2players.transform.Find("LeaderboardPlayer1Back/1stPlayer").GetComponent<Text>().text= playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
+            leaderboard2players.transform.Find("LeaderboardPlayer1Back/1stPlayer").GetComponent<Text>().text = playerLeaderboard[0].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
             leaderboard2players.transform.Find("LeaderboardPlayer2Back/2ndPlayer").GetComponent<Text>().text = playerLeaderboard[1].transform.Find("userName").GetComponent<UserHoverTag>().username.text.ToString();
         }
         else if (playerLeaderboard.Length == 3)
@@ -452,5 +489,7 @@ public class RaceInformations : MonoBehaviour {
             leaderboard3players.SetActive(false);
             leaderboard4players.SetActive(false);
         }
+
+
     }
 }

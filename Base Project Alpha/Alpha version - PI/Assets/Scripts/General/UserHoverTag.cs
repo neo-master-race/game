@@ -18,6 +18,7 @@ public class UserHoverTag : MonoBehaviour {
             if(player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
                 player.transform.Find("userName/userNameTexture/userNamePosition").GetComponent<Text>().enabled = false;
+                player.transform.Find("userName/userNameTexture/userNameText").GetComponent<Text>().text = GameObject.Find("UserStats").GetComponent<UserStats>().username;
                 player.transform.Find("userName/userNameTexture/userNameText").GetComponent<Text>().enabled = false;
                 player.transform.Find("userName/userNameTexture").GetComponent<RawImage>().enabled = false;
                 localPlayer = player;
