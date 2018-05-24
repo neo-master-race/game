@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            Destroy(GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>());
+            Destroy(GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>()); 
         }
     }
 

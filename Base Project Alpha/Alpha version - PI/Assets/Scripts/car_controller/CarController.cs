@@ -67,8 +67,8 @@ public class CarController : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            Destroy(transform.Find("trailL").gameObject);
-            Destroy(transform.Find("trailR").gameObject);
+            Destroy(transform.Find("Particle System").gameObject);
+            Destroy(transform.Find("Particle System (1)").gameObject);
         }
 
         buttonForward = GameObject.Find("/PrefabInterface/ControlPanel/AccelerateRawImage");
