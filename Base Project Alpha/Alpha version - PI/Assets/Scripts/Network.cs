@@ -309,10 +309,14 @@ class Network : MonoBehaviour {
 
         player.transform.localPosition =
             new Vector3(vecPos.X, vecPos.Y, vecPos.Z);
-        player.transform.localEulerAngles =
-            new Vector3(vecRot.X, vecRot.Y, vecRot.Z);
         player.transform.localScale =
             new Vector3(vecScale.X, vecScale.Y, vecScale.Z);
+
+        player.transform.rotation = Quaternion.Lerp(
+            player.transform.rotation,
+            Quaternion.Euler(new Vector3(vecRot.X, vecRot.Y, vecRot.Z)),
+            Time.time * 0.2f);
+
         Rigidbody rb = player.GetComponent<Rigidbody>();
         rb.velocity = new Vector3(vecVelocity.X, vecVelocity.Y, vecVelocity.Z);
         break;
@@ -520,12 +524,18 @@ class Network : MonoBehaviour {
       case "global_record":
         Protocol.GlobalRecord gr = parsedData.GlobalRecord;
         Debug.Log(gr.Track + gr.Record);
-		if(gr.Track==1)
-			GameObject.Find("UserStats").GetComponent<UserStats>().track1WorldRecord = gr.Record;
-		if(gr.Track==2)
-			GameObject.Find("UserStats").GetComponent<UserStats>().track2WorldRecord = gr.Record;
-		if(gr.Track==3)
-			GameObject.Find("UserStats").GetComponent<UserStats>().track3WorldRecord = gr.Record;
+        if (gr.Track == 1)
+          GameObject.Find("UserStats")
+              .GetComponent<UserStats>()
+              .track1WorldRecord = gr.Record;
+        if (gr.Track == 2)
+          GameObject.Find("UserStats")
+              .GetComponent<UserStats>()
+              .track2WorldRecord = gr.Record;
+        if (gr.Track == 3)
+          GameObject.Find("UserStats")
+              .GetComponent<UserStats>()
+              .track3WorldRecord = gr.Record;
         break;
       default:
         Debug.LogWarning("unsupported message type for " + parsedData);
