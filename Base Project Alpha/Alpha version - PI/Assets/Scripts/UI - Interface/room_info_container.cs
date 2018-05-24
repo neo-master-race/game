@@ -471,7 +471,8 @@ public class room_info_container : MonoBehaviour {
             yield return new WaitForSeconds(1.0f);
             waitTime -= 1.0f;
         }
-        startGame();
+		if (GameObject.Find("UserStats").GetComponent<UserStats>().inLobby!=null)
+        	startGame();
         yield break;
     }
 
@@ -482,9 +483,14 @@ public class room_info_container : MonoBehaviour {
 
     public void notOnRoomList()
     {
-        GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
-		GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
 		GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 0;
+		GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = 0;
+		GameObject.Find("UserStats").GetComponent<UserStats>().inLobby=null;
         reset_list();
     }
 
