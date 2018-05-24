@@ -326,6 +326,7 @@ public class room_info_container : MonoBehaviour {
         GameObject.Find("UserStats").GetComponent<UserStats>().inLobby = id;
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = true;
         GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+		GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step= 10;
         
 
 

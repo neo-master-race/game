@@ -633,6 +633,10 @@ void disable_all()
 				carSelection.SetActive (true);
 				break;
 	            
+			case 10:
+				disable_all ();
+				multiplayerUI.SetActive (true);
+				break;
 			}
 			GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step--;
 		}
