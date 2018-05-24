@@ -14,6 +14,11 @@ public class carSelection : MonoBehaviour {
     public GameObject lambo;
     public GameObject ford;
 
+    public GameObject cursor1;
+    public GameObject cursor2;
+    public GameObject cursor3;
+    public GameObject cursor4;
+
     public int selectedVehicule = 0;
     private int totalVehiculeNumber = 4;
 
@@ -27,6 +32,10 @@ public class carSelection : MonoBehaviour {
                 porsche.SetActive(false);
                 lambo.SetActive(false);
                 ford.SetActive(false);
+                cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+                cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+                cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
+                cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
                 break;
             case 1:
                 vehiculeNameText.GetComponent<Text>().text = "Porsche";
@@ -34,6 +43,10 @@ public class carSelection : MonoBehaviour {
                 porsche.SetActive(true);
                 lambo.SetActive(false);
                 ford.SetActive(false);
+                cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, 0);
+                cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, 0);
+                cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, 0);
+                cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
                 break;
             case 2:
                 vehiculeNameText.GetComponent<Text>().text = "Lamborghini";
@@ -41,6 +54,10 @@ public class carSelection : MonoBehaviour {
                 porsche.SetActive(false);
                 lambo.SetActive(true);
                 ford.SetActive(false);
+                cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, 0);
+                cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+                cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+                cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
                 break;
             case 3:
                 vehiculeNameText.GetComponent<Text>().text = "Ford";
@@ -48,6 +65,10 @@ public class carSelection : MonoBehaviour {
                 porsche.SetActive(false);
                 lambo.SetActive(false);
                 ford.SetActive(true);
+                cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
+                cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, 0);
+                cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+                cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, 0);
                 break;
 
             default:
