@@ -636,6 +636,7 @@ void disable_all()
 			case 10:
 				disable_all ();
 				multiplayerUI.SetActive (true);
+				GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step = 5;
 				break;
 			}
 			GameObject.Find ("Script_Source").GetComponent<menu_selection> ().selection_step--;
