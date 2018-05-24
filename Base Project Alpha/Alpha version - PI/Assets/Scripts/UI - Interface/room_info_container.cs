@@ -498,6 +498,7 @@ public class room_info_container : MonoBehaviour {
 		carSelect.SetActive(false);
 		createRoom.SetActive(true);
 		userStats.SetActive(true);
+        GameObject.Find("Network").GetComponent<Network>().leaveRoom();
         reset_list();
     }
 
