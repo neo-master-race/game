@@ -459,8 +459,21 @@ public class room_info_container : MonoBehaviour {
                 }
             }
         }
-        SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
-        SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
+        if(GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb==1)
+        {
+            SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+            SceneManager.LoadScene("Track1", LoadSceneMode.Additive);
+        }
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb ==2)
+        {
+            SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+            SceneManager.LoadScene("Track2", LoadSceneMode.Additive);
+        }
+        else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
+        {
+            SceneManager.LoadScene("trackCommon", LoadSceneMode.Single);
+            SceneManager.LoadScene("Track3", LoadSceneMode.Additive);
+        }
     }
 
     public IEnumerator roomStartCountdown(float waitTime)
