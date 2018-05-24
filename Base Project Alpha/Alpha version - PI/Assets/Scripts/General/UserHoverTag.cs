@@ -11,9 +11,8 @@ public class UserHoverTag : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        username.text =
-            GameObject.Find("UserStats").GetComponent<UserStats>().username;
-
+        //username.text =
+        //    GameObject.Find("UserStats").GetComponent<UserStats>().username;
         foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
             if(player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
@@ -23,13 +22,15 @@ public class UserHoverTag : MonoBehaviour {
                 player.transform.Find("userName/userNameTexture").GetComponent<RawImage>().enabled = false;
                 localPlayer = player;
             }
+            
         }
         
     }
 	
 	// Update is called once per frame
 	void Update () {
-        foreach (GameObject player in GameObject.Find("RaceInformations").GetComponent<RaceInformations>().players)
+        int i = 2;
+        foreach (GameObject player in GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLeaderboard)
         {
             if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
@@ -40,6 +41,13 @@ public class UserHoverTag : MonoBehaviour {
             }
         }
         this.transform.localEulerAngles = new Vector3(0, 180+(localPlayer.transform.localEulerAngles.y-this.transform.parent.localEulerAngles.y), 0);
-        
+        foreach (GameObject player in GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLeaderboard)
+        {
+            if (!player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                player.transform.Find("userName/userNameTexture/userNamePosition").GetComponent<Text>().text = player.GetComponent<Player_Info_Ingame>().leaderboardPosition.ToString();
+            }
+
+        }
     }
 }

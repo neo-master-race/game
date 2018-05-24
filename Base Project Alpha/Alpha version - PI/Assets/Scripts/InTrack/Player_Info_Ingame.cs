@@ -88,7 +88,9 @@ public class Player_Info_Ingame : MonoBehaviour {
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 2)
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("track2"));
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));         
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
+
+        
     }
 
     public void setpos()
@@ -115,6 +117,22 @@ public class Player_Info_Ingame : MonoBehaviour {
         else if (GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb == 3)
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("track3"));
 
+        foreach (GameObject player in GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLeaderboard)
+        {
+            string user = "";
+            if (!player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
+            {
+                if (player.GetComponent<Player_Info_Ingame>().leaderboardPosition == GameObject.Find("UserStats").GetComponent<UserStats>().player2sp)
+                    user = GameObject.Find("UserStats").GetComponent<UserStats>().player2name;
+                if (player.GetComponent<Player_Info_Ingame>().leaderboardPosition == GameObject.Find("UserStats").GetComponent<UserStats>().player3sp)
+                    user = GameObject.Find("UserStats").GetComponent<UserStats>().player3name;
+                if (player.GetComponent<Player_Info_Ingame>().leaderboardPosition == GameObject.Find("UserStats").GetComponent<UserStats>().player4sp)
+                    user = GameObject.Find("UserStats").GetComponent<UserStats>().player4name;
+                player.transform.Find("userName/userNameTexture/userNameText").GetComponent<Text>().text = user;
+            }
+
+        }
+
     }
 
     // Update is called once per frame
@@ -129,9 +147,9 @@ public class Player_Info_Ingame : MonoBehaviour {
             {
                 if (nb_players_after - nb_players_before > 0)
                 {
-                    for (int i = 0; i < nb_players_after - nb_players_before; i++)
+                    for (int i = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; i < nb_players_after - nb_players_before; i++)
                     {
-                        for (int j = 0; j < playersLeaderboard.Length - 1; j++)
+                        for (int j = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; j < playersLeaderboard.Length - 1; j++)
                         {
                             GameObject tmp = playersLeaderboard[j + 1];
                             playersLeaderboard[j + 1] = playersLeaderboard[j];
@@ -144,9 +162,9 @@ public class Player_Info_Ingame : MonoBehaviour {
             if (GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistances
                 && !GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation)
             {
-                for (int i=0;i< playersLeaderboard.Length-1;i++)
+                for (int i= GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; i< playersLeaderboard.Length-1;i++)
                 {
-                    for (int j = 0; j < playersLeaderboard.Length-1; j++)
+                    for (int j = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; j < playersLeaderboard.Length-1; j++)
                     {
                         if ((playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[0]+ playersLeaderboard[j].GetComponent<Player_Info_Ingame>().distanceToWaypoint[1])
                              >
@@ -160,9 +178,9 @@ public class Player_Info_Ingame : MonoBehaviour {
                 }
                 GameObject.FindWithTag("Checkpoints").GetComponent<Checkpoints_Check>().initializedWaypointDistancesConfirmation = true;
             }
-            for (int i = 0; i < playersLeaderboard.Length - 1; i++)
+            for (int i = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; i < playersLeaderboard.Length - 1; i++)
             {
-                for (int j = 0; j < playersLeaderboard.Length - 1; j++)
+                for (int j = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition - 1; j < playersLeaderboard.Length - 1; j++)
                 {
                     if (playersLeaderboard[j].GetComponent<Player_Info_Ingame>().virtual_lap_count < playersLeaderboard[j + 1].GetComponent<Player_Info_Ingame>().virtual_lap_count)
                     {
@@ -189,18 +207,17 @@ public class Player_Info_Ingame : MonoBehaviour {
                     }
                 }
             }
-            for (int i = 0; i < playersLeaderboard.Length; i++)
+            for (int i = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition-1; i < playersLeaderboard.Length; i++)
             {
-                if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().isLocalPlayer)
-                    playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i + 1;
+                playersLeaderboard[i].GetComponent<Player_Info_Ingame>().leaderboardPosition = i + 1;
 
                 if (playersLeaderboard[i].GetComponent<Player_Info_Ingame>().supposedNextCheckpointNumber > playersLeaderboard[i].GetComponent<Player_Info_Ingame>().nextCheckpointNumber)
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count - 1;
                 else
                     playersLeaderboard[i].GetComponent<Player_Info_Ingame>().virtual_lap_count = playersLeaderboard[i].GetComponent<Player_Info_Ingame>().lap_count;
             }
-            if (!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished)
-            { 
+            if (!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished && leaderboardPosition>= GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition)
+            {
                 GameObject.Find("PositionText").GetComponent<Text>().text = leaderboardPosition.ToString();
                 GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(leaderboardPosition);
             }

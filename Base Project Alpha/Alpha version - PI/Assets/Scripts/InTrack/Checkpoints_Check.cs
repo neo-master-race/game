@@ -64,6 +64,7 @@ public class Checkpoints_Check : MonoBehaviour
                             if (car.GetComponent<Player_Info_Ingame>().lap_count == GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber)
                             {
                                 GameObject.Find("TimeCounter").GetComponent<Timer>().stopGlobalTimer(i);
+                                GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition++;
                             }
                         }
                             

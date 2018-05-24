@@ -92,7 +92,7 @@ public class Timer : MonoBehaviour {
     {
         int racelap = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceLapNumber;
         GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLapTimes[playerId* racelap + GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerLapCount[playerId]- 1] = zeroDisplay(currentMinLap[playerId], 2) + ":"+ zeroDisplay(currentSecLap[playerId], 2) + ":"+ zeroDisplay(currentMilliSecLap[playerId], 3);
-        if (GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--.---")
+        if (GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--.---" && GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--:---" && GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--.--" && GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId] != "--:--:--")
         {
             int bestLapMin = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(0, 2));
             int bestlapSec = int.Parse(GameObject.Find("RaceInformations").GetComponent<RaceInformations>().playerBestLapTimes[playerId].Substring(3, 2));

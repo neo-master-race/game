@@ -79,6 +79,14 @@ public class UserStats : MonoBehaviour {
 	public string track2WorldRecord;
 	public string track3WorldRecord;
 
+    [Header("other players")]
+    public string player2name;
+    public int player2sp;
+    public string player3name;
+    public int player3sp;
+    public string player4name;
+    public int player4sp;
+
 
 
     private static UserStats playerInstance;

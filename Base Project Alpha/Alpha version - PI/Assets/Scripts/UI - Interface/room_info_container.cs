@@ -433,17 +433,24 @@ public class room_info_container : MonoBehaviour {
         {
             if (rooms[j].roomIndex == GameObject.Find("UserStats").GetComponent<UserStats>().inLobby)
             {
+                if (rooms[j].circuits[0] == Circuit.Track1)
+                    GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 1;
+                else if (rooms[j].circuits[0] == Circuit.Track2)
+                    GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 2;
+                else if (rooms[j].circuits[0] == Circuit.Track3)
+                    GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 3;
                 for (int k = 0; k < rooms[j].MaximumPlayersNb; k++)
                 {
-                    Debug.Log(rooms[j].MaximumPlayersNb);
-                    Debug.Log(k);
-                    Debug.Log(rooms[j].ActivePlayers[k]);
                     if (rooms[j].ActivePlayers[k] == GameObject.Find("UserStats").GetComponent<UserStats>().username)
                     {
                         GameObject.Find("UserStats").GetComponent<UserStats>().startingPosition = rooms[j].startingPositions[k];
 
                     }
-
+                    else
+                    {
+                        GameObject.Find("UserStats").GetComponent<UserStats>().player2name = rooms[j].ActivePlayers[k];
+                        GameObject.Find("UserStats").GetComponent<UserStats>().player2sp= rooms[j].startingPositions[k];
+                    }
                 }
             }
         }

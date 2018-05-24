@@ -103,6 +103,8 @@ public class PositionHandler : MonoBehaviour {
 
     public void setpos(int pos)
     {
+        if (!GameObject.Find("RaceInformations").GetComponent<RaceInformations>().hasFinished  && pos < GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition)
+            pos = GameObject.Find("RaceInformations").GetComponent<RaceInformations>().raceMinimumLeaderboardPosition;
         switch (pos)
         {
             case 1:
