@@ -66,6 +66,7 @@ public class menu_selection : MonoBehaviour {
     [Header("Customisation")]
     public GameObject customUI;
 	public GameObject noncustomBackground;
+    public GameObject carPodium;
 
 
     //Schneberger Maxime
@@ -433,10 +434,11 @@ public class menu_selection : MonoBehaviour {
 				GameObject.Find("Script_Source").GetComponent<menu_selection>().selection_step = 5;
 				trackSelection.SetActive(false);
                 carSelection.SetActive(true);
+                carPodium.SetActive(true);
+                noncustomBackground.SetActive(false);
 
-                
-				
-				break;
+
+                break;
 
             /************************************************************************************
             *                        BOUTON DE CONFIRMATION DU VEHICULE                         *
