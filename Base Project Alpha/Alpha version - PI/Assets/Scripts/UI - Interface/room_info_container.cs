@@ -482,9 +482,13 @@ public class room_info_container : MonoBehaviour {
 
     public void notOnRoomList()
     {
-        GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
-		GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
 		GameObject.Find("UserStats").GetComponent<UserStats>().isBack = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().playingSolo = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().playingMulti = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().isOnRoomList = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().isOnLobby = false;
+		GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 0;
+		GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = 0;
         reset_list();
     }
 
