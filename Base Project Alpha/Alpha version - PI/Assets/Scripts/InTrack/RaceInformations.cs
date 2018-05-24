@@ -331,7 +331,39 @@ public class RaceInformations : MonoBehaviour {
             if (player.GetComponent<Player_Info_Ingame>().isLocalPlayer)
             {
                 newrecord = playerBestLapTimes[player.GetComponent<Player_Info_Ingame>().leaderboardPosition - 1];
-                GameObject.Find("PositionText").GetComponent<PositionHandler>().setpos(player.GetComponent<Player_Info_Ingame>().leaderboardPosition);
+                int finalpos = player.GetComponent<Player_Info_Ingame>().leaderboardPosition;
+                if(finalpos==1)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "1";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "er";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(235, 205, 0, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(255, 225, 0, 255);
+                }
+                else if (finalpos == 2)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "2";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(120, 120, 120, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(154, 154, 154, 255);
+                }
+                else if (finalpos == 3)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "3";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(170, 80, 50, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(207, 120, 50, 255);
+                }
+                else if (finalpos == 4)
+                {
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().text = "4";
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().text = "ème";
+                    endScreenMulti.transform.Find("PositionPanel").GetComponent<Image>().color = new Color32(60, 16, 104, 200);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                    endScreenMulti.transform.Find("PositionPanel/PositionText2").GetComponent<Text>().color = new Color32(120, 60, 150, 255);
+                }
             }
         }
         bool gotNewRecord = false;
