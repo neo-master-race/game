@@ -17,6 +17,7 @@ public class transition : MonoBehaviour {
     public void OnPointerDownDelegate(PointerEventData data)
     {
         GameObject.Find("UserStats").GetComponent<UserStats>().gobacktomenu();
+        GameObject.Find("Network").GetComponent<Network>().leaveRoom();
     }
 
     // Update is called once per frame
