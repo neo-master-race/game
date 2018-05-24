@@ -44,8 +44,8 @@ public class Player_Info_Ingame : MonoBehaviour {
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            Destroy(transform.Find("Particle System").gameObject);
-            Destroy(transform.Find("Particle System (1)").gameObject);
+            Destroy(transform.Find("trailL").gameObject);
+            Destroy(transform.Find("trailR").gameObject);
         }
 
         if (GameObject.Find("UserStats").GetComponent<UserStats>().carIndex == 1)
