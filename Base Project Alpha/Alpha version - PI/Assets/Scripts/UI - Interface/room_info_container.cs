@@ -81,6 +81,10 @@ public class room_info_container : MonoBehaviour {
     public Texture porscheImage;
     public Texture lamboImage;
     public Texture fordImage;
+    public GameObject cursor1;
+    public GameObject cursor2;
+    public GameObject cursor3;
+    public GameObject cursor4;
 
     public void roomConstructor(string id, int room_type, int id_circuit, int max_players, int nb_players,
         string[] players_username, int[] players_nb_races, int[] players_nb_wins, string[] players_record, int[] startingPositions)
@@ -634,6 +638,10 @@ public class room_info_container : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car1R;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car1G;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car1B;
+            cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+            cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+            cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
+            cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
         }
         else if (carIndex == 2)
         {
@@ -644,6 +652,10 @@ public class room_info_container : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car2R;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car2G;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car2B;
+            cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, 0);
+            cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, 0);
+            cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, 0);
+            cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
         }
         else if (carIndex == 3)
         {
@@ -654,6 +666,10 @@ public class room_info_container : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car3R;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car3G;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car3B;
+            cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, 0);
+            cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+            cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+            cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
         }
         else if(carIndex==4)
         {
@@ -664,6 +680,10 @@ public class room_info_container : MonoBehaviour {
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarR = GameObject.Find("UserStats").GetComponent<UserStats>().Car4R;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarG = GameObject.Find("UserStats").GetComponent<UserStats>().Car4G;
             GameObject.Find("UserStats").GetComponent<UserStats>().currentCarB = GameObject.Find("UserStats").GetComponent<UserStats>().Car4B;
+            cursor1.GetComponent<RectTransform>().anchoredPosition = new Vector2(60, 0);
+            cursor2.GetComponent<RectTransform>().anchoredPosition = new Vector2(120, 0);
+            cursor3.GetComponent<RectTransform>().anchoredPosition = new Vector2(80, 0);
+            cursor4.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, 0);
         }
     }
 
