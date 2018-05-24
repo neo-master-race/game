@@ -492,6 +492,12 @@ public class room_info_container : MonoBehaviour {
 		GameObject.Find("UserStats").GetComponent<UserStats>().onTrackNb = 0;
 		GameObject.Find("UserStats").GetComponent<UserStats>().trackLapNumber = 0;
 		GameObject.Find("UserStats").GetComponent<UserStats>().inLobby=null;
+		lobby.SetActive(false);
+		room.SetActive(true);
+		scrollbar.SetActive(true);
+		carSelect.SetActive(false);
+		createRoom.SetActive(true);
+		userStats.SetActive(true);
         reset_list();
     }
 
