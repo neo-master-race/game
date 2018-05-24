@@ -7,11 +7,23 @@ using UnityEngine.UI;
 public class log_reg_form : MonoBehaviour {
 
     public GameObject log_reg_canvas;
+
     public GameObject display_error;
+
     public GameObject user_input;
     public GameObject pwd_input;
     public GameObject user_text;
     public GameObject pwd_text;
+
+    public GameObject user_input_reg;
+    public GameObject pwd_input_reg;
+    public GameObject pwd_input_conf_reg;
+    public GameObject user_text_reg;
+    public GameObject pwd_text_reg;
+    public GameObject pwd_text_conf_reg;
+
+
+
     public GameObject after_canvas;
     public GameObject register_button;
     public GameObject login_button;
@@ -180,6 +192,28 @@ public class log_reg_form : MonoBehaviour {
 
     }
 
+
+    public IEnumerator displayErrorReg(String msg)
+    {
+        log_reg_canvas.SetActive(true);
+        user_input_reg.SetActive(true);
+        pwd_input_reg.SetActive(true);
+        pwd_input_conf_reg.SetActive(true);
+        confirm.GetComponent<RawImage>().color = new Color(255, 255, 255);
+        user_text_reg.GetComponent<Text>().enabled = true;
+        pwd_text_reg.GetComponent<Text>().enabled = true;
+        pwd_text_conf_reg.GetComponent<Text>().enabled = true;
+        display_error.SetActive(true);
+        GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = true;
+        GameObject.Find("ErrorDisplayText").GetComponent<Text>().text = msg;
+        yield return new WaitForSeconds(3.0f);
+        if (display_error.activeSelf)
+            GameObject.Find("ErrorDisplayText").GetComponent<Text>().enabled = false;
+        display_error.SetActive(false);
+
+
+    }
+
     public void LogInSuccess()
     {
         Debug.Log("New user connected");
@@ -203,6 +237,8 @@ public class log_reg_form : MonoBehaviour {
     public void RegisterError(String msg)
     {
         Debug.Log(msg);
+        StartCoroutine(displayErrorReg(msg));
+
     }
 
     // Update is called once per frame
